@@ -381,7 +381,7 @@ module PE_control #(
                 o_ifmap_fifo_ready = 0;
                 o_wght_fifo_ready = 0;
                 o_psum_in_fifo_ready = (counter >= P);
-                o_psum_out_fifo_valid = (counter < P);
+                o_psum_out_fifo_valid = (counter - 3 < P);
 
                 o_ifmap_ra = 0;
                 o_wght_ra = 0;

@@ -1,6 +1,6 @@
 //multicast controller
 module MC #(
-    parameter DATA_BITWIDTH = 16
+    parameter DATA_BITWIDTH = 8
 )(
     input i_clk,
     input i_rst,

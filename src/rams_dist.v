@@ -1,7 +1,7 @@
 // Dual-Port Distributed RAM with Synchronous Read
 module rams_dist # (
     parameter DATA_BITWIDTH = 8,
-    parameter ADDR_BITWIDTH = 7
+    parameter ADDR_BITWIDTH = 8
 )(
     input         clk,
     input         we,

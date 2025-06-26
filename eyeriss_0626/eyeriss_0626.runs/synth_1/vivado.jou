@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Thu Jun 26 13:04:46 2025
+# Process ID: 2360
+# Current directory: C:/LAB/Graduation_Project/eyeriss_0626/eyeriss_0626.runs/synth_1
+# Command line: vivado.exe -log PE_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source PE_top.tcl
+# Log file: C:/LAB/Graduation_Project/eyeriss_0626/eyeriss_0626.runs/synth_1/PE_top.vds
+# Journal file: C:/LAB/Graduation_Project/eyeriss_0626/eyeriss_0626.runs/synth_1\vivado.jou
+# Running On: DESKTOP-SQHMHKD, OS: Windows, CPU Frequency: 1996 MHz, CPU Physical cores: 16, Host memory: 14861 MB
+#-----------------------------------------------------------
+source PE_top.tcl -notrace

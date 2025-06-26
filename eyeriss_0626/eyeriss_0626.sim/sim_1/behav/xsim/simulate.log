@@ -1,0 +1,3 @@
+Time resolution is 1 ps
+Start Testbench
+$stop called at time : 2105 ns : File "C:/LAB/Graduation_Project/eyeriss_0626/eyeriss_0626.srcs/sim_1/imports/tb/tb_PE_top.v" Line 187

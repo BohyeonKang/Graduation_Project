@@ -1,0 +1,15 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../eyeriss_0626.srcs/sources_1/imports/src/PE_control.v" \
+"../../../../eyeriss_0626.srcs/sources_1/imports/src/PE_datapath.v" \
+"../../../../eyeriss_0626.srcs/sources_1/imports/src/PE_top.v" \
+"../../../../eyeriss_0626.srcs/sources_1/imports/src/RF.v" \
+"../../../../eyeriss_0626.srcs/sources_1/imports/src/fifo.v" \
+"../../../../eyeriss_0626.srcs/sources_1/imports/src/rams_dist.v" \
+"../../../../eyeriss_0626.srcs/sim_1/imports/tb/tb_PE_top.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

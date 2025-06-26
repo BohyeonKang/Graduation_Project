@@ -47,7 +47,7 @@ module PE_top #(
     wire psum_in_ctrl2fifo_ready;
 
     wire [DATA_BITWIDTH-1:0] psum_out_datapath2fifo_data;
-    wire psum_out_ctrl2fifo_valid;
+    wire psum_out_datapath2ctrl_valid;
     wire psum_out_fifo2ctrl_ready;
 
     //Local control signals
@@ -121,7 +121,7 @@ module PE_top #(
 
         //FIFO interface as rx
         .i_push_data(psum_out_datapath2fifo_data),
-        .i_valid(psum_out_ctrl2fifo_valid),
+        .i_valid(psum_out_datapath2ctrl_valid),
         .o_ready(psum_out_fifo2ctrl_ready),
 
         //FIFO interface as tx
@@ -151,7 +151,7 @@ module PE_top #(
         .i_psum_in_fifo_valid(psum_in_fifo2ctrl_valid),
         .o_psum_in_fifo_ready(psum_in_ctrl2fifo_ready),
         .i_psum_out_fifo_ready(psum_out_fifo2ctrl_ready),
-        .o_psum_out_fifo_valid(psum_out_ctrl2fifo_valid),
+        .i_psum_out_fifo_valid(psum_out_datapath2ctrl_valid),
 
         .o_ifmap_ra(ifmap_ra_ctrl2datapath),
         .o_wght_ra(wght_ra_ctrl2datapath),

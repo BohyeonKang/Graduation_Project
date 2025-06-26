@@ -28,9 +28,8 @@ module PE_control #(
     output reg o_psum_in_fifo_ready,
 
     //// Interface to OUTPUT PSUM FIFO ////
-    input i_psum_out_fifo_ready,
-    output reg o_psum_out_fifo_valid,
-    
+    input i_psum_out_fifo_ready,    // from FIFO
+    input i_psum_out_fifo_valid,    // from datapath
 
     //// Interface to PE_datapath.v ////
 	output reg [IFMAP_ADDR_BITWIDTH-1:0] o_ifmap_ra,
@@ -85,7 +84,7 @@ module PE_control #(
     wire ifmap_fifo_hs = i_ifmap_fifo_valid && o_ifmap_fifo_ready;
     wire wght_fifo_hs = i_wght_fifo_valid && o_wght_fifo_ready;
     wire psum_in_fifo_hs = i_psum_in_fifo_valid && o_psum_in_fifo_ready;
-    wire psum_out_fifo_hs = o_psum_out_fifo_valid && i_psum_out_fifo_ready;
+    wire psum_out_fifo_hs = i_psum_out_fifo_valid && i_psum_out_fifo_ready;
 
     //FSM : state register update
     always @(posedge i_clk) begin
@@ -190,7 +189,7 @@ module PE_control #(
                 case(state)
                     LOAD_IFMAP      : counter <= (ifmap_fifo_hs) ? counter - 1 : counter;
                     LOAD_WGHT       : counter <= (wght_fifo_hs) ? counter - 1 : counter;
-                    ACCRST          : counter <= ((psum_in_fifo_hs) || (counter < P)) ? counter - 1 : counter;
+                    ACCRST          : counter <= ((counter >= P) && psum_in_fifo_hs) || ((counter < P)) ? counter - 1 : counter;
                     default         : counter <= counter - 1;
                 endcase
             end 
@@ -252,7 +251,6 @@ module PE_control #(
                 o_ifmap_fifo_ready = 0;
                 o_wght_fifo_ready = 0;
                 o_psum_in_fifo_ready = 0;
-                o_psum_out_fifo_valid = 0;
 
                 o_ifmap_ra = 0;
                 o_wght_ra = 0;
@@ -272,7 +270,6 @@ module PE_control #(
                 o_ifmap_fifo_ready = 0;
                 o_wght_fifo_ready = 0;
                 o_psum_in_fifo_ready = 0;
-                o_psum_out_fifo_valid = 0;
 
                 o_ifmap_ra = 0;
                 o_wght_ra = 0;
@@ -292,7 +289,6 @@ module PE_control #(
                 o_ifmap_fifo_ready = 0;
                 o_wght_fifo_ready = 0;
                 o_psum_in_fifo_ready = 0;
-                o_psum_out_fifo_valid = 0;
 
                 o_ifmap_ra = 0;
                 o_wght_ra = 0;
@@ -312,7 +308,6 @@ module PE_control #(
                 o_ifmap_fifo_ready = 1;
                 o_wght_fifo_ready = 0;
                 o_psum_in_fifo_ready = 0;
-                o_psum_out_fifo_valid = 0;
 
                 o_ifmap_ra = 0;
                 o_wght_ra = 0;
@@ -335,7 +330,6 @@ module PE_control #(
                 o_ifmap_fifo_ready = 0;
                 o_wght_fifo_ready = 1;
                 o_psum_in_fifo_ready = 0;
-                o_psum_out_fifo_valid = 0;
 
                 o_ifmap_ra = 0;
                 o_wght_ra = 0;
@@ -358,7 +352,6 @@ module PE_control #(
                 o_ifmap_fifo_ready = 0;
                 o_wght_fifo_ready = 0;
                 o_psum_in_fifo_ready = 0;
-                o_psum_out_fifo_valid = 0;
 
                 o_ifmap_ra = cnt_S + (S * cnt_Q);
                 o_wght_ra = (cnt_P * Q * S) + (cnt_Q * S) + cnt_S;
@@ -381,7 +374,6 @@ module PE_control #(
                 o_ifmap_fifo_ready = 0;
                 o_wght_fifo_ready = 0;
                 o_psum_in_fifo_ready = (counter >= P);
-                o_psum_out_fifo_valid = (counter - 3 < P);
 
                 o_ifmap_ra = 0;
                 o_wght_ra = 0;
@@ -421,7 +413,6 @@ module PE_control #(
                 o_rst_psum = 0;
 
                 o_psum_in_fifo_ready = 0;
-                o_psum_out_fifo_valid = 0;
             end
             default: begin
                 o_inst_ready = 0;
@@ -445,7 +436,6 @@ module PE_control #(
                 o_rst_psum = 0;
 
                 o_psum_in_fifo_ready = 0;
-                o_psum_out_fifo_valid = 0;
             end
         endcase
     end

@@ -1,3 +1,4 @@
 Time resolution is 1 ps
 Start Testbench
-$stop called at time : 2105 ns : File "C:/LAB/Graduation_Project/eyeriss_0626/eyeriss_0626.srcs/sim_1/imports/tb/tb_PE_vector.v" Line 192
+Finish Simulation
+$finish called at time : 375 ns : File "C:/LAB/Graduation_Project/eyeriss_0626/eyeriss_0626.srcs/sim_1/imports/tb/tb_GIN_BUS.v" Line 104

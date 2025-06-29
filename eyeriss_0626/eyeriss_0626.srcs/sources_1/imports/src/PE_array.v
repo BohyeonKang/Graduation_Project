@@ -20,7 +20,7 @@ module PE_array #(
     input i_inst_valid,
     output o_inst_ready,
 
-    input i_psum_select,
+    input [COL_LEN * ROW_LEN - 1:0] i_ctrl_psum_select,
     input [SLV_NUM * ID_BITWIDTH - 1:0] i_ifmap_id,
     input [SLV_NUM * ID_BITWIDTH - 1:0] i_wght_id,
     input [SLV_NUM * ID_BITWIDTH - 1:0] i_psum_id,
@@ -41,10 +41,18 @@ module PE_array #(
     input i_psum_id_valid
 );
 
+    wire [ROW_LEN-1:0] ctrl_psum_select [COL_LEN-1:0];
+    genvar col;
+    generate
+        for (col = 0; col < COL_LEN; col = col + 1) begin : gen_ctrl_unpack
+            assign ctrl_psum_select[col] = i_ctrl_psum_select[col * ROW_LEN +: ROW_LEN];
+        end
+    endgenerate
+
+    // local wire between ybus and xbus
     wire [COL_LEN * (IFMAP_DATA_BITWIDTH + IFMAP_COL_ID_BITWIDTH) - 1:0] ifmap_packet_ybus2xbus;
     wire [COL_LEN * (WGHT_DATA_BITWIDTH + WGHT_COL_ID_BITWIDTH) - 1:0] wght_packet_ybus2xbus;
     wire [COL_LEN * (PSUM_DATA_BITWIDTH + PSUM_COL_ID_BITWIDTH) - 1:0] psum_packet_ybus2xbus;
-
     wire [COL_LEN-1:0] ifmap_ready_xbus2ybus;
     wire [COL_LEN-1:0] ifmap_valid_ybus2xbus;
     wire [COL_LEN-1:0] wght_ready_xbus2ybus;
@@ -52,9 +60,29 @@ module PE_array #(
     wire [COL_LEN-1:0] psum_ready_xbus2ybus;
     wire [COL_LEN-1:0] psum_valid_ybus2xbus;
 
+    // local wire between xbus and PEs
     wire [COL_LEN * IFMAP_DATA_BITWIDTH - 1:0] ifmap_packet_xbus2PE;
     wire [COL_LEN * WGHT_DATA_BITWIDTH - 1:0] wght_packet_xbus2PE;
     wire [COL_LEN * PSUM_DATA_BITWIDTH - 1:0] psum_packet_xbus2PE;
+    wire ifmap_valid_xbus2PE [COL_LEN-1:0];
+    wire wght_valid_xbus2PE [COL_LEN-1:0];
+    wire psum_valid_xbus2PE [COL_LEN-1:0];
+    wire [ROW_LEN-1:0] ifmap_ready_PE2xbus [COL_LEN-1:0];
+    wire [ROW_LEN-1:0] wght_ready_PE2xbus [COL_LEN-1:0];
+    wire [ROW_LEN-1:0] psum_ready_PE2xbus [COL_LEN-1:0];
+
+    // wire for Local Network (i.e. Inter PE communication for PSUM)
+    wire [(PSUM_DATA_BITWIDTH * ROW_LEN) -1:0] LN_data [COL_LEN:0];
+    wire [ROW_LEN-1:0] LN_valid [COL_LEN:0];
+    wire [ROW_LEN-1:0] LN_ready [COL_LEN:0];
+
+    // psum dataflow determined by control i_psum_select
+    wire [(PSUM_DATA_BITWIDTH * ROW_LEN)-1:0] psum_data_GINorLN [COL_LEN:0];
+    wire [ROW_LEN-1:0] psum_valid_GINorLN [COL_LEN:0];
+    wire [ROW_LEN-1:0] psum_ready_GINorLN [COL_LEN:0];
+
+    wire [ROW_LEN-1:0] inst_ready [COL_LEN-1:0];
+    assign o_inst_ready = & inst_ready;
 
     GIN_BUS #(
         .ID_BITWIDTH(IFMAP_ROW_ID_BITWIDTH),
@@ -128,20 +156,9 @@ module PE_array #(
         .i_id_valid (i_psum_id_valid)
     );
 
-    wire [COL_LEN * ROW_LEN - 1 : 0] inst_ready;
-    assign o_inst_ready = & inst_ready;
-
     genvar i, j;
     generate
-        for(i=0; i<COL_LEN; i=i+1) begin: GIN_XBUS_gen
-
-            wire ifmap_valid_xbus2PE;
-            wire wght_valid_xbus2PE;
-            wire psum_valid_xbus2PE;
-            wire [ROW_LEN-1:0] ifmap_ready_PE2xbus;
-            wire [ROW_LEN-1:0] wght_ready_PE2xbus;
-            wire [ROW_LEN-1:0] psum_ready_PE2xbus;
-
+        for(i=0; i<COL_LEN; i=i+1) begin: GIN_XBUS_gen        
             GIN_BUS #(
                 .ID_BITWIDTH(IFMAP_COL_ID_BITWIDTH),
                 .PACKET_IN_BITWIDTH(IFMAP_DATA_BITWIDTH + IFMAP_COL_ID_BITWIDTH),
@@ -176,9 +193,9 @@ module PE_array #(
                 .i_rst      (i_rst),
 
                 // rx
-                .i_packet   (i_wght_packet),
-                .i_valid    (i_wght_valid),
-                .o_ready    (o_wght_ready),
+                .i_packet   (wght_packet_ybus2xbus),
+                .i_valid    (wght_valid_ybus2xbus),
+                .o_ready    (wght_ready_xbus2ybus),
 
                 // tx
                 .o_packet   (o_wght_packet),
@@ -200,14 +217,14 @@ module PE_array #(
                 .i_rst      (i_rst),
 
                 // rx
-                .i_packet   (i_psum_packet),
-                .i_valid    (i_psum_valid),
-                .o_ready    (o_psum_ready),
+                .i_packet   (psum_packet_ybus2xbus),
+                .i_valid    (psum_valid_ybus2xbus),
+                .o_ready    (psum_ready_xbus2ybus[i]),
 
                 // tx
-                .o_packet   (o_psum_packet),
-                .i_ready    (i_psum_ready),
-                .o_valid    (o_psum_valid),
+                .o_packet   (psum_data_xbus2PE),
+                .i_ready    (),
+                .o_valid    (),
 
                 // TOP CTRL interface
                 .i_id       (i_psum_id),
@@ -216,6 +233,9 @@ module PE_array #(
             
 
             for(j=0; j<ROW_LEN; j=j+1) begin: PE_gen
+                assign psum_data_GINorLN[i][j] = (i_psum_select[])
+                assign psum_valid_GINorLN[i][j] = 
+                assign psum_ready_GINorLN[i][j] = 
                 PE_top #(
                     .DATA_BITWIDTH       (8),
                     .IFMAP_ADDR_BITWIDTH (4),
@@ -229,20 +249,20 @@ module PE_array #(
                     .i_inst_data           (i_inst_data),
                     .i_conv_info           (i_conv_info),
                     .i_inst_valid          (i_inst_valid),
-                    .o_inst_ready          (inst_ready[3*i + j]),
+                    .o_inst_ready          (inst_ready[i][j]),
 
                     // fifo interface I/O
-                    .i_ifmap_fifo_data     (ifmap_packet_xbus2PE),
-                    .i_ifmap_fifo_valid    (ifmap_valid_xbus2PE),
-                    .o_ifmap_fifo_ready    (ifmap_ready_PE2xbus[j]),
+                    .i_ifmap_fifo_data     (ifmap_packet_xbus2PE[j * IFMAP_DATA_BITWIDTH +: IFMAP_DATA_BITWIDTH]),
+                    .i_ifmap_fifo_valid    (ifmap_valid_xbus2PE[i]),
+                    .o_ifmap_fifo_ready    (ifmap_ready_PE2xbus[i][j]),
 
-                    .i_wght_fifo_data      (wght_packet_xbus2PE),
-                    .i_wght_fifo_valid     (wght_valid_xbus2PE),
-                    .o_wght_fifo_ready     (wght_ready_PE2xbus[j]),
+                    .i_wght_fifo_data      (wght_packet_xbus2PE[j * IFMAP_DATA_BITWIDTH +: IFMAP_DATA_BITWIDTH]),
+                    .i_wght_fifo_valid     (wght_valid_xbus2PE[i]),
+                    .o_wght_fifo_ready     (wght_ready_PE2xbus[i][j]),
 
                     .i_psum_in_fifo_data   (psum_packet_xbus2PE),
-                    .i_psum_in_fifo_valid  (psum_valid_xbus2PE),
-                    .o_psum_in_fifo_ready  (psum_ready_PE2xbus[j]),
+                    .i_psum_in_fifo_valid  (psum_valid_xbus2PE[i]),
+                    .o_psum_in_fifo_ready  (psum_ready_PE2xbus[i][j]),
 
                     .o_psum_out_fifo_data  (psum_data[i+1]),
                     .o_psum_out_fifo_valid (psum_valid[i+1]),

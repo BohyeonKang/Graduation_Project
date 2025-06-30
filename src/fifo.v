@@ -47,7 +47,7 @@ module fifo#(
     assign push_flag   = i_valid & o_ready;
     
     always @(posedge i_clk or negedge i_rst) begin
-        if (i_rst) begin
+        if (!i_rst) begin
             tail <= 0;
             head <= 0;
         end else begin

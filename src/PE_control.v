@@ -103,6 +103,8 @@ module PE_control #(
             conv_info_reg <= 0;
         else if(state == SET)
             conv_info_reg <= i_conv_info;
+        else
+            conv_info_reg <= conv_info_reg;
     end
 
     //capture opcode

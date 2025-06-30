@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-(* use_dsp = "yes" *) module PE_datapath #(
+module PE_datapath #(
 	parameter DATA_BITWIDTH = 8,
 	parameter IFMAP_ADDR_BITWIDTH = 4,
 	parameter WGHT_ADDR_BITWIDTH = 7,
@@ -138,7 +138,8 @@
 	end
 
 
-	reg [DATA_BITWIDTH-1:0] mul_reg, mul_reg_d;
+	(* use_dsp = "yes" *) reg [DATA_BITWIDTH-1:0] mul_reg;
+	reg [DATA_BITWIDTH-1:0] mul_reg_d;
 	always @(posedge i_clk) begin
 		if(i_rst) begin
 			mul_reg <= 0;

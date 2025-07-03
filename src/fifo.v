@@ -1,4 +1,4 @@
-module fifo#(
+module fifo #(
     parameter QUEUE_PTR_BANDWIDTH = 3,
     parameter ELE_BANDWIDTH       = 8
 )(
@@ -46,7 +46,7 @@ module fifo#(
     assign pop_flag    = o_valid & i_ready;
     assign push_flag   = i_valid & o_ready;
     
-    always @(posedge i_clk or negedge i_rst) begin
+    always @(posedge i_clk) begin
         if (i_rst) begin
             tail <= 0;
             head <= 0;

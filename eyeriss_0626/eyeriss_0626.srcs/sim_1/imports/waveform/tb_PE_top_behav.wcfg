@@ -3,344 +3,64 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="tb_PE_top_behav.wdb" id="1">
+      <db_ref path="tb_PE_array_behav.wdb" id="1">
          <top_modules>
             <top_module name="glbl" />
-            <top_module name="tb_PE_top" />
+            <top_module name="tb_PE_array" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="2,105.001 ns"></ZoomEndTime>
-      <Cursor1Time time="1,159.067 ns"></Cursor1Time>
+      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
+      <ZoomEndTime time="5.627955 us"></ZoomEndTime>
+      <Cursor1Time time="1.575000 us"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="444"></NameColumnWidth>
-      <ValueColumnWidth column_width="213"></ValueColumnWidth>
+      <ValueColumnWidth column_width="174"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="8" />
-   <wvobject fp_name="/tb_PE_top/i_clk" type="logic">
-      <obj_property name="ElementShortName">i_clk</obj_property>
-      <obj_property name="ObjectShortName">i_clk</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_PE_top/i_rst" type="logic">
-      <obj_property name="ElementShortName">i_rst</obj_property>
-      <obj_property name="ObjectShortName">i_rst</obj_property>
-   </wvobject>
+   <WVObjectSize size="3" />
    <wvobject fp_name="group480" type="group">
       <obj_property name="label">dut(PE_top)</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <wvobject fp_name="/tb_PE_top/dut/i_inst_data" type="array">
-         <obj_property name="ElementShortName">i_inst_data[2:0]</obj_property>
-         <obj_property name="ObjectShortName">i_inst_data[2:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_PE_top/dut/i_conv_info" type="array">
-         <obj_property name="ElementShortName">i_conv_info[8:0]</obj_property>
-         <obj_property name="ObjectShortName">i_conv_info[8:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_PE_top/dut/i_inst_valid" type="logic">
-         <obj_property name="ElementShortName">i_inst_valid</obj_property>
-         <obj_property name="ObjectShortName">i_inst_valid</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_PE_top/dut/o_inst_ready" type="logic">
-         <obj_property name="ElementShortName">o_inst_ready</obj_property>
-         <obj_property name="ObjectShortName">o_inst_ready</obj_property>
-      </wvobject>
       <wvobject fp_name="group483" type="group">
          <obj_property name="label">fifo_interface_io</obj_property>
          <obj_property name="DisplayName">label</obj_property>
-         <wvobject fp_name="/tb_PE_top/dut/i_ifmap_fifo_data" type="array">
-            <obj_property name="ElementShortName">i_ifmap_fifo_data[7:0]</obj_property>
-            <obj_property name="ObjectShortName">i_ifmap_fifo_data[7:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/i_ifmap_fifo_valid" type="logic">
-            <obj_property name="ElementShortName">i_ifmap_fifo_valid</obj_property>
-            <obj_property name="ObjectShortName">i_ifmap_fifo_valid</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/o_ifmap_fifo_ready" type="logic">
-            <obj_property name="ElementShortName">o_ifmap_fifo_ready</obj_property>
-            <obj_property name="ObjectShortName">o_ifmap_fifo_ready</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/i_wght_fifo_data" type="array">
-            <obj_property name="ElementShortName">i_wght_fifo_data[7:0]</obj_property>
-            <obj_property name="ObjectShortName">i_wght_fifo_data[7:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/i_wght_fifo_valid" type="logic">
-            <obj_property name="ElementShortName">i_wght_fifo_valid</obj_property>
-            <obj_property name="ObjectShortName">i_wght_fifo_valid</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/o_wght_fifo_ready" type="logic">
-            <obj_property name="ElementShortName">o_wght_fifo_ready</obj_property>
-            <obj_property name="ObjectShortName">o_wght_fifo_ready</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/i_psum_in_fifo_data" type="array">
-            <obj_property name="ElementShortName">i_psum_in_fifo_data[7:0]</obj_property>
-            <obj_property name="ObjectShortName">i_psum_in_fifo_data[7:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/i_psum_in_fifo_valid" type="logic">
-            <obj_property name="ElementShortName">i_psum_in_fifo_valid</obj_property>
-            <obj_property name="ObjectShortName">i_psum_in_fifo_valid</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/o_psum_in_fifo_ready" type="logic">
-            <obj_property name="ElementShortName">o_psum_in_fifo_ready</obj_property>
-            <obj_property name="ObjectShortName">o_psum_in_fifo_ready</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/o_psum_out_fifo_data" type="array">
-            <obj_property name="ElementShortName">o_psum_out_fifo_data[7:0]</obj_property>
-            <obj_property name="ObjectShortName">o_psum_out_fifo_data[7:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/o_psum_out_fifo_valid" type="logic">
-            <obj_property name="ElementShortName">o_psum_out_fifo_valid</obj_property>
-            <obj_property name="ObjectShortName">o_psum_out_fifo_valid</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/i_psum_out_fifo_ready" type="logic">
-            <obj_property name="ElementShortName">i_psum_out_fifo_ready</obj_property>
-            <obj_property name="ObjectShortName">i_psum_out_fifo_ready</obj_property>
-         </wvobject>
       </wvobject>
       <wvobject fp_name="group481" type="group">
          <obj_property name="label">local_fifo_interface</obj_property>
          <obj_property name="DisplayName">label</obj_property>
-         <wvobject fp_name="/tb_PE_top/dut/ifmap_fifo2datapath_data" type="array">
-            <obj_property name="ElementShortName">ifmap_fifo2datapath_data[7:0]</obj_property>
-            <obj_property name="ObjectShortName">ifmap_fifo2datapath_data[7:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/ifmap_fifo2ctrl_valid" type="logic">
-            <obj_property name="ElementShortName">ifmap_fifo2ctrl_valid</obj_property>
-            <obj_property name="ObjectShortName">ifmap_fifo2ctrl_valid</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/ifmap_ctrl2fifo_ready" type="logic">
-            <obj_property name="ElementShortName">ifmap_ctrl2fifo_ready</obj_property>
-            <obj_property name="ObjectShortName">ifmap_ctrl2fifo_ready</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/wght_fifo2datapath_data" type="array">
-            <obj_property name="ElementShortName">wght_fifo2datapath_data[7:0]</obj_property>
-            <obj_property name="ObjectShortName">wght_fifo2datapath_data[7:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/wght_fifo2ctrl_valid" type="logic">
-            <obj_property name="ElementShortName">wght_fifo2ctrl_valid</obj_property>
-            <obj_property name="ObjectShortName">wght_fifo2ctrl_valid</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/wght_ctrl2fifo_ready" type="logic">
-            <obj_property name="ElementShortName">wght_ctrl2fifo_ready</obj_property>
-            <obj_property name="ObjectShortName">wght_ctrl2fifo_ready</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/psum_in_fifo2datapath_data" type="array">
-            <obj_property name="ElementShortName">psum_in_fifo2datapath_data[7:0]</obj_property>
-            <obj_property name="ObjectShortName">psum_in_fifo2datapath_data[7:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/psum_in_fifo2ctrl_valid" type="logic">
-            <obj_property name="ElementShortName">psum_in_fifo2ctrl_valid</obj_property>
-            <obj_property name="ObjectShortName">psum_in_fifo2ctrl_valid</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/psum_in_ctrl2fifo_ready" type="logic">
-            <obj_property name="ElementShortName">psum_in_ctrl2fifo_ready</obj_property>
-            <obj_property name="ObjectShortName">psum_in_ctrl2fifo_ready</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/psum_out_ctrl2fifo_valid" type="logic">
-            <obj_property name="ElementShortName">psum_out_ctrl2fifo_valid</obj_property>
-            <obj_property name="ObjectShortName">psum_out_ctrl2fifo_valid</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/psum_out_fifo2ctrl_ready" type="logic">
-            <obj_property name="ElementShortName">psum_out_fifo2ctrl_ready</obj_property>
-            <obj_property name="ObjectShortName">psum_out_fifo2ctrl_ready</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/psum_out_datapath2fifo_data" type="array">
-            <obj_property name="ElementShortName">psum_out_datapath2fifo_data[7:0]</obj_property>
-            <obj_property name="ObjectShortName">psum_out_datapath2fifo_data[7:0]</obj_property>
-         </wvobject>
       </wvobject>
       <wvobject fp_name="group482" type="group">
          <obj_property name="label">local_control_signals</obj_property>
          <obj_property name="DisplayName">label</obj_property>
-         <wvobject fp_name="/tb_PE_top/dut/ifmap_ra_ctrl2datapath" type="array">
-            <obj_property name="ElementShortName">ifmap_ra_ctrl2datapath[3:0]</obj_property>
-            <obj_property name="ObjectShortName">ifmap_ra_ctrl2datapath[3:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/ifmap_wa_ctrl2datapath" type="array">
-            <obj_property name="ElementShortName">ifmap_wa_ctrl2datapath[3:0]</obj_property>
-            <obj_property name="ObjectShortName">ifmap_wa_ctrl2datapath[3:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/wght_ra_ctrl2datapath" type="array">
-            <obj_property name="ElementShortName">wght_ra_ctrl2datapath[6:0]</obj_property>
-            <obj_property name="ObjectShortName">wght_ra_ctrl2datapath[6:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/wght_wa_ctrl2datapath" type="array">
-            <obj_property name="ElementShortName">wght_wa_ctrl2datapath[6:0]</obj_property>
-            <obj_property name="ObjectShortName">wght_wa_ctrl2datapath[6:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/psum_ra_ctrl2datapath" type="array">
-            <obj_property name="ElementShortName">psum_ra_ctrl2datapath[2:0]</obj_property>
-            <obj_property name="ObjectShortName">psum_ra_ctrl2datapath[2:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/psum_wa_ctrl2datapath" type="array">
-            <obj_property name="ElementShortName">psum_wa_ctrl2datapath[2:0]</obj_property>
-            <obj_property name="ObjectShortName">psum_wa_ctrl2datapath[2:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/ifmap_we_ctrl2datapath" type="logic">
-            <obj_property name="ElementShortName">ifmap_we_ctrl2datapath</obj_property>
-            <obj_property name="ObjectShortName">ifmap_we_ctrl2datapath</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/wght_we_ctrl2datapath" type="logic">
-            <obj_property name="ElementShortName">wght_we_ctrl2datapath</obj_property>
-            <obj_property name="ObjectShortName">wght_we_ctrl2datapath</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/psum_we_ctrl2datapath" type="logic">
-            <obj_property name="ElementShortName">psum_we_ctrl2datapath</obj_property>
-            <obj_property name="ObjectShortName">psum_we_ctrl2datapath</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/acc_sel_ctrl2datapath" type="logic">
-            <obj_property name="ElementShortName">acc_sel_ctrl2datapath</obj_property>
-            <obj_property name="ObjectShortName">acc_sel_ctrl2datapath</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/rst_psum_ctrl2datapath" type="logic">
-            <obj_property name="ElementShortName">rst_psum_ctrl2datapath</obj_property>
-            <obj_property name="ObjectShortName">rst_psum_ctrl2datapath</obj_property>
-         </wvobject>
       </wvobject>
    </wvobject>
    <wvobject fp_name="group530" type="group">
       <obj_property name="label">datapath</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="isExpanded"></obj_property>
-      <wvobject fp_name="/tb_PE_top/dut/u_PE_datapath/o_psum_out_valid" type="logic">
-         <obj_property name="ElementShortName">o_psum_out_valid</obj_property>
-         <obj_property name="ObjectShortName">o_psum_out_valid</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_PE_top/dut/u_PE_datapath/o_psum_data" type="array">
-         <obj_property name="ElementShortName">o_psum_data[7:0]</obj_property>
-         <obj_property name="ObjectShortName">o_psum_data[7:0]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      </wvobject>
       <wvobject fp_name="group533" type="group">
          <obj_property name="label">data_io</obj_property>
          <obj_property name="DisplayName">label</obj_property>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_datapath/i_ifmap_data" type="array">
-            <obj_property name="ElementShortName">i_ifmap_data[7:0]</obj_property>
-            <obj_property name="ObjectShortName">i_ifmap_data[7:0]</obj_property>
-            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_datapath/i_wght_data" type="array">
-            <obj_property name="ElementShortName">i_wght_data[7:0]</obj_property>
-            <obj_property name="ObjectShortName">i_wght_data[7:0]</obj_property>
-            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_datapath/i_psum_data" type="array">
-            <obj_property name="ElementShortName">i_psum_data[7:0]</obj_property>
-            <obj_property name="ObjectShortName">i_psum_data[7:0]</obj_property>
-            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-         </wvobject>
       </wvobject>
       <wvobject fp_name="group534" type="group">
          <obj_property name="label">PE_ctrl_interface_io</obj_property>
          <obj_property name="DisplayName">label</obj_property>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_datapath/i_acc_sel" type="logic">
-            <obj_property name="ElementShortName">i_acc_sel</obj_property>
-            <obj_property name="ObjectShortName">i_acc_sel</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_datapath/i_rst_psum" type="logic">
-            <obj_property name="ElementShortName">i_rst_psum</obj_property>
-            <obj_property name="ObjectShortName">i_rst_psum</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_datapath/i_ifmap_ra" type="array">
-            <obj_property name="ElementShortName">i_ifmap_ra[3:0]</obj_property>
-            <obj_property name="ObjectShortName">i_ifmap_ra[3:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_datapath/i_wght_ra" type="array">
-            <obj_property name="ElementShortName">i_wght_ra[6:0]</obj_property>
-            <obj_property name="ObjectShortName">i_wght_ra[6:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_datapath/i_psum_ra" type="array">
-            <obj_property name="ElementShortName">i_psum_ra[2:0]</obj_property>
-            <obj_property name="ObjectShortName">i_psum_ra[2:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_datapath/i_ifmap_wa" type="array">
-            <obj_property name="ElementShortName">i_ifmap_wa[3:0]</obj_property>
-            <obj_property name="ObjectShortName">i_ifmap_wa[3:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_datapath/i_wght_wa" type="array">
-            <obj_property name="ElementShortName">i_wght_wa[6:0]</obj_property>
-            <obj_property name="ObjectShortName">i_wght_wa[6:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_datapath/i_psum_wa" type="array">
-            <obj_property name="ElementShortName">i_psum_wa[2:0]</obj_property>
-            <obj_property name="ObjectShortName">i_psum_wa[2:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_datapath/i_ifmap_we" type="logic">
-            <obj_property name="ElementShortName">i_ifmap_we</obj_property>
-            <obj_property name="ObjectShortName">i_ifmap_we</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_datapath/i_wght_we" type="logic">
-            <obj_property name="ElementShortName">i_wght_we</obj_property>
-            <obj_property name="ObjectShortName">i_wght_we</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_datapath/i_psum_we" type="logic">
-            <obj_property name="ElementShortName">i_psum_we</obj_property>
-            <obj_property name="ObjectShortName">i_psum_we</obj_property>
-         </wvobject>
       </wvobject>
       <wvobject fp_name="group531" type="group">
          <obj_property name="label">cycle 0</obj_property>
          <obj_property name="DisplayName">label</obj_property>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_datapath/ifmap_rd" type="array">
-            <obj_property name="ElementShortName">ifmap_rd[7:0]</obj_property>
-            <obj_property name="ObjectShortName">ifmap_rd[7:0]</obj_property>
-            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_datapath/psum_rd" type="array">
-            <obj_property name="ElementShortName">psum_rd[7:0]</obj_property>
-            <obj_property name="ObjectShortName">psum_rd[7:0]</obj_property>
-            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_datapath/wght_rd" type="array">
-            <obj_property name="ElementShortName">wght_rd[7:0]</obj_property>
-            <obj_property name="ObjectShortName">wght_rd[7:0]</obj_property>
-            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-         </wvobject>
+         <obj_property name="isExpanded"></obj_property>
       </wvobject>
       <wvobject fp_name="group532" type="group">
          <obj_property name="label">cycle 1</obj_property>
          <obj_property name="DisplayName">label</obj_property>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_datapath/ifmap_reg" type="array">
-            <obj_property name="ElementShortName">ifmap_reg[7:0]</obj_property>
-            <obj_property name="ObjectShortName">ifmap_reg[7:0]</obj_property>
-            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_datapath/wght_reg" type="array">
-            <obj_property name="ElementShortName">wght_reg[7:0]</obj_property>
-            <obj_property name="ObjectShortName">wght_reg[7:0]</obj_property>
-            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_datapath/psum_reg" type="array">
-            <obj_property name="ElementShortName">psum_reg[7:0]</obj_property>
-            <obj_property name="ObjectShortName">psum_reg[7:0]</obj_property>
-            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_datapath/psum_in_reg" type="array">
-            <obj_property name="ElementShortName">psum_in_reg[7:0]</obj_property>
-            <obj_property name="ObjectShortName">psum_in_reg[7:0]</obj_property>
-            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-         </wvobject>
       </wvobject>
       <wvobject fp_name="group543" type="group">
          <obj_property name="label">cycle 2</obj_property>
          <obj_property name="DisplayName">label</obj_property>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_datapath/mul_reg" type="array">
-            <obj_property name="ElementShortName">mul_reg[7:0]</obj_property>
-            <obj_property name="ObjectShortName">mul_reg[7:0]</obj_property>
-            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_datapath/psum_reg_d" type="array">
-            <obj_property name="ElementShortName">psum_reg_d[7:0]</obj_property>
-            <obj_property name="ObjectShortName">psum_reg_d[7:0]</obj_property>
-            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_datapath/psum_in_reg_d" type="array">
-            <obj_property name="ElementShortName">psum_in_reg_d[7:0]</obj_property>
-            <obj_property name="ObjectShortName">psum_in_reg_d[7:0]</obj_property>
-            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-         </wvobject>
+         <obj_property name="isExpanded"></obj_property>
       </wvobject>
       <wvobject fp_name="group544" type="group">
          <obj_property name="label">cycle 3</obj_property>
@@ -348,42 +68,10 @@
          <wvobject fp_name="group546" type="group">
             <obj_property name="label">data</obj_property>
             <obj_property name="DisplayName">label</obj_property>
-            <wvobject fp_name="/tb_PE_top/dut/u_PE_datapath/mul_reg_d" type="array">
-               <obj_property name="ElementShortName">mul_reg_d[7:0]</obj_property>
-               <obj_property name="ObjectShortName">mul_reg_d[7:0]</obj_property>
-               <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-            </wvobject>
-            <wvobject fp_name="/tb_PE_top/dut/u_PE_datapath/psum_reg_d2" type="array">
-               <obj_property name="ElementShortName">psum_reg_d2[7:0]</obj_property>
-               <obj_property name="ObjectShortName">psum_reg_d2[7:0]</obj_property>
-               <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-            </wvobject>
-            <wvobject fp_name="/tb_PE_top/dut/u_PE_datapath/psum_in_reg_d2" type="array">
-               <obj_property name="ElementShortName">psum_in_reg_d2[7:0]</obj_property>
-               <obj_property name="ObjectShortName">psum_in_reg_d2[7:0]</obj_property>
-               <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-            </wvobject>
          </wvobject>
          <wvobject fp_name="group545" type="group">
             <obj_property name="label">ctrl</obj_property>
             <obj_property name="DisplayName">label</obj_property>
-            <wvobject fp_name="/tb_PE_top/dut/u_PE_datapath/rst_psum" type="logic">
-               <obj_property name="ElementShortName">rst_psum</obj_property>
-               <obj_property name="ObjectShortName">rst_psum</obj_property>
-            </wvobject>
-            <wvobject fp_name="/tb_PE_top/dut/u_PE_datapath/acc_sel" type="logic">
-               <obj_property name="ElementShortName">acc_sel</obj_property>
-               <obj_property name="ObjectShortName">acc_sel</obj_property>
-            </wvobject>
-            <wvobject fp_name="/tb_PE_top/dut/u_PE_datapath/psum_wa" type="array">
-               <obj_property name="ElementShortName">psum_wa[2:0]</obj_property>
-               <obj_property name="ObjectShortName">psum_wa[2:0]</obj_property>
-               <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-            </wvobject>
-            <wvobject fp_name="/tb_PE_top/dut/u_PE_datapath/psum_we" type="logic">
-               <obj_property name="ElementShortName">psum_we</obj_property>
-               <obj_property name="ObjectShortName">psum_we</obj_property>
-            </wvobject>
          </wvobject>
       </wvobject>
    </wvobject>
@@ -393,200 +81,22 @@
       <wvobject fp_name="group651" type="group">
          <obj_property name="label">top_ctrl_interface_io</obj_property>
          <obj_property name="DisplayName">label</obj_property>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_control/i_opcode" type="array">
-            <obj_property name="ElementShortName">i_opcode[2:0]</obj_property>
-            <obj_property name="ObjectShortName">i_opcode[2:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_control/i_conv_info" type="array">
-            <obj_property name="ElementShortName">i_conv_info[8:0]</obj_property>
-            <obj_property name="ObjectShortName">i_conv_info[8:0]</obj_property>
-            <obj_property name="Radix">BINARYRADIX</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_control/i_inst_valid" type="logic">
-            <obj_property name="ElementShortName">i_inst_valid</obj_property>
-            <obj_property name="ObjectShortName">i_inst_valid</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_control/o_inst_ready" type="logic">
-            <obj_property name="ElementShortName">o_inst_ready</obj_property>
-            <obj_property name="ObjectShortName">o_inst_ready</obj_property>
-         </wvobject>
       </wvobject>
       <wvobject fp_name="group652" type="group">
          <obj_property name="label">fifo_interface_io</obj_property>
          <obj_property name="DisplayName">label</obj_property>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_control/i_ifmap_fifo_valid" type="logic">
-            <obj_property name="ElementShortName">i_ifmap_fifo_valid</obj_property>
-            <obj_property name="ObjectShortName">i_ifmap_fifo_valid</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_control/o_ifmap_fifo_ready" type="logic">
-            <obj_property name="ElementShortName">o_ifmap_fifo_ready</obj_property>
-            <obj_property name="ObjectShortName">o_ifmap_fifo_ready</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_control/i_wght_fifo_valid" type="logic">
-            <obj_property name="ElementShortName">i_wght_fifo_valid</obj_property>
-            <obj_property name="ObjectShortName">i_wght_fifo_valid</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_control/o_wght_fifo_ready" type="logic">
-            <obj_property name="ElementShortName">o_wght_fifo_ready</obj_property>
-            <obj_property name="ObjectShortName">o_wght_fifo_ready</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_control/i_psum_in_fifo_valid" type="logic">
-            <obj_property name="ElementShortName">i_psum_in_fifo_valid</obj_property>
-            <obj_property name="ObjectShortName">i_psum_in_fifo_valid</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_control/o_psum_in_fifo_ready" type="logic">
-            <obj_property name="ElementShortName">o_psum_in_fifo_ready</obj_property>
-            <obj_property name="ObjectShortName">o_psum_in_fifo_ready</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_control/i_psum_out_fifo_ready" type="logic">
-            <obj_property name="ElementShortName">i_psum_out_fifo_ready</obj_property>
-            <obj_property name="ObjectShortName">i_psum_out_fifo_ready</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_control/o_psum_out_fifo_valid" type="logic">
-            <obj_property name="ElementShortName">o_psum_out_fifo_valid</obj_property>
-            <obj_property name="ObjectShortName">o_psum_out_fifo_valid</obj_property>
-         </wvobject>
       </wvobject>
       <wvobject fp_name="group653" type="group">
          <obj_property name="label">datapath_interface_io</obj_property>
          <obj_property name="DisplayName">label</obj_property>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_control/o_ifmap_ra" type="array">
-            <obj_property name="ElementShortName">o_ifmap_ra[3:0]</obj_property>
-            <obj_property name="ObjectShortName">o_ifmap_ra[3:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_control/o_wght_ra" type="array">
-            <obj_property name="ElementShortName">o_wght_ra[6:0]</obj_property>
-            <obj_property name="ObjectShortName">o_wght_ra[6:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_control/o_psum_ra" type="array">
-            <obj_property name="ElementShortName">o_psum_ra[2:0]</obj_property>
-            <obj_property name="ObjectShortName">o_psum_ra[2:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_control/o_ifmap_wa" type="array">
-            <obj_property name="ElementShortName">o_ifmap_wa[3:0]</obj_property>
-            <obj_property name="ObjectShortName">o_ifmap_wa[3:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_control/o_wght_wa" type="array">
-            <obj_property name="ElementShortName">o_wght_wa[6:0]</obj_property>
-            <obj_property name="ObjectShortName">o_wght_wa[6:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_control/o_psum_wa" type="array">
-            <obj_property name="ElementShortName">o_psum_wa[2:0]</obj_property>
-            <obj_property name="ObjectShortName">o_psum_wa[2:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_control/o_ifmap_we" type="logic">
-            <obj_property name="ElementShortName">o_ifmap_we</obj_property>
-            <obj_property name="ObjectShortName">o_ifmap_we</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_control/o_wght_we" type="logic">
-            <obj_property name="ElementShortName">o_wght_we</obj_property>
-            <obj_property name="ObjectShortName">o_wght_we</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_control/o_psum_we" type="logic">
-            <obj_property name="ElementShortName">o_psum_we</obj_property>
-            <obj_property name="ObjectShortName">o_psum_we</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_control/o_acc_sel" type="logic">
-            <obj_property name="ElementShortName">o_acc_sel</obj_property>
-            <obj_property name="ObjectShortName">o_acc_sel</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_control/o_rst_psum" type="logic">
-            <obj_property name="ElementShortName">o_rst_psum</obj_property>
-            <obj_property name="ObjectShortName">o_rst_psum</obj_property>
-         </wvobject>
-      </wvobject>
-      <wvobject fp_name="/tb_PE_top/dut/u_PE_control/opcode_reg" type="array">
-         <obj_property name="ElementShortName">opcode_reg[2:0]</obj_property>
-         <obj_property name="ObjectShortName">opcode_reg[2:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_PE_top/dut/u_PE_control/conv_info_reg" type="array">
-         <obj_property name="ElementShortName">conv_info_reg[8:0]</obj_property>
-         <obj_property name="ObjectShortName">conv_info_reg[8:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_PE_top/dut/u_PE_control/P" type="array">
-         <obj_property name="ElementShortName">P[2:0]</obj_property>
-         <obj_property name="ObjectShortName">P[2:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_PE_top/dut/u_PE_control/Q" type="array">
-         <obj_property name="ElementShortName">Q[2:0]</obj_property>
-         <obj_property name="ObjectShortName">Q[2:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_PE_top/dut/u_PE_control/S" type="array">
-         <obj_property name="ElementShortName">S[2:0]</obj_property>
-         <obj_property name="ObjectShortName">S[2:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_PE_top/dut/u_PE_control/state" type="array">
-         <obj_property name="ElementShortName">state[3:0]</obj_property>
-         <obj_property name="ObjectShortName">state[3:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_PE_top/dut/u_PE_control/n_state" type="array">
-         <obj_property name="ElementShortName">n_state[3:0]</obj_property>
-         <obj_property name="ObjectShortName">n_state[3:0]</obj_property>
       </wvobject>
       <wvobject fp_name="group654" type="group">
          <obj_property name="label">counter</obj_property>
          <obj_property name="DisplayName">label</obj_property>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_control/cnt_P" type="array">
-            <obj_property name="ElementShortName">cnt_P[2:0]</obj_property>
-            <obj_property name="ObjectShortName">cnt_P[2:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_control/cnt_Q" type="array">
-            <obj_property name="ElementShortName">cnt_Q[2:0]</obj_property>
-            <obj_property name="ObjectShortName">cnt_Q[2:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_control/cnt_S" type="array">
-            <obj_property name="ElementShortName">cnt_S[2:0]</obj_property>
-            <obj_property name="ObjectShortName">cnt_S[2:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_control/counter" type="array">
-            <obj_property name="ElementShortName">counter[6:0]</obj_property>
-            <obj_property name="ObjectShortName">counter[6:0]</obj_property>
-         </wvobject>
       </wvobject>
       <wvobject fp_name="group658" type="group">
          <obj_property name="label">handshake</obj_property>
          <obj_property name="DisplayName">label</obj_property>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_control/inst_hs" type="logic">
-            <obj_property name="ElementShortName">inst_hs</obj_property>
-            <obj_property name="ObjectShortName">inst_hs</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_control/ifmap_fifo_hs" type="logic">
-            <obj_property name="ElementShortName">ifmap_fifo_hs</obj_property>
-            <obj_property name="ObjectShortName">ifmap_fifo_hs</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_control/wght_fifo_hs" type="logic">
-            <obj_property name="ElementShortName">wght_fifo_hs</obj_property>
-            <obj_property name="ObjectShortName">wght_fifo_hs</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_control/psum_in_fifo_hs" type="logic">
-            <obj_property name="ElementShortName">psum_in_fifo_hs</obj_property>
-            <obj_property name="ObjectShortName">psum_in_fifo_hs</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_PE_top/dut/u_PE_control/psum_out_fifo_hs" type="logic">
-            <obj_property name="ElementShortName">psum_out_fifo_hs</obj_property>
-            <obj_property name="ObjectShortName">psum_out_fifo_hs</obj_property>
-         </wvobject>
       </wvobject>
-   </wvobject>
-   <wvobject fp_name="/tb_PE_top/dut/u_PE_datapath/spad_ifmap/registers" type="array">
-      <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="ElementShortName">registers[0:15][7:0]</obj_property>
-      <obj_property name="ObjectShortName">registers[0:15][7:0]</obj_property>
-      <obj_property name="label">ifmap_spad[0:15][7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_PE_top/dut/u_PE_datapath/spad_weight/ram" type="array">
-      <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="ElementShortName">ram[127:0][7:0]</obj_property>
-      <obj_property name="ObjectShortName">ram[127:0][7:0]</obj_property>
-      <obj_property name="label">wght_spad[127:0][7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_PE_top/dut/u_PE_datapath/spad_psum/registers" type="array">
-      <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="ElementShortName">registers[0:7][7:0]</obj_property>
-      <obj_property name="ObjectShortName">registers[0:7][7:0]</obj_property>
-      <obj_property name="label">psum_spad[0:7][7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
 </wave_config>

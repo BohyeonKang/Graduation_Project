@@ -72,6 +72,7 @@ module PE_control #(
     reg [3:0] n_state;
 
     //counter
+    reg [2:0] cnt_minimum_delay;
     reg [2:0] cnt_P;
     reg [2:0] cnt_Q;
     reg [2:0] cnt_S;
@@ -202,7 +203,7 @@ module PE_control #(
                     NOP             : counter <= 0;
                     LOAD_IFMAP      : counter <= Q * S - 1;
                     LOAD_WGHT       : counter <= P * Q * S - 1;
-                    CONV            : counter <= P * Q * S - 1;
+                    CONV            : counter <= (P < 3) ? (3 * Q * S - 1) : P * Q * S - 1;
                     ACCRST          : counter <= (2*P - 1);
                     DONE            : counter <= 0;
                     default         : counter <= 0;
@@ -214,6 +215,7 @@ module PE_control #(
     //counter for convolution
     always @(posedge i_clk) begin
         if(i_rst) begin
+            cnt_minimum_delay <= 0;
             cnt_P <= 0; 
             cnt_Q <= 0; 
             cnt_S <= 0;
@@ -228,10 +230,23 @@ module PE_control #(
                 cnt_S <= (cnt_S == S - 1) ? 0 : cnt_S + 1;
                 cnt_Q <= (cnt_S == S - 1) ? ((cnt_Q == Q - 1) ? 0 : cnt_Q + 1) : cnt_Q;
             end
-            else if(state == LOAD_WGHT || state == CONV) begin
+            else if(state == LOAD_WGHT) begin
                 cnt_P <= (cnt_P == P - 1) ? 0 : cnt_P + 1; 
                 cnt_S <= (cnt_P == P - 1) ? ((cnt_S == S - 1) ? 0 : cnt_S + 1) : cnt_S;
                 cnt_Q <= (cnt_P == P - 1) ? ((cnt_S == S - 1) ? ((cnt_Q == Q - 1) ? 0 : cnt_Q + 1) : cnt_Q) : cnt_Q;
+            end
+            else if(state == CONV) begin
+                if(P < 3) begin // PSUM SPAD에 write한 partial sum을 곧바로 read하는 데 3 cycle이 소요됨. logic 보완 필요
+                    cnt_minimum_delay <= (cnt_minimum_delay == 2) ? 0 : cnt_minimum_delay + 1;
+                    cnt_P <= (cnt_minimum_delay == 2) ? cnt_P : ((cnt_P == P - 1) ? 0 : cnt_P + 1); 
+                    cnt_S <= (cnt_minimum_delay == 2) ? ((cnt_S == S - 1) ? 0 : cnt_S + 1) : cnt_S;
+                    cnt_Q <= (cnt_P == P - 1) ? ((cnt_S == S - 1) ? ((cnt_Q == Q - 1) ? 0 : cnt_Q + 1) : cnt_Q) : cnt_Q;
+                end
+                else begin
+                    cnt_P <= (cnt_P == P - 1) ? 0 : cnt_P + 1; 
+                    cnt_S <= (cnt_P == P - 1) ? ((cnt_S == S - 1) ? 0 : cnt_S + 1) : cnt_S;
+                    cnt_Q <= (cnt_P == P - 1) ? ((cnt_S == S - 1) ? ((cnt_Q == Q - 1) ? 0 : cnt_Q + 1) : cnt_Q) : cnt_Q;
+                end
             end
             else if(state == ACCRST) begin
                 cnt_P <= (cnt_P == P - 1) ? 0 : cnt_P + 1; 
@@ -364,7 +379,7 @@ module PE_control #(
                 o_wght_we = 0;
 
                 o_psum_wa = cnt_P;
-                o_psum_we = 1;
+                o_psum_we = 1; // logic 보완 필요
 
                 o_acc_sel = 0;
                 o_rst_psum = 0;

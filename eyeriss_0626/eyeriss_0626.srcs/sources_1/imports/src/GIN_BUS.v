@@ -29,6 +29,10 @@ module GIN_BUS #(
 
     wire [ID_BITWIDTH-1:0] id [SLV_NUM-1:0];
 
+    wire [SLV_NUM-1:0] slv_MC_ready;
+
+    assign o_ready = & slv_MC_ready;
+
     genvar i;
     generate
         for(i=0; i<SLV_NUM; i=i+1) begin: BUS_MC_gen
@@ -47,7 +51,7 @@ module GIN_BUS #(
                 
                 .i_data(data),
                 .i_valid(i_valid),
-                .o_ready(o_ready),
+                .o_ready(slv_MC_ready[i]),
 
                 .i_ready(i_ready[i]),
                 .o_valid(o_valid[i]),

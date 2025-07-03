@@ -15,7 +15,7 @@ module rams_dist # (
     localparam RAM_DEPTH = 1 << ADDR_BITWIDTH;
 
     (* ram_style = "distributed" *)
-    reg [DATA_BITWIDTH-1:0] ram [RAM_DEPTH-1:0];
+    reg [DATA_BITWIDTH-1:0] ram [0:RAM_DEPTH-1];
 
     always @(posedge clk) begin
         if (we)

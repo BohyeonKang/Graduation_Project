@@ -12,7 +12,6 @@ module GIN_BUS #(
     input [2:0] i_id,
     input [2:0] i_tag,
 
-
     input [SLV_NUM-1:0] i_ready,
     output o_bus_valid,
     output [DATA_BITWIDTH-1:0] o_bus_data,

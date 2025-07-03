@@ -1,11 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1750910684">
-  <File Type="PA-TCL" Name="PE_top.tcl"/>
-  <File Type="REPORTS-TCL" Name="PE_top_reports.tcl"/>
-  <File Type="RDS-RDS" Name="PE_top.vds"/>
-  <File Type="RDS-DCP" Name="PE_top.dcp"/>
+<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1751516778" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/PE_top.dcp">
+  <File Type="PA-TCL" Name="PE_array.tcl"/>
+  <File Type="REPORTS-TCL" Name="PE_array_reports.tcl"/>
+  <File Type="RDS-RDS" Name="PE_array.vds"/>
+  <File Type="RDS-UTIL" Name="PE_array_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="PE_array_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="PE_array.dcp"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/src/GLB.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../src/GLB.v"/>
+        <Attr Name="ImportTime" Val="1750866052"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/MC.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../src/MC.v"/>
+        <Attr Name="ImportTime" Val="1750866052"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/imports/src/PE_control.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../src/PE_control.v"/>
@@ -24,6 +44,15 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/PE_top.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../src/PE_top.v"/>
+        <Attr Name="ImportTime" Val="1750866052"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/imports/src/RF.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../src/RF.v"/>
@@ -35,8 +64,6 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/src/fifo.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../src/fifo.v"/>
-        <Attr Name="ImportTime" Val="1750866052"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -51,48 +78,8 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/src/PE_top.v">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../src/PE_top.v"/>
-        <Attr Name="ImportTime" Val="1750866052"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/src/MC.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../src/MC.v"/>
-        <Attr Name="ImportTime" Val="1750866052"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/src/GIN.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../src/GIN.v"/>
-        <Attr Name="ImportTime" Val="1750866052"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/src/GLB.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../src/GLB.v"/>
-        <Attr Name="ImportTime" Val="1750866052"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/imports/src/true_dpbram.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../src/true_dpbram.v"/>
         <Attr Name="ImportTime" Val="1750866052"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -100,9 +87,30 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/PE_vector.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/GIN_BUS.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/PE_array.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="PE_top"/>
+      <Option Name="TopModule" Val="PE_array"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
@@ -113,6 +121,14 @@
   </FileSet>
   <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
     <Filter Type="Utils"/>
+    <File Path="$PSRCDIR/utils_1/imports/synth_1/PE_top.dcp">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="AutoDcp" Val="1"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>

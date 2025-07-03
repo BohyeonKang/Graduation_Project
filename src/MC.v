@@ -1,31 +1,35 @@
 //multicast controller
 module MC #(
-    parameter DATA_BITWIDTH = 8
+    parameter DATA_BITWIDTH = 8,
+    parameter ID_BITWIDTH = 4
 )(
     input i_clk,
     input i_rst,
-
-    input [2:0] i_id, //comes from config scan chain
-    input [2:0] i_tag, //determined by GIN X-BUS and Y-BUS
-    
-    input i_data,
+        
+    // rx
+    input [DATA_BITWIDTH-1:0] i_data,
     input i_valid,
     output o_ready,
 
+    // tx
     input i_ready,
     output o_valid,
-    output o_data
+    output [DATA_BITWIDTH-1:0] o_data,
+
+    // ctrl
+    input [ID_BITWIDTH-1:0] i_id, // determined by TOP CTRL config scan chain
+    input                   i_id_valid,
+    input [ID_BITWIDTH-1:0] i_tag // packet from data
 );
 
-    reg [2:0] id_reg;
+    reg [ID_BITWIDTH-1:0] id_reg;
     always @(posedge i_clk) begin
         if(i_rst)
             id_reg <= 0;
-        else
+        else if(i_id_valid)
             id_reg <= i_id;
     end
-
-    wire is_match = (id_reg === i_tag);
+    
     wire multicast_enable = i_valid && i_ready && (id_reg == i_tag);
 
     assign o_data = (multicast_enable) ? i_data : 0;

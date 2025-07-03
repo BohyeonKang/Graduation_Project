@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-(* use_dsp = "yes" *) module PE_datapath #(
+module PE_datapath #(
 	parameter DATA_BITWIDTH = 8,
 	parameter IFMAP_ADDR_BITWIDTH = 4,
 	parameter WGHT_ADDR_BITWIDTH = 7,
@@ -46,7 +46,7 @@
 	reg [DATA_BITWIDTH-1:0] psum_reg, psum_reg_d, psum_reg_d2;
 	reg [DATA_BITWIDTH-1:0] wght_reg;
 
-	//control signal delayed for 2 cycles
+	//control signal delayed for 3 cycles
 	reg [2:0] acc_sel_sft_reg;
 	reg [2:0] rst_psum_sft_reg;
 	reg [PSUM_ADDR_BITWIDTH-1:0] psum_wa_reg, psum_wa_reg_d1, psum_wa_reg_d2;
@@ -133,12 +133,14 @@
 			psum_wa_reg_d2 <= psum_wa_reg_d1;
 			
 			rst_psum_sft_reg <= {rst_psum_sft_reg[1:0], i_rst_psum};
-			acc_sel_sft_reg <= {acc_sel_sft_reg[2:0], i_acc_sel};
+			acc_sel_sft_reg <= {acc_sel_sft_reg[1:0], i_acc_sel};
 		end
 	end
 
 
-	reg [DATA_BITWIDTH-1:0] mul_reg, mul_reg_d;
+	(* use_dsp = "yes" *) reg [DATA_BITWIDTH-1:0] mul_reg;
+	reg [DATA_BITWIDTH-1:0] mul_reg_d;
+	
 	always @(posedge i_clk) begin
 		if(i_rst) begin
 			mul_reg <= 0;

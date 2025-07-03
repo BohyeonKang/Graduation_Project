@@ -13,7 +13,7 @@ module GLB #(
 	input signed [DATA_BITWIDTH-1 : 0] i_wd,
 	output signed [DATA_BITWIDTH-1 : 0] o_rd
 );
-	
+
 	reg [DATA_BITWIDTH-1 : 0] mem [0 : (1 << ADDR_BITWIDTH) - 1]; 
 	reg [DATA_BITWIDTH-1 : 0] data;
 	

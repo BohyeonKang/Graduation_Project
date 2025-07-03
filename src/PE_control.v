@@ -28,9 +28,8 @@ module PE_control #(
     output reg o_psum_in_fifo_ready,
 
     //// Interface to OUTPUT PSUM FIFO ////
-    input i_psum_out_fifo_ready,
-    output reg o_psum_out_fifo_valid,
-    
+    input i_psum_out_fifo_ready,    // from FIFO
+    input i_psum_out_fifo_valid,    // from datapath
 
     //// Interface to PE_datapath.v ////
 	output reg [IFMAP_ADDR_BITWIDTH-1:0] o_ifmap_ra,
@@ -73,6 +72,7 @@ module PE_control #(
     reg [3:0] n_state;
 
     //counter
+    reg [2:0] cnt_minimum_delay;
     reg [2:0] cnt_P;
     reg [2:0] cnt_Q;
     reg [2:0] cnt_S;
@@ -85,7 +85,7 @@ module PE_control #(
     wire ifmap_fifo_hs = i_ifmap_fifo_valid && o_ifmap_fifo_ready;
     wire wght_fifo_hs = i_wght_fifo_valid && o_wght_fifo_ready;
     wire psum_in_fifo_hs = i_psum_in_fifo_valid && o_psum_in_fifo_ready;
-    wire psum_out_fifo_hs = o_psum_out_fifo_valid && i_psum_out_fifo_ready;
+    wire psum_out_fifo_hs = i_psum_out_fifo_valid && i_psum_out_fifo_ready;
 
     //FSM : state register update
     always @(posedge i_clk) begin
@@ -190,7 +190,7 @@ module PE_control #(
                 case(state)
                     LOAD_IFMAP      : counter <= (ifmap_fifo_hs) ? counter - 1 : counter;
                     LOAD_WGHT       : counter <= (wght_fifo_hs) ? counter - 1 : counter;
-                    ACCRST          : counter <= ((psum_in_fifo_hs) || (counter < P)) ? counter - 1 : counter;
+                    ACCRST          : counter <= ((counter >= P) && psum_in_fifo_hs) || ((counter < P)) ? counter - 1 : counter;
                     default         : counter <= counter - 1;
                 endcase
             end 
@@ -203,7 +203,7 @@ module PE_control #(
                     NOP             : counter <= 0;
                     LOAD_IFMAP      : counter <= Q * S - 1;
                     LOAD_WGHT       : counter <= P * Q * S - 1;
-                    CONV            : counter <= P * Q * S - 1;
+                    CONV            : counter <= (P < 3) ? (3 * Q * S - 1) : P * Q * S - 1;
                     ACCRST          : counter <= (2*P - 1);
                     DONE            : counter <= 0;
                     default         : counter <= 0;
@@ -215,6 +215,7 @@ module PE_control #(
     //counter for convolution
     always @(posedge i_clk) begin
         if(i_rst) begin
+            cnt_minimum_delay <= 0;
             cnt_P <= 0; 
             cnt_Q <= 0; 
             cnt_S <= 0;
@@ -229,10 +230,23 @@ module PE_control #(
                 cnt_S <= (cnt_S == S - 1) ? 0 : cnt_S + 1;
                 cnt_Q <= (cnt_S == S - 1) ? ((cnt_Q == Q - 1) ? 0 : cnt_Q + 1) : cnt_Q;
             end
-            else if(state == LOAD_WGHT || state == CONV) begin
+            else if(state == LOAD_WGHT) begin
                 cnt_P <= (cnt_P == P - 1) ? 0 : cnt_P + 1; 
                 cnt_S <= (cnt_P == P - 1) ? ((cnt_S == S - 1) ? 0 : cnt_S + 1) : cnt_S;
                 cnt_Q <= (cnt_P == P - 1) ? ((cnt_S == S - 1) ? ((cnt_Q == Q - 1) ? 0 : cnt_Q + 1) : cnt_Q) : cnt_Q;
+            end
+            else if(state == CONV) begin
+                if(P < 3) begin // PSUM SPAD에 write한 partial sum을 곧바로 read하는 데 3 cycle이 소요됨. logic 보완 필요
+                    cnt_minimum_delay <= (cnt_minimum_delay == 2) ? 0 : cnt_minimum_delay + 1;
+                    cnt_P <= (cnt_minimum_delay == 2) ? cnt_P : ((cnt_P == P - 1) ? 0 : cnt_P + 1); 
+                    cnt_S <= (cnt_minimum_delay == 2) ? ((cnt_S == S - 1) ? 0 : cnt_S + 1) : cnt_S;
+                    cnt_Q <= (cnt_P == P - 1) ? ((cnt_S == S - 1) ? ((cnt_Q == Q - 1) ? 0 : cnt_Q + 1) : cnt_Q) : cnt_Q;
+                end
+                else begin
+                    cnt_P <= (cnt_P == P - 1) ? 0 : cnt_P + 1; 
+                    cnt_S <= (cnt_P == P - 1) ? ((cnt_S == S - 1) ? 0 : cnt_S + 1) : cnt_S;
+                    cnt_Q <= (cnt_P == P - 1) ? ((cnt_S == S - 1) ? ((cnt_Q == Q - 1) ? 0 : cnt_Q + 1) : cnt_Q) : cnt_Q;
+                end
             end
             else if(state == ACCRST) begin
                 cnt_P <= (cnt_P == P - 1) ? 0 : cnt_P + 1; 
@@ -252,7 +266,6 @@ module PE_control #(
                 o_ifmap_fifo_ready = 0;
                 o_wght_fifo_ready = 0;
                 o_psum_in_fifo_ready = 0;
-                o_psum_out_fifo_valid = 0;
 
                 o_ifmap_ra = 0;
                 o_wght_ra = 0;
@@ -272,7 +285,6 @@ module PE_control #(
                 o_ifmap_fifo_ready = 0;
                 o_wght_fifo_ready = 0;
                 o_psum_in_fifo_ready = 0;
-                o_psum_out_fifo_valid = 0;
 
                 o_ifmap_ra = 0;
                 o_wght_ra = 0;
@@ -292,7 +304,6 @@ module PE_control #(
                 o_ifmap_fifo_ready = 0;
                 o_wght_fifo_ready = 0;
                 o_psum_in_fifo_ready = 0;
-                o_psum_out_fifo_valid = 0;
 
                 o_ifmap_ra = 0;
                 o_wght_ra = 0;
@@ -312,7 +323,6 @@ module PE_control #(
                 o_ifmap_fifo_ready = 1;
                 o_wght_fifo_ready = 0;
                 o_psum_in_fifo_ready = 0;
-                o_psum_out_fifo_valid = 0;
 
                 o_ifmap_ra = 0;
                 o_wght_ra = 0;
@@ -335,7 +345,6 @@ module PE_control #(
                 o_ifmap_fifo_ready = 0;
                 o_wght_fifo_ready = 1;
                 o_psum_in_fifo_ready = 0;
-                o_psum_out_fifo_valid = 0;
 
                 o_ifmap_ra = 0;
                 o_wght_ra = 0;
@@ -358,7 +367,6 @@ module PE_control #(
                 o_ifmap_fifo_ready = 0;
                 o_wght_fifo_ready = 0;
                 o_psum_in_fifo_ready = 0;
-                o_psum_out_fifo_valid = 0;
 
                 o_ifmap_ra = cnt_S + (S * cnt_Q);
                 o_wght_ra = (cnt_P * Q * S) + (cnt_Q * S) + cnt_S;
@@ -371,7 +379,7 @@ module PE_control #(
                 o_wght_we = 0;
 
                 o_psum_wa = cnt_P;
-                o_psum_we = 1;
+                o_psum_we = 1; // logic 보완 필요
 
                 o_acc_sel = 0;
                 o_rst_psum = 0;
@@ -381,7 +389,6 @@ module PE_control #(
                 o_ifmap_fifo_ready = 0;
                 o_wght_fifo_ready = 0;
                 o_psum_in_fifo_ready = (counter >= P);
-                o_psum_out_fifo_valid = (counter < P);
 
                 o_ifmap_ra = 0;
                 o_wght_ra = 0;
@@ -421,7 +428,6 @@ module PE_control #(
                 o_rst_psum = 0;
 
                 o_psum_in_fifo_ready = 0;
-                o_psum_out_fifo_valid = 0;
             end
             default: begin
                 o_inst_ready = 0;
@@ -445,7 +451,6 @@ module PE_control #(
                 o_rst_psum = 0;
 
                 o_psum_in_fifo_ready = 0;
-                o_psum_out_fifo_valid = 0;
             end
         endcase
     end

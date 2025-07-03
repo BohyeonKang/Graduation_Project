@@ -90,11 +90,12 @@ module tb_PE_datapath;
 
 		// Load ifmap
 		// [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3]
+
+		i_ifmap_we = 1;
 		for (i = 0; i < Q; i = i + 1) begin
 			for (j = 0; j < S; j = j + 1) begin
 				i_ifmap_wa = (i * S) + j;
 				i_ifmap_data = j + 1;
-				i_ifmap_we = 1;
 				@(posedge i_clk);
 			end
 		end
@@ -109,12 +110,13 @@ module tb_PE_datapath;
 		// [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3]
 		// [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3]
 		// [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3]
+		
+		i_wght_we = 1;
 		for (i = 0; i < Q; i = i + 1) begin
 			for(j = 0; j < S; j = j + 1) begin
 				for (k = 0; k < P; k = k + 1) begin
 					i_wght_wa = (i * S) + j + (k * Q * S);
 					i_wght_data = j + 1;
-					i_wght_we = 1;
 					@(posedge i_clk);
 				end
 			end
@@ -126,6 +128,8 @@ module tb_PE_datapath;
 		repeat (10) @(posedge i_clk);
 
 		// Convolution
+
+		i_psum_we = 1;
 		for (i = 0; i < Q; i = i + 1) begin
 			for (j = 0; j < S; j = j + 1) begin
 				for (k = 0; k < P; k = k + 1) begin
@@ -133,7 +137,6 @@ module tb_PE_datapath;
 					i_wght_ra = (i * S) + j + (k * Q * S);
 					i_psum_ra = k;
 					i_psum_wa = k;
-					i_psum_we = 1;
 					i_rst_psum = 0;
 					i_acc_sel = 0;
 					@(posedge i_clk);

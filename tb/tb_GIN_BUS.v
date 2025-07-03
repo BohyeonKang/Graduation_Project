@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module tb_PE_datapath;
+module tb_GIN_BUS;
 
     parameter ID_BITWIDTH = 4;
     parameter PACKET_IN_BITWIDTH = 12;
@@ -11,12 +11,12 @@ module tb_PE_datapath;
     reg i_rst;
 
     // rx
-    reg [PACKET_IN_BITWIDTH-1:0] i_data;
+    reg [PACKET_IN_BITWIDTH-1:0] i_packet;
     reg i_valid;
     wire o_ready;
 
     // tx
-    wire [SLV_NUM * PACKET_OUT_BITWIDTH-1:0] o_data;
+    wire [SLV_NUM * PACKET_OUT_BITWIDTH-1:0] o_packet;
     reg [SLV_NUM-1:0] i_ready;
     wire [SLV_NUM-1:0] o_valid;
 
@@ -35,12 +35,12 @@ module tb_PE_datapath;
         .i_rst      (i_rst),
 
         // rx
-        .i_data     (i_data),
+        .i_packet   (i_packet),
         .i_valid    (i_valid),
         .o_ready    (o_ready),
 
         // tx
-        .o_data     (o_data),
+        .o_packet   (o_packet),
         .i_ready    (i_ready),
         .o_valid    (o_valid),
 
@@ -60,7 +60,7 @@ module tb_PE_datapath;
         i_clk = 0;
         i_rst = 1;
 
-        i_data = 0;
+        i_packet = 0;
         i_valid = 0;
         i_ready = 0;
 
@@ -70,12 +70,15 @@ module tb_PE_datapath;
 		repeat (10) @(posedge i_clk);
 		i_rst = 0;
 
+        repeat (5) @(posedge i_clk);
+
 //////////////////////////////////////////////////////////
 
 		// id configuration
-        i_id = {4'd0, 4'd1, 4'd2, 4'd3, 4'd4, 4'd5};
-        i_id_valid = 1;
+        i_id = {4'd5, 4'd4, 4'd3, 4'd2, 4'd1, 4'd0};
+        @(posedge i_clk);
 
+        i_id_valid = 1;
         @(posedge i_clk);
 
         i_id = 0;
@@ -86,12 +89,12 @@ module tb_PE_datapath;
 //////////////////////////////////////////////////////////
 
         // tag matching
-        i_data = {4'd2, 4'd5, 8'b00000000};
+        i_packet = {4'd2, 4'd5, 8'b00010001};
         i_valid = 1;
         i_ready = 6'b111111;
 
         @(posedge i_clk);
-        i_data = 0;
+        i_packet = 0;
         i_valid = 0;
         i_ready = 0;
 

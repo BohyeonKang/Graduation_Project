@@ -1,0 +1,15 @@
+0.7
+2020.2
+Apr 18 2022
+16:05:34
+C:/LAB/Graduation_Project/eyeriss_0710/eyeriss_0710.sim/sim_1/behav/xsim/glbl.v,1649976174,verilog,,,,glbl,,,,,,,,
+C:/LAB/Graduation_Project/eyeriss_0710/eyeriss_0710.srcs/sim_1/imports/tb/tb_PE_datapath.v,1752150419,verilog,,,,tb_PE_datapath,,,,,,,,
+,,,,,,tb_PE_top,,,,,,,,
+C:/LAB/Graduation_Project/eyeriss_0710/eyeriss_0710.srcs/sim_1/imports/tb/tb_sftreg.v,1752149452,verilog,,,,tb_sftreg,,,,,,,,
+C:/LAB/Graduation_Project/eyeriss_0710/eyeriss_0710.srcs/sources_1/imports/src/PE_control.v,1751525888,verilog,,C:/LAB/Graduation_Project/eyeriss_0710/eyeriss_0710.srcs/sources_1/imports/src/PE_datapath.v,,PE_control,,,,,,,,
+C:/LAB/Graduation_Project/eyeriss_0710/eyeriss_0710.srcs/sources_1/imports/src/PE_datapath.v,1752150994,verilog,,C:/LAB/Graduation_Project/eyeriss_0710/eyeriss_0710.srcs/sources_1/imports/src/PE_top.v,,PE_datapath,,,,,,,,
+,,,,C:/LAB/Graduation_Project/eyeriss_0710/eyeriss_0710.srcs/sources_1/imports/src/RF.v,,PE_top,,,,,,,,
+C:/LAB/Graduation_Project/eyeriss_0710/eyeriss_0710.srcs/sources_1/imports/src/RF.v,1750908686,verilog,,C:/LAB/Graduation_Project/eyeriss_0710/eyeriss_0710.srcs/sources_1/imports/src/fifo.v,,RF,,,,,,,,
+,,,,C:/LAB/Graduation_Project/eyeriss_0710/eyeriss_0710.srcs/sources_1/imports/src/rams_dist.v,,fifo,,,,,,,,
+C:/LAB/Graduation_Project/eyeriss_0710/eyeriss_0710.srcs/sources_1/imports/src/rams_dist.v,1751525888,verilog,,C:/LAB/Graduation_Project/eyeriss_0710/eyeriss_0710.srcs/sim_1/imports/tb/tb_PE_top.v,,rams_dist,,,,,,,,
+C:/LAB/Graduation_Project/eyeriss_0710/eyeriss_0710.srcs/sources_1/imports/src/sftreg.v,1752149387,verilog,,C:/LAB/Graduation_Project/eyeriss_0710/eyeriss_0710.srcs/sim_1/imports/tb/tb_sftreg.v,,sftreg,,,,,,,,

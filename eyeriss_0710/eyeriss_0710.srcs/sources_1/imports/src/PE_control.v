@@ -15,21 +15,25 @@ module PE_control #(
     input       i_inst_valid, // TOP CTRL에서 opcode와 함께 보내주는 start 신호
     output reg  o_inst_ready, // (state == IDLE)일 때 활성화
 
-    //// Interface to IFMAP FIFO ////
+    //// Interface to IFMAP FIFO & MUX////
     input i_ifmap_fifo_valid,
     output reg o_ifmap_fifo_ready,
+    output reg o_ifmap_mux_select,
 
     //// Interface to WGHT FIFO ////
     input i_wght_fifo_valid,
     output reg o_wght_fifo_ready,
+    output reg o_wght_mux_select,
 
     //// Interface to INPUT PSUM FIFO ////
     input i_psum_in_fifo_valid,
     output reg o_psum_in_fifo_ready,
+    output reg o_psum_in_mux_select,
 
     //// Interface to OUTPUT PSUM FIFO ////
     input i_psum_out_fifo_ready,    // from FIFO
     input i_psum_out_fifo_valid,    // from datapath
+    output reg o_psum_out_demux_select,
 
     //// Interface to PE_datapath.v ////
 	output reg [IFMAP_ADDR_BITWIDTH-1:0] o_ifmap_ra,
@@ -72,6 +76,12 @@ module PE_control #(
     reg [3:0] n_state;
 
     //counter
+    
+    reg [1:0] cnt_ifmap_chunk;
+    reg [1:0] cnt_wght_chunk;
+    reg [1:0] cnt_psum_in_chunk;
+    reg [1:0] cnt_psum_out_chunk;
+
     reg [2:0] cnt_minimum_delay;
     reg [2:0] cnt_P;
     reg [2:0] cnt_Q;
@@ -193,7 +203,7 @@ module PE_control #(
                     ACCRST          : counter <= ((counter >= P) && psum_in_fifo_hs) || ((counter < P)) ? counter - 1 : counter;
                     default         : counter <= counter - 1;
                 endcase
-            end 
+            end
             else begin
                 case (n_state)
                     // Defines how long the system should stay in the current state
@@ -204,10 +214,38 @@ module PE_control #(
                     LOAD_IFMAP      : counter <= Q * S - 1;
                     LOAD_WGHT       : counter <= P * Q * S - 1;
                     CONV            : counter <= (P < 3) ? (3 * Q * S - 1) : P * Q * S - 1;
-                    ACCRST          : counter <= (2*P - 1);
+                    ACCRST          : counter <= (2 * P - 1);
                     DONE            : counter <= 0;
                     default         : counter <= 0;
                 endcase
+            end
+        end
+    end
+
+    //counter for mux & demux select
+    always @(posedge i_clk) begin
+        if(i_rst) begin
+            cnt_ifmap_chunk <= 0;
+            cnt_wght_chunk <= 0;
+            cnt_psum_in_chunk <= 0;
+            cnt_psum_out_chunk <= 0;
+        end
+        else begin
+            if(n_state != state) begin
+                cnt_ifmap_chunk <= 0;
+                cnt_wght_chunk <= 0;
+                cnt_psum_in_chunk <= 0;
+                cnt_psum_out_chunk <= 0;
+            end
+            else if(state == LOAD_IFMAP) begin
+                cnt_ifmap_chunk <= cnt_ifmap_chunk;
+            end
+            else if(state == LOAD_WGHT) begin
+                cnt_wght_chunk <= cnt_wght_chunk + 1;
+            end
+            else if(state == ACCRST) begin
+                cnt_psum_in_chunk <= cnt_psum_in_chunk + 1;
+                cnt_psum_out_chunk <= cnt_psum_out_chunk + 1;
             end
         end
     end
@@ -264,8 +302,12 @@ module PE_control #(
             IDLE: begin
                 o_inst_ready = 1;
                 o_ifmap_fifo_ready = 0;
+                o_ifmap_mux_select = 0;
                 o_wght_fifo_ready = 0;
+                o_wght_mux_select = 0;
                 o_psum_in_fifo_ready = 0;
+                o_psum_in_mux_select = 0;
+                o_psum_out_demux_select = 0;
 
                 o_ifmap_ra = 0;
                 o_wght_ra = 0;
@@ -283,8 +325,12 @@ module PE_control #(
             DEC: begin
                 o_inst_ready = 0;
                 o_ifmap_fifo_ready = 0;
+                o_ifmap_mux_select = 0;
                 o_wght_fifo_ready = 0;
+                o_wght_mux_select = 0;
                 o_psum_in_fifo_ready = 0;
+                o_psum_in_mux_select = 0;
+                o_psum_out_demux_select = 0;
 
                 o_ifmap_ra = 0;
                 o_wght_ra = 0;
@@ -302,8 +348,12 @@ module PE_control #(
             NOP: begin
                 o_inst_ready = 0;
                 o_ifmap_fifo_ready = 0;
+                o_ifmap_mux_select = 0;
                 o_wght_fifo_ready = 0;
+                o_wght_mux_select = 0;
                 o_psum_in_fifo_ready = 0;
+                o_psum_in_mux_select = 0;
+                o_psum_out_demux_select = 0;
 
                 o_ifmap_ra = 0;
                 o_wght_ra = 0;
@@ -320,9 +370,13 @@ module PE_control #(
             end
             LOAD_IFMAP: begin
                 o_inst_ready = 0;
-                o_ifmap_fifo_ready = 1;
+                o_ifmap_fifo_ready = (cnt_ifmap_chunk == 0);
+                o_ifmap_mux_select = cnt_ifmap_chunk;
                 o_wght_fifo_ready = 0;
+                o_wght_mux_select = 0;
                 o_psum_in_fifo_ready = 0;
+                o_psum_in_mux_select = 0;
+                o_psum_out_demux_select = 0;
 
                 o_ifmap_ra = 0;
                 o_wght_ra = 0;
@@ -343,8 +397,12 @@ module PE_control #(
             LOAD_WGHT: begin
                 o_inst_ready = 0;
                 o_ifmap_fifo_ready = 0;
-                o_wght_fifo_ready = 1;
+                o_ifmap_mux_select = 0;
+                o_wght_fifo_ready = (cnt_wght_chunk == 0);
+                o_wght_mux_select = cnt_wght_chunk;
                 o_psum_in_fifo_ready = 0;
+                o_psum_in_mux_select = 0;
+                o_psum_out_demux_select = 0;
 
                 o_ifmap_ra = 0;
                 o_wght_ra = 0;
@@ -365,8 +423,12 @@ module PE_control #(
             CONV: begin
                 o_inst_ready = 0;
                 o_ifmap_fifo_ready = 0;
+                o_ifmap_mux_select = 0;
                 o_wght_fifo_ready = 0;
+                o_wght_mux_select = 0;
                 o_psum_in_fifo_ready = 0;
+                o_psum_in_mux_select = 0;
+                o_psum_out_demux_select = 0;
 
                 o_ifmap_ra = cnt_S + (S * cnt_Q);
                 o_wght_ra = (cnt_P * Q * S) + (cnt_Q * S) + cnt_S;
@@ -387,8 +449,12 @@ module PE_control #(
             ACCRST: begin
                 o_inst_ready = 0;
                 o_ifmap_fifo_ready = 0;
+                o_ifmap_mux_select = 0;
                 o_wght_fifo_ready = 0;
+                o_wght_mux_select = 0;
                 o_psum_in_fifo_ready = (counter >= P);
+                o_psum_in_mux_select = cnt_psum_in_chunk;
+                o_psum_out_demux_select = cnt_psum_out_chunk;
 
                 o_ifmap_ra = 0;
                 o_wght_ra = 0;
@@ -409,7 +475,12 @@ module PE_control #(
             DONE: begin
                 o_inst_ready = 0;
                 o_ifmap_fifo_ready = 0;
+                o_ifmap_mux_select = 0;
                 o_wght_fifo_ready = 0;
+                o_wght_mux_select = 0;
+                o_psum_in_fifo_ready = 0;
+                o_psum_in_mux_select = 0;
+                o_psum_out_demux_select = 0;
 
                 o_ifmap_ra = 0;
                 o_wght_ra = 0;
@@ -426,13 +497,16 @@ module PE_control #(
 
                 o_acc_sel = 0;
                 o_rst_psum = 0;
-
-                o_psum_in_fifo_ready = 0;
             end
             default: begin
                 o_inst_ready = 0;
                 o_ifmap_fifo_ready = 0;
+                o_ifmap_mux_select = 0;
                 o_wght_fifo_ready = 0;
+                o_wght_mux_select = 0;
+                o_psum_in_fifo_ready = 0;
+                o_psum_in_mux_select = 0;
+                o_psum_out_demux_select = 0;
 
                 o_ifmap_ra = 0;
                 o_wght_ra = 0;
@@ -449,8 +523,6 @@ module PE_control #(
 
                 o_acc_sel = 0;
                 o_rst_psum = 0;
-
-                o_psum_in_fifo_ready = 0;
             end
         endcase
     end

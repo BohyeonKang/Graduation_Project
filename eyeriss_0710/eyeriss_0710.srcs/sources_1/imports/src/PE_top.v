@@ -33,20 +33,24 @@ module PE_top #(
     input i_psum_out_fifo_ready
 );
 
+    localparam IFMAP_BUS_BITWIDTH = DATA_BITWIDTH;
+    localparam WGHT_BUS_BITWIDTH = 4 * DATA_BITWIDTH;
+    localparam PSUM_BUS_BITWIDTH = 4 * DATA_BITWIDTH;
+
     //Local FIFO interface signals
-    wire [DATA_BITWIDTH-1:0] ifmap_data_fifo2datapath;
+    wire [IFMAP_BUS_BITWIDTH-1:0] ifmap_chunk_fifo2datapath;
     wire ifmap_valid_fifo2ctrl;
     wire ifmap_ready_ctrl2fifo;
 
-    wire [DATA_BITWIDTH-1:0] wght_data_fifo2datapath;
+    wire [WGHT_BUS_BITWIDTH-1:0] wght_chunk_fifo2datapath;
     wire wght_valid_fifo2ctrl;
     wire wght_ready_ctrl2fifo;
 
-    wire [DATA_BITWIDTH-1:0] psum_in_data_fifo2datapath;
+    wire [PSUM_BUS_BITWIDTH-1:0] psum_in_chunk_fifo2datapath;
     wire psum_in_valid_fifo2ctrl;
     wire psum_in_ready_ctrl2fifo;
 
-    wire [DATA_BITWIDTH-1:0] psum_out_data_datapath2fifo;
+    wire [PSUM_BUS_BITWIDTH-1:0] psum_out_chunk_datapath2fifo;
     wire psum_out_valid_datapath2ctrl;
     wire psum_out_ready_fifo2ctrl;
 
@@ -60,7 +64,7 @@ module PE_top #(
 
     fifo #(
         .QUEUE_PTR_BANDWIDTH(),
-        .ELE_BANDWIDTH(DATA_BITWIDTH)
+        .ELE_BANDWIDTH(IFMAP_BUS_BITWIDTH)
     ) u_ifmap_fifo (
         .i_clk(i_clk),
         .i_rst(i_rst),
@@ -73,12 +77,12 @@ module PE_top #(
         //FIFO interface as tx
         .i_ready(ifmap_ready_ctrl2fifo),         
         .o_valid(ifmap_valid_fifo2ctrl),
-        .o_pop_data(ifmap_data_fifo2datapath)
+        .o_pop_data(ifmap_chunk_fifo2datapath)
     );
 
     fifo #(
         .QUEUE_PTR_BANDWIDTH(),
-        .ELE_BANDWIDTH(DATA_BITWIDTH)
+        .ELE_BANDWIDTH(WGHT_BUS_BITWIDTH)
     ) u_wght_fifo (
         .i_clk(i_clk),
         .i_rst(i_rst),
@@ -91,12 +95,12 @@ module PE_top #(
         //FIFO interface as tx
         .i_ready(wght_ready_ctrl2fifo),         
         .o_valid(wght_valid_fifo2ctrl),
-        .o_pop_data(wght_data_fifo2datapath)
+        .o_pop_data(wght_chunk_fifo2datapath)
     );
 
     fifo #(
         .QUEUE_PTR_BANDWIDTH(),
-        .ELE_BANDWIDTH(DATA_BITWIDTH)
+        .ELE_BANDWIDTH(PSUM_BUS_BITWIDTH)
     ) u_psum_in_fifo (
         .i_clk(i_clk),
         .i_rst(i_rst),
@@ -109,18 +113,18 @@ module PE_top #(
         //FIFO interface as tx
         .i_ready(psum_in_ready_ctrl2fifo),         
         .o_valid(psum_in_valid_fifo2ctrl),
-        .o_pop_data(psum_in_data_fifo2datapath)
+        .o_pop_data(psum_in_chunk_fifo2datapath)
     );
 
     fifo #(
         .QUEUE_PTR_BANDWIDTH(),
-        .ELE_BANDWIDTH(DATA_BITWIDTH)
+        .ELE_BANDWIDTH(PSUM_BUS_BITWIDTH)
     ) u_psum_out_fifo (
         .i_clk(i_clk),
         .i_rst(i_rst),
 
         //FIFO interface as rx
-        .i_push_data(psum_out_data_datapath2fifo),
+        .i_push_data(psum_out_chunk_datapath2fifo),
         .i_valid(psum_out_valid_datapath2ctrl),
         .o_ready(psum_out_ready_fifo2ctrl),
 
@@ -175,10 +179,10 @@ module PE_top #(
         .i_clk(i_clk),
         .i_rst(i_rst),
 
-        .i_ifmap_data(ifmap_data_fifo2datapath),
-        .i_wght_data(wght_data_fifo2datapath),
-        .i_psum_data(psum_in_data_fifo2datapath),
-        .o_psum_data(psum_out_data_datapath2fifo),
+        .i_ifmap_data(ifmap_chunk_fifo2datapath),
+        .i_wght_data(wght_chunk_fifo2datapath),
+        .i_psum_data(psum_in_chunk_fifo2datapath),
+        .o_psum_data(psum_out_chunk_datapath2fifo),
 
         //controller interface
         .i_ifmap_ra(ifmap_ra_ctrl2datapath),

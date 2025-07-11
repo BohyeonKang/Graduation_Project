@@ -2,85 +2,113 @@
 
 module tb_PE_control;
 
-    parameter DATA_BITWIDTH = 16;
+    parameter DATA_BITWIDTH = 8;
     parameter IFMAP_ADDR_BITWIDTH = 4;
     parameter WGHT_ADDR_BITWIDTH = 8;
     parameter PSUM_ADDR_BITWIDTH = 5;
 
-    parameter P = 6;
-    parameter Q = 4;
-    parameter S = 3;
+    localparam CMD_NOP          = 3'b000;
+    localparam CMD_SET          = 3'b001;
+    localparam CMD_LOAD_IFMAP   = 3'b010;
+    localparam CMD_LOAD_WGHT    = 3'b011;
+    localparam CMD_CONV         = 3'b100;
+	localparam CMD_ACC          = 3'b101;
 
-    // Inputs
-    reg i_clk = 0;
+    // Clock & Reset
+    reg i_clk;
     reg i_rst;
-    
-    reg [2:0] i_opcode;
-    reg [8:0] i_conv_info;
-    reg i_inst_valid, i_ifmap_fifo_valid, i_wght_fifo_valid, i_psum_fifo_valid;
 
-    // Outputs
-    wire o_inst_ready, o_ifmap_fifo_ready, o_wght_fifo_ready, o_psum_fifo_ready;
+    // Interface to TOP CTRL instruction
+    reg  [2:0] i_opcode;
+    reg  [8:0] i_conv_info;
+    reg        i_inst_valid;
+    wire       o_inst_ready;
+
+    // Interface to IFMAP FIFO & MUX
+    reg  i_ifmap_fifo_valid;
+    wire o_ifmap_fifo_ready;
+    wire o_ifmap_mux_select;
+
+    // Interface to WGHT FIFO
+    reg  i_wght_fifo_valid;
+    wire o_wght_fifo_ready;
+    wire o_wght_mux_select;
+
+    // Interface to INPUT PSUM FIFO
+    reg  i_psum_in_fifo_valid;
+    wire o_psum_in_fifo_ready;
+    wire o_psum_in_mux_select;
+
+    // Interface to OUTPUT PSUM FIFO
+    reg  i_psum_out_fifo_ready;
+    reg  i_psum_out_fifo_valid;
+    wire o_psum_out_demux_select;
+
+    // Interface to PE_datapath.v
     wire [IFMAP_ADDR_BITWIDTH-1:0] o_ifmap_ra;
-    wire [WGHT_ADDR_BITWIDTH-1:0] o_wght_ra;
-    wire [PSUM_ADDR_BITWIDTH-1:0] o_psum_ra;
+    wire [WGHT_ADDR_BITWIDTH-1:0]  o_wght_ra;
+    wire [PSUM_ADDR_BITWIDTH-1:0]  o_psum_ra;
+
     wire [IFMAP_ADDR_BITWIDTH-1:0] o_ifmap_wa;
-    wire [WGHT_ADDR_BITWIDTH-1:0] o_wght_wa;
-    wire [PSUM_ADDR_BITWIDTH-1:0] o_psum_wa;
-    wire o_ifmap_we, o_wght_we, o_psum_we;
-    wire o_acc_sel, o_rst_psum;
+    wire [WGHT_ADDR_BITWIDTH-1:0]  o_wght_wa;
+    wire [PSUM_ADDR_BITWIDTH-1:0]  o_psum_wa;
 
-    task automatic fluctuate_valid_signals(input integer cycles);
-        integer i;
-        begin
-            for (i = 0; i < cycles; i = i + 1) begin
-                // 일정 확률로 valid 신호를 ON/OFF
-                i_inst_valid  = ($urandom % 3 != 0); // 약 66% 확률로 1
-                i_ifmap_fifo_valid = ($urandom % 2);     // 약 50% 확률로 1
-                i_wght_fifo_valid  = ($urandom % 4 != 0); // 약 75% 확률로 1
-                i_psum_fifo_valid  = ($urandom % 2);     // 약 50% 확률로 1
-                @(posedge i_clk);
-            end
+    wire o_ifmap_we;
+    wire o_wght_we;
+    wire o_psum_we;
 
-            // 이후 다시 안정화된 상태로 복구
-            i_inst_valid  = 1;
-            i_ifmap_fifo_valid = 1;
-            i_wght_fifo_valid  = 1;
-            i_psum_fifo_valid  = 1;
-        end
-    endtask
+    wire o_acc_sel;
+    wire o_rst_psum;
 
-    // Instantiate DUT
     PE_control #(
         .DATA_BITWIDTH(DATA_BITWIDTH),
         .IFMAP_ADDR_BITWIDTH(IFMAP_ADDR_BITWIDTH),
         .WGHT_ADDR_BITWIDTH(WGHT_ADDR_BITWIDTH),
         .PSUM_ADDR_BITWIDTH(PSUM_ADDR_BITWIDTH)
     ) dut (
+        // Clock & Reset
         .i_clk(i_clk),
         .i_rst(i_rst),
 
+        // Interface to TOP CTRL instruction
         .i_opcode(i_opcode),
         .i_conv_info(i_conv_info),
-
         .i_inst_valid(i_inst_valid),
         .o_inst_ready(o_inst_ready),
+
+        // Interface to IFMAP FIFO & MUX
         .i_ifmap_fifo_valid(i_ifmap_fifo_valid),
         .o_ifmap_fifo_ready(o_ifmap_fifo_ready),
+        .o_ifmap_mux_select(o_ifmap_mux_select),
+
+        // Interface to WGHT FIFO
         .i_wght_fifo_valid(i_wght_fifo_valid),
         .o_wght_fifo_ready(o_wght_fifo_ready),
-        .i_psum_fifo_valid(i_psum_fifo_valid),
-        .o_psum_fifo_ready(o_psum_fifo_ready),
-    
+        .o_wght_mux_select(o_wght_mux_select),
+
+        // Interface to INPUT PSUM FIFO
+        .i_psum_in_fifo_valid(i_psum_in_fifo_valid),
+        .o_psum_in_fifo_ready(o_psum_in_fifo_ready),
+        .o_psum_in_mux_select(o_psum_in_mux_select),
+
+        // Interface to OUTPUT PSUM FIFO
+        .i_psum_out_fifo_ready(i_psum_out_fifo_ready),
+        .i_psum_out_fifo_valid(i_psum_out_fifo_valid),
+        .o_psum_out_demux_select(o_psum_out_demux_select),
+
+        // Interface to PE_datapath.v
         .o_ifmap_ra(o_ifmap_ra),
         .o_wght_ra(o_wght_ra),
         .o_psum_ra(o_psum_ra),
+
         .o_ifmap_wa(o_ifmap_wa),
         .o_wght_wa(o_wght_wa),
         .o_psum_wa(o_psum_wa),
+
         .o_ifmap_we(o_ifmap_we),
         .o_wght_we(o_wght_we),
         .o_psum_we(o_psum_we),
+
         .o_acc_sel(o_acc_sel),
         .o_rst_psum(o_rst_psum)
     );
@@ -88,78 +116,124 @@ module tb_PE_control;
     // Clock
     always #5 i_clk = ~i_clk;
 
-    // Signal counters
-    integer ifmap_we_count = 0;
-    integer wght_we_count = 0;
-    integer psum_we_count = 0;
-
-    always @(posedge i_clk) begin
-        if (o_ifmap_we) ifmap_we_count = ifmap_we_count + 1;
-        if (o_wght_we)  wght_we_count  = wght_we_count + 1;
-        if (o_psum_we)  psum_we_count  = psum_we_count + 1;
-    end
-
-    // Wait until state becomes DONE
-    task wait_done();
-        begin
-            wait (dut.state == 4'h9); // DONE
-            @(posedge i_clk);
-            @(posedge i_clk);
-        end
-    endtask
-
-    // Send one command
-    task send_cmd(input [2:0] opcode);
-        begin
-            i_opcode = opcode;
-            wait_done();
-        end
-    endtask
-
+    integer i,j,k;
     initial begin
-        $display("=== PE_control Full Functional Testbench ===");
 
-        // Reset
+        ///// RESET /////
+        i_clk = 0;
         i_rst = 1;
+
         i_opcode = 0;
         i_conv_info = 0;
-
         i_inst_valid = 0;
+
         i_ifmap_fifo_valid = 0;
         i_wght_fifo_valid = 0;
-        i_psum_fifo_valid = 0;
-        #20;
+        i_psum_in_fifo_valid = 0;
 
-        i_rst = 0;
-        i_inst_valid = 1;
-        i_ifmap_fifo_valid = 1;
+        i_psum_out_fifo_ready = 0;
+        i_psum_out_fifo_valid = 0;
+
+        repeat (5) @(posedge i_clk); #1;
+		i_rst = 0;
+
+
+
+		///// SET /////
+		@(posedge i_clk); #1;
+		i_opcode = CMD_SET;
+		i_conv_info = 9'b110100011; //(P=6, Q=4, S=3)
+		i_inst_valid = 1;
+
+		@(posedge i_clk); #1;
+		wait(o_inst_ready);
+		i_inst_valid = 0;
+		
+		repeat (5) @(posedge i_clk);
+
+
+		///// LOAD_IFMAP /////
+		@(posedge i_clk); #1;
+		i_opcode = CMD_LOAD_IFMAP;
+		i_inst_valid = 1;
+
+		@(posedge i_clk); #1;
+		wait(o_inst_ready);
+		i_inst_valid = 0;
+
+		@(posedge i_clk) #1; //wait 1 cycle for DEC state
+		i_ifmap_fifo_valid = 1;
+
+		for(j=0; j<dut.conv_info_reg[5:3]; j=j+1) begin  // loop for Q
+			for(k=0; k<dut.conv_info_reg[2:0]; k=k+1) begin // loop for S
+				@(posedge i_clk); #1;
+			end
+		end
+		i_ifmap_fifo_valid = 0;
+
+		repeat (5) @(posedge i_clk);
+
+
+		///// LOAD_WGHT /////
+        @(posedge i_clk); #1;
+		i_opcode = CMD_LOAD_WGHT;
+		i_inst_valid = 1;
+
+		@(posedge i_clk); #1;
+		wait(o_inst_ready);
+		i_inst_valid = 0;
+
+		@(posedge i_clk); #1 //wait 1 cycle for DEC state
+		
         i_wght_fifo_valid = 1;
-        i_psum_fifo_valid = 1;
-        @(posedge i_clk);
+		for(i=0; i<dut.u_PE_control.conv_info_reg[5:3]; i=i+1) begin  // loop for Q
+			for(j=0; j<dut.u_PE_control.conv_info_reg[2:0]; j=j+1) begin // loop for S
+				for(k=0; k<dut.u_PE_control.conv_info_reg[8:6]; k=k+1) begin // loop for P
+					@(posedge i_clk); #1;
+				end
+			end
+		end
+		i_wght_fifo_valid = 0;
 
-        // 0. NOP
-        send_cmd(3'b000); // NOP
+		repeat (5) @(posedge i_clk);
 
-        // 1. SET (P=6, Q=4, S=3)
-        i_conv_info = {P[2:0], Q[2:0], S[2:0]};
-        send_cmd(3'b001); // SET
 
-        // 2. LOAD_IFMAP (Q*S = 12)
-        fork
-            fluctuate_valid_signals(Q*S + 5);  // 조금 여유 있게 반복
-            send_cmd(3'b010); // LOAD_IFMAP
-        join
+		///// CONV /////
+        @(posedge i_clk); #1;
+		i_opcode = CMD_CONV;
+		i_inst_valid = 1;
 
-        // 3. LOAD_WGHT (P*Q*S = 72)
-        fork
-            fluctuate_valid_signals(P*Q*S + 5);  // 조금 여유 있게 반복
-            send_cmd(3'b011);
-        join
+		@(posedge i_clk); #1;
+		wait(o_inst_ready);
+		i_inst_valid = 0;
 
-        // 4. CONV (P*Q*S = 72 + ACC)
-        send_cmd(3'b100); // CONV
+		@(posedge i_clk); #1 //wait 1 cycle for DEC state
 
-        $stop;
+		repeat (72) @(posedge i_clk);
+
+		repeat (5) @(posedge i_clk);
+
+
+		///// ACCRST /////
+        @(posedge i_clk); #1;
+		i_opcode = CMD_ACC;
+		i_inst_valid = 1;
+
+		@(posedge i_clk); #1;
+		wait(o_inst_ready);
+		i_inst_valid = 0;
+
+		@(posedge i_clk); //wait 1 cycle for DEC state
+
+		#1; i_psum_in_fifo_valid = 1;
+		for(i=0; i<dut.u_PE_control.conv_info_reg[8:6]; i=i+1) begin  // loop for P
+			@(posedge i_clk);
+		end
+		#1; i_psum_in_fifo_valid = 0;
+
+		repeat (10) @(posedge i_clk);
+
+		$stop;
     end
 
 endmodule

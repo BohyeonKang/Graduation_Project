@@ -15,25 +15,21 @@ module PE_control #(
     input       i_inst_valid, // TOP CTRL에서 opcode와 함께 보내주는 start 신호
     output reg  o_inst_ready, // (state == IDLE)일 때 활성화
 
-    //// Interface to IFMAP FIFO & MUX////
+    //// Interface to IFMAP FIFO ////
     input i_ifmap_fifo_valid,
     output reg o_ifmap_fifo_ready,
-    output reg o_ifmap_mux_select,
 
-    //// Interface to WGHT FIFO ////
-    input i_wght_fifo_valid,
-    output reg o_wght_fifo_ready,
-    output reg o_wght_mux_select,
+    //// Interface to WGHT PISO ////
+    input i_wght_piso_valid,
+    output reg o_wght_piso_ready,
 
-    //// Interface to INPUT PSUM FIFO ////
-    input i_psum_in_fifo_valid,
-    output reg o_psum_in_fifo_ready,
-    output reg o_psum_in_mux_select,
+    //// Interface to INPUT PSUM PISO ////
+    input i_psum_in_piso_valid,
+    output reg o_psum_in_piso_ready,
 
-    //// Interface to OUTPUT PSUM FIFO ////
-    input i_psum_out_fifo_ready,    // from FIFO
-    input i_psum_out_fifo_valid,    // from datapath
-    output reg o_psum_out_demux_select,
+    //// Interface to OUTPUT PSUM SIPO ////
+    input i_psum_out_sipo_ready,    // from SIPO
+    input i_psum_out_sipo_valid,    // from datapath
 
     //// Interface to PE_datapath.v ////
 	output reg [IFMAP_ADDR_BITWIDTH-1:0] o_ifmap_ra,
@@ -76,12 +72,6 @@ module PE_control #(
     reg [3:0] n_state;
 
     //counter
-    
-    reg [1:0] cnt_ifmap_chunk;
-    reg [1:0] cnt_wght_chunk;
-    reg [1:0] cnt_psum_in_chunk;
-    reg [1:0] cnt_psum_out_chunk;
-
     reg [2:0] cnt_minimum_delay;
     reg [2:0] cnt_P;
     reg [2:0] cnt_Q;
@@ -93,9 +83,9 @@ module PE_control #(
 
     wire inst_hs = i_inst_valid && o_inst_ready;
     wire ifmap_fifo_hs = i_ifmap_fifo_valid && o_ifmap_fifo_ready;
-    wire wght_fifo_hs = i_wght_fifo_valid && o_wght_fifo_ready;
-    wire psum_in_fifo_hs = i_psum_in_fifo_valid && o_psum_in_fifo_ready;
-    wire psum_out_fifo_hs = i_psum_out_fifo_valid && i_psum_out_fifo_ready;
+    wire wght_piso_hs = i_wght_piso_valid && o_wght_piso_ready;
+    wire psum_in_piso_hs = i_psum_in_piso_valid && o_psum_in_piso_ready;
+    wire psum_out_sipo_hs = i_psum_out_sipo_valid && i_psum_out_sipo_ready;
 
     //FSM : state register update
     always @(posedge i_clk) begin
@@ -199,11 +189,11 @@ module PE_control #(
             if (counter > 0) begin
                 case(state)
                     LOAD_IFMAP      : counter <= (ifmap_fifo_hs) ? counter - 1 : counter;
-                    LOAD_WGHT       : counter <= (wght_fifo_hs) ? counter - 1 : counter;
-                    ACCRST          : counter <= ((counter >= P) && psum_in_fifo_hs) || ((counter < P)) ? counter - 1 : counter;
+                    LOAD_WGHT       : counter <= (wght_piso_hs) ? counter - 1 : counter;
+                    ACCRST          : counter <= ((counter >= P) && psum_in_piso_hs) || ((counter < P)) ? counter - 1 : counter;
                     default         : counter <= counter - 1;
                 endcase
-            end
+            end 
             else begin
                 case (n_state)
                     // Defines how long the system should stay in the current state
@@ -214,38 +204,10 @@ module PE_control #(
                     LOAD_IFMAP      : counter <= Q * S - 1;
                     LOAD_WGHT       : counter <= P * Q * S - 1;
                     CONV            : counter <= (P < 3) ? (3 * Q * S - 1) : P * Q * S - 1;
-                    ACCRST          : counter <= (2 * P - 1);
+                    ACCRST          : counter <= (2*P - 1);
                     DONE            : counter <= 0;
                     default         : counter <= 0;
                 endcase
-            end
-        end
-    end
-
-    //counter for mux & demux select
-    always @(posedge i_clk) begin
-        if(i_rst) begin
-            cnt_ifmap_chunk <= 0;
-            cnt_wght_chunk <= 0;
-            cnt_psum_in_chunk <= 0;
-            cnt_psum_out_chunk <= 0;
-        end
-        else begin
-            if(n_state != state) begin
-                cnt_ifmap_chunk <= 0;
-                cnt_wght_chunk <= 0;
-                cnt_psum_in_chunk <= 0;
-                cnt_psum_out_chunk <= 0;
-            end
-            else if(state == LOAD_IFMAP) begin
-                cnt_ifmap_chunk <= cnt_ifmap_chunk;
-            end
-            else if(state == LOAD_WGHT) begin
-                cnt_wght_chunk <= cnt_wght_chunk + 1;
-            end
-            else if(state == ACCRST) begin
-                cnt_psum_in_chunk <= cnt_psum_in_chunk + 1;
-                cnt_psum_out_chunk <= cnt_psum_out_chunk + 1;
             end
         end
     end
@@ -265,13 +227,17 @@ module PE_control #(
                 cnt_Q <= 0;
             end
             else if(state == LOAD_IFMAP) begin
-                cnt_S <= (cnt_S == S - 1) ? 0 : cnt_S + 1;
-                cnt_Q <= (cnt_S == S - 1) ? ((cnt_Q == Q - 1) ? 0 : cnt_Q + 1) : cnt_Q;
+                if(ifmap_fifo_hs) begin
+                    cnt_S <= (cnt_S == S - 1) ? 0 : cnt_S + 1;
+                    cnt_Q <= (cnt_S == S - 1) ? ((cnt_Q == Q - 1) ? 0 : cnt_Q + 1) : cnt_Q;
+                end
             end
             else if(state == LOAD_WGHT) begin
-                cnt_P <= (cnt_P == P - 1) ? 0 : cnt_P + 1; 
-                cnt_S <= (cnt_P == P - 1) ? ((cnt_S == S - 1) ? 0 : cnt_S + 1) : cnt_S;
-                cnt_Q <= (cnt_P == P - 1) ? ((cnt_S == S - 1) ? ((cnt_Q == Q - 1) ? 0 : cnt_Q + 1) : cnt_Q) : cnt_Q;
+                if(wght_piso_hs) begin
+                    cnt_P <= (cnt_P == P - 1) ? 0 : cnt_P + 1; 
+                    cnt_S <= (cnt_P == P - 1) ? ((cnt_S == S - 1) ? 0 : cnt_S + 1) : cnt_S;
+                    cnt_Q <= (cnt_P == P - 1) ? ((cnt_S == S - 1) ? ((cnt_Q == Q - 1) ? 0 : cnt_Q + 1) : cnt_Q) : cnt_Q;
+                end
             end
             else if(state == CONV) begin
                 if(P < 3) begin // PSUM SPAD에 write한 partial sum을 곧바로 read하는 데 3 cycle이 소요됨. logic 보완 필요
@@ -302,12 +268,8 @@ module PE_control #(
             IDLE: begin
                 o_inst_ready = 1;
                 o_ifmap_fifo_ready = 0;
-                o_ifmap_mux_select = 0;
-                o_wght_fifo_ready = 0;
-                o_wght_mux_select = 0;
-                o_psum_in_fifo_ready = 0;
-                o_psum_in_mux_select = 0;
-                o_psum_out_demux_select = 0;
+                o_wght_piso_ready = 0;
+                o_psum_in_piso_ready = 0;
 
                 o_ifmap_ra = 0;
                 o_wght_ra = 0;
@@ -325,12 +287,8 @@ module PE_control #(
             DEC: begin
                 o_inst_ready = 0;
                 o_ifmap_fifo_ready = 0;
-                o_ifmap_mux_select = 0;
-                o_wght_fifo_ready = 0;
-                o_wght_mux_select = 0;
-                o_psum_in_fifo_ready = 0;
-                o_psum_in_mux_select = 0;
-                o_psum_out_demux_select = 0;
+                o_wght_piso_ready = 0;
+                o_psum_in_piso_ready = 0;
 
                 o_ifmap_ra = 0;
                 o_wght_ra = 0;
@@ -348,12 +306,8 @@ module PE_control #(
             NOP: begin
                 o_inst_ready = 0;
                 o_ifmap_fifo_ready = 0;
-                o_ifmap_mux_select = 0;
-                o_wght_fifo_ready = 0;
-                o_wght_mux_select = 0;
-                o_psum_in_fifo_ready = 0;
-                o_psum_in_mux_select = 0;
-                o_psum_out_demux_select = 0;
+                o_wght_piso_ready = 0;
+                o_psum_in_piso_ready = 0;
 
                 o_ifmap_ra = 0;
                 o_wght_ra = 0;
@@ -370,13 +324,9 @@ module PE_control #(
             end
             LOAD_IFMAP: begin
                 o_inst_ready = 0;
-                o_ifmap_fifo_ready = (cnt_ifmap_chunk == 0);
-                o_ifmap_mux_select = cnt_ifmap_chunk;
-                o_wght_fifo_ready = 0;
-                o_wght_mux_select = 0;
-                o_psum_in_fifo_ready = 0;
-                o_psum_in_mux_select = 0;
-                o_psum_out_demux_select = 0;
+                o_ifmap_fifo_ready = 1;
+                o_wght_piso_ready = 0;
+                o_psum_in_piso_ready = 0;
 
                 o_ifmap_ra = 0;
                 o_wght_ra = 0;
@@ -397,12 +347,8 @@ module PE_control #(
             LOAD_WGHT: begin
                 o_inst_ready = 0;
                 o_ifmap_fifo_ready = 0;
-                o_ifmap_mux_select = 0;
-                o_wght_fifo_ready = (cnt_wght_chunk == 0);
-                o_wght_mux_select = cnt_wght_chunk;
-                o_psum_in_fifo_ready = 0;
-                o_psum_in_mux_select = 0;
-                o_psum_out_demux_select = 0;
+                o_wght_piso_ready = 1;
+                o_psum_in_piso_ready = 0;
 
                 o_ifmap_ra = 0;
                 o_wght_ra = 0;
@@ -412,7 +358,7 @@ module PE_control #(
                 o_ifmap_we = 0;
 
                 o_wght_wa = (cnt_P * Q * S) + (cnt_Q * S) + cnt_S;
-                o_wght_we = 1;
+                o_wght_we = i_wght_piso_valid;
 
                 o_psum_wa = 0;
                 o_psum_we = 0;
@@ -423,12 +369,8 @@ module PE_control #(
             CONV: begin
                 o_inst_ready = 0;
                 o_ifmap_fifo_ready = 0;
-                o_ifmap_mux_select = 0;
-                o_wght_fifo_ready = 0;
-                o_wght_mux_select = 0;
-                o_psum_in_fifo_ready = 0;
-                o_psum_in_mux_select = 0;
-                o_psum_out_demux_select = 0;
+                o_wght_piso_ready = 0;
+                o_psum_in_piso_ready = 0;
 
                 o_ifmap_ra = cnt_S + (S * cnt_Q);
                 o_wght_ra = (cnt_P * Q * S) + (cnt_Q * S) + cnt_S;
@@ -449,12 +391,8 @@ module PE_control #(
             ACCRST: begin
                 o_inst_ready = 0;
                 o_ifmap_fifo_ready = 0;
-                o_ifmap_mux_select = 0;
-                o_wght_fifo_ready = 0;
-                o_wght_mux_select = 0;
-                o_psum_in_fifo_ready = (counter >= P);
-                o_psum_in_mux_select = cnt_psum_in_chunk;
-                o_psum_out_demux_select = cnt_psum_out_chunk;
+                o_wght_piso_ready = 0;
+                o_psum_in_piso_ready = (counter >= P);
 
                 o_ifmap_ra = 0;
                 o_wght_ra = 0;
@@ -469,18 +407,13 @@ module PE_control #(
                 o_psum_wa = cnt_P;
                 o_psum_we = (counter < P);
 
-                o_acc_sel = psum_in_fifo_hs;
+                o_acc_sel = psum_in_piso_hs;
                 o_rst_psum = (counter < P);
             end
             DONE: begin
                 o_inst_ready = 0;
                 o_ifmap_fifo_ready = 0;
-                o_ifmap_mux_select = 0;
-                o_wght_fifo_ready = 0;
-                o_wght_mux_select = 0;
-                o_psum_in_fifo_ready = 0;
-                o_psum_in_mux_select = 0;
-                o_psum_out_demux_select = 0;
+                o_wght_piso_ready = 0;
 
                 o_ifmap_ra = 0;
                 o_wght_ra = 0;
@@ -497,16 +430,13 @@ module PE_control #(
 
                 o_acc_sel = 0;
                 o_rst_psum = 0;
+
+                o_psum_in_piso_ready = 0;
             end
             default: begin
                 o_inst_ready = 0;
                 o_ifmap_fifo_ready = 0;
-                o_ifmap_mux_select = 0;
-                o_wght_fifo_ready = 0;
-                o_wght_mux_select = 0;
-                o_psum_in_fifo_ready = 0;
-                o_psum_in_mux_select = 0;
-                o_psum_out_demux_select = 0;
+                o_wght_piso_ready = 0;
 
                 o_ifmap_ra = 0;
                 o_wght_ra = 0;
@@ -523,6 +453,8 @@ module PE_control #(
 
                 o_acc_sel = 0;
                 o_rst_psum = 0;
+
+                o_psum_in_piso_ready = 0;
             end
         endcase
     end

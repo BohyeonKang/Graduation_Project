@@ -105,11 +105,10 @@ module tb_PE_top;
 		i_conv_info = 9'b110100011; //(P=6, Q=4, S=3)
 		i_inst_valid = 1;
 
-		@(posedge i_clk); #1;
-		wait(o_inst_ready);
+		@(posedge i_clk); #1; //wait 1 cycle for DEC state
 		i_inst_valid = 0;
-		
-		repeat (5) @(posedge i_clk);
+
+		wait(o_inst_ready);
 
 
 		///// LOAD_IFMAP /////
@@ -117,80 +116,163 @@ module tb_PE_top;
 		i_inst_data = CMD_LOAD_IFMAP;
 		i_inst_valid = 1;
 
-		@(posedge i_clk); #1;
-		wait(o_inst_ready);
+		@(posedge i_clk); #1; //wait 1 cycle for DEC state
 		i_inst_valid = 0;
-
-		@(posedge i_clk); //wait 1 cycle for DEC state
-
-		i_ifmap_fifo_valid = 1;
 
 		for(j=0; j<dut.u_PE_control.conv_info_reg[5:3]; j=j+1) begin  // loop for Q
 			for(k=0; k<dut.u_PE_control.conv_info_reg[2:0]; k=k+1) begin // loop for S
+				@(posedge i_clk); #1
+				i_ifmap_fifo_valid = 1;
 				i_ifmap_fifo_data = k + 1;
-				@(posedge i_clk);
 			end
 		end
-		i_ifmap_fifo_valid = 0;
 
-		repeat (5) @(posedge i_clk);
+		@(posedge i_clk); #1
+		i_ifmap_fifo_valid = 0;
+		i_ifmap_fifo_data = 0;
+
+		wait(o_inst_ready);
 
 
 		///// LOAD_WGHT /////
+		@(posedge i_clk); #1;
 		i_inst_data = CMD_LOAD_WGHT;
 		i_inst_valid = 1;
-		@(posedge i_clk);
-		wait(o_inst_ready);
+		
+		@(posedge i_clk); #1; //wait 1 cycle for DEC state
 		i_inst_valid = 0;
 
-		@(posedge i_clk); //wait 1 cycle for DEC state
-		
-		i_wght_fifo_valid = 1;
 
-		for(i=0; i<dut.u_PE_control.conv_info_reg[5:3]; i=i+1) begin  // loop for Q
-			for(j=0; j<dut.u_PE_control.conv_info_reg[2:0]; j=j+1) begin // loop for S
-				for(k=0; k<dut.u_PE_control.conv_info_reg[8:6]; k=k+1) begin // loop for P
-					i_wght_fifo_data = j + 1;
-					@(posedge i_clk);
-				end
-			end
-		end
+		@(posedge i_clk); #1;
+		i_wght_fifo_valid = 1;
+		i_wght_fifo_data = {8'd1, 8'd1, 8'd1, 8'd1};
+
+		@(posedge i_clk); #1;
+		i_wght_fifo_valid = 1;
+		i_wght_fifo_data = {8'd1, 8'd1, 8'd2, 8'd2};
+
+		@(posedge i_clk); #1;
+		i_wght_fifo_valid = 1;
+		i_wght_fifo_data = {8'd2, 8'd2, 8'd2, 8'd2};
+
+		@(posedge i_clk); #1;
+		i_wght_fifo_valid = 1;
+		i_wght_fifo_data = {8'd3, 8'd3, 8'd3, 8'd3};
+		
+		@(posedge i_clk); #1;
+		i_wght_fifo_valid = 1;
+		i_wght_fifo_data = {8'd3, 8'd3, 8'd1, 8'd1};
+
+		@(posedge i_clk); #1;
+		i_wght_fifo_valid = 1;
+		i_wght_fifo_data = {8'd1, 8'd1, 8'd1, 8'd1};
+
+		@(posedge i_clk); #1;
+		i_wght_fifo_valid = 1;
+		i_wght_fifo_data = {8'd2, 8'd2, 8'd2, 8'd2};
+
+		@(posedge i_clk); #1;
+		i_wght_fifo_valid = 1;
+		i_wght_fifo_data = {8'd2, 8'd2, 8'd3, 8'd3};
+
+		@(posedge i_clk); #1;
+		i_wght_fifo_valid = 1;
+		i_wght_fifo_data = {8'd3, 8'd3, 8'd3, 8'd3};
+
+		@(posedge i_clk); #1;
+		i_wght_fifo_valid = 1;
+		i_wght_fifo_data = {8'd1, 8'd1, 8'd1, 8'd1};
+
+		@(posedge i_clk); #1;
+		i_wght_fifo_valid = 1;
+		i_wght_fifo_data = {8'd1, 8'd1, 8'd2, 8'd2};
+
+		@(posedge i_clk); #1;
+		i_wght_fifo_valid = 1;
+		i_wght_fifo_data = {8'd2, 8'd2, 8'd2, 8'd2};
+
+		@(posedge i_clk); #1;
+		i_wght_fifo_valid = 1;
+		i_wght_fifo_data = {8'd3, 8'd3, 8'd3, 8'd3};
+		
+		@(posedge i_clk); #1;
+		i_wght_fifo_valid = 1;
+		i_wght_fifo_data = {8'd3, 8'd3, 8'd1, 8'd1};
+
+		@(posedge i_clk); #1;
+		i_wght_fifo_valid = 1;
+		i_wght_fifo_data = {8'd1, 8'd1, 8'd1, 8'd1};
+
+		@(posedge i_clk); #1;
+		i_wght_fifo_valid = 1;
+		i_wght_fifo_data = {8'd2, 8'd2, 8'd2, 8'd2};
+
+		@(posedge i_clk); #1;
+		i_wght_fifo_valid = 1;
+		i_wght_fifo_data = {8'd2, 8'd2, 8'd3, 8'd3};
+
+		@(posedge i_clk); #1;
+		i_wght_fifo_valid = 1;
+		i_wght_fifo_data = {8'd3, 8'd3, 8'd3, 8'd3};
+
+		@(posedge i_clk); #1;
 		i_wght_fifo_valid = 0;
 
-		repeat (5) @(posedge i_clk);
+		wait(o_inst_ready);
 
 
 		///// CONV /////
+		@(posedge i_clk); #1;
 		i_inst_data = CMD_CONV;
 		i_inst_valid = 1;
-		@(posedge i_clk);
-		wait(o_inst_ready);
-		i_inst_valid = 0;
 
-		@(posedge i_clk); //wait 1 cycle for DEC state
+		@(posedge i_clk); #1; //wait 1 cycle for DEC state
+		i_inst_valid = 0;
 
 		repeat (72) @(posedge i_clk);
 
-		repeat (5) @(posedge i_clk);
+		wait(o_inst_ready);
 
 
 		///// ACCRST /////
+		@(posedge i_clk); #1;
 		i_inst_data = CMD_ACC;
 		i_inst_valid = 1;
-		@(posedge i_clk);
-		wait(o_inst_ready);
+
+		@(posedge i_clk); #1; //wait 1 cycle for DEC state
 		i_inst_valid = 0;
 
-		@(posedge i_clk); //wait 1 cycle for DEC state
 
+		@(posedge i_clk); #1;
 		i_psum_in_fifo_valid = 1;
-		for(i=0; i<dut.u_PE_control.conv_info_reg[8:6]; i=i+1) begin  // loop for P
-			i_psum_in_fifo_data = 10;
-			@(posedge i_clk);
-		end
+		i_psum_in_fifo_data = 10;
+
+		@(posedge i_clk); #1;
+		i_psum_in_fifo_valid = 1;
+		i_psum_in_fifo_data = 10;
+
+		@(posedge i_clk); #1;
+		i_psum_in_fifo_valid = 1;
+		i_psum_in_fifo_data = 10;
+
+		@(posedge i_clk); #1;
+		i_psum_in_fifo_valid = 1;
+		i_psum_in_fifo_data = 10;
+
+		@(posedge i_clk); #1;
+		i_psum_in_fifo_valid = 1;
+		i_psum_in_fifo_data = 10;
+
+		@(posedge i_clk); #1;
+		i_psum_in_fifo_valid = 1;
+		i_psum_in_fifo_data = 10;
+
+		@(posedge i_clk); #1;
 		i_psum_in_fifo_valid = 0;
 
 		repeat (10) @(posedge i_clk);
+
+		wait(o_inst_ready);
 
 		$stop;
 	end

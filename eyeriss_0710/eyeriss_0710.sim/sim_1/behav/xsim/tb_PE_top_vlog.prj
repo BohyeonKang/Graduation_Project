@@ -3,7 +3,9 @@ verilog xil_defaultlib  \
 "../../../../eyeriss_0710.srcs/sources_1/imports/src/PE_control.v" \
 "../../../../eyeriss_0710.srcs/sources_1/imports/src/PE_datapath.v" \
 "../../../../eyeriss_0710.srcs/sources_1/imports/src/PE_top.v" \
+"../../../../eyeriss_0710.srcs/sources_1/imports/src/PISO_32to8.v" \
 "../../../../eyeriss_0710.srcs/sources_1/imports/src/RF.v" \
+"../../../../eyeriss_0710.srcs/sources_1/imports/src/SIPO_8to32.v" \
 "../../../../eyeriss_0710.srcs/sources_1/imports/src/fifo.v" \
 "../../../../eyeriss_0710.srcs/sources_1/imports/src/rams_dist.v" \
 "../../../../eyeriss_0710.srcs/sim_1/imports/tb/tb_PE_top.v" \

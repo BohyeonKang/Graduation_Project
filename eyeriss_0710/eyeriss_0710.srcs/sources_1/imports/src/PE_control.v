@@ -29,7 +29,6 @@ module PE_control #(
 
     //// Interface to OUTPUT PSUM SIPO ////
     input i_psum_out_sipo_ready,    // from SIPO
-    input i_psum_out_sipo_valid,    // from datapath
 
     //// Interface to PE_datapath.v ////
 	output reg [IFMAP_ADDR_BITWIDTH-1:0] o_ifmap_ra,
@@ -85,7 +84,6 @@ module PE_control #(
     wire ifmap_fifo_hs = i_ifmap_fifo_valid && o_ifmap_fifo_ready;
     wire wght_piso_hs = i_wght_piso_valid && o_wght_piso_ready;
     wire psum_in_piso_hs = i_psum_in_piso_valid && o_psum_in_piso_ready;
-    wire psum_out_sipo_hs = i_psum_out_sipo_valid && i_psum_out_sipo_ready;
 
     //FSM : state register update
     always @(posedge i_clk) begin

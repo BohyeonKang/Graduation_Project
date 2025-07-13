@@ -63,8 +63,8 @@ module PE_top #(
     wire psum_out_ready_sipo2ctrl;
 
     wire [PSUM_BUS_BITWIDTH-1:0] psum_out_data_sipo2fifo;
-    wire psum_out_valid_datapath2ctrl;
-    wire psum_out_ready_fifo2ctrl;
+    wire psum_out_valid_sipo2fifo;
+    wire psum_out_ready_fifo2sipo;
 
 
     // Local control signals
@@ -137,9 +137,9 @@ module PE_top #(
         .o_ready(o_psum_in_fifo_ready),
 
         //FIFO interface as tx
-        .i_ready(psum_in_ready_ctrl2fifo),         
-        .o_valid(psum_in_valid_fifo2ctrl),
-        .o_pop_data(psum_in_data_fifo2datapath)
+        .i_ready(psum_in_ready_piso2fifo),         
+        .o_valid(psum_in_valid_fifo2piso),
+        .o_pop_data(psum_in_data_fifo2piso)
     );
 
     PISO_32to8 u_psum_piso (
@@ -178,6 +178,8 @@ module PE_top #(
         .i_clk    (i_clk),      // 클럭
         .i_rst    (i_rst),      // 리셋
 
+        .i_flush  (o_inst_ready),
+
         // 직렬 입력 인터페이스 (rx)
         .i_valid  (psum_out_valid_datapath2sipo),    // 입력 데이터 유효
         .i_data   (psum_out_data_datapath2sipo),     // 8비트 입력
@@ -211,7 +213,6 @@ module PE_top #(
         .i_psum_in_piso_valid(psum_in_valid_piso2ctrl),
         .o_psum_in_piso_ready(psum_in_ready_ctrl2piso),
         .i_psum_out_sipo_ready(psum_out_ready_sipo2ctrl),
-        .i_psum_out_sipo_valid(psum_out_valid_datapath2ctrl),
 
         .o_ifmap_ra(ifmap_ra_ctrl2datapath),
         .o_wght_ra(wght_ra_ctrl2datapath),
@@ -252,7 +253,7 @@ module PE_top #(
         .i_psum_we(psum_we_ctrl2datapath),
         .i_acc_sel(acc_sel_ctrl2datapath),
         .i_rst_psum(rst_psum_ctrl2datapath),
-        .o_psum_out_valid(psum_out_valid_datapath2ctrl)
+        .o_psum_out_valid(psum_out_valid_datapath2sipo)
     );
 
 endmodule

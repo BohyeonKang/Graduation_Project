@@ -3,6 +3,7 @@
 module tb_PE_top;
 
 	parameter DATA_BITWIDTH = 8;
+	parameter BUS_BITWIDTH = 32;
 	parameter IFMAP_ADDR_BITWIDTH = 4;
 	parameter WGHT_ADDR_BITWIDTH = 7;
 	parameter PSUM_ADDR_BITWIDTH = 3;
@@ -46,6 +47,7 @@ module tb_PE_top;
 
 	PE_top #(
 		.DATA_BITWIDTH(DATA_BITWIDTH), 
+		.BUS_BITWIDTH(BUS_BITWIDTH),
 		.IFMAP_ADDR_BITWIDTH(IFMAP_ADDR_BITWIDTH), 
 		.WGHT_ADDR_BITWIDTH(WGHT_ADDR_BITWIDTH), 
 		.PSUM_ADDR_BITWIDTH(PSUM_ADDR_BITWIDTH)
@@ -242,30 +244,13 @@ module tb_PE_top;
 		@(posedge i_clk); #1; //wait 1 cycle for DEC state
 		i_inst_valid = 0;
 
+		@(posedge i_clk); #1;
+		i_psum_in_fifo_valid = 1;
+		i_psum_in_fifo_data = {8'd10, 8'd10, 8'd10, 8'd10};
 
 		@(posedge i_clk); #1;
 		i_psum_in_fifo_valid = 1;
-		i_psum_in_fifo_data = 10;
-
-		@(posedge i_clk); #1;
-		i_psum_in_fifo_valid = 1;
-		i_psum_in_fifo_data = 10;
-
-		@(posedge i_clk); #1;
-		i_psum_in_fifo_valid = 1;
-		i_psum_in_fifo_data = 10;
-
-		@(posedge i_clk); #1;
-		i_psum_in_fifo_valid = 1;
-		i_psum_in_fifo_data = 10;
-
-		@(posedge i_clk); #1;
-		i_psum_in_fifo_valid = 1;
-		i_psum_in_fifo_data = 10;
-
-		@(posedge i_clk); #1;
-		i_psum_in_fifo_valid = 1;
-		i_psum_in_fifo_data = 10;
+		i_psum_in_fifo_data = {8'd10, 8'd10, 8'd0, 8'd0};
 
 		@(posedge i_clk); #1;
 		i_psum_in_fifo_valid = 0;

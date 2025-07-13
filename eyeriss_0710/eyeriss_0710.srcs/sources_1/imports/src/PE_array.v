@@ -1,13 +1,17 @@
 module PE_array #(
     parameter ROW_LEN = 3,
     parameter COL_LEN = 3,
-    parameter IFMAP_DATA_BITWIDTH = 8,
+    parameter DATA_BITWIDTH = 8,
+
+    parameter IFMAP_BUS_BITWIDTH = 8,
     parameter IFMAP_ROW_ID_BITWIDTH = 4,
     parameter IFMAP_COL_ID_BITWIDTH = 4,
-    parameter WGHT_DATA_BITWIDTH = 8,
+
+    parameter WGHT_BUS_BITWIDTH = 32,
     parameter WGHT_ROW_ID_BITWIDTH = 4,
     parameter WGHT_COL_ID_BITWIDTH = 4,
-    parameter PSUM_DATA_BITWIDTH = 8,
+
+    parameter PSUM_BUS_BITWIDTH = 32,
     parameter PSUM_ROW_ID_BITWIDTH = 4,
     parameter PSUM_COL_ID_BITWIDTH = 4
 )(
@@ -41,9 +45,9 @@ module PE_array #(
     input [COL_LEN * ROW_LEN - 1:0] i_ctrl_psum_select,
 
     // GLB interface
-    input [IFMAP_DATA_BITWIDTH + IFMAP_ROW_ID_BITWIDTH + IFMAP_COL_ID_BITWIDTH - 1:0] i_ifmap_packet,
-    input [WGHT_DATA_BITWIDTH + WGHT_ROW_ID_BITWIDTH + WGHT_COL_ID_BITWIDTH - 1:0] i_wght_packet,
-    input [PSUM_DATA_BITWIDTH + PSUM_ROW_ID_BITWIDTH + PSUM_COL_ID_BITWIDTH - 1:0] i_psum_in_packet,
+    input [IFMAP_ROW_ID_BITWIDTH + IFMAP_COL_ID_BITWIDTH + IFMAP_BUS_BITWIDTH - 1:0] i_ifmap_packet,
+    input [WGHT_ROW_ID_BITWIDTH + WGHT_COL_ID_BITWIDTH + WGHT_BUS_BITWIDTH - 1:0] i_wght_packet,
+    input [PSUM_ROW_ID_BITWIDTH + PSUM_COL_ID_BITWIDTH + PSUM_BUS_BITWIDTH - 1:0] i_psum_in_packet,
 
     input i_ifmap_valid,
     input i_wght_valid,
@@ -71,9 +75,9 @@ module PE_array #(
     endgenerate
 
     // signals between ybus and xbus (GIN)
-    wire [IFMAP_COL_ID_BITWIDTH + IFMAP_DATA_BITWIDTH - 1 : 0] ifmap_packet_ybus2xbus [0:COL_LEN-1];
-    wire [WGHT_COL_ID_BITWIDTH + WGHT_DATA_BITWIDTH - 1 : 0] wght_packet_ybus2xbus [0:COL_LEN-1];
-    wire [PSUM_COL_ID_BITWIDTH + PSUM_DATA_BITWIDTH - 1 : 0] psum_in_packet_ybus2xbus [0:COL_LEN-1];
+    wire [IFMAP_COL_ID_BITWIDTH + IFMAP_BUS_BITWIDTH - 1 : 0] ifmap_packet_ybus2xbus [0:COL_LEN-1];
+    wire [WGHT_COL_ID_BITWIDTH + WGHT_BUS_BITWIDTH - 1 : 0] wght_packet_ybus2xbus [0:COL_LEN-1];
+    wire [PSUM_COL_ID_BITWIDTH + PSUM_BUS_BITWIDTH - 1 : 0] psum_in_packet_ybus2xbus [0:COL_LEN-1];
 
     wire ifmap_valid_ybus2xbus [0:COL_LEN-1];
     wire wght_valid_ybus2xbus [0:COL_LEN-1];
@@ -84,9 +88,9 @@ module PE_array #(
     wire psum_in_ready_xbus2ybus [0:COL_LEN-1];
 
 
-    wire [COL_LEN * (IFMAP_COL_ID_BITWIDTH + IFMAP_DATA_BITWIDTH) - 1 : 0] ifmap_packet_ybus2xbus_flatten;
-    wire [COL_LEN * (WGHT_COL_ID_BITWIDTH + WGHT_DATA_BITWIDTH) - 1 : 0] wght_packet_ybus2xbus_flatten;
-    wire [COL_LEN * (PSUM_COL_ID_BITWIDTH + PSUM_DATA_BITWIDTH) - 1 : 0] psum_in_packet_ybus2xbus_flatten;
+    wire [COL_LEN * (IFMAP_COL_ID_BITWIDTH + IFMAP_BUS_BITWIDTH) - 1 : 0] ifmap_packet_ybus2xbus_flatten;
+    wire [COL_LEN * (WGHT_COL_ID_BITWIDTH + WGHT_BUS_BITWIDTH) - 1 : 0] wght_packet_ybus2xbus_flatten;
+    wire [COL_LEN * (PSUM_COL_ID_BITWIDTH + PSUM_BUS_BITWIDTH) - 1 : 0] psum_in_packet_ybus2xbus_flatten;
 
     wire [COL_LEN-1:0] ifmap_valid_ybus2xbus_flatten;
     wire [COL_LEN-1:0] wght_valid_ybus2xbus_flatten;
@@ -98,9 +102,9 @@ module PE_array #(
 
 
     // signals between xbus and PE (GIN)
-    wire [IFMAP_DATA_BITWIDTH-1:0] ifmap_packet_xbus2PE [0:COL_LEN-1][0:ROW_LEN-1];
-    wire [WGHT_DATA_BITWIDTH-1:0] wght_packet_xbus2PE [0:COL_LEN-1][0:ROW_LEN-1];
-    wire [PSUM_DATA_BITWIDTH-1:0] psum_in_packet_xbus2PE [0:COL_LEN-1][0:ROW_LEN-1];
+    wire [IFMAP_BUS_BITWIDTH-1:0] ifmap_packet_xbus2PE [0:COL_LEN-1][0:ROW_LEN-1];
+    wire [WGHT_BUS_BITWIDTH-1:0] wght_packet_xbus2PE [0:COL_LEN-1][0:ROW_LEN-1];
+    wire [PSUM_BUS_BITWIDTH-1:0] psum_in_packet_xbus2PE [0:COL_LEN-1][0:ROW_LEN-1];
 
     wire ifmap_valid_xbus2PE [0:COL_LEN-1][0:ROW_LEN-1];
     wire wght_valid_xbus2PE [0:COL_LEN-1][0:ROW_LEN-1];
@@ -110,9 +114,9 @@ module PE_array #(
     wire wght_ready_PE2xbus [0:COL_LEN-1][0:ROW_LEN-1];
     wire psum_in_ready_PE2xbus [0:COL_LEN-1][0:ROW_LEN-1];
 
-    wire [ROW_LEN * IFMAP_DATA_BITWIDTH - 1 : 0] ifmap_packet_xbus2PE_flatten [0:COL_LEN-1];
-    wire [ROW_LEN * WGHT_DATA_BITWIDTH - 1 : 0] wght_packet_xbus2PE_flatten [0:COL_LEN-1];
-    wire [ROW_LEN * PSUM_DATA_BITWIDTH - 1 : 0] psum_in_packet_xbus2PE_flatten [0:COL_LEN-1];
+    wire [ROW_LEN * IFMAP_BUS_BITWIDTH - 1 : 0] ifmap_packet_xbus2PE_flatten [0:COL_LEN-1];
+    wire [ROW_LEN * WGHT_BUS_BITWIDTH - 1 : 0] wght_packet_xbus2PE_flatten [0:COL_LEN-1];
+    wire [ROW_LEN * PSUM_BUS_BITWIDTH - 1 : 0] psum_in_packet_xbus2PE_flatten [0:COL_LEN-1];
 
     wire [ROW_LEN-1:0] ifmap_valid_xbus2PE_flatten [0:COL_LEN-1];
     wire [ROW_LEN-1:0] wght_valid_xbus2PE_flatten [0:COL_LEN-1];
@@ -123,7 +127,7 @@ module PE_array #(
     wire [ROW_LEN-1:0] psum_in_ready_PE2xbus_flatten [0:COL_LEN-1];
 
     // signals between interPE (LN)
-    wire [PSUM_DATA_BITWIDTH-1:0] LN_psum_data [0:COL_LEN][0:ROW_LEN-1];
+    wire [PSUM_BUS_BITWIDTH-1:0] LN_psum_data [0:COL_LEN][0:ROW_LEN-1];
     wire LN_psum_valid [0:COL_LEN][0:ROW_LEN-1];
     wire LN_psum_ready [0:COL_LEN][0:ROW_LEN-1];
 
@@ -143,7 +147,7 @@ module PE_array #(
         end
     endgenerate
 
-    reg [PSUM_DATA_BITWIDTH-1:0] psum_in_data_mux_select [0:COL_LEN-1][0:ROW_LEN-1];
+    reg [PSUM_BUS_BITWIDTH-1:0] psum_in_data_mux_select [0:COL_LEN-1][0:ROW_LEN-1];
     reg psum_in_valid_mux_select [0:COL_LEN-1][0:ROW_LEN-1];
 
     integer i, j;
@@ -164,9 +168,9 @@ module PE_array #(
 
     generate
         for (col = 0; col < COL_LEN; col = col + 1) begin : gen_col_flatten
-            assign ifmap_packet_ybus2xbus[col] = ifmap_packet_ybus2xbus_flatten[col * (IFMAP_COL_ID_BITWIDTH + IFMAP_DATA_BITWIDTH) +: (IFMAP_COL_ID_BITWIDTH + IFMAP_DATA_BITWIDTH)];
-            assign wght_packet_ybus2xbus[col] = wght_packet_ybus2xbus_flatten[col * (WGHT_COL_ID_BITWIDTH + WGHT_DATA_BITWIDTH) +: (WGHT_COL_ID_BITWIDTH + WGHT_DATA_BITWIDTH)];
-            assign psum_in_packet_ybus2xbus[col] = psum_in_packet_ybus2xbus_flatten[col * (PSUM_COL_ID_BITWIDTH + PSUM_DATA_BITWIDTH) +: (PSUM_COL_ID_BITWIDTH + PSUM_DATA_BITWIDTH)];
+            assign ifmap_packet_ybus2xbus[col] = ifmap_packet_ybus2xbus_flatten[col * (IFMAP_COL_ID_BITWIDTH + IFMAP_BUS_BITWIDTH) +: (IFMAP_COL_ID_BITWIDTH + IFMAP_BUS_BITWIDTH)];
+            assign wght_packet_ybus2xbus[col] = wght_packet_ybus2xbus_flatten[col * (WGHT_COL_ID_BITWIDTH + WGHT_BUS_BITWIDTH) +: (WGHT_COL_ID_BITWIDTH + WGHT_BUS_BITWIDTH)];
+            assign psum_in_packet_ybus2xbus[col] = psum_in_packet_ybus2xbus_flatten[col * (PSUM_COL_ID_BITWIDTH + PSUM_BUS_BITWIDTH) +: (PSUM_COL_ID_BITWIDTH + PSUM_BUS_BITWIDTH)];
 
             assign ifmap_valid_ybus2xbus[col] = ifmap_valid_ybus2xbus_flatten[col];
             assign wght_valid_ybus2xbus[col] = wght_valid_ybus2xbus_flatten[col];
@@ -177,9 +181,9 @@ module PE_array #(
             assign psum_in_ready_xbus2ybus_flatten[col] = psum_in_ready_xbus2ybus[col];
 
             for (row = 0; row < ROW_LEN; row = row + 1) begin : gen_row_flatten
-                assign ifmap_packet_xbus2PE[col][row] = ifmap_packet_xbus2PE_flatten[col][row * IFMAP_DATA_BITWIDTH +: IFMAP_DATA_BITWIDTH];
-                assign wght_packet_xbus2PE[col][row] = wght_packet_xbus2PE_flatten[col][row * WGHT_DATA_BITWIDTH +: WGHT_DATA_BITWIDTH];
-                assign psum_in_packet_xbus2PE[col][row] = psum_in_packet_xbus2PE_flatten[col][row * PSUM_DATA_BITWIDTH +: PSUM_DATA_BITWIDTH];
+                assign ifmap_packet_xbus2PE[col][row] = ifmap_packet_xbus2PE_flatten[col][row * IFMAP_BUS_BITWIDTH +: IFMAP_BUS_BITWIDTH];
+                assign wght_packet_xbus2PE[col][row] = wght_packet_xbus2PE_flatten[col][row * WGHT_BUS_BITWIDTH +: WGHT_BUS_BITWIDTH];
+                assign psum_in_packet_xbus2PE[col][row] = psum_in_packet_xbus2PE_flatten[col][row * PSUM_BUS_BITWIDTH +: PSUM_BUS_BITWIDTH];
 
                 assign ifmap_valid_xbus2PE[col][row] = ifmap_valid_xbus2PE_flatten[col][row];
                 assign wght_valid_xbus2PE[col][row] = wght_valid_xbus2PE_flatten[col][row];
@@ -194,8 +198,8 @@ module PE_array #(
 
     GIN_BUS #(
         .ID_BITWIDTH(IFMAP_ROW_ID_BITWIDTH),
-        .PACKET_IN_BITWIDTH(IFMAP_ROW_ID_BITWIDTH + IFMAP_COL_ID_BITWIDTH + IFMAP_DATA_BITWIDTH),
-        .PACKET_OUT_BITWIDTH(IFMAP_COL_ID_BITWIDTH + IFMAP_DATA_BITWIDTH),
+        .PACKET_IN_BITWIDTH(IFMAP_ROW_ID_BITWIDTH + IFMAP_COL_ID_BITWIDTH + IFMAP_BUS_BITWIDTH),
+        .PACKET_OUT_BITWIDTH(IFMAP_COL_ID_BITWIDTH + IFMAP_BUS_BITWIDTH),
         .SLV_NUM(COL_LEN)
     ) u_GIN_IFMAP_YBUS (
         .i_clk      (i_clk),
@@ -218,8 +222,8 @@ module PE_array #(
 
     GIN_BUS #(
         .ID_BITWIDTH(WGHT_ROW_ID_BITWIDTH),
-        .PACKET_IN_BITWIDTH(WGHT_ROW_ID_BITWIDTH + WGHT_COL_ID_BITWIDTH + WGHT_DATA_BITWIDTH),
-        .PACKET_OUT_BITWIDTH(WGHT_COL_ID_BITWIDTH + WGHT_DATA_BITWIDTH),
+        .PACKET_IN_BITWIDTH(WGHT_ROW_ID_BITWIDTH + WGHT_COL_ID_BITWIDTH + WGHT_BUS_BITWIDTH),
+        .PACKET_OUT_BITWIDTH(WGHT_COL_ID_BITWIDTH + WGHT_BUS_BITWIDTH),
         .SLV_NUM(COL_LEN)
     ) u_GIN_WGHT_YBUS (
         .i_clk      (i_clk),
@@ -242,8 +246,8 @@ module PE_array #(
 
     GIN_BUS #(
         .ID_BITWIDTH(PSUM_ROW_ID_BITWIDTH),
-        .PACKET_IN_BITWIDTH(PSUM_ROW_ID_BITWIDTH + PSUM_COL_ID_BITWIDTH + PSUM_DATA_BITWIDTH),
-        .PACKET_OUT_BITWIDTH(PSUM_COL_ID_BITWIDTH + PSUM_DATA_BITWIDTH),
+        .PACKET_IN_BITWIDTH(PSUM_ROW_ID_BITWIDTH + PSUM_COL_ID_BITWIDTH + PSUM_BUS_BITWIDTH),
+        .PACKET_OUT_BITWIDTH(PSUM_COL_ID_BITWIDTH + PSUM_BUS_BITWIDTH),
         .SLV_NUM(COL_LEN)
     ) u_GIN_PSUM_YBUS (
         .i_clk      (i_clk),
@@ -268,8 +272,8 @@ module PE_array #(
         for(col = 0; col < COL_LEN; col = col + 1) begin: GIN_XBUS_gen        
             GIN_BUS #(
                 .ID_BITWIDTH(IFMAP_COL_ID_BITWIDTH),
-                .PACKET_IN_BITWIDTH(IFMAP_COL_ID_BITWIDTH + IFMAP_DATA_BITWIDTH),
-                .PACKET_OUT_BITWIDTH(IFMAP_DATA_BITWIDTH),
+                .PACKET_IN_BITWIDTH(IFMAP_COL_ID_BITWIDTH + IFMAP_BUS_BITWIDTH),
+                .PACKET_OUT_BITWIDTH(IFMAP_BUS_BITWIDTH),
                 .SLV_NUM(ROW_LEN)
             ) u_GIN_IFMAP_XBUS (
                 .i_clk      (i_clk),
@@ -292,8 +296,8 @@ module PE_array #(
 
             GIN_BUS #(
                 .ID_BITWIDTH(WGHT_COL_ID_BITWIDTH),
-                .PACKET_IN_BITWIDTH(WGHT_COL_ID_BITWIDTH + WGHT_DATA_BITWIDTH),
-                .PACKET_OUT_BITWIDTH(WGHT_DATA_BITWIDTH),
+                .PACKET_IN_BITWIDTH(WGHT_COL_ID_BITWIDTH + WGHT_BUS_BITWIDTH),
+                .PACKET_OUT_BITWIDTH(WGHT_BUS_BITWIDTH),
                 .SLV_NUM(ROW_LEN)
             ) u_GIN_WGHT_XBUS (
                 .i_clk      (i_clk),
@@ -316,8 +320,8 @@ module PE_array #(
 
             GIN_BUS #(
                 .ID_BITWIDTH(PSUM_COL_ID_BITWIDTH),
-                .PACKET_IN_BITWIDTH(PSUM_COL_ID_BITWIDTH + PSUM_DATA_BITWIDTH),
-                .PACKET_OUT_BITWIDTH(PSUM_DATA_BITWIDTH),
+                .PACKET_IN_BITWIDTH(PSUM_COL_ID_BITWIDTH + PSUM_BUS_BITWIDTH),
+                .PACKET_OUT_BITWIDTH(PSUM_BUS_BITWIDTH),
                 .SLV_NUM(ROW_LEN)
             ) u_GIN_PSUM_XBUS (
                 .i_clk      (i_clk),
@@ -344,7 +348,10 @@ module PE_array #(
         for(col = 0; col < COL_LEN; col = col + 1) begin: PE_gen_vertical
             for(row = 0; row < ROW_LEN; row = row + 1) begin: PE_gen_horizontal
             PE_top #(
-                .DATA_BITWIDTH       (16),
+                .DATA_BITWIDTH       (DATA_BITWIDTH),
+                .IFMAP_BUS_BITWIDTH  (IFMAP_BUS_BITWIDTH),
+                .WGHT_BUS_BITWIDTH   (WGHT_BUS_BITWIDTH),
+                .PSUM_BUS_BITWIDTH   (PSUM_BUS_BITWIDTH),
                 .IFMAP_ADDR_BITWIDTH (2),
                 .WGHT_ADDR_BITWIDTH  (2),
                 .PSUM_ADDR_BITWIDTH  (2)

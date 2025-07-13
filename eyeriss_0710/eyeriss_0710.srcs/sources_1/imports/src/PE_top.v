@@ -111,7 +111,11 @@ module PE_top #(
         .o_pop_data(wght_data_fifo2piso)
     );
 
-    PISO_32to8 u_wght_piso (
+    PISO #(
+        .IN_WIDTH(WGHT_BUS_BITWIDTH),
+        .OUT_WIDTH(DATA_BITWIDTH),
+        .N_CHUNKS(4)
+    ) u_wght_piso (
         .i_clk    (i_clk),  
         .i_rst    (i_rst),  
 
@@ -142,7 +146,11 @@ module PE_top #(
         .o_pop_data(psum_in_data_fifo2piso)
     );
 
-    PISO_32to8 u_psum_piso (
+    PISO #(
+        .IN_WIDTH(PSUM_BUS_BITWIDTH),
+        .OUT_WIDTH(DATA_BITWIDTH),
+        .N_CHUNKS(4)
+    ) u_psum_in_piso (
         .i_clk    (i_clk),  
         .i_rst    (i_rst),  
 
@@ -174,7 +182,11 @@ module PE_top #(
         .o_pop_data(o_psum_out_fifo_data)
     );
 
-    SIPO_8to32 u_sipo_8to32 (
+    SIPO #(
+        .IN_WIDTH(DATA_BITWIDTH),
+        .OUT_WIDTH(PSUM_BUS_BITWIDTH),
+        .N_CHUNKS(4)
+    ) u_psum_out_sipo (
         .i_clk    (i_clk),      // 클럭
         .i_rst    (i_rst),      // 리셋
 
@@ -190,7 +202,6 @@ module PE_top #(
         .o_valid  (psum_out_valid_sipo2fifo),    // 출력 데이터 유효
         .o_data   (psum_out_data_sipo2fifo)      // 32비트 병렬 출력
     );
-
 
     PE_control #(
         .DATA_BITWIDTH(DATA_BITWIDTH),

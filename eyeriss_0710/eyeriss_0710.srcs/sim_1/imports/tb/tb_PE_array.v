@@ -4,6 +4,7 @@ module tb_PE_array;
 
     parameter COL_LEN = 3;
 	parameter ROW_LEN = 3;
+	parameter DATA_BITWIDTH = 16;
 
 	parameter IFMAP_ROW_ID_BITWIDTH = 4;
 	parameter WGHT_ROW_ID_BITWIDTH = 4;
@@ -13,9 +14,9 @@ module tb_PE_array;
 	parameter WGHT_COL_ID_BITWIDTH = 4;
 	parameter PSUM_COL_ID_BITWIDTH = 4;
 
-	parameter IFMAP_DATA_BITWIDTH = 16;
-    parameter WGHT_DATA_BITWIDTH = 16;
-    parameter PSUM_DATA_BITWIDTH = 16;
+	parameter IFMAP_BUS_BITWIDTH = 16;
+    parameter WGHT_BUS_BITWIDTH = 64;
+    parameter PSUM_BUS_BITWIDTH = 64;
 
     localparam CMD_NOP          = 3'b000;
     localparam CMD_SET          = 3'b001;
@@ -54,9 +55,9 @@ module tb_PE_array;
 	reg  [COL_LEN * ROW_LEN - 1:0] i_ctrl_psum_select;
 
 	// GLB interface
-	reg  [IFMAP_ROW_ID_BITWIDTH + IFMAP_COL_ID_BITWIDTH + IFMAP_DATA_BITWIDTH - 1:0] i_ifmap_packet;
-	reg  [WGHT_ROW_ID_BITWIDTH + WGHT_COL_ID_BITWIDTH + WGHT_DATA_BITWIDTH - 1:0]    i_wght_packet;
-	reg  [PSUM_ROW_ID_BITWIDTH + PSUM_COL_ID_BITWIDTH + PSUM_DATA_BITWIDTH - 1:0]    i_psum_in_packet;
+	reg  [IFMAP_ROW_ID_BITWIDTH + IFMAP_COL_ID_BITWIDTH + IFMAP_BUS_BITWIDTH - 1:0] i_ifmap_packet;
+	reg  [WGHT_ROW_ID_BITWIDTH + WGHT_COL_ID_BITWIDTH + WGHT_BUS_BITWIDTH - 1:0]    i_wght_packet;
+	reg  [PSUM_ROW_ID_BITWIDTH + PSUM_COL_ID_BITWIDTH + PSUM_BUS_BITWIDTH - 1:0]    i_psum_in_packet;
 
 	reg        i_ifmap_valid;
 	reg        i_wght_valid;
@@ -69,13 +70,14 @@ module tb_PE_array;
 	PE_array #(
 		.ROW_LEN(ROW_LEN),
 		.COL_LEN(COL_LEN),
-		.IFMAP_DATA_BITWIDTH(IFMAP_DATA_BITWIDTH),
+		.DATA_BITWIDTH(DATA_BITWIDTH),
+		.IFMAP_BUS_BITWIDTH(IFMAP_BUS_BITWIDTH),
 		.IFMAP_ROW_ID_BITWIDTH(IFMAP_ROW_ID_BITWIDTH),
 		.IFMAP_COL_ID_BITWIDTH(IFMAP_COL_ID_BITWIDTH),
-		.WGHT_DATA_BITWIDTH(WGHT_DATA_BITWIDTH),
+		.WGHT_BUS_BITWIDTH(WGHT_BUS_BITWIDTH),
 		.WGHT_ROW_ID_BITWIDTH(WGHT_ROW_ID_BITWIDTH),
 		.WGHT_COL_ID_BITWIDTH(WGHT_COL_ID_BITWIDTH),
-		.PSUM_DATA_BITWIDTH(PSUM_DATA_BITWIDTH),
+		.PSUM_BUS_BITWIDTH(PSUM_BUS_BITWIDTH),
 		.PSUM_ROW_ID_BITWIDTH(PSUM_ROW_ID_BITWIDTH),
 		.PSUM_COL_ID_BITWIDTH(PSUM_COL_ID_BITWIDTH)
 	) dut (
@@ -151,9 +153,9 @@ module tb_PE_array;
 
 		i_ctrl_psum_select    = { (ROW_LEN * COL_LEN) {1'b0} };
 
-		i_ifmap_packet        = { (IFMAP_DATA_BITWIDTH + IFMAP_ROW_ID_BITWIDTH + IFMAP_COL_ID_BITWIDTH) {1'b0} };
-		i_wght_packet         = { (WGHT_DATA_BITWIDTH + WGHT_ROW_ID_BITWIDTH + WGHT_COL_ID_BITWIDTH) {1'b0} };
-		i_psum_in_packet      = { (PSUM_DATA_BITWIDTH + PSUM_ROW_ID_BITWIDTH + PSUM_COL_ID_BITWIDTH) {1'b0} };
+		i_ifmap_packet        = { (IFMAP_BUS_BITWIDTH + IFMAP_ROW_ID_BITWIDTH + IFMAP_COL_ID_BITWIDTH) {1'b0} };
+		i_wght_packet         = { (WGHT_ROW_ID_BITWIDTH + WGHT_COL_ID_BITWIDTH + WGHT_BUS_BITWIDTH) {1'b0} };
+		i_psum_in_packet      = { (PSUM_ROW_ID_BITWIDTH + PSUM_COL_ID_BITWIDTH + PSUM_BUS_BITWIDTH) {1'b0} };
 
 		i_ifmap_valid         = 1'b0;
 		i_wght_valid          = 1'b0;
@@ -219,135 +221,152 @@ module tb_PE_array;
 
 
 		///// SET CONV INFO /////
+		@(posedge i_clk); #1;
 		i_inst_data = CMD_SET;
 		i_conv_info = 9'b001001011; //(P=1, Q=1, S=3)
 		i_inst_valid = 1;
-		@(posedge i_clk);
-		wait(o_inst_ready);
+
+		@(posedge i_clk); #1;
 		i_inst_valid = 0;
 		
-		repeat (5) @(posedge i_clk);
+		wait(o_inst_ready);
 
 
 		///// LOAD_IFMAP /////
+		@(posedge i_clk); #1;
 		i_inst_data = CMD_LOAD_IFMAP;
 		i_inst_valid = 1;
-		@(posedge i_clk);
-		wait(o_inst_ready);
+
+		@(posedge i_clk); #1; //wait 1 cycle for DEC state
 		i_inst_valid = 0;
 
-		@(posedge i_clk); //wait 1 cycle for DEC state
-
-		i_ifmap_valid = 1;
-
 		// LOAD ifmap row 1 (iter 1)
+		@(posedge i_clk); #1;
+		i_ifmap_valid = 1;		
 		i_ifmap_packet = {4'd1, 4'd1, 16'd1};
-		@(posedge i_clk);
+
+		@(posedge i_clk); #1;
+		i_ifmap_valid = 1;	
 		i_ifmap_packet = {4'd1, 4'd1, 16'd2};
-		@(posedge i_clk);
+
+		@(posedge i_clk); #1;
+		i_ifmap_valid = 1;	
 		i_ifmap_packet = {4'd1, 4'd1, 16'd3};
-		@(posedge i_clk);
 
 		// LOAD ifmap row 2 (iter 1)
+		@(posedge i_clk); #1;
+		i_ifmap_valid = 1;	
 		i_ifmap_packet = {4'd1, 4'd2, 16'd6};
-		@(posedge i_clk);
+		
+		@(posedge i_clk); #1;
+		i_ifmap_valid = 1;	
 		i_ifmap_packet = {4'd1, 4'd2, 16'd7};
-		@(posedge i_clk);
+
+		@(posedge i_clk); #1;
+		i_ifmap_valid = 1;	
 		i_ifmap_packet = {4'd1, 4'd2, 16'd8};
-		@(posedge i_clk);
 
 		// LOAD ifmap row 3 (iter 1)
+		@(posedge i_clk); #1;
+		i_ifmap_valid = 1;	
 		i_ifmap_packet = {4'd1, 4'd3, 16'd11};
-		@(posedge i_clk);
+
+		@(posedge i_clk); #1;
+		i_ifmap_valid = 1;	
 		i_ifmap_packet = {4'd1, 4'd3, 16'd12};
-		@(posedge i_clk);
+
+		@(posedge i_clk); #1;
+		i_ifmap_valid = 1;	
 		i_ifmap_packet = {4'd1, 4'd3, 16'd13};
-		@(posedge i_clk);
 
 		// LOAD ifmap row 4 (iter 1)
+		@(posedge i_clk); #1;
+		i_ifmap_valid = 1;
 		i_ifmap_packet = {4'd1, 4'd4, 16'd16};
-		@(posedge i_clk);
+
+		@(posedge i_clk); #1;
+		i_ifmap_valid = 1;
 		i_ifmap_packet = {4'd1, 4'd4, 16'd17};
-		@(posedge i_clk);
+
+		@(posedge i_clk); #1;
+		i_ifmap_valid = 1;
 		i_ifmap_packet = {4'd1, 4'd4, 16'd18};
-		@(posedge i_clk);
 
 		// LOAD ifmap row 5 (iter 1)
+		@(posedge i_clk); #1;
+		i_ifmap_valid = 1;
 		i_ifmap_packet = {4'd1, 4'd5, 16'd21};
-		@(posedge i_clk);
-		i_ifmap_packet = {4'd1, 4'd5, 16'd22};
-		@(posedge i_clk);
-		i_ifmap_packet = {4'd1, 4'd5, 16'd23};
-		@(posedge i_clk);
 
+		@(posedge i_clk); #1;
+		i_ifmap_valid = 1;
+		i_ifmap_packet = {4'd1, 4'd5, 16'd22};
+
+		@(posedge i_clk); #1;
+		i_ifmap_valid = 1;
+		i_ifmap_packet = {4'd1, 4'd5, 16'd23};
+
+		@(posedge i_clk); #1;
 		i_ifmap_valid = 0;
+
+		wait(o_inst_ready);
 
 		repeat (5) @(posedge i_clk);
 
 
 		///// LOAD_WGHT /////
+		@(posedge i_clk); #1;
 		i_inst_data = CMD_LOAD_WGHT;
 		i_inst_valid = 1;
-		@(posedge i_clk);
-		wait(o_inst_ready);
+
+		@(posedge i_clk); #1;
 		i_inst_valid = 0;
 
-		@(posedge i_clk); //wait 1 cycle for DEC state
-		
-		i_wght_valid = 1;
-
 		// LOAD wght row 1
-		i_wght_packet = {4'd1, 4'd1, 16'd1};
-		@(posedge i_clk);
-		i_wght_packet = {4'd1, 4'd1, 16'd2};
-		@(posedge i_clk);
-		i_wght_packet = {4'd1, 4'd1, 16'd3};
-		@(posedge i_clk);
+		@(posedge i_clk); #1;
+		i_wght_valid = 1;
+		i_wght_packet = {4'd1, 4'd1, 16'd1, 16'd2, 16'd3, 16'd0}; // 1, 2, 3 for row one
 
 		// LOAD wght row 2
-		i_wght_packet = {4'd2, 4'd1, 16'd4};
-		@(posedge i_clk);
-		i_wght_packet = {4'd2, 4'd1, 16'd5};
-		@(posedge i_clk);
-		i_wght_packet = {4'd2, 4'd1, 16'd6};
-		@(posedge i_clk);
+		@(posedge i_clk); #1;
+		i_wght_valid = 1;
+		i_wght_packet = {4'd2, 4'd1, 16'd4, 16'd5, 16'd6, 16'd0}; // 4, 5, 6 for row two
 
 		// LOAD wght row 3
-		i_wght_packet = {4'd3, 4'd1, 16'd7};
-		@(posedge i_clk);
-		i_wght_packet = {4'd3, 4'd1, 16'd8};
-		@(posedge i_clk);
-		i_wght_packet = {4'd3, 4'd1, 16'd9};
-		@(posedge i_clk);
+		@(posedge i_clk); #1;
+		i_wght_valid = 1;
+		i_wght_packet = {4'd3, 4'd1, 16'd7, 16'd8, 16'd9, 16'd0};
 
+		@(posedge i_clk); #1;
 		i_wght_valid = 0;
+
+		wait(o_inst_ready);
 
 		repeat (5) @(posedge i_clk);
 
 		$stop;
 
 		///// CONV /////
+		@(posedge i_clk); #1;
 		i_inst_data = CMD_CONV;
 		i_inst_valid = 1;
-		@(posedge i_clk);
-		wait(o_inst_ready);
+
+		@(posedge i_clk); #1;
 		i_inst_valid = 0;
 
-		@(posedge i_clk); //wait 1 cycle for DEC state
-
-		repeat (72) @(posedge i_clk);
+		wait(o_inst_ready);
 
 		repeat (5) @(posedge i_clk);
 
 
 		///// ACCRST /////
+		@(posedge i_clk); #1;
 		i_inst_data = CMD_ACC;
 		i_inst_valid = 1;
-		@(posedge i_clk);
-		wait(o_inst_ready);
+
+		@(posedge i_clk); #1;
 		i_inst_valid = 0;
 
-		@(posedge i_clk); //wait 1 cycle for DEC state
+		wait(o_inst_ready);
 
 		repeat (10) @(posedge i_clk);
 

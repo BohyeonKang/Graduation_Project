@@ -42,20 +42,24 @@ module PE_array #(
     input [COL_LEN-1:0] i_wght_col_id_valid,
     input [COL_LEN-1:0] i_psum_col_id_valid,
 
-    input [COL_LEN * ROW_LEN - 1:0] i_ctrl_psum_select,
+    input [COL_LEN * ROW_LEN - 1:0] i_ctrl_psum_in_sel_LNorGIN,
+    input [COL_LEN * ROW_LEN - 1:0] i_ctrl_psum_out_sel_GON,
 
     // GLB interface
     input [IFMAP_ROW_ID_BITWIDTH + IFMAP_COL_ID_BITWIDTH + IFMAP_BUS_BITWIDTH - 1:0] i_ifmap_packet,
     input [WGHT_ROW_ID_BITWIDTH + WGHT_COL_ID_BITWIDTH + WGHT_BUS_BITWIDTH - 1:0] i_wght_packet,
     input [PSUM_ROW_ID_BITWIDTH + PSUM_COL_ID_BITWIDTH + PSUM_BUS_BITWIDTH - 1:0] i_psum_in_packet,
+    output [PSUM_BUS_BITWIDTH-1:0] o_psum_out_data,
 
     input i_ifmap_valid,
     input i_wght_valid,
     input i_psum_in_valid,
+    input i_psum_out_ready,
 
     output o_ifmap_ready,
     output o_wght_ready,
-    output o_psum_in_ready
+    output o_psum_in_ready,
+    output o_psum_out_valid
 );
 
     genvar col, row;
@@ -154,7 +158,7 @@ module PE_array #(
     always @(*) begin
         for(i=0; i<COL_LEN; i=i+1) begin
             for(j=0; j<ROW_LEN; j=j+1) begin
-                if(i_ctrl_psum_select[i * ROW_LEN + j]) begin
+                if(i_ctrl_psum_in_sel_LNorGIN[i * ROW_LEN + j]) begin
                     psum_in_data_mux_select[i][j] = psum_in_packet_xbus2PE[i][j];
                     psum_in_valid_mux_select[i][j] = psum_in_valid_xbus2PE[i][j];
                 end
@@ -344,45 +348,65 @@ module PE_array #(
         end
     endgenerate
 
+    reg [PSUM_BUS_BITWIDTH-1:0] psum_out_data_buffer [COL_LEN-1:0][ROW_LEN-1:0];
+    reg                         psum_out_valid_buffer [COL_LEN-1:0][ROW_LEN-1:0];
     generate
         for(col = 0; col < COL_LEN; col = col + 1) begin: PE_gen_vertical
             for(row = 0; row < ROW_LEN; row = row + 1) begin: PE_gen_horizontal
-            PE_top #(
-                .DATA_BITWIDTH       (DATA_BITWIDTH),
-                .IFMAP_BUS_BITWIDTH  (IFMAP_BUS_BITWIDTH),
-                .WGHT_BUS_BITWIDTH   (WGHT_BUS_BITWIDTH),
-                .PSUM_BUS_BITWIDTH   (PSUM_BUS_BITWIDTH),
-                .IFMAP_ADDR_BITWIDTH (2),
-                .WGHT_ADDR_BITWIDTH  (2),
-                .PSUM_ADDR_BITWIDTH  (2)
-            ) u_PE_top (
-                .i_clk                 (i_clk),
-                .i_rst                 (i_rst),
+                PE_top #(
+                    .DATA_BITWIDTH       (DATA_BITWIDTH),
+                    .IFMAP_BUS_BITWIDTH  (IFMAP_BUS_BITWIDTH),
+                    .WGHT_BUS_BITWIDTH   (WGHT_BUS_BITWIDTH),
+                    .PSUM_BUS_BITWIDTH   (PSUM_BUS_BITWIDTH),
+                    .IFMAP_ADDR_BITWIDTH (2),
+                    .WGHT_ADDR_BITWIDTH  (2),
+                    .PSUM_ADDR_BITWIDTH  (2)
+                ) u_PE_top (
+                    .i_clk                 (i_clk),
+                    .i_rst                 (i_rst),
 
-                // TOP CTRL
-                .i_inst_data           (i_inst_data),
-                .i_conv_info           (i_conv_info),
-                .i_inst_valid          (i_inst_valid),
-                .o_inst_ready          (inst_ready_pe[col][row]),
+                    // TOP CTRL
+                    .i_inst_data           (i_inst_data),
+                    .i_conv_info           (i_conv_info),
+                    .i_inst_valid          (i_inst_valid),
+                    .o_inst_ready          (inst_ready_pe[col][row]),
 
-                // fifo interface I/O
-                .i_ifmap_fifo_data     (ifmap_packet_xbus2PE[col][row]),
-                .i_ifmap_fifo_valid    (ifmap_valid_xbus2PE[col][row]),
-                .o_ifmap_fifo_ready    (ifmap_ready_PE2xbus[col][row]),
+                    // fifo interface I/O
+                    .i_ifmap_fifo_data     (ifmap_packet_xbus2PE[col][row]),
+                    .i_ifmap_fifo_valid    (ifmap_valid_xbus2PE[col][row]),
+                    .o_ifmap_fifo_ready    (ifmap_ready_PE2xbus[col][row]),
 
-                .i_wght_fifo_data      (wght_packet_xbus2PE[col][row]),
-                .i_wght_fifo_valid     (wght_valid_xbus2PE[col][row]),
-                .o_wght_fifo_ready     (wght_ready_PE2xbus[col][row]),
+                    .i_wght_fifo_data      (wght_packet_xbus2PE[col][row]),
+                    .i_wght_fifo_valid     (wght_valid_xbus2PE[col][row]),
+                    .o_wght_fifo_ready     (wght_ready_PE2xbus[col][row]),
 
-                .i_psum_in_fifo_data   (psum_in_data_mux_select[col][row]),
-                .i_psum_in_fifo_valid  (psum_in_valid_mux_select[col][row]),
-                .o_psum_in_fifo_ready  (LN_psum_ready[col+1][row]),
+                    .i_psum_in_fifo_data   (psum_in_data_mux_select[col][row]),
+                    .i_psum_in_fifo_valid  (psum_in_valid_mux_select[col][row]),
+                    .o_psum_in_fifo_ready  (LN_psum_ready[col+1][row]),
 
-                .o_psum_out_fifo_data  (LN_psum_data[col][row]),
-                .o_psum_out_fifo_valid (LN_psum_valid[col][row]),
-                .i_psum_out_fifo_ready (LN_psum_ready[col][row])
-            );
+                    .o_psum_out_fifo_data  (LN_psum_data[col][row]),
+                    .o_psum_out_fifo_valid (LN_psum_valid[col][row]),
+                    .i_psum_out_fifo_ready (LN_psum_ready[col][row])
+                );
+
+                always @(posedge i_clk) begin
+                    if(i_rst) begin
+                        psum_out_data_buffer[col][row] <= 0;
+                        psum_out_valid_buffer[col][row] <= 0;
+                    end
+                    else begin
+                        if(LN_psum_valid[col][row]) begin
+                            psum_out_data_buffer[col][row] <= LN_psum_data[col][row];
+                            psum_out_valid_buffer[col][row] <= LN_psum_valid[col][row];
+                        end
+                    end
+                end
             end
         end
     endgenerate
+
+    // Implement GON
+
+    
+
 endmodule

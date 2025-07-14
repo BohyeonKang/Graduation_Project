@@ -14,20 +14,17 @@ module GON_BUS #(
     input [SLV_NUM-1:0] i_valid,
 
     // tx
-    output [PACKET_OUT_BITWIDTH-1:0] o_packet,
-    output o_valid,
-    input i_ready,
+    output [SLV_NUM * PACKET_OUT_BITWIDTH-1:0] o_packet,
+    output [SLV_NUM-1:0] o_valid,
+    input [SLV_NUM-1:0] i_ready,
 
     // TOP CTRL interface
     input [SLV_NUM * ID_BITWIDTH - 1:0] i_id,
     input i_id_valid,
-
-    // slave interface
-    input [SLV_NUM * ID_BITWIDTH - 1:0] i_tag
+    input [SLV_NUM * ID_BITWIDTH - 1:0] i_tag // for selecting which output to send to GLB
 );
 
     wire [ID_BITWIDTH-1:0] id [SLV_NUM-1:0];
-    wire [ID_BITWIDTH-1:0] tag [SLV_NUM-1:0];
 
     genvar i;
     generate
@@ -43,7 +40,7 @@ module GON_BUS #(
 
                 .i_id(id[i]), //comes from config scan chain
                 .i_id_valid(i_id_valid),
-                .i_tag(tag[i * ID_BITWIDTH +: ID_BITWIDTH]), //determined by GIN X-BUS and Y-BUS
+                .i_tag(i_tag[i * ID_BITWIDTH +: ID_BITWIDTH]), //determined by GIN X-BUS and Y-BUS
                 
                 .i_data(data),
                 .i_valid(i_valid),

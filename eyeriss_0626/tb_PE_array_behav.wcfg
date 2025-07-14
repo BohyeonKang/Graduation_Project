@@ -11,13 +11,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="1,424.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="1,593.401 ns"></ZoomEndTime>
+      <ZoomStartTime time="754.692 ns"></ZoomStartTime>
+      <ZoomEndTime time="1,607.693 ns"></ZoomEndTime>
       <Cursor1Time time="1,565.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="511"></NameColumnWidth>
-      <ValueColumnWidth column_width="107"></ValueColumnWidth>
+      <ValueColumnWidth column_width="101"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="20" />
    <wvobject fp_name="/tb_PE_array/dut/i_clk" type="logic">
@@ -321,6 +321,7 @@
       <wvobject fp_name="group369" type="group">
          <obj_property name="label">LOAD</obj_property>
          <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
          <wvobject fp_name="/tb_PE_array/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /i_ifmap_fifo_data" type="array">
             <obj_property name="ElementShortName">i_ifmap_fifo_data[15:0]</obj_property>
             <obj_property name="ObjectShortName">i_ifmap_fifo_data[15:0]</obj_property>
@@ -351,7 +352,7 @@
       <wvobject fp_name="/tb_PE_array/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /o_psum_out_fifo_data" type="array">
          <obj_property name="ElementShortName">o_psum_out_fifo_data[15:0]</obj_property>
          <obj_property name="ObjectShortName">o_psum_out_fifo_data[15:0]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_PE_array/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /o_psum_out_fifo_valid" type="logic">
          <obj_property name="ElementShortName">o_psum_out_fifo_valid</obj_property>
@@ -395,7 +396,7 @@
       <wvobject fp_name="/tb_PE_array/dut/\PE_gen_vertical[0].PE_gen_horizontal[1].u_PE_top /o_psum_out_fifo_data" type="array">
          <obj_property name="ElementShortName">o_psum_out_fifo_data[15:0]</obj_property>
          <obj_property name="ObjectShortName">o_psum_out_fifo_data[15:0]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_PE_array/dut/\PE_gen_vertical[0].PE_gen_horizontal[1].u_PE_top /o_psum_out_fifo_valid" type="logic">
          <obj_property name="ElementShortName">o_psum_out_fifo_valid</obj_property>
@@ -405,7 +406,6 @@
    <wvobject fp_name="group973" type="group">
       <obj_property name="label">PE[0][2]</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="group371" type="group">
          <obj_property name="label">LOAD</obj_property>
          <obj_property name="DisplayName">label</obj_property>
@@ -439,7 +439,7 @@
       <wvobject fp_name="/tb_PE_array/dut/\PE_gen_vertical[0].PE_gen_horizontal[2].u_PE_top /o_psum_out_fifo_data" type="array">
          <obj_property name="ElementShortName">o_psum_out_fifo_data[15:0]</obj_property>
          <obj_property name="ObjectShortName">o_psum_out_fifo_data[15:0]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_PE_array/dut/\PE_gen_vertical[0].PE_gen_horizontal[2].u_PE_top /o_psum_out_fifo_valid" type="logic">
          <obj_property name="ElementShortName">o_psum_out_fifo_valid</obj_property>
@@ -533,6 +533,7 @@
    <wvobject fp_name="group1006" type="group">
       <obj_property name="label">PE[1][2]</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="group374" type="group">
          <obj_property name="label">LOAD</obj_property>
          <obj_property name="DisplayName">label</obj_property>
@@ -619,6 +620,7 @@
    <wvobject fp_name="group1020" type="group">
       <obj_property name="label">PE[2][1]</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="group376" type="group">
          <obj_property name="label">LOAD</obj_property>
          <obj_property name="DisplayName">label</obj_property>
@@ -661,6 +663,7 @@
    <wvobject fp_name="group1026" type="group">
       <obj_property name="label">PE[2][2]</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="group377" type="group">
          <obj_property name="label">LOAD</obj_property>
          <obj_property name="DisplayName">label</obj_property>

@@ -45,9 +45,9 @@ module GIN_BUS #(
                 .i_clk(i_clk),
                 .i_rst(i_rst),
 
-                .i_id(id[i]), //comes from config scan chain
+                .i_id(id[i]),
                 .i_id_valid(i_id_valid),
-                .i_tag(tag), //determined by GIN X-BUS and Y-BUS
+                .i_tag(tag),
                 
                 .i_data(data),
                 .i_valid(i_valid),

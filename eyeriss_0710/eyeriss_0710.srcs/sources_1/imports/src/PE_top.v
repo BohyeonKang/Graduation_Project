@@ -117,7 +117,9 @@ module PE_top #(
         .N_CHUNKS(4)
     ) u_wght_piso (
         .i_clk    (i_clk),  
-        .i_rst    (i_rst),  
+        .i_rst    (i_rst),
+
+        .i_flush  (o_inst_ready),
 
         .i_data   (wght_data_fifo2piso), 
         .i_valid  (wght_valid_fifo2piso),
@@ -152,7 +154,9 @@ module PE_top #(
         .N_CHUNKS(4)
     ) u_psum_in_piso (
         .i_clk    (i_clk),  
-        .i_rst    (i_rst),  
+        .i_rst    (i_rst),
+
+        .i_flush  (o_inst_ready),
 
         .i_data   (psum_in_data_fifo2piso), 
         .i_valid  (psum_in_valid_fifo2piso),

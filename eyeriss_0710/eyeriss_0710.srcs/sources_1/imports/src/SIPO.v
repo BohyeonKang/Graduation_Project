@@ -49,8 +49,8 @@ module SIPO #(
             // ✅ 유효한 데이터 수신 중
             else if (i_valid && o_ready) begin
                 collecting <= 1'b1;
-                // 상위 바이트부터 순서대로 밀어넣음
-                data_buf <= {data_buf[OUT_WIDTH - IN_WIDTH - 1:0], i_data};
+
+                data_buf[(OUT_WIDTH - 1 - chunk_index * IN_WIDTH) -: IN_WIDTH] <= i_data;
                 chunk_index <= chunk_index + 1;
 
                 if (chunk_index == N_CHUNKS - 1) begin

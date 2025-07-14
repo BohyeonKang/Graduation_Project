@@ -6,6 +6,8 @@ module PISO #(
     input                  i_clk,
     input                  i_rst,
 
+    input                  i_flush,
+
     // PISO interface as rx
     input  [IN_WIDTH-1:0]  i_data,   // 병렬 입력
     input                  i_valid,  // 병렬 입력 유효
@@ -34,25 +36,34 @@ module PISO #(
             loaded       <= 0;
         end
         else begin
-            // ✅ 병렬 데이터 로드
-            if (i_valid && o_ready) begin
-                data_buf     <= i_data;
-                chunk_index  <= 0;
-                o_data       <= i_data[IN_WIDTH-1 -: OUT_WIDTH];  // MSB first
-                o_valid      <= 1'b1;
-                loaded       <= 1'b1;
+            // flush가 수신 중일 때 우선 처리
+            if (i_flush && loaded) begin
+                o_data <= {OUT_WIDTH{1'b0}};
+                o_valid <= 1'b0;
+                loaded <= 1'b0;
+                chunk_index <= 0;
+                data_buf <= 0;
             end
-
-            // ✅ 시리얼 전송
-            else if (o_valid && i_ready) begin
-                chunk_index <= chunk_index + 1;
-
-                if (chunk_index == N_CHUNKS - 1) begin
-                    o_valid <= 1'b0;
-                    loaded  <= 1'b0;
+            else begin
+                // 병렬 데이터 로드
+                if (i_valid && o_ready) begin
+                    data_buf     <= i_data;
+                    chunk_index  <= 0;
+                    o_data       <= i_data[IN_WIDTH-1 -: OUT_WIDTH];  // MSB first
+                    o_valid      <= 1'b1;
+                    loaded       <= 1'b1;
                 end
-                else begin
-                    o_data <= data_buf[IN_WIDTH - 1 - chunk_index * OUT_WIDTH - OUT_WIDTH -: OUT_WIDTH];
+
+                // 시리얼 전송
+                if (o_valid && i_ready) begin
+                    chunk_index <= chunk_index + 1;
+                    if (chunk_index == N_CHUNKS - 1) begin
+                        o_valid <= 1'b0;
+                        loaded  <= 1'b0;
+                    end
+                    else begin
+                        o_data <= data_buf[IN_WIDTH - 1 - chunk_index * OUT_WIDTH - OUT_WIDTH -: OUT_WIDTH];
+                    end
                 end
             end
         end

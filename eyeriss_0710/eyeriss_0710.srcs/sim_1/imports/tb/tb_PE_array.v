@@ -52,20 +52,24 @@ module tb_PE_array;
 	reg  [COL_LEN-1:0] i_wght_col_id_valid;
 	reg  [COL_LEN-1:0] i_psum_col_id_valid;
 
-	reg  [COL_LEN * ROW_LEN - 1:0] i_ctrl_psum_select;
+    reg [COL_LEN * ROW_LEN - 1:0] i_ctrl_psum_in_sel_LNorGIN;
+    reg [COL_LEN * ROW_LEN - 1:0] i_ctrl_psum_out_sel_GON;
 
 	// GLB interface
 	reg  [IFMAP_ROW_ID_BITWIDTH + IFMAP_COL_ID_BITWIDTH + IFMAP_BUS_BITWIDTH - 1:0] i_ifmap_packet;
 	reg  [WGHT_ROW_ID_BITWIDTH + WGHT_COL_ID_BITWIDTH + WGHT_BUS_BITWIDTH - 1:0]    i_wght_packet;
 	reg  [PSUM_ROW_ID_BITWIDTH + PSUM_COL_ID_BITWIDTH + PSUM_BUS_BITWIDTH - 1:0]    i_psum_in_packet;
+	wire [PSUM_BUS_BITWIDTH-1:0] o_psum_out_data;
 
 	reg        i_ifmap_valid;
 	reg        i_wght_valid;
 	reg        i_psum_in_valid;
+	reg 	   i_psum_out_ready;
 
 	wire       o_ifmap_ready;
 	wire       o_wght_ready;
 	wire       o_psum_in_ready;
+	wire	   o_psum_out_valid;
 
 	PE_array #(
 		.ROW_LEN(ROW_LEN),
@@ -106,20 +110,24 @@ module tb_PE_array;
 		.i_wght_col_id_valid(i_wght_col_id_valid),
 		.i_psum_col_id_valid(i_psum_col_id_valid),
 
-		.i_ctrl_psum_select(i_ctrl_psum_select),
+		.i_ctrl_psum_in_sel_LNorGIN(i_ctrl_psum_in_sel_LNorGIN),
+		.i_ctrl_psum_out_sel_GON(i_ctrl_psum_out_sel_GON),
 
 		// GLB interface
 		.i_ifmap_packet(i_ifmap_packet),
 		.i_wght_packet(i_wght_packet),
 		.i_psum_in_packet(i_psum_in_packet),
+		.o_psum_out_data(o_psum_out_data),
 
 		.i_ifmap_valid(i_ifmap_valid),
 		.i_wght_valid(i_wght_valid),
 		.i_psum_in_valid(i_psum_in_valid),
+		.i_psum_out_ready(i_psum_out_ready),
 
 		.o_ifmap_ready(o_ifmap_ready),
 		.o_wght_ready(o_wght_ready),
-		.o_psum_in_ready(o_psum_in_ready)
+		.o_psum_in_ready(o_psum_in_ready),
+		.o_psum_out_valid(o_psum_out_valid)
 	);
 
     always #5 i_clk = ~i_clk; // 10ns clock period
@@ -151,7 +159,7 @@ module tb_PE_array;
 		i_wght_col_id_valid   = { COL_LEN {1'b0} };
 		i_psum_col_id_valid   = { COL_LEN {1'b0} };
 
-		i_ctrl_psum_select    = { (ROW_LEN * COL_LEN) {1'b0} };
+		i_ctrl_psum_in_sel_LNorGIN = { (ROW_LEN * COL_LEN) {1'b0} };
 
 		i_ifmap_packet        = { (IFMAP_BUS_BITWIDTH + IFMAP_ROW_ID_BITWIDTH + IFMAP_COL_ID_BITWIDTH) {1'b0} };
 		i_wght_packet         = { (WGHT_ROW_ID_BITWIDTH + WGHT_COL_ID_BITWIDTH + WGHT_BUS_BITWIDTH) {1'b0} };
@@ -370,7 +378,25 @@ module tb_PE_array;
 
 		repeat (10) @(posedge i_clk);
 
+		
+		
+		///// SEND TO GLB /////
+		@(posedge i_clk); #1;
+		i_psum_out_ready = 1;
+		i_ctrl_psum_out_sel_GON = 9'b100000000;
+		@(posedge i_clk); #1;
+		i_psum_out_ready = 1;
+		i_ctrl_psum_out_sel_GON = 9'b010000000;
+		@(posedge i_clk); #1;
+		i_psum_out_ready = 1;
+		i_ctrl_psum_out_sel_GON = 9'b001000000;
+
+		@(posedge i_clk); #1;
+		i_psum_out_ready = 0;
+		i_ctrl_psum_out_sel_GON = 9'b0;
+		
+		repeat (10) @(posedge i_clk);
+
 		$stop;
     end
-
 endmodule

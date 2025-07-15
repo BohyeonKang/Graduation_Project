@@ -49,7 +49,7 @@ module PE_array #(
     input [IFMAP_ROW_ID_BITWIDTH + IFMAP_COL_ID_BITWIDTH + IFMAP_BUS_BITWIDTH - 1:0] i_ifmap_packet,
     input [WGHT_ROW_ID_BITWIDTH + WGHT_COL_ID_BITWIDTH + WGHT_BUS_BITWIDTH - 1:0] i_wght_packet,
     input [PSUM_ROW_ID_BITWIDTH + PSUM_COL_ID_BITWIDTH + PSUM_BUS_BITWIDTH - 1:0] i_psum_in_packet,
-    output [PSUM_BUS_BITWIDTH-1:0] o_psum_out_data,
+    output reg [PSUM_BUS_BITWIDTH-1:0] o_psum_out_data,
 
     input i_ifmap_valid,
     input i_wght_valid,
@@ -59,7 +59,7 @@ module PE_array #(
     output o_ifmap_ready,
     output o_wght_ready,
     output o_psum_in_ready,
-    output o_psum_out_valid
+    output reg o_psum_out_valid
 );
 
     genvar col, row;
@@ -350,6 +350,7 @@ module PE_array #(
 
     reg [PSUM_BUS_BITWIDTH-1:0] psum_out_data_buffer [COL_LEN-1:0][ROW_LEN-1:0];
     reg                         psum_out_valid_buffer [COL_LEN-1:0][ROW_LEN-1:0];
+
     generate
         for(col = 0; col < COL_LEN; col = col + 1) begin: PE_gen_vertical
             for(row = 0; row < ROW_LEN; row = row + 1) begin: PE_gen_horizontal
@@ -405,8 +406,18 @@ module PE_array #(
         end
     endgenerate
 
-    // Implement GON
-
-    
-
+    always @(*) begin
+        o_psum_out_data = {PSUM_BUS_BITWIDTH{1'b0}};
+        o_psum_out_valid = 1'b0;
+        for (i = 0; i < COL_LEN; i = i + 1) begin
+            for (j = 0; j < ROW_LEN; j = j + 1) begin
+                if (i_ctrl_psum_out_sel_GON[i * ROW_LEN + j]) begin
+                    o_psum_out_data = psum_out_data_buffer[i][j];
+                end
+                if (i_ctrl_psum_out_sel_GON[i * ROW_LEN + j] && psum_out_valid_buffer[i][j]) begin
+                    o_psum_out_valid = 1'b1;
+                end
+            end
+        end
+    end
 endmodule

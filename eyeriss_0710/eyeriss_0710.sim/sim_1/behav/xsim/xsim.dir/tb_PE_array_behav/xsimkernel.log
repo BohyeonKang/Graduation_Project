@@ -2,3 +2,6 @@ Running: xsim.dir/tb_PE_array_behav/xsimk.exe -simmode gui -wdb tb_PE_array_beha
 Design successfully loaded
 Design Loading Memory Usage: 8488 KB (Peak: 8488 KB)
 Design Loading CPU Usage: 31 ms
+Simulation completed
+Simulation Memory Usage: 9504 KB (Peak: 9504 KB)
+Simulation CPU Usage: 62 ms

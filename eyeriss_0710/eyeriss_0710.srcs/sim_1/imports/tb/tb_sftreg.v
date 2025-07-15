@@ -1,5 +1,5 @@
+// It works weird in VIVADO...
 `timescale 1ns / 1ps
-
 module tb_sftreg;
 
     reg i_clk;

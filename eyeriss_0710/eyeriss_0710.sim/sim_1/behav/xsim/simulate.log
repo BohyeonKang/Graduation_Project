@@ -1,0 +1,6 @@
+Time resolution is 1 ps
+Start GLB testbench
+[Bank 0] Read value = 0xXXXXXXXx (expect DEADBEEF)
+[Bank 1] Read value = 0xXXxxXXxx (expect CAFEBABE)
+End of test
+$finish called at time : 127 ns : File "C:/LAB/Graduation_Project/eyeriss_0710/eyeriss_0710.srcs/sim_1/imports/tb/tb_GLB.v" Line 112

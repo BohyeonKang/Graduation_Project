@@ -1,3 +1,4 @@
+// It works weird in VIVADO...
 module sftreg(
     input i_clk,
     input i_rst,

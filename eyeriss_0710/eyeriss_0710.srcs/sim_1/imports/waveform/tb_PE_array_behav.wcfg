@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="922.600 ns"></ZoomStartTime>
-      <ZoomEndTime time="1,070.001 ns"></ZoomEndTime>
-      <Cursor1Time time="1,047.400 ns"></Cursor1Time>
+      <ZoomStartTime time="1,095.416 ns"></ZoomStartTime>
+      <ZoomEndTime time="1,133.917 ns"></ZoomEndTime>
+      <Cursor1Time time="1,166.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="489"></NameColumnWidth>
-      <ValueColumnWidth column_width="239"></ValueColumnWidth>
+      <ValueColumnWidth column_width="129"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="20" />
+   <WVObjectSize size="26" />
    <wvobject fp_name="/tb_PE_array/dut/i_clk" type="logic">
       <obj_property name="ElementShortName">i_clk</obj_property>
       <obj_property name="ObjectShortName">i_clk</obj_property>
@@ -94,10 +94,6 @@
       <wvobject fp_name="/tb_PE_array/dut/i_psum_col_id_valid" type="array">
          <obj_property name="ElementShortName">i_psum_col_id_valid[2:0]</obj_property>
          <obj_property name="ObjectShortName">i_psum_col_id_valid[2:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_PE_array/dut/i_ctrl_psum_select" type="array">
-         <obj_property name="ElementShortName">i_ctrl_psum_select[8:0]</obj_property>
-         <obj_property name="ObjectShortName">i_ctrl_psum_select[8:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_PE_array/dut/i_ifmap_packet" type="array">
          <obj_property name="ElementShortName">i_ifmap_packet[23:0]</obj_property>
@@ -1674,5 +1670,30 @@
       <obj_property name="ElementShortName">registers[0:3][15:0]</obj_property>
       <obj_property name="ObjectShortName">registers[0:3][15:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_PE_array/dut/i_ctrl_psum_out_sel_GON" type="array">
+      <obj_property name="ElementShortName">i_ctrl_psum_out_sel_GON[8:0]</obj_property>
+      <obj_property name="ObjectShortName">i_ctrl_psum_out_sel_GON[8:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_PE_array/dut/o_psum_out_data" type="array">
+      <obj_property name="ElementShortName">o_psum_out_data[63:0]</obj_property>
+      <obj_property name="ObjectShortName">o_psum_out_data[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_PE_array/dut/i_psum_out_ready" type="logic">
+      <obj_property name="ElementShortName">i_psum_out_ready</obj_property>
+      <obj_property name="ObjectShortName">i_psum_out_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_PE_array/dut/psum_out_data_buffer" type="array">
+      <obj_property name="ElementShortName">psum_out_data_buffer[2:0][2:0][63:0]</obj_property>
+      <obj_property name="ObjectShortName">psum_out_data_buffer[2:0][2:0][63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_PE_array/dut/psum_out_valid_buffer" type="array">
+      <obj_property name="ElementShortName">psum_out_valid_buffer[2:0][2:0]</obj_property>
+      <obj_property name="ObjectShortName">psum_out_valid_buffer[2:0][2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_PE_array/o_psum_out_valid" type="logic">
+      <obj_property name="ElementShortName">o_psum_out_valid</obj_property>
+      <obj_property name="ObjectShortName">o_psum_out_valid</obj_property>
    </wvobject>
 </wave_config>

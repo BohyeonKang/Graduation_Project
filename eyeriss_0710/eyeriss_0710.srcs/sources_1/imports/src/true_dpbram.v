@@ -7,7 +7,7 @@
 module true_dpbram #(
   parameter RAM_WIDTH = 8,                       // Specify RAM data width
   parameter RAM_DEPTH = 1024,                     // Specify RAM depth (number of entries)
-  parameter RAM_PERFORMANCE= "HIGH_PERFORMANCE", // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
+  parameter RAM_PERFORMANCE= "LOW_LATENCY", // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
   parameter INIT_FILE = ""                        // Specify name/location of RAM initialization file if using one (leave blank if not)
 ) (
   input [clogb2(RAM_DEPTH-1)-1:0] addra,  // Port A address bus, width determined from RAM_DEPTH
@@ -28,7 +28,7 @@ module true_dpbram #(
   output [RAM_WIDTH-1:0] doutb          // Port B RAM output data
 );
 
-  reg [RAM_WIDTH-1:0] BRAM [0:RAM_DEPTH-1];
+  (* ram_style = "block" *) reg [RAM_WIDTH-1:0] BRAM [0:RAM_DEPTH-1];
   reg [RAM_WIDTH-1:0] ram_data_a = {RAM_WIDTH{1'b0}};
   reg [RAM_WIDTH-1:0] ram_data_b = {RAM_WIDTH{1'b0}};
 
@@ -128,5 +128,3 @@ endmodule
     .doutb(doutb)    // Port B RAM output data, width determined from RAM_WIDTH
   );
 */
-							
-							

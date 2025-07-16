@@ -19,7 +19,10 @@ module GLB #(
 );
 
 	wire [BANK_NUM-1:0] bank_sel_one_hot;
+    wire [DATA_BITWIDTH-1:0] read_data [BANK_NUM-1:0];
+
 	assign bank_sel_one_hot = 1'b1 << i_bank_sel;
+    assign o_rd = read_data[i_bank_sel];
 
     genvar i;
     generate
@@ -27,7 +30,7 @@ module GLB #(
             true_dpbram #(
                 .RAM_WIDTH(DATA_BITWIDTH),
                 .RAM_DEPTH(BANK_DEPTH),
-                .RAM_PERFORMANCE("LOW_LATENCY")
+                .RAM_PERFORMANCE("HIGH_PERFORMANCE")
             ) glb_bank_inst (
                 .addra   (i_ra),
                 .addrb   (i_wa), // Port A: Read, Port B: Write
@@ -43,7 +46,7 @@ module GLB #(
                 .rstb    (i_rst),
                 .regcea  (1'b1),                 // Output register always enabled
                 .regceb  (1'b1),
-                .douta   (o_rd),              // Read data
+                .douta   (read_data[i]),              // Read data
                 .doutb   ()                      // Port B output unused
             );
         end

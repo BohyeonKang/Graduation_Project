@@ -58,7 +58,7 @@
     <Option Name="IPStaticSourceDir" Val="$PIPUSERFILESDIR/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
     <Option Name="DSABoardId" Val="zybo-z7-20"/>
-    <Option Name="WTXSimLaunchSim" Val="142"/>
+    <Option Name="WTXSimLaunchSim" Val="155"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -89,8 +89,27 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
       <Filter Type="Srcs"/>
+      <File Path="$PSRCDIR/sources_1/imports/src/true_dpbram.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../src/true_dpbram.v"/>
+          <Attr Name="ImportTime" Val="1751525888"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/GLB.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../src/GLB.v"/>
+          <Attr Name="ImportTime" Val="1751525888"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/imports/src/GIN_BUS.v">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../src/GIN_BUS.v"/>
           <Attr Name="ImportTime" Val="1751525888"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -100,6 +119,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/src/MC.v">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../src/MC.v"/>
           <Attr Name="ImportTime" Val="1751525888"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -109,6 +129,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/src/PE_control.v">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../src/PE_control.v"/>
           <Attr Name="ImportTime" Val="1751525888"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -118,6 +139,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/src/PE_datapath.v">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../src/PE_datapath.v"/>
           <Attr Name="ImportTime" Val="1751525888"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -127,6 +149,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/src/PE_top.v">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../src/PE_top.v"/>
           <Attr Name="ImportTime" Val="1751525888"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -136,6 +159,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/src/PISO.v">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -143,6 +167,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/src/RF.v">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../src/RF.v"/>
           <Attr Name="ImportTime" Val="1750908686"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -152,6 +177,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/src/SIPO.v">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -159,6 +185,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/src/fifo.v">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../src/fifo.v"/>
           <Attr Name="ImportTime" Val="1751526071"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -168,6 +195,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/src/rams_dist.v">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../src/rams_dist.v"/>
           <Attr Name="ImportTime" Val="1751525888"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -177,17 +205,8 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/src/PE_array.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../src/PE_array.v"/>
-          <Attr Name="ImportTime" Val="1751525888"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/src/GLB.v">
-        <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../src/GLB.v"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../src/PE_array.v"/>
           <Attr Name="ImportTime" Val="1751525888"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -202,19 +221,9 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/src/true_dpbram.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../src/true_dpbram.v"/>
-          <Attr Name="ImportTime" Val="1751525888"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="PE_array"/>
+        <Option Name="TopModule" Val="GLB"/>
       </Config>
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">

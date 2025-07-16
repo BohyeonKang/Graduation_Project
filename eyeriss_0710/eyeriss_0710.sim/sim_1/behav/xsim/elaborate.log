@@ -8,4 +8,11 @@ WARNING: [VRFC 10-3091] actual bit length 3 differs from formal bit length 2 for
 WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 4 for port 'i_ra' [C:/LAB/Graduation_Project/eyeriss_0710/eyeriss_0710.srcs/sim_1/imports/tb/tb_GLB.v:48]
 WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 4 for port 'i_wa' [C:/LAB/Graduation_Project/eyeriss_0710/eyeriss_0710.srcs/sim_1/imports/tb/tb_GLB.v:49]
 Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.true_dpbram(RAM_WIDTH=32,RAM_DEP...
+Compiling module xil_defaultlib.GLB(BANK_NUM=4,BANK_DEPTH=16)
+Compiling module xil_defaultlib.tb_GLB
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_GLB_behav

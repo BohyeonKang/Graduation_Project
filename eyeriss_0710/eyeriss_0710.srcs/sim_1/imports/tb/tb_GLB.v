@@ -11,9 +11,9 @@ module tb_GLB;
     endfunction
 
     // Parameters
-    localparam DATA_BITWIDTH = 32;
+    localparam DATA_BITWIDTH = 16;
     localparam BANK_NUM = 4;  // 테스트 간단히
-    localparam BANK_DEPTH = 16;
+    localparam BANK_DEPTH = 512;
 
     localparam BANK_SEL_WIDTH = clogb2(BANK_NUM);
     localparam ADDR_WIDTH = clogb2(BANK_DEPTH);
@@ -53,6 +53,9 @@ module tb_GLB;
 
     // Test sequence
     initial begin
+        $readmemh("init_bank0.mem", glb.gen_GLB_BANKS[0].glb_bank_inst.BRAM);
+        $readmemh("init_bank1.mem", glb.gen_GLB_BANKS[1].glb_bank_inst.BRAM);
+
         $display("Start GLB testbench");
         i_clk = 0;
         i_rst = 1;
@@ -92,7 +95,7 @@ module tb_GLB;
         i_ra = 5;
         i_re = 1;
 
-        @(posedge i_clk); #1; // read latency 1-cycle
+        repeat (2) @(posedge i_clk); #1; // read latency 1-cycle
         i_re = 0;
 
         #1 $display("[Bank 0] Read value = 0x%08X (expect DEADBEEF)", o_rd);
@@ -103,7 +106,7 @@ module tb_GLB;
         i_ra = 3;
         i_re = 1;
 
-        @(posedge i_clk); #1; // read latency 1-cycle
+        repeat (2) @(posedge i_clk); #1; // read latency 1-cycle
         i_re = 0;
 
         #1 $display("[Bank 1] Read value = 0x%08X (expect CAFEBABE)", o_rd);

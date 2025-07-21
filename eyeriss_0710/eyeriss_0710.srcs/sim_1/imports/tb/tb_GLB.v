@@ -12,7 +12,7 @@ module tb_GLB;
 
     // Parameters
     localparam DATA_BITWIDTH = 16;
-    localparam BANK_NUM = 4;  // 테스트 간단히
+    localparam BANK_NUM = 3;  // 테스트 간단히
     localparam BANK_DEPTH = 512;
 
     localparam BANK_SEL_WIDTH = clogb2(BANK_NUM);
@@ -53,8 +53,9 @@ module tb_GLB;
 
     // Test sequence
     initial begin
+        $readmemh("init_bank0.mem", dut.gen_GLB_BANKS[0].glb_bank_inst.BRAM);
+        $readmemh("init_bank1.mem", dut.gen_GLB_BANKS[1].glb_bank_inst.BRAM);
         $readmemh("init_bank0.mem", glb.gen_GLB_BANKS[0].glb_bank_inst.BRAM);
-        $readmemh("init_bank1.mem", glb.gen_GLB_BANKS[1].glb_bank_inst.BRAM);
 
         $display("Start GLB testbench");
         i_clk = 0;

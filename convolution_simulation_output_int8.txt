@@ -1,0 +1,448 @@
+--- RS Dataflow 기반 3D Convolution 검증 시뮬레이션 시작 (INT8 Signed Data) ---
+
+--- GLB Bank0 (ifmap) 초기화 완료 (INT8 signed garbage value, 채널별 시각화) ---
+--- ifmap Channel 0 ---
+[[ -34  -46    8  -90  -19]
+ [  25   44  -24   96  -74]
+ [ 115   83    2  114   37]
+ [ 113  -63 -101  -53  -81]
+ [ 100  -70  -53   22   29]]
+--- ifmap Channel 1 ---
+[[ -35  -41   -1  -93  -88]
+ [  45   69   39  -63  -54]
+ [ -60 -106  -48 -110  -77]
+ [-103   91  -23   86   91]
+ [  89  126  -34   65  -49]]
+--- ifmap Channel 2 ---
+[[  55  -61  -20   98   35]
+ [  -6   46  -40   35   65]
+ [  61  -54   11   75  -88]
+ [ -52  -67  -96  -39   53]
+ [-110  -65  -26  -66   17]]
+--- ifmap Channel 3 ---
+[[  57   -6   19  -75  -28]
+ [  70   60   -2  -61   10]
+ [ 123   51 -117 -125 -115]
+ [  13   59   79  -79  -52]
+ [ -75  -41   89  105  -74]]
+--- ifmap Channel 4 ---
+[[  78   52  -15  -49 -107]
+ [ 118   -4   46  120   10]
+ [ -62   38 -118   60   24]
+ [   3   56  -74  -88  -36]
+ [  -7  103  -64 -127  -34]]
+
+--- GLB Bank1 (weights) 초기화 완료 (INT8 signed garbage value, 필터별/채널별 시각화) ---
+
+--- Weight for Output Filter 0 ---
+--- Input Channel 0 Kernel ---
+[[104  11 -85]
+ [-24 -26 110]
+ [-89 -45 112]]
+--- Input Channel 1 Kernel ---
+[[-94  58  44]
+ [ 38 -12  94]
+ [-71  72   7]]
+--- Input Channel 2 Kernel ---
+[[ -77    4   67]
+ [ 101   99  -89]
+ [-115   17   75]]
+--- Input Channel 3 Kernel ---
+[[   6  111   84]
+ [ -88 -112   11]
+ [  90   61   87]]
+--- Input Channel 4 Kernel ---
+[[ 19  75 -82]
+ [  7 108  84]
+ [ 61   1  57]]
+
+--- Weight for Output Filter 1 ---
+--- Input Channel 0 Kernel ---
+[[-71 -68 -14]
+ [ 31 -19 -16]
+ [-24 -31  84]]
+--- Input Channel 1 Kernel ---
+[[-102 -109  -58]
+ [   2  -44   22]
+ [ -12  -31  -93]]
+--- Input Channel 2 Kernel ---
+[[ 99   5  -4]
+ [ 85 -36 -80]
+ [-76  39  82]]
+--- Input Channel 3 Kernel ---
+[[ -68  -74  -90]
+ [ -60   52 -126]
+ [ -29  117  104]]
+--- Input Channel 4 Kernel ---
+[[-64  39 -73]
+ [-52  43  28]
+ [-45 -66  46]]
+
+--- Weight for Output Filter 2 ---
+--- Input Channel 0 Kernel ---
+[[ -80   53   -9]
+ [ -18  104 -112]
+ [ 118   11  123]]
+--- Input Channel 1 Kernel ---
+[[ -58   80 -106]
+ [ -23  -92  -53]
+ [  50  -59  120]]
+--- Input Channel 2 Kernel ---
+[[  18  -27   57]
+ [  43 -111  -24]
+ [ -67  -30  110]]
+--- Input Channel 3 Kernel ---
+[[125  79 -31]
+ [ 22 -48 121]
+ [  8  32  -4]]
+--- Input Channel 4 Kernel ---
+[[ -59   78  -14]
+ [  -6   51   71]
+ [-104   77   57]]
+
+--- Weight for Output Filter 3 ---
+--- Input Channel 0 Kernel ---
+[[ 66  -8  87]
+ [ 80 -12   8]
+ [115 -91  12]]
+--- Input Channel 1 Kernel ---
+[[  55 -126  -60]
+ [  41  -26  -69]
+ [ -64   94   36]]
+--- Input Channel 2 Kernel ---
+[[ -79   81  -34]
+ [ -90  116   13]
+ [ -36 -109  -40]]
+--- Input Channel 3 Kernel ---
+[[ -44   67 -107]
+ [ -57  119   12]
+ [ -77    0   74]]
+--- Input Channel 4 Kernel ---
+[[ 56 110 -29]
+ [ -2  -5 -53]
+ [-69  70 112]]
+
+--- GLB Bank2 (psums) 초기화 불필요 (0으로 유지) ---
+--- psum Output Channel 0 ---
+Output Row 0: [0 0 0]
+Output Row 1: [0 0 0]
+Output Row 2: [0 0 0]
+--- psum Output Channel 1 ---
+Output Row 0: [0 0 0]
+Output Row 1: [0 0 0]
+Output Row 2: [0 0 0]
+--- psum Output Channel 2 ---
+Output Row 0: [0 0 0]
+Output Row 1: [0 0 0]
+Output Row 2: [0 0 0]
+--- psum Output Channel 3 ---
+Output Row 0: [0 0 0]
+Output Row 1: [0 0 0]
+Output Row 2: [0 0 0]
+
+--- PE Weight Loading (초기 1회, PE Array 행에 따라) ---
+  PE 0: weight spad 로드 완료.
+  PE 1: weight spad 로드 완료.
+  PE 2: weight spad 로드 완료.
+  PE 3: weight spad 로드 완료.
+  PE 4: weight spad 로드 완료.
+  PE 5: weight spad 로드 완료.
+  PE 6: weight spad 로드 완료.
+  PE 7: weight spad 로드 완료.
+  PE 8: weight spad 로드 완료.
+
+===== 현재 Processing Pass: Output Row 0 =====
+
+--- Processing PE at Output Position: (0, 0) ---
+  PE 0: ifmap spad 로드 완료.
+  PE 0: 1D Convolution을 위한 ifmap spad (flattened):
+  [-34 -46 8 -35 -41 -1 55 -61 -20 57 -6 19 78 52 -15]
+  PE 0: 1D Convolution을 위한 weight spad (flattened per p-line):
+  [104 11 -85 -94 58 44 -77 4 67 6 111 84 19 75 -82]
+  [-71 -68 -14 -102 -109 -58 99 5 -4 -68 -74 -90 -64 39 -73]
+  [-80 53 -9 -58 80 -106 18 -27 57 125 79 -31 -59 78 -14]
+  [66 -8 87 55 -126 -60 -79 81 -34 -44 67 -107 56 110 -29]
+  PE 0: 1D Convolution 수행 완료.
+  PE 0 psum spad: [-1789 11736  6289  -905]
+  GLB Bank2에 psum 저장 완료 (위치: [0,0]).
+  업데이트된 GLB Bank2 (누적 결과):
+--- psum Output Channel 0 ---
+Output Row 0: [-1789     0     0]
+Output Row 1: [0 0 0]
+Output Row 2: [0 0 0]
+--- psum Output Channel 1 ---
+Output Row 0: [11736     0     0]
+Output Row 1: [0 0 0]
+Output Row 2: [0 0 0]
+--- psum Output Channel 2 ---
+Output Row 0: [6289    0    0]
+Output Row 1: [0 0 0]
+Output Row 2: [0 0 0]
+--- psum Output Channel 3 ---
+Output Row 0: [-905    0    0]
+Output Row 1: [0 0 0]
+Output Row 2: [0 0 0]
+
+--- Processing PE at Output Position: (0, 1) ---
+  PE 1: ifmap spad 로드 완료.
+  PE 1: 1D Convolution을 위한 ifmap spad (flattened):
+  [-46 8 -90 -41 -1 -93 -61 -20 98 -6 19 -75 52 -15 -49]
+  PE 1: 1D Convolution을 위한 weight spad (flattened per p-line):
+  [104 11 -85 -94 58 44 -77 4 67 6 111 84 19 75 -82]
+  [-71 -68 -14 -102 -109 -58 99 5 -4 -68 -74 -90 -64 39 -73]
+  [-80 53 -9 -58 80 -106 18 -27 57 125 79 -31 -59 78 -14]
+  [66 -8 87 55 -126 -60 -79 81 -34 -44 67 -107 56 110 -29]
+  PE 1: 1D Convolution 수행 완료.
+  PE 1 psum spad: [13495 12552 21622  4633]
+  GLB Bank2에 psum 저장 완료 (위치: [0,1]).
+  업데이트된 GLB Bank2 (누적 결과):
+--- psum Output Channel 0 ---
+Output Row 0: [-1789 13495     0]
+Output Row 1: [0 0 0]
+Output Row 2: [0 0 0]
+--- psum Output Channel 1 ---
+Output Row 0: [11736 12552     0]
+Output Row 1: [0 0 0]
+Output Row 2: [0 0 0]
+--- psum Output Channel 2 ---
+Output Row 0: [ 6289 21622     0]
+Output Row 1: [0 0 0]
+Output Row 2: [0 0 0]
+--- psum Output Channel 3 ---
+Output Row 0: [-905 4633    0]
+Output Row 1: [0 0 0]
+Output Row 2: [0 0 0]
+
+--- Processing PE at Output Position: (0, 2) ---
+  PE 2: ifmap spad 로드 완료.
+  PE 2: 1D Convolution을 위한 ifmap spad (flattened):
+  [8 -90 -19 -1 -93 -88 -20 98 35 19 -75 -28 -15 -49 -107]
+  PE 2: 1D Convolution을 위한 weight spad (flattened per p-line):
+  [104 11 -85 -94 58 44 -77 4 67 6 111 84 19 75 -82]
+  [-71 -68 -14 -102 -109 -58 99 5 -4 -68 -74 -90 -64 39 -73]
+  [-80 53 -9 -58 80 -106 18 -27 57 125 79 -31 -59 78 -14]
+  [66 -8 87 55 -126 -60 -79 81 -34 -44 67 -107 56 110 -29]
+  PE 2: 1D Convolution 수행 완료.
+  PE 2 psum spad: [-9187 33169 -8425 18874]
+  GLB Bank2에 psum 저장 완료 (위치: [0,2]).
+  업데이트된 GLB Bank2 (누적 결과):
+--- psum Output Channel 0 ---
+Output Row 0: [-1789 13495 -9187]
+Output Row 1: [0 0 0]
+Output Row 2: [0 0 0]
+--- psum Output Channel 1 ---
+Output Row 0: [11736 12552 33169]
+Output Row 1: [0 0 0]
+Output Row 2: [0 0 0]
+--- psum Output Channel 2 ---
+Output Row 0: [ 6289 21622 -8425]
+Output Row 1: [0 0 0]
+Output Row 2: [0 0 0]
+--- psum Output Channel 3 ---
+Output Row 0: [ -905  4633 18874]
+Output Row 1: [0 0 0]
+Output Row 2: [0 0 0]
+
+===== 현재 Processing Pass: Output Row 1 =====
+
+--- Processing PE at Output Position: (1, 0) ---
+  PE 3: ifmap spad 로드 완료.
+  PE 3: 1D Convolution을 위한 ifmap spad (flattened):
+  [115 83 2 -60 -106 -48 61 -54 11 123 51 -117 -62 38 -118]
+  PE 3: 1D Convolution을 위한 weight spad (flattened per p-line):
+  [-24 -26 110 38 -12 94 101 99 -89 -88 -112 11 7 108 84]
+  [31 -19 -16 2 -44 22 85 -36 -80 -60 52 -126 -52 43 28]
+  [-18 104 -112 -23 -92 -53 43 -111 -24 22 -48 121 -6 51 71]
+  [80 -12 8 41 -26 -69 -90 116 13 -57 119 12 -2 -5 -53]
+  PE 3: 1D Convolution 수행 완료.
+  PE 3 psum spad: [-34447  23261   8400   4059]
+  GLB Bank2에 psum 저장 완료 (위치: [1,0]).
+  업데이트된 GLB Bank2 (누적 결과):
+--- psum Output Channel 0 ---
+Output Row 0: [-1789 13495 -9187]
+Output Row 1: [-34447      0      0]
+Output Row 2: [0 0 0]
+--- psum Output Channel 1 ---
+Output Row 0: [11736 12552 33169]
+Output Row 1: [23261     0     0]
+Output Row 2: [0 0 0]
+--- psum Output Channel 2 ---
+Output Row 0: [ 6289 21622 -8425]
+Output Row 1: [8400    0    0]
+Output Row 2: [0 0 0]
+--- psum Output Channel 3 ---
+Output Row 0: [ -905  4633 18874]
+Output Row 1: [4059    0    0]
+Output Row 2: [0 0 0]
+
+--- Processing PE at Output Position: (1, 1) ---
+  PE 4: ifmap spad 로드 완료.
+  PE 4: 1D Convolution을 위한 ifmap spad (flattened):
+  [83 2 114 -106 -48 -110 -54 11 75 51 -117 -125 38 -118 60]
+  PE 4: 1D Convolution을 위한 weight spad (flattened per p-line):
+  [-24 -26 110 38 -12 94 101 99 -89 -88 -112 11 7 108 84]
+  [31 -19 -16 2 -44 22 85 -36 -80 -60 52 -126 -52 43 28]
+  [-18 104 -112 -23 -92 -53 43 -111 -24 22 -48 121 -6 51 71]
+  [80 -12 8 41 -26 -69 -90 116 13 -57 119 12 -2 -5 -53]
+  PE 4: 1D Convolution 수행 완료.
+  PE 4 psum spad: [-14533  -9559 -17086  -1865]
+  GLB Bank2에 psum 저장 완료 (위치: [1,1]).
+  업데이트된 GLB Bank2 (누적 결과):
+--- psum Output Channel 0 ---
+Output Row 0: [-1789 13495 -9187]
+Output Row 1: [-34447 -14533      0]
+Output Row 2: [0 0 0]
+--- psum Output Channel 1 ---
+Output Row 0: [11736 12552 33169]
+Output Row 1: [23261 -9559     0]
+Output Row 2: [0 0 0]
+--- psum Output Channel 2 ---
+Output Row 0: [ 6289 21622 -8425]
+Output Row 1: [  8400 -17086      0]
+Output Row 2: [0 0 0]
+--- psum Output Channel 3 ---
+Output Row 0: [ -905  4633 18874]
+Output Row 1: [ 4059 -1865     0]
+Output Row 2: [0 0 0]
+
+--- Processing PE at Output Position: (1, 2) ---
+  PE 5: ifmap spad 로드 완료.
+  PE 5: 1D Convolution을 위한 ifmap spad (flattened):
+  [2 114 37 -48 -110 -77 11 75 -88 -117 -125 -115 -118 60 24]
+  PE 5: 1D Convolution을 위한 weight spad (flattened per p-line):
+  [-24 -26 110 38 -12 94 101 99 -89 -88 -112 11 7 108 84]
+  [31 -19 -16 2 -44 22 85 -36 -80 -60 52 -126 -52 43 28]
+  [-18 104 -112 -23 -92 -53 43 -111 -24 22 -48 121 -6 51 71]
+  [80 -12 8 41 -26 -69 -90 116 13 -57 119 12 -2 -5 -53]
+  PE 5: 1D Convolution 수행 완료.
+  PE 5 psum spad: [40385 30027 12224   937]
+  GLB Bank2에 psum 저장 완료 (위치: [1,2]).
+  업데이트된 GLB Bank2 (누적 결과):
+--- psum Output Channel 0 ---
+Output Row 0: [-1789 13495 -9187]
+Output Row 1: [-34447 -14533  40385]
+Output Row 2: [0 0 0]
+--- psum Output Channel 1 ---
+Output Row 0: [11736 12552 33169]
+Output Row 1: [23261 -9559 30027]
+Output Row 2: [0 0 0]
+--- psum Output Channel 2 ---
+Output Row 0: [ 6289 21622 -8425]
+Output Row 1: [  8400 -17086  12224]
+Output Row 2: [0 0 0]
+--- psum Output Channel 3 ---
+Output Row 0: [ -905  4633 18874]
+Output Row 1: [ 4059 -1865   937]
+Output Row 2: [0 0 0]
+
+===== 현재 Processing Pass: Output Row 2 =====
+
+--- Processing PE at Output Position: (2, 0) ---
+  PE 6: ifmap spad 로드 완료.
+  PE 6: 1D Convolution을 위한 ifmap spad (flattened):
+  [100 -70 -53 89 126 -34 -110 -65 -26 -75 -41 89 -7 103 -64]
+  PE 6: 1D Convolution을 위한 weight spad (flattened per p-line):
+  [-89 -45 112 -71 72 7 -115 17 75 90 61 87 61 1 57]
+  [-24 -31 84 -12 -31 -93 -76 39 82 -29 117 104 -45 -66 46]
+  [118 11 123 50 -59 120 -67 -30 110 8 32 -4 -104 77 57]
+  [115 -91 12 -64 94 36 -36 -109 -40 -77 0 74 -69 70 112]
+  PE 6: 1D Convolution 수행 완료.
+  PE 6 psum spad: [-5056 -5594  6650 47129]
+  GLB Bank2에 psum 저장 완료 (위치: [2,0]).
+  업데이트된 GLB Bank2 (누적 결과):
+--- psum Output Channel 0 ---
+Output Row 0: [-1789 13495 -9187]
+Output Row 1: [-34447 -14533  40385]
+Output Row 2: [-5056     0     0]
+--- psum Output Channel 1 ---
+Output Row 0: [11736 12552 33169]
+Output Row 1: [23261 -9559 30027]
+Output Row 2: [-5594     0     0]
+--- psum Output Channel 2 ---
+Output Row 0: [ 6289 21622 -8425]
+Output Row 1: [  8400 -17086  12224]
+Output Row 2: [6650    0    0]
+--- psum Output Channel 3 ---
+Output Row 0: [ -905  4633 18874]
+Output Row 1: [ 4059 -1865   937]
+Output Row 2: [47129     0     0]
+
+--- Processing PE at Output Position: (2, 1) ---
+  PE 7: ifmap spad 로드 완료.
+  PE 7: 1D Convolution을 위한 ifmap spad (flattened):
+  [-70 -53 22 126 -34 65 -65 -26 -66 -41 89 105 103 -64 -127]
+  PE 7: 1D Convolution을 위한 weight spad (flattened per p-line):
+  [-89 -45 112 -71 72 7 -115 17 75 90 61 87 61 1 57]
+  [-24 -31 84 -12 -31 -93 -76 39 82 -29 117 104 -45 -66 46]
+  [118 11 123 50 -59 120 -67 -30 110 8 32 -4 -104 77 57]
+  [115 -91 12 -64 94 36 -36 -109 -40 -77 0 74 -69 70 112]
+  PE 7: 1D Convolution 수행 완료.
+  PE 7 psum spad: [ 12077  13451 -12935 -18953]
+  GLB Bank2에 psum 저장 완료 (위치: [2,1]).
+  업데이트된 GLB Bank2 (누적 결과):
+--- psum Output Channel 0 ---
+Output Row 0: [-1789 13495 -9187]
+Output Row 1: [-34447 -14533  40385]
+Output Row 2: [-5056 12077     0]
+--- psum Output Channel 1 ---
+Output Row 0: [11736 12552 33169]
+Output Row 1: [23261 -9559 30027]
+Output Row 2: [-5594 13451     0]
+--- psum Output Channel 2 ---
+Output Row 0: [ 6289 21622 -8425]
+Output Row 1: [  8400 -17086  12224]
+Output Row 2: [  6650 -12935      0]
+--- psum Output Channel 3 ---
+Output Row 0: [ -905  4633 18874]
+Output Row 1: [ 4059 -1865   937]
+Output Row 2: [ 47129 -18953      0]
+
+--- Processing PE at Output Position: (2, 2) ---
+  PE 8: ifmap spad 로드 완료.
+  PE 8: 1D Convolution을 위한 ifmap spad (flattened):
+  [-53 22 29 -34 65 -49 -26 -66 17 89 105 -74 -64 -127 -34]
+  PE 8: 1D Convolution을 위한 weight spad (flattened per p-line):
+  [-89 -45 112 -71 72 7 -115 17 75 90 61 87 61 1 57]
+  [-24 -31 84 -12 -31 -93 -76 39 82 -29 117 104 -45 -66 46]
+  [118 11 123 50 -59 120 -67 -30 110 8 32 -4 -104 77 57]
+  [115 -91 12 -64 94 36 -36 -109 -40 -77 0 74 -69 70 112]
+  PE 8: 1D Convolution 수행 완료.
+  PE 8 psum spad: [ 18877  18478  -8961 -14388]
+  GLB Bank2에 psum 저장 완료 (위치: [2,2]).
+  업데이트된 GLB Bank2 (누적 결과):
+--- psum Output Channel 0 ---
+Output Row 0: [-1789 13495 -9187]
+Output Row 1: [-34447 -14533  40385]
+Output Row 2: [-5056 12077 18877]
+--- psum Output Channel 1 ---
+Output Row 0: [11736 12552 33169]
+Output Row 1: [23261 -9559 30027]
+Output Row 2: [-5594 13451 18478]
+--- psum Output Channel 2 ---
+Output Row 0: [ 6289 21622 -8425]
+Output Row 1: [  8400 -17086  12224]
+Output Row 2: [  6650 -12935  -8961]
+--- psum Output Channel 3 ---
+Output Row 0: [ -905  4633 18874]
+Output Row 1: [ 4059 -1865   937]
+Output Row 2: [ 47129 -18953 -14388]
+
+--- 최종 GLB Bank2 (Output Feature Map) (채널별/행별 시각화) ---
+--- Final Output Channel 0 ---
+Output Row 0: [-1789 13495 -9187]
+Output Row 1: [-34447 -14533  40385]
+Output Row 2: [-5056 12077 18877]
+--- Final Output Channel 1 ---
+Output Row 0: [11736 12552 33169]
+Output Row 1: [23261 -9559 30027]
+Output Row 2: [-5594 13451 18478]
+--- Final Output Channel 2 ---
+Output Row 0: [ 6289 21622 -8425]
+Output Row 1: [  8400 -17086  12224]
+Output Row 2: [  6650 -12935  -8961]
+--- Final Output Channel 3 ---
+Output Row 0: [ -905  4633 18874]
+Output Row 1: [ 4059 -1865   937]
+Output Row 2: [ 47129 -18953 -14388]
+
+--- 시뮬레이션 완료 ---

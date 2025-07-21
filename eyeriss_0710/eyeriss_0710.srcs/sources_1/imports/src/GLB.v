@@ -30,7 +30,7 @@ module GLB #(
             true_dpbram #(
                 .RAM_WIDTH(DATA_BITWIDTH),
                 .RAM_DEPTH(BANK_DEPTH),
-                .RAM_PERFORMANCE("HIGH_PERFORMANCE")
+                .RAM_PERFORMANCE("HIGH_PERFORMANCE"),
             ) glb_bank_inst (
                 .addra   (i_ra),
                 .addrb   (i_wa), // Port A: Read, Port B: Write

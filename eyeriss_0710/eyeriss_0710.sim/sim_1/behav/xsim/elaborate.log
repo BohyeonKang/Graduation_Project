@@ -1,18 +1,15 @@
 Vivado Simulator v2022.1
 Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2022.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_GLB_behav xil_defaultlib.tb_GLB xil_defaultlib.glbl -log elaborate.log 
+Running: C:/Xilinx/Vivado/2022.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_Processing_Pass_behav xil_defaultlib.tb_Processing_Pass xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3091] actual bit length 3 differs from formal bit length 2 for port 'i_bank_sel' [C:/LAB/Graduation_Project/eyeriss_0710/eyeriss_0710.srcs/sim_1/imports/tb/tb_GLB.v:45]
-WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 4 for port 'i_ra' [C:/LAB/Graduation_Project/eyeriss_0710/eyeriss_0710.srcs/sim_1/imports/tb/tb_GLB.v:48]
-WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 4 for port 'i_wa' [C:/LAB/Graduation_Project/eyeriss_0710/eyeriss_0710.srcs/sim_1/imports/tb/tb_GLB.v:49]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.true_dpbram(RAM_WIDTH=32,RAM_DEP...
-Compiling module xil_defaultlib.GLB(BANK_NUM=4,BANK_DEPTH=16)
-Compiling module xil_defaultlib.tb_GLB
+Compiling module xil_defaultlib.true_dpbram(RAM_WIDTH=32)
+Compiling module xil_defaultlib.GLB_default
+Compiling module xil_defaultlib.tb_Processing_Pass
 Compiling module xil_defaultlib.glbl
-Built simulation snapshot tb_GLB_behav
+Built simulation snapshot tb_Processing_Pass_behav

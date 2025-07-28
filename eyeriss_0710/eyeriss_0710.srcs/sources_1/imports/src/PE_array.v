@@ -359,9 +359,9 @@ module PE_array #(
                     .IFMAP_BUS_BITWIDTH  (IFMAP_BUS_BITWIDTH),
                     .WGHT_BUS_BITWIDTH   (WGHT_BUS_BITWIDTH),
                     .PSUM_BUS_BITWIDTH   (PSUM_BUS_BITWIDTH),
-                    .IFMAP_ADDR_BITWIDTH (2),
-                    .WGHT_ADDR_BITWIDTH  (2),
-                    .PSUM_ADDR_BITWIDTH  (2)
+                    .IFMAP_ADDR_BITWIDTH (4),
+                    .WGHT_ADDR_BITWIDTH  (8),
+                    .PSUM_ADDR_BITWIDTH  (4)
                 ) u_PE_top (
                     .i_clk                 (i_clk),
                     .i_rst                 (i_rst),

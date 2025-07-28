@@ -7,7 +7,8 @@ module PE_top #(
     parameter PSUM_BUS_BITWIDTH = 32,
     parameter IFMAP_ADDR_BITWIDTH = 4,
     parameter WGHT_ADDR_BITWIDTH = 7,
-    parameter PSUM_ADDR_BITWIDTH = 3
+    parameter PSUM_ADDR_BITWIDTH = 3,
+    parameter N_CHUNKS = WGHT_BUS_BITWIDTH / IFMAP_BUS_BITWIDTH
 )(
     input i_clk,
     input i_rst,
@@ -114,7 +115,7 @@ module PE_top #(
     PISO #(
         .IN_WIDTH(WGHT_BUS_BITWIDTH),
         .OUT_WIDTH(DATA_BITWIDTH),
-        .N_CHUNKS(4)
+        .N_CHUNKS(N_CHUNKS)
     ) u_wght_piso (
         .i_clk    (i_clk),  
         .i_rst    (i_rst),
@@ -151,7 +152,7 @@ module PE_top #(
     PISO #(
         .IN_WIDTH(PSUM_BUS_BITWIDTH),
         .OUT_WIDTH(DATA_BITWIDTH),
-        .N_CHUNKS(4)
+        .N_CHUNKS(N_CHUNKS)
     ) u_psum_in_piso (
         .i_clk    (i_clk),  
         .i_rst    (i_rst),
@@ -166,7 +167,6 @@ module PE_top #(
         .o_valid  (psum_in_valid_piso2ctrl),
         .o_data   (psum_in_data_piso2datapath)   
     );
-
 
     fifo #(
         .QUEUE_PTR_BANDWIDTH(),
@@ -189,7 +189,7 @@ module PE_top #(
     SIPO #(
         .IN_WIDTH(DATA_BITWIDTH),
         .OUT_WIDTH(PSUM_BUS_BITWIDTH),
-        .N_CHUNKS(4)
+        .N_CHUNKS(N_CHUNKS)
     ) u_psum_out_sipo (
         .i_clk    (i_clk),      // 클럭
         .i_rst    (i_rst),      // 리셋

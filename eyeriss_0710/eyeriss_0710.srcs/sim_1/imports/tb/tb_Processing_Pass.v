@@ -19,8 +19,8 @@ module tb_Processing_Pass;
 	parameter PSUM_COL_ID_BITWIDTH = 4;
 
 	parameter IFMAP_BUS_BITWIDTH = 32;
-    parameter WGHT_BUS_BITWIDTH = 128;
-    parameter PSUM_BUS_BITWIDTH = 128;
+    parameter WGHT_BUS_BITWIDTH = 32;
+    parameter PSUM_BUS_BITWIDTH = 32;
 
     localparam CMD_NOP          = 3'b000;
     localparam CMD_SET          = 3'b001;
@@ -37,8 +37,8 @@ module tb_Processing_Pass;
     reg [4:0] i_bank_sel;
     reg i_we, i_re;
     reg [9:0] i_wa, i_ra;  // BANK_DEPTH = 1024 -> 10 bits
-    reg [127:0] i_wd;
-    wire [127:0] o_rd;
+    reg [31:0] i_wd;
+    wire [31:0] o_rd;
 
 	// TOP CTRL interface
 	reg  [2:0]  i_inst_data;
@@ -84,7 +84,7 @@ module tb_Processing_Pass;
 
     // Instantiate GLB
     GLB #(
-        .DATA_BITWIDTH(4 * DATA_BITWIDTH),
+        .DATA_BITWIDTH(DATA_BITWIDTH),
         .BANK_NUM(32),
         .BANK_DEPTH(1024)
     ) u_GLB (
@@ -177,9 +177,9 @@ module tb_Processing_Pass;
 	reg [31:0] ifmap_ra_iter2_row3 [0:14];
 	reg [31:0] ifmap_ra_iter2_row4 [0:14];
 
-	reg [127:0] wght_ra_row0 [0:14];
-	reg [127:0] wght_ra_row1 [0:14];
-	reg [127:0] wght_ra_row2 [0:14];
+	reg [31:0] wght_ra_row0 [0:60];
+	reg [31:0] wght_ra_row1 [0:60];
+	reg [31:0] wght_ra_row2 [0:60];
 
 	integer i;
 
@@ -426,7 +426,7 @@ module tb_Processing_Pass;
         i_re = 1;
         i_ra = wght_ra_row0[1];
 
-        for (i = 2; i < 15; i = i + 1) begin
+        for (i = 2; i < 60; i = i + 1) begin
 			@(posedge i_clk); #1;
 			i_bank_sel= 1;
 			i_re = 1;
@@ -436,7 +436,7 @@ module tb_Processing_Pass;
 			i_wght_packet = {4'd1, 4'd1, o_rd};
         end
 
-        for (i = 0; i < 15; i = i + 1) begin
+        for (i = 0; i < 60; i = i + 1) begin
 			@(posedge i_clk); #1;
 			i_bank_sel= 1;
 			i_re = 1;
@@ -447,7 +447,7 @@ module tb_Processing_Pass;
 			else 		i_wght_packet = {4'd2, 4'd1, o_rd};
         end
 
-        for (i = 0; i < 15; i = i + 1) begin
+        for (i = 0; i < 60; i = i + 1) begin
 			@(posedge i_clk); #1;
 			i_bank_sel= 1;
 			i_re = 1;

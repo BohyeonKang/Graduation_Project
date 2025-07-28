@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="1,121.942 ns"></ZoomStartTime>
-      <ZoomEndTime time="1,260.543 ns"></ZoomEndTime>
-      <Cursor1Time time="1,167.342 ns"></Cursor1Time>
+      <ZoomStartTime time="653.333 ns"></ZoomStartTime>
+      <ZoomEndTime time="1,543.334 ns"></ZoomEndTime>
+      <Cursor1Time time="1,145.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="518"></NameColumnWidth>
-      <ValueColumnWidth column_width="254"></ValueColumnWidth>
+      <NameColumnWidth column_width="387"></NameColumnWidth>
+      <ValueColumnWidth column_width="188"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="10" />
+   <WVObjectSize size="14" />
    <wvobject fp_name="group1927" type="group">
       <obj_property name="label">u_GLB</obj_property>
       <obj_property name="DisplayName">label</obj_property>
@@ -52,12 +52,12 @@
          <obj_property name="ObjectShortName">i_wa[9:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/u_GLB/i_wd" type="array">
-         <obj_property name="ElementShortName">i_wd[127:0]</obj_property>
-         <obj_property name="ObjectShortName">i_wd[127:0]</obj_property>
+         <obj_property name="ElementShortName">i_wd[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i_wd[31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/u_GLB/o_rd" type="array">
-         <obj_property name="ElementShortName">o_rd[127:0]</obj_property>
-         <obj_property name="ObjectShortName">o_rd[127:0]</obj_property>
+         <obj_property name="ElementShortName">o_rd[31:0]</obj_property>
+         <obj_property name="ObjectShortName">o_rd[31:0]</obj_property>
          <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/u_GLB/bank_sel_one_hot" type="array">
@@ -65,8 +65,8 @@
          <obj_property name="ObjectShortName">bank_sel_one_hot[31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/u_GLB/read_data" type="array">
-         <obj_property name="ElementShortName">read_data[31:0][127:0]</obj_property>
-         <obj_property name="ObjectShortName">read_data[31:0][127:0]</obj_property>
+         <obj_property name="ElementShortName">read_data[31:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">read_data[31:0][31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/u_GLB/DATA_BITWIDTH" type="array">
          <obj_property name="ElementShortName">DATA_BITWIDTH[31:0]</obj_property>
@@ -161,17 +161,17 @@
          <obj_property name="ObjectShortName">i_ifmap_packet[39:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/dut/i_wght_packet" type="array">
-         <obj_property name="ElementShortName">i_wght_packet[135:0]</obj_property>
-         <obj_property name="ObjectShortName">i_wght_packet[135:0]</obj_property>
+         <obj_property name="ElementShortName">i_wght_packet[39:0]</obj_property>
+         <obj_property name="ObjectShortName">i_wght_packet[39:0]</obj_property>
          <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/dut/i_psum_in_packet" type="array">
-         <obj_property name="ElementShortName">i_psum_in_packet[135:0]</obj_property>
-         <obj_property name="ObjectShortName">i_psum_in_packet[135:0]</obj_property>
+         <obj_property name="ElementShortName">i_psum_in_packet[39:0]</obj_property>
+         <obj_property name="ObjectShortName">i_psum_in_packet[39:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/dut/o_psum_out_data" type="array">
-         <obj_property name="ElementShortName">o_psum_out_data[127:0]</obj_property>
-         <obj_property name="ObjectShortName">o_psum_out_data[127:0]</obj_property>
+         <obj_property name="ElementShortName">o_psum_out_data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">o_psum_out_data[31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/dut/i_ifmap_valid" type="logic">
          <obj_property name="ElementShortName">i_ifmap_valid</obj_property>
@@ -222,12 +222,12 @@
          <obj_property name="ObjectShortName">ifmap_packet_ybus2xbus[0:2][35:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/dut/wght_packet_ybus2xbus" type="array">
-         <obj_property name="ElementShortName">wght_packet_ybus2xbus[0:2][131:0]</obj_property>
-         <obj_property name="ObjectShortName">wght_packet_ybus2xbus[0:2][131:0]</obj_property>
+         <obj_property name="ElementShortName">wght_packet_ybus2xbus[0:2][35:0]</obj_property>
+         <obj_property name="ObjectShortName">wght_packet_ybus2xbus[0:2][35:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/dut/psum_in_packet_ybus2xbus" type="array">
-         <obj_property name="ElementShortName">psum_in_packet_ybus2xbus[0:2][131:0]</obj_property>
-         <obj_property name="ObjectShortName">psum_in_packet_ybus2xbus[0:2][131:0]</obj_property>
+         <obj_property name="ElementShortName">psum_in_packet_ybus2xbus[0:2][35:0]</obj_property>
+         <obj_property name="ObjectShortName">psum_in_packet_ybus2xbus[0:2][35:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/dut/ifmap_valid_ybus2xbus" type="array">
          <obj_property name="ElementShortName">ifmap_valid_ybus2xbus[0:2]</obj_property>
@@ -258,12 +258,12 @@
          <obj_property name="ObjectShortName">ifmap_packet_ybus2xbus_flatten[107:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/dut/wght_packet_ybus2xbus_flatten" type="array">
-         <obj_property name="ElementShortName">wght_packet_ybus2xbus_flatten[395:0]</obj_property>
-         <obj_property name="ObjectShortName">wght_packet_ybus2xbus_flatten[395:0]</obj_property>
+         <obj_property name="ElementShortName">wght_packet_ybus2xbus_flatten[107:0]</obj_property>
+         <obj_property name="ObjectShortName">wght_packet_ybus2xbus_flatten[107:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/dut/psum_in_packet_ybus2xbus_flatten" type="array">
-         <obj_property name="ElementShortName">psum_in_packet_ybus2xbus_flatten[395:0]</obj_property>
-         <obj_property name="ObjectShortName">psum_in_packet_ybus2xbus_flatten[395:0]</obj_property>
+         <obj_property name="ElementShortName">psum_in_packet_ybus2xbus_flatten[107:0]</obj_property>
+         <obj_property name="ObjectShortName">psum_in_packet_ybus2xbus_flatten[107:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/dut/ifmap_valid_ybus2xbus_flatten" type="array">
          <obj_property name="ElementShortName">ifmap_valid_ybus2xbus_flatten[2:0]</obj_property>
@@ -294,12 +294,12 @@
          <obj_property name="ObjectShortName">ifmap_packet_xbus2PE[0:2][0:2][31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/dut/wght_packet_xbus2PE" type="array">
-         <obj_property name="ElementShortName">wght_packet_xbus2PE[0:2][0:2][127:0]</obj_property>
-         <obj_property name="ObjectShortName">wght_packet_xbus2PE[0:2][0:2][127:0]</obj_property>
+         <obj_property name="ElementShortName">wght_packet_xbus2PE[0:2][0:2][31:0]</obj_property>
+         <obj_property name="ObjectShortName">wght_packet_xbus2PE[0:2][0:2][31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/dut/psum_in_packet_xbus2PE" type="array">
-         <obj_property name="ElementShortName">psum_in_packet_xbus2PE[0:2][0:2][127:0]</obj_property>
-         <obj_property name="ObjectShortName">psum_in_packet_xbus2PE[0:2][0:2][127:0]</obj_property>
+         <obj_property name="ElementShortName">psum_in_packet_xbus2PE[0:2][0:2][31:0]</obj_property>
+         <obj_property name="ObjectShortName">psum_in_packet_xbus2PE[0:2][0:2][31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/dut/ifmap_valid_xbus2PE" type="array">
          <obj_property name="ElementShortName">ifmap_valid_xbus2PE[0:2][0:2]</obj_property>
@@ -330,12 +330,12 @@
          <obj_property name="ObjectShortName">ifmap_packet_xbus2PE_flatten[0:2][95:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/dut/wght_packet_xbus2PE_flatten" type="array">
-         <obj_property name="ElementShortName">wght_packet_xbus2PE_flatten[0:2][383:0]</obj_property>
-         <obj_property name="ObjectShortName">wght_packet_xbus2PE_flatten[0:2][383:0]</obj_property>
+         <obj_property name="ElementShortName">wght_packet_xbus2PE_flatten[0:2][95:0]</obj_property>
+         <obj_property name="ObjectShortName">wght_packet_xbus2PE_flatten[0:2][95:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/dut/psum_in_packet_xbus2PE_flatten" type="array">
-         <obj_property name="ElementShortName">psum_in_packet_xbus2PE_flatten[0:2][383:0]</obj_property>
-         <obj_property name="ObjectShortName">psum_in_packet_xbus2PE_flatten[0:2][383:0]</obj_property>
+         <obj_property name="ElementShortName">psum_in_packet_xbus2PE_flatten[0:2][95:0]</obj_property>
+         <obj_property name="ObjectShortName">psum_in_packet_xbus2PE_flatten[0:2][95:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/dut/ifmap_valid_xbus2PE_flatten" type="array">
          <obj_property name="ElementShortName">ifmap_valid_xbus2PE_flatten[0:2][2:0]</obj_property>
@@ -362,8 +362,8 @@
          <obj_property name="ObjectShortName">psum_in_ready_PE2xbus_flatten[0:2][2:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/dut/LN_psum_data" type="array">
-         <obj_property name="ElementShortName">LN_psum_data[0:3][0:2][127:0]</obj_property>
-         <obj_property name="ObjectShortName">LN_psum_data[0:3][0:2][127:0]</obj_property>
+         <obj_property name="ElementShortName">LN_psum_data[0:3][0:2][31:0]</obj_property>
+         <obj_property name="ObjectShortName">LN_psum_data[0:3][0:2][31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/dut/LN_psum_valid" type="array">
          <obj_property name="ElementShortName">LN_psum_valid[0:3][0:2]</obj_property>
@@ -374,8 +374,8 @@
          <obj_property name="ObjectShortName">LN_psum_ready[0:3][0:2]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/dut/psum_in_data_mux_select" type="array">
-         <obj_property name="ElementShortName">psum_in_data_mux_select[0:2][0:2][127:0]</obj_property>
-         <obj_property name="ObjectShortName">psum_in_data_mux_select[0:2][0:2][127:0]</obj_property>
+         <obj_property name="ElementShortName">psum_in_data_mux_select[0:2][0:2][31:0]</obj_property>
+         <obj_property name="ObjectShortName">psum_in_data_mux_select[0:2][0:2][31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/dut/psum_in_valid_mux_select" type="array">
          <obj_property name="ElementShortName">psum_in_valid_mux_select[0:2][0:2]</obj_property>
@@ -390,8 +390,8 @@
          <obj_property name="ObjectShortName">j[31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/dut/psum_out_data_buffer" type="array">
-         <obj_property name="ElementShortName">psum_out_data_buffer[2:0][2:0][127:0]</obj_property>
-         <obj_property name="ObjectShortName">psum_out_data_buffer[2:0][2:0][127:0]</obj_property>
+         <obj_property name="ElementShortName">psum_out_data_buffer[2:0][2:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">psum_out_data_buffer[2:0][2:0][31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/dut/psum_out_valid_buffer" type="array">
          <obj_property name="ElementShortName">psum_out_valid_buffer[2:0][2:0]</obj_property>
@@ -411,12 +411,12 @@
          <obj_property name="ObjectShortName">addrb[9:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/u_GLB/\gen_GLB_BANKS[0].glb_bank_inst /dina" type="array">
-         <obj_property name="ElementShortName">dina[127:0]</obj_property>
-         <obj_property name="ObjectShortName">dina[127:0]</obj_property>
+         <obj_property name="ElementShortName">dina[31:0]</obj_property>
+         <obj_property name="ObjectShortName">dina[31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/u_GLB/\gen_GLB_BANKS[0].glb_bank_inst /dinb" type="array">
-         <obj_property name="ElementShortName">dinb[127:0]</obj_property>
-         <obj_property name="ObjectShortName">dinb[127:0]</obj_property>
+         <obj_property name="ElementShortName">dinb[31:0]</obj_property>
+         <obj_property name="ObjectShortName">dinb[31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/u_GLB/\gen_GLB_BANKS[0].glb_bank_inst /clka" type="logic">
          <obj_property name="ElementShortName">clka</obj_property>
@@ -459,36 +459,36 @@
          <obj_property name="ObjectShortName">regceb</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/u_GLB/\gen_GLB_BANKS[0].glb_bank_inst /douta" type="array">
-         <obj_property name="ElementShortName">douta[127:0]</obj_property>
-         <obj_property name="ObjectShortName">douta[127:0]</obj_property>
+         <obj_property name="ElementShortName">douta[31:0]</obj_property>
+         <obj_property name="ObjectShortName">douta[31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/u_GLB/\gen_GLB_BANKS[0].glb_bank_inst /doutb" type="array">
-         <obj_property name="ElementShortName">doutb[127:0]</obj_property>
-         <obj_property name="ObjectShortName">doutb[127:0]</obj_property>
+         <obj_property name="ElementShortName">doutb[31:0]</obj_property>
+         <obj_property name="ObjectShortName">doutb[31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/u_GLB/\gen_GLB_BANKS[0].glb_bank_inst /BRAM" type="array">
-         <obj_property name="ElementShortName">BRAM[0:1023][127:0]</obj_property>
-         <obj_property name="ObjectShortName">BRAM[0:1023][127:0]</obj_property>
+         <obj_property name="ElementShortName">BRAM[0:1023][31:0]</obj_property>
+         <obj_property name="ObjectShortName">BRAM[0:1023][31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/u_GLB/\gen_GLB_BANKS[0].glb_bank_inst /ram_data_a" type="array">
-         <obj_property name="ElementShortName">ram_data_a[127:0]</obj_property>
-         <obj_property name="ObjectShortName">ram_data_a[127:0]</obj_property>
+         <obj_property name="ElementShortName">ram_data_a[31:0]</obj_property>
+         <obj_property name="ObjectShortName">ram_data_a[31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/u_GLB/\gen_GLB_BANKS[0].glb_bank_inst /ram_data_b" type="array">
-         <obj_property name="ElementShortName">ram_data_b[127:0]</obj_property>
-         <obj_property name="ObjectShortName">ram_data_b[127:0]</obj_property>
+         <obj_property name="ElementShortName">ram_data_b[31:0]</obj_property>
+         <obj_property name="ObjectShortName">ram_data_b[31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/u_GLB/\gen_GLB_BANKS[0].glb_bank_inst /\init_bram_to_zero.ram_index " type="array">
          <obj_property name="ElementShortName">\init_bram_to_zero.ram_index [31:0]</obj_property>
          <obj_property name="ObjectShortName">\init_bram_to_zero.ram_index [31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/u_GLB/\gen_GLB_BANKS[0].glb_bank_inst /\output_register.douta_reg " type="array">
-         <obj_property name="ElementShortName">\output_register.douta_reg [127:0]</obj_property>
-         <obj_property name="ObjectShortName">\output_register.douta_reg [127:0]</obj_property>
+         <obj_property name="ElementShortName">\output_register.douta_reg [31:0]</obj_property>
+         <obj_property name="ObjectShortName">\output_register.douta_reg [31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/u_GLB/\gen_GLB_BANKS[0].glb_bank_inst /\output_register.doutb_reg " type="array">
-         <obj_property name="ElementShortName">\output_register.doutb_reg [127:0]</obj_property>
-         <obj_property name="ObjectShortName">\output_register.doutb_reg [127:0]</obj_property>
+         <obj_property name="ElementShortName">\output_register.doutb_reg [31:0]</obj_property>
+         <obj_property name="ObjectShortName">\output_register.doutb_reg [31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/u_GLB/\gen_GLB_BANKS[0].glb_bank_inst /RAM_WIDTH" type="array">
          <obj_property name="ElementShortName">RAM_WIDTH[31:0]</obj_property>
@@ -520,12 +520,12 @@
          <obj_property name="ObjectShortName">addrb[9:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/u_GLB/\gen_GLB_BANKS[1].glb_bank_inst /dina" type="array">
-         <obj_property name="ElementShortName">dina[127:0]</obj_property>
-         <obj_property name="ObjectShortName">dina[127:0]</obj_property>
+         <obj_property name="ElementShortName">dina[31:0]</obj_property>
+         <obj_property name="ObjectShortName">dina[31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/u_GLB/\gen_GLB_BANKS[1].glb_bank_inst /dinb" type="array">
-         <obj_property name="ElementShortName">dinb[127:0]</obj_property>
-         <obj_property name="ObjectShortName">dinb[127:0]</obj_property>
+         <obj_property name="ElementShortName">dinb[31:0]</obj_property>
+         <obj_property name="ObjectShortName">dinb[31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/u_GLB/\gen_GLB_BANKS[1].glb_bank_inst /clka" type="logic">
          <obj_property name="ElementShortName">clka</obj_property>
@@ -568,36 +568,36 @@
          <obj_property name="ObjectShortName">regceb</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/u_GLB/\gen_GLB_BANKS[1].glb_bank_inst /douta" type="array">
-         <obj_property name="ElementShortName">douta[127:0]</obj_property>
-         <obj_property name="ObjectShortName">douta[127:0]</obj_property>
+         <obj_property name="ElementShortName">douta[31:0]</obj_property>
+         <obj_property name="ObjectShortName">douta[31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/u_GLB/\gen_GLB_BANKS[1].glb_bank_inst /doutb" type="array">
-         <obj_property name="ElementShortName">doutb[127:0]</obj_property>
-         <obj_property name="ObjectShortName">doutb[127:0]</obj_property>
+         <obj_property name="ElementShortName">doutb[31:0]</obj_property>
+         <obj_property name="ObjectShortName">doutb[31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/u_GLB/\gen_GLB_BANKS[1].glb_bank_inst /BRAM" type="array">
-         <obj_property name="ElementShortName">BRAM[0:1023][127:0]</obj_property>
-         <obj_property name="ObjectShortName">BRAM[0:1023][127:0]</obj_property>
+         <obj_property name="ElementShortName">BRAM[0:1023][31:0]</obj_property>
+         <obj_property name="ObjectShortName">BRAM[0:1023][31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/u_GLB/\gen_GLB_BANKS[1].glb_bank_inst /ram_data_a" type="array">
-         <obj_property name="ElementShortName">ram_data_a[127:0]</obj_property>
-         <obj_property name="ObjectShortName">ram_data_a[127:0]</obj_property>
+         <obj_property name="ElementShortName">ram_data_a[31:0]</obj_property>
+         <obj_property name="ObjectShortName">ram_data_a[31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/u_GLB/\gen_GLB_BANKS[1].glb_bank_inst /ram_data_b" type="array">
-         <obj_property name="ElementShortName">ram_data_b[127:0]</obj_property>
-         <obj_property name="ObjectShortName">ram_data_b[127:0]</obj_property>
+         <obj_property name="ElementShortName">ram_data_b[31:0]</obj_property>
+         <obj_property name="ObjectShortName">ram_data_b[31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/u_GLB/\gen_GLB_BANKS[1].glb_bank_inst /\init_bram_to_zero.ram_index " type="array">
          <obj_property name="ElementShortName">\init_bram_to_zero.ram_index [31:0]</obj_property>
          <obj_property name="ObjectShortName">\init_bram_to_zero.ram_index [31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/u_GLB/\gen_GLB_BANKS[1].glb_bank_inst /\output_register.douta_reg " type="array">
-         <obj_property name="ElementShortName">\output_register.douta_reg [127:0]</obj_property>
-         <obj_property name="ObjectShortName">\output_register.douta_reg [127:0]</obj_property>
+         <obj_property name="ElementShortName">\output_register.douta_reg [31:0]</obj_property>
+         <obj_property name="ObjectShortName">\output_register.douta_reg [31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/u_GLB/\gen_GLB_BANKS[1].glb_bank_inst /\output_register.doutb_reg " type="array">
-         <obj_property name="ElementShortName">\output_register.doutb_reg [127:0]</obj_property>
-         <obj_property name="ObjectShortName">\output_register.doutb_reg [127:0]</obj_property>
+         <obj_property name="ElementShortName">\output_register.doutb_reg [31:0]</obj_property>
+         <obj_property name="ObjectShortName">\output_register.doutb_reg [31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/u_GLB/\gen_GLB_BANKS[1].glb_bank_inst /RAM_WIDTH" type="array">
          <obj_property name="ElementShortName">RAM_WIDTH[31:0]</obj_property>
@@ -628,12 +628,12 @@
          <obj_property name="ObjectShortName">addrb[9:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/u_GLB/\gen_GLB_BANKS[2].glb_bank_inst /dina" type="array">
-         <obj_property name="ElementShortName">dina[127:0]</obj_property>
-         <obj_property name="ObjectShortName">dina[127:0]</obj_property>
+         <obj_property name="ElementShortName">dina[31:0]</obj_property>
+         <obj_property name="ObjectShortName">dina[31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/u_GLB/\gen_GLB_BANKS[2].glb_bank_inst /dinb" type="array">
-         <obj_property name="ElementShortName">dinb[127:0]</obj_property>
-         <obj_property name="ObjectShortName">dinb[127:0]</obj_property>
+         <obj_property name="ElementShortName">dinb[31:0]</obj_property>
+         <obj_property name="ObjectShortName">dinb[31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/u_GLB/\gen_GLB_BANKS[2].glb_bank_inst /clka" type="logic">
          <obj_property name="ElementShortName">clka</obj_property>
@@ -676,36 +676,36 @@
          <obj_property name="ObjectShortName">regceb</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/u_GLB/\gen_GLB_BANKS[2].glb_bank_inst /douta" type="array">
-         <obj_property name="ElementShortName">douta[127:0]</obj_property>
-         <obj_property name="ObjectShortName">douta[127:0]</obj_property>
+         <obj_property name="ElementShortName">douta[31:0]</obj_property>
+         <obj_property name="ObjectShortName">douta[31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/u_GLB/\gen_GLB_BANKS[2].glb_bank_inst /doutb" type="array">
-         <obj_property name="ElementShortName">doutb[127:0]</obj_property>
-         <obj_property name="ObjectShortName">doutb[127:0]</obj_property>
+         <obj_property name="ElementShortName">doutb[31:0]</obj_property>
+         <obj_property name="ObjectShortName">doutb[31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/u_GLB/\gen_GLB_BANKS[2].glb_bank_inst /BRAM" type="array">
-         <obj_property name="ElementShortName">BRAM[0:1023][127:0]</obj_property>
-         <obj_property name="ObjectShortName">BRAM[0:1023][127:0]</obj_property>
+         <obj_property name="ElementShortName">BRAM[0:1023][31:0]</obj_property>
+         <obj_property name="ObjectShortName">BRAM[0:1023][31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/u_GLB/\gen_GLB_BANKS[2].glb_bank_inst /ram_data_a" type="array">
-         <obj_property name="ElementShortName">ram_data_a[127:0]</obj_property>
-         <obj_property name="ObjectShortName">ram_data_a[127:0]</obj_property>
+         <obj_property name="ElementShortName">ram_data_a[31:0]</obj_property>
+         <obj_property name="ObjectShortName">ram_data_a[31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/u_GLB/\gen_GLB_BANKS[2].glb_bank_inst /ram_data_b" type="array">
-         <obj_property name="ElementShortName">ram_data_b[127:0]</obj_property>
-         <obj_property name="ObjectShortName">ram_data_b[127:0]</obj_property>
+         <obj_property name="ElementShortName">ram_data_b[31:0]</obj_property>
+         <obj_property name="ObjectShortName">ram_data_b[31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/u_GLB/\gen_GLB_BANKS[2].glb_bank_inst /\init_bram_to_zero.ram_index " type="array">
          <obj_property name="ElementShortName">\init_bram_to_zero.ram_index [31:0]</obj_property>
          <obj_property name="ObjectShortName">\init_bram_to_zero.ram_index [31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/u_GLB/\gen_GLB_BANKS[2].glb_bank_inst /\output_register.douta_reg " type="array">
-         <obj_property name="ElementShortName">\output_register.douta_reg [127:0]</obj_property>
-         <obj_property name="ObjectShortName">\output_register.douta_reg [127:0]</obj_property>
+         <obj_property name="ElementShortName">\output_register.douta_reg [31:0]</obj_property>
+         <obj_property name="ObjectShortName">\output_register.douta_reg [31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/u_GLB/\gen_GLB_BANKS[2].glb_bank_inst /\output_register.doutb_reg " type="array">
-         <obj_property name="ElementShortName">\output_register.doutb_reg [127:0]</obj_property>
-         <obj_property name="ObjectShortName">\output_register.doutb_reg [127:0]</obj_property>
+         <obj_property name="ElementShortName">\output_register.doutb_reg [31:0]</obj_property>
+         <obj_property name="ObjectShortName">\output_register.doutb_reg [31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/u_GLB/\gen_GLB_BANKS[2].glb_bank_inst /RAM_WIDTH" type="array">
          <obj_property name="ElementShortName">RAM_WIDTH[31:0]</obj_property>
@@ -803,18 +803,18 @@
          <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/wght_ra_row0" type="array">
-         <obj_property name="ElementShortName">wght_ra_row0[0:14][127:0]</obj_property>
-         <obj_property name="ObjectShortName">wght_ra_row0[0:14][127:0]</obj_property>
+         <obj_property name="ElementShortName">wght_ra_row0[0:60][31:0]</obj_property>
+         <obj_property name="ObjectShortName">wght_ra_row0[0:60][31:0]</obj_property>
          <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/wght_ra_row1" type="array">
-         <obj_property name="ElementShortName">wght_ra_row1[0:14][127:0]</obj_property>
-         <obj_property name="ObjectShortName">wght_ra_row1[0:14][127:0]</obj_property>
+         <obj_property name="ElementShortName">wght_ra_row1[0:60][31:0]</obj_property>
+         <obj_property name="ObjectShortName">wght_ra_row1[0:60][31:0]</obj_property>
          <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/wght_ra_row2" type="array">
-         <obj_property name="ElementShortName">wght_ra_row2[0:14][127:0]</obj_property>
-         <obj_property name="ObjectShortName">wght_ra_row2[0:14][127:0]</obj_property>
+         <obj_property name="ElementShortName">wght_ra_row2[0:60][31:0]</obj_property>
+         <obj_property name="ObjectShortName">wght_ra_row2[0:60][31:0]</obj_property>
          <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       </wvobject>
    </wvobject>
@@ -874,28 +874,28 @@
          <obj_property name="ObjectShortName">i_psum_out_sipo_ready</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_control/o_ifmap_ra" type="array">
-         <obj_property name="ElementShortName">o_ifmap_ra[1:0]</obj_property>
-         <obj_property name="ObjectShortName">o_ifmap_ra[1:0]</obj_property>
+         <obj_property name="ElementShortName">o_ifmap_ra[3:0]</obj_property>
+         <obj_property name="ObjectShortName">o_ifmap_ra[3:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_control/o_wght_ra" type="array">
-         <obj_property name="ElementShortName">o_wght_ra[1:0]</obj_property>
-         <obj_property name="ObjectShortName">o_wght_ra[1:0]</obj_property>
+         <obj_property name="ElementShortName">o_wght_ra[7:0]</obj_property>
+         <obj_property name="ObjectShortName">o_wght_ra[7:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_control/o_psum_ra" type="array">
-         <obj_property name="ElementShortName">o_psum_ra[1:0]</obj_property>
-         <obj_property name="ObjectShortName">o_psum_ra[1:0]</obj_property>
+         <obj_property name="ElementShortName">o_psum_ra[3:0]</obj_property>
+         <obj_property name="ObjectShortName">o_psum_ra[3:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_control/o_ifmap_wa" type="array">
-         <obj_property name="ElementShortName">o_ifmap_wa[1:0]</obj_property>
-         <obj_property name="ObjectShortName">o_ifmap_wa[1:0]</obj_property>
+         <obj_property name="ElementShortName">o_ifmap_wa[3:0]</obj_property>
+         <obj_property name="ObjectShortName">o_ifmap_wa[3:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_control/o_wght_wa" type="array">
-         <obj_property name="ElementShortName">o_wght_wa[1:0]</obj_property>
-         <obj_property name="ObjectShortName">o_wght_wa[1:0]</obj_property>
+         <obj_property name="ElementShortName">o_wght_wa[7:0]</obj_property>
+         <obj_property name="ObjectShortName">o_wght_wa[7:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_control/o_psum_wa" type="array">
-         <obj_property name="ElementShortName">o_psum_wa[1:0]</obj_property>
-         <obj_property name="ObjectShortName">o_psum_wa[1:0]</obj_property>
+         <obj_property name="ElementShortName">o_psum_wa[3:0]</obj_property>
+         <obj_property name="ObjectShortName">o_psum_wa[3:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_control/o_ifmap_we" type="logic">
          <obj_property name="ElementShortName">o_ifmap_we</obj_property>
@@ -1061,22 +1061,21 @@
    <wvobject fp_name="group1295" type="group">
       <obj_property name="label">pe00</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /ifmap_data_fifo2datapath" type="array">
          <obj_property name="ElementShortName">ifmap_data_fifo2datapath[31:0]</obj_property>
          <obj_property name="ObjectShortName">ifmap_data_fifo2datapath[31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /wght_data_fifo2piso" type="array">
-         <obj_property name="ElementShortName">wght_data_fifo2piso[127:0]</obj_property>
-         <obj_property name="ObjectShortName">wght_data_fifo2piso[127:0]</obj_property>
+         <obj_property name="ElementShortName">wght_data_fifo2piso[31:0]</obj_property>
+         <obj_property name="ObjectShortName">wght_data_fifo2piso[31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /wght_data_piso2datapath" type="array">
          <obj_property name="ElementShortName">wght_data_piso2datapath[31:0]</obj_property>
          <obj_property name="ObjectShortName">wght_data_piso2datapath[31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /psum_in_data_fifo2piso" type="array">
-         <obj_property name="ElementShortName">psum_in_data_fifo2piso[127:0]</obj_property>
-         <obj_property name="ObjectShortName">psum_in_data_fifo2piso[127:0]</obj_property>
+         <obj_property name="ElementShortName">psum_in_data_fifo2piso[31:0]</obj_property>
+         <obj_property name="ObjectShortName">psum_in_data_fifo2piso[31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /wght_valid_fifo2piso" type="logic">
          <obj_property name="ElementShortName">wght_valid_fifo2piso</obj_property>
@@ -1095,16 +1094,16 @@
          <obj_property name="ObjectShortName">ifmap_data_fifo2datapath[31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[1].u_PE_top /wght_data_fifo2piso" type="array">
-         <obj_property name="ElementShortName">wght_data_fifo2piso[127:0]</obj_property>
-         <obj_property name="ObjectShortName">wght_data_fifo2piso[127:0]</obj_property>
+         <obj_property name="ElementShortName">wght_data_fifo2piso[31:0]</obj_property>
+         <obj_property name="ObjectShortName">wght_data_fifo2piso[31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[1].u_PE_top /wght_data_piso2datapath" type="array">
          <obj_property name="ElementShortName">wght_data_piso2datapath[31:0]</obj_property>
          <obj_property name="ObjectShortName">wght_data_piso2datapath[31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[1].u_PE_top /psum_in_data_fifo2piso" type="array">
-         <obj_property name="ElementShortName">psum_in_data_fifo2piso[127:0]</obj_property>
-         <obj_property name="ObjectShortName">psum_in_data_fifo2piso[127:0]</obj_property>
+         <obj_property name="ElementShortName">psum_in_data_fifo2piso[31:0]</obj_property>
+         <obj_property name="ObjectShortName">psum_in_data_fifo2piso[31:0]</obj_property>
       </wvobject>
    </wvobject>
    <wvobject fp_name="group1305" type="group">
@@ -1115,16 +1114,221 @@
          <obj_property name="ObjectShortName">ifmap_data_fifo2datapath[31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[2].u_PE_top /wght_data_fifo2piso" type="array">
-         <obj_property name="ElementShortName">wght_data_fifo2piso[127:0]</obj_property>
-         <obj_property name="ObjectShortName">wght_data_fifo2piso[127:0]</obj_property>
+         <obj_property name="ElementShortName">wght_data_fifo2piso[31:0]</obj_property>
+         <obj_property name="ObjectShortName">wght_data_fifo2piso[31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[2].u_PE_top /wght_data_piso2datapath" type="array">
          <obj_property name="ElementShortName">wght_data_piso2datapath[31:0]</obj_property>
          <obj_property name="ObjectShortName">wght_data_piso2datapath[31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[2].u_PE_top /psum_in_data_fifo2piso" type="array">
-         <obj_property name="ElementShortName">psum_in_data_fifo2piso[127:0]</obj_property>
-         <obj_property name="ObjectShortName">psum_in_data_fifo2piso[127:0]</obj_property>
+         <obj_property name="ElementShortName">psum_in_data_fifo2piso[31:0]</obj_property>
+         <obj_property name="ObjectShortName">psum_in_data_fifo2piso[31:0]</obj_property>
       </wvobject>
+   </wvobject>
+   <wvobject fp_name="group1547" type="group">
+      <obj_property name="label">PE00 datapath</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/i_clk" type="logic">
+         <obj_property name="ElementShortName">i_clk</obj_property>
+         <obj_property name="ObjectShortName">i_clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/i_rst" type="logic">
+         <obj_property name="ElementShortName">i_rst</obj_property>
+         <obj_property name="ObjectShortName">i_rst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/i_ifmap_data" type="array">
+         <obj_property name="ElementShortName">i_ifmap_data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i_ifmap_data[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/i_wght_data" type="array">
+         <obj_property name="ElementShortName">i_wght_data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i_wght_data[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/i_psum_data" type="array">
+         <obj_property name="ElementShortName">i_psum_data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i_psum_data[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/o_psum_data" type="array">
+         <obj_property name="ElementShortName">o_psum_data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">o_psum_data[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/i_acc_sel" type="logic">
+         <obj_property name="ElementShortName">i_acc_sel</obj_property>
+         <obj_property name="ObjectShortName">i_acc_sel</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/i_rst_psum" type="logic">
+         <obj_property name="ElementShortName">i_rst_psum</obj_property>
+         <obj_property name="ObjectShortName">i_rst_psum</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/i_ifmap_ra" type="array">
+         <obj_property name="ElementShortName">i_ifmap_ra[3:0]</obj_property>
+         <obj_property name="ObjectShortName">i_ifmap_ra[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/i_wght_ra" type="array">
+         <obj_property name="ElementShortName">i_wght_ra[7:0]</obj_property>
+         <obj_property name="ObjectShortName">i_wght_ra[7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/i_psum_ra" type="array">
+         <obj_property name="ElementShortName">i_psum_ra[3:0]</obj_property>
+         <obj_property name="ObjectShortName">i_psum_ra[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/i_ifmap_wa" type="array">
+         <obj_property name="ElementShortName">i_ifmap_wa[3:0]</obj_property>
+         <obj_property name="ObjectShortName">i_ifmap_wa[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/i_wght_wa" type="array">
+         <obj_property name="ElementShortName">i_wght_wa[7:0]</obj_property>
+         <obj_property name="ObjectShortName">i_wght_wa[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/i_psum_wa" type="array">
+         <obj_property name="ElementShortName">i_psum_wa[3:0]</obj_property>
+         <obj_property name="ObjectShortName">i_psum_wa[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/i_ifmap_we" type="logic">
+         <obj_property name="ElementShortName">i_ifmap_we</obj_property>
+         <obj_property name="ObjectShortName">i_ifmap_we</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/i_wght_we" type="logic">
+         <obj_property name="ElementShortName">i_wght_we</obj_property>
+         <obj_property name="ObjectShortName">i_wght_we</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/i_psum_we" type="logic">
+         <obj_property name="ElementShortName">i_psum_we</obj_property>
+         <obj_property name="ObjectShortName">i_psum_we</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/o_psum_out_valid" type="logic">
+         <obj_property name="ElementShortName">o_psum_out_valid</obj_property>
+         <obj_property name="ObjectShortName">o_psum_out_valid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/psum_in_reg" type="array">
+         <obj_property name="ElementShortName">psum_in_reg[31:0]</obj_property>
+         <obj_property name="ObjectShortName">psum_in_reg[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/psum_in_reg_d" type="array">
+         <obj_property name="ElementShortName">psum_in_reg_d[31:0]</obj_property>
+         <obj_property name="ObjectShortName">psum_in_reg_d[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/psum_in_reg_d2" type="array">
+         <obj_property name="ElementShortName">psum_in_reg_d2[31:0]</obj_property>
+         <obj_property name="ObjectShortName">psum_in_reg_d2[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/ifmap_rd" type="array">
+         <obj_property name="ElementShortName">ifmap_rd[31:0]</obj_property>
+         <obj_property name="ObjectShortName">ifmap_rd[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/wght_rd" type="array">
+         <obj_property name="ElementShortName">wght_rd[31:0]</obj_property>
+         <obj_property name="ObjectShortName">wght_rd[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/psum_rd" type="array">
+         <obj_property name="ElementShortName">psum_rd[31:0]</obj_property>
+         <obj_property name="ObjectShortName">psum_rd[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/ifmap_reg" type="array">
+         <obj_property name="ElementShortName">ifmap_reg[31:0]</obj_property>
+         <obj_property name="ObjectShortName">ifmap_reg[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/psum_reg" type="array">
+         <obj_property name="ElementShortName">psum_reg[31:0]</obj_property>
+         <obj_property name="ObjectShortName">psum_reg[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/psum_reg_d" type="array">
+         <obj_property name="ElementShortName">psum_reg_d[31:0]</obj_property>
+         <obj_property name="ObjectShortName">psum_reg_d[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/psum_reg_d2" type="array">
+         <obj_property name="ElementShortName">psum_reg_d2[31:0]</obj_property>
+         <obj_property name="ObjectShortName">psum_reg_d2[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/wght_reg" type="array">
+         <obj_property name="ElementShortName">wght_reg[31:0]</obj_property>
+         <obj_property name="ObjectShortName">wght_reg[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/acc_sel_sft_reg" type="array">
+         <obj_property name="ElementShortName">acc_sel_sft_reg[2:0]</obj_property>
+         <obj_property name="ObjectShortName">acc_sel_sft_reg[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/rst_psum_sft_reg" type="array">
+         <obj_property name="ElementShortName">rst_psum_sft_reg[2:0]</obj_property>
+         <obj_property name="ObjectShortName">rst_psum_sft_reg[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/psum_wa_reg" type="array">
+         <obj_property name="ElementShortName">psum_wa_reg[3:0]</obj_property>
+         <obj_property name="ObjectShortName">psum_wa_reg[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/psum_wa_reg_d1" type="array">
+         <obj_property name="ElementShortName">psum_wa_reg_d1[3:0]</obj_property>
+         <obj_property name="ObjectShortName">psum_wa_reg_d1[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/psum_wa_reg_d2" type="array">
+         <obj_property name="ElementShortName">psum_wa_reg_d2[3:0]</obj_property>
+         <obj_property name="ObjectShortName">psum_wa_reg_d2[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/psum_we_sftreg" type="array">
+         <obj_property name="ElementShortName">psum_we_sftreg[2:0]</obj_property>
+         <obj_property name="ObjectShortName">psum_we_sftreg[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/rst_psum" type="logic">
+         <obj_property name="ElementShortName">rst_psum</obj_property>
+         <obj_property name="ObjectShortName">rst_psum</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/psum_we" type="logic">
+         <obj_property name="ElementShortName">psum_we</obj_property>
+         <obj_property name="ObjectShortName">psum_we</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/psum_wa" type="array">
+         <obj_property name="ElementShortName">psum_wa[3:0]</obj_property>
+         <obj_property name="ObjectShortName">psum_wa[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/acc_sel" type="logic">
+         <obj_property name="ElementShortName">acc_sel</obj_property>
+         <obj_property name="ObjectShortName">acc_sel</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/mul_reg" type="array">
+         <obj_property name="ElementShortName">mul_reg[31:0]</obj_property>
+         <obj_property name="ObjectShortName">mul_reg[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/mul_reg_d" type="array">
+         <obj_property name="ElementShortName">mul_reg_d[31:0]</obj_property>
+         <obj_property name="ObjectShortName">mul_reg_d[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/DATA_BITWIDTH" type="array">
+         <obj_property name="ElementShortName">DATA_BITWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">DATA_BITWIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/IFMAP_ADDR_BITWIDTH" type="array">
+         <obj_property name="ElementShortName">IFMAP_ADDR_BITWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">IFMAP_ADDR_BITWIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/WGHT_ADDR_BITWIDTH" type="array">
+         <obj_property name="ElementShortName">WGHT_ADDR_BITWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">WGHT_ADDR_BITWIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/PSUM_ADDR_BITWIDTH" type="array">
+         <obj_property name="ElementShortName">PSUM_ADDR_BITWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">PSUM_ADDR_BITWIDTH[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/spad_ifmap/registers" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">registers[0:15][31:0]</obj_property>
+      <obj_property name="ObjectShortName">registers[0:15][31:0]</obj_property>
+      <obj_property name="label">pe00_ifmap[0:15][31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/spad_weight/ram" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">ram[0:255][31:0]</obj_property>
+      <obj_property name="ObjectShortName">ram[0:255][31:0]</obj_property>
+      <obj_property name="label">pe00_wght[0:255][31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_Processing_Pass/dut/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/spad_psum/registers" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">registers[0:15][31:0]</obj_property>
+      <obj_property name="ObjectShortName">registers[0:15][31:0]</obj_property>
+      <obj_property name="label">pe00_psum[0:15][31:0]</obj_property>
    </wvobject>
 </wave_config>

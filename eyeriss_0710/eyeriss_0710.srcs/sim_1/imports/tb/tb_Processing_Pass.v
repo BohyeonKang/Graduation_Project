@@ -33,16 +33,12 @@ module tb_Processing_Pass;
     reg i_clk;
     reg i_rst;
 
-
-
     // GLB interface
     reg [4:0] i_bank_sel;
     reg i_we, i_re;
     reg [9:0] i_wa, i_ra;  // BANK_DEPTH = 1024 -> 10 bits
-    reg [31:0] i_wd;
-    wire [31:0] o_rd;
-
-
+    reg [127:0] i_wd;
+    wire [127:0] o_rd;
 
 	// TOP CTRL interface
 	reg  [2:0]  i_inst_data;
@@ -88,7 +84,7 @@ module tb_Processing_Pass;
 
     // Instantiate GLB
     GLB #(
-        .DATA_BITWIDTH(DATA_BITWIDTH),
+        .DATA_BITWIDTH(4 * DATA_BITWIDTH),
         .BANK_NUM(32),
         .BANK_DEPTH(1024)
     ) u_GLB (
@@ -165,8 +161,50 @@ module tb_Processing_Pass;
     // Clock generation
     always #5 i_clk = ~i_clk;
 
+	reg [31:0] ifmap_ra_iter0_row0 [0:14];
+	reg [31:0] ifmap_ra_iter0_row1 [0:14];
+	reg [31:0] ifmap_ra_iter0_row2 [0:14];
+	reg [31:0] ifmap_ra_iter0_row3 [0:14];
+	reg [31:0] ifmap_ra_iter0_row4 [0:14];
+	reg [31:0] ifmap_ra_iter1_row0 [0:14];
+	reg [31:0] ifmap_ra_iter1_row1 [0:14];
+	reg [31:0] ifmap_ra_iter1_row2 [0:14];
+	reg [31:0] ifmap_ra_iter1_row3 [0:14];
+	reg [31:0] ifmap_ra_iter1_row4 [0:14];
+	reg [31:0] ifmap_ra_iter2_row0 [0:14];
+	reg [31:0] ifmap_ra_iter2_row1 [0:14];
+	reg [31:0] ifmap_ra_iter2_row2 [0:14];
+	reg [31:0] ifmap_ra_iter2_row3 [0:14];
+	reg [31:0] ifmap_ra_iter2_row4 [0:14];
+
+	reg [127:0] wght_ra_row0 [0:14];
+	reg [127:0] wght_ra_row1 [0:14];
+	reg [127:0] wght_ra_row2 [0:14];
+
+	integer i;
+
     // Initial block for simulation
     initial begin
+		$readmemh("ifmap_ra_iter0_row0.mem", ifmap_ra_iter0_row0);
+		$readmemh("ifmap_ra_iter0_row1.mem", ifmap_ra_iter0_row1);
+		$readmemh("ifmap_ra_iter0_row2.mem", ifmap_ra_iter0_row2);
+		$readmemh("ifmap_ra_iter0_row3.mem", ifmap_ra_iter0_row3);
+		$readmemh("ifmap_ra_iter0_row4.mem", ifmap_ra_iter0_row4);
+		$readmemh("ifmap_ra_iter1_row0.mem", ifmap_ra_iter1_row0);
+		$readmemh("ifmap_ra_iter1_row1.mem", ifmap_ra_iter1_row1);
+		$readmemh("ifmap_ra_iter1_row2.mem", ifmap_ra_iter1_row2);
+		$readmemh("ifmap_ra_iter1_row3.mem", ifmap_ra_iter1_row3);
+		$readmemh("ifmap_ra_iter1_row4.mem", ifmap_ra_iter1_row4);
+		$readmemh("ifmap_ra_iter2_row0.mem", ifmap_ra_iter2_row0);
+		$readmemh("ifmap_ra_iter2_row1.mem", ifmap_ra_iter2_row1);
+		$readmemh("ifmap_ra_iter2_row2.mem", ifmap_ra_iter2_row2);
+		$readmemh("ifmap_ra_iter2_row3.mem", ifmap_ra_iter2_row3);
+		$readmemh("ifmap_ra_iter2_row4.mem", ifmap_ra_iter2_row4);
+		
+		$readmemh("wght_ra_row0.mem", wght_ra_row0);
+		$readmemh("wght_ra_row1.mem", wght_ra_row1);
+		$readmemh("wght_ra_row2.mem", wght_ra_row2);
+
         $display("Start tb_Processing_Pass");
 
         i_clk = 0;
@@ -279,129 +317,93 @@ module tb_Processing_Pass;
 		wait(o_inst_ready);
 
 
-
 		///// LOAD_IFMAP /////
 
-        // // GLB interface
-        // reg [4:0] i_bank_sel;
-        // reg i_we, i_re;
-        // reg [9:0] i_wa, i_ra;  // BANK_DEPTH = 1024 -> 10 bits
-        // reg [31:0] i_wd;
-        // wire [31:0] o_rd;
-
+		/////// ROW 0 ///////
         @(posedge i_clk); #1; 
 		i_inst_data = CMD_LOAD_IFMAP;
 		i_inst_valid = 1;
 
         i_bank_sel = 0;
         i_re = 1;
-        i_ra = 0; // read GLB in advance (it takes 2 cycle for mem read)
+        i_ra = ifmap_ra_iter0_row0[0]; // read GLB in advance (it takes 2 cycle for mem read)
 
 		@(posedge i_clk); #1; //wait 1 cycle for DEC state
 		i_inst_valid = 0;
 
         i_bank_sel = 0;
         i_re = 1;
-        i_ra = 1;
+        i_ra = ifmap_ra_iter0_row0[1];
 
-        for (i = 0; i <= 14; i = i + 1) begin
-            ifmap_ra.mem[i];
+        for (i = 2; i < 15; i = i + 1) begin
+			@(posedge i_clk); #1;
+			i_bank_sel= 0;
+			i_re = 1;
+            i_ra = ifmap_ra_iter0_row0[i];
+
+			i_ifmap_valid = 1;		
+			i_ifmap_packet = {4'd1, 4'd1, o_rd[31:0]};
         end
+
+        for (i = 0; i < 15; i = i + 1) begin
+			@(posedge i_clk); #1;
+			i_bank_sel= 0;
+			i_re = 1;
+            i_ra = ifmap_ra_iter0_row1[i];
+
+			i_ifmap_valid = 1;		
+			if(i<2)		i_ifmap_packet = {4'd1, 4'd1, o_rd[31:0]};
+			else 		i_ifmap_packet = {4'd1, 4'd2, o_rd[31:0]};
+        end
+
+        for (i = 0; i < 15; i = i + 1) begin
+			@(posedge i_clk); #1;
+			i_bank_sel= 0;
+			i_re = 1;
+            i_ra = ifmap_ra_iter0_row2[i];
+
+			i_ifmap_valid = 1;		
+			if(i<2)		i_ifmap_packet = {4'd1, 4'd2, o_rd[31:0]};
+			else 		i_ifmap_packet = {4'd1, 4'd3, o_rd[31:0]};
+        end
+
+        for (i = 0; i < 15; i = i + 1) begin
+			@(posedge i_clk); #1;
+			i_bank_sel= 0;
+			i_re = 1;
+            i_ra = ifmap_ra_iter0_row3[i];
+
+			i_ifmap_valid = 1;		
+			if(i<2)		i_ifmap_packet = {4'd1, 4'd3, o_rd[31:0]};
+			else 		i_ifmap_packet = {4'd1, 4'd4, o_rd[31:0]};
+        end
+
+        for (i = 0; i < 15; i = i + 1) begin
+			@(posedge i_clk); #1;
+			i_bank_sel= 0;
+			i_re = 1;
+            i_ra = ifmap_ra_iter0_row4[i];
+
+			i_ifmap_valid = 1;		
+			if(i<2)		i_ifmap_packet = {4'd1, 4'd4, o_rd[31:0]};
+			else 		i_ifmap_packet = {4'd1, 4'd5, o_rd[31:0]};
+        end
+
+		@(posedge i_clk); #1;
+		i_re = 0;
+        i_ra = 0;
+		i_ifmap_valid = 1;		
+		i_ifmap_packet = {4'd1, 4'd5, o_rd[31:0]};
+
 		@(posedge i_clk); #1;
 		i_ifmap_valid = 1;		
-		i_ifmap_packet = {4'd1, 4'd1, o_rd};
-
-        i_bank_sel = 0;
-        i_re = 1;
-        i_ra = 2;
-
-		@(posedge i_clk); #1;
-		i_ifmap_valid = 1;		
-		i_ifmap_packet = {4'd1, 4'd1, o_rd};
-
-        i_bank_sel = 0;
-        i_re = 1;
-        i_ra = 25;
-
-		@(posedge i_clk); #1;
-		i_ifmap_valid = 1;		
-		i_ifmap_packet = {4'd1, 4'd1, o_rd};
-
-        i_bank_sel = 0;
-        i_re = 1;
-        i_ra = 26;
-
-		@(posedge i_clk); #1;
-		i_ifmap_valid = 1;		
-		i_ifmap_packet = {4'd1, 4'd1, o_rd};
-
-        i_bank_sel = 0;
-        i_re = 1;
-        i_ra = 27;
-        
-
-		@(posedge i_clk); #1;
-		i_ifmap_valid = 1;	
-		i_ifmap_packet = {4'd1, 4'd1, 16'd2};
-
-		@(posedge i_clk); #1;
-		i_ifmap_valid = 1;	
-		i_ifmap_packet = {4'd1, 4'd1, 16'd3};
-
-		// LOAD ifmap row 2 (iter 1)
-		@(posedge i_clk); #1;
-		i_ifmap_valid = 1;	
-		i_ifmap_packet = {4'd1, 4'd2, 16'd6};
-		
-		@(posedge i_clk); #1;
-		i_ifmap_valid = 1;	
-		i_ifmap_packet = {4'd1, 4'd2, 16'd7};
-
-		@(posedge i_clk); #1;
-		i_ifmap_valid = 1;	
-		i_ifmap_packet = {4'd1, 4'd2, 16'd8};
-
-		// LOAD ifmap row 3 (iter 1)
-		@(posedge i_clk); #1;
-		i_ifmap_valid = 1;	
-		i_ifmap_packet = {4'd1, 4'd3, 16'd11};
-
-		@(posedge i_clk); #1;
-		i_ifmap_valid = 1;	
-		i_ifmap_packet = {4'd1, 4'd3, 16'd12};
-
-		@(posedge i_clk); #1;
-		i_ifmap_valid = 1;	
-		i_ifmap_packet = {4'd1, 4'd3, 16'd13};
-
-		// LOAD ifmap row 4 (iter 1)
-		@(posedge i_clk); #1;
-		i_ifmap_valid = 1;
-		i_ifmap_packet = {4'd1, 4'd4, 16'd16};
-
-		@(posedge i_clk); #1;
-		i_ifmap_valid = 1;
-		i_ifmap_packet = {4'd1, 4'd4, 16'd17};
-
-		@(posedge i_clk); #1;
-		i_ifmap_valid = 1;
-		i_ifmap_packet = {4'd1, 4'd4, 16'd18};
-
-		// LOAD ifmap row 5 (iter 1)
-		@(posedge i_clk); #1;
-		i_ifmap_valid = 1;
-		i_ifmap_packet = {4'd1, 4'd5, 16'd21};
-
-		@(posedge i_clk); #1;
-		i_ifmap_valid = 1;
-		i_ifmap_packet = {4'd1, 4'd5, 16'd22};
-
-		@(posedge i_clk); #1;
-		i_ifmap_valid = 1;
-		i_ifmap_packet = {4'd1, 4'd5, 16'd23};
+		i_ifmap_packet = {4'd1, 4'd5, o_rd[31:0]};
 
 		@(posedge i_clk); #1;
 		i_ifmap_valid = 0;
+		i_ifmap_packet = 0;
+
+//////////////////////////////////////////////////
 
 		wait(o_inst_ready);
 
@@ -413,26 +415,62 @@ module tb_Processing_Pass;
 		i_inst_data = CMD_LOAD_WGHT;
 		i_inst_valid = 1;
 
+		i_bank_sel = 1;
+        i_re = 1;
+        i_ra = wght_ra_row0[0]; // read GLB in advance (it takes 2 cycle for mem read)
+
 		@(posedge i_clk); #1;
 		i_inst_valid = 0;
 
-		// LOAD wght row 1
-		@(posedge i_clk); #1;
-		i_wght_valid = 1;
-		i_wght_packet = {4'd1, 4'd1, 16'd1, 16'd2, 16'd3, 16'd0}; // 1, 2, 3 for row one
+        i_bank_sel = 1;
+        i_re = 1;
+        i_ra = wght_ra_row0[1];
 
-		// LOAD wght row 2
-		@(posedge i_clk); #1;
-		i_wght_valid = 1;
-		i_wght_packet = {4'd2, 4'd1, 16'd4, 16'd5, 16'd6, 16'd0}; // 4, 5, 6 for row two
+        for (i = 2; i < 15; i = i + 1) begin
+			@(posedge i_clk); #1;
+			i_bank_sel= 1;
+			i_re = 1;
+            i_ra = wght_ra_row0[i];
 
-		// LOAD wght row 3
+			i_wght_valid = 1;		
+			i_wght_packet = {4'd1, 4'd1, o_rd};
+        end
+
+        for (i = 0; i < 15; i = i + 1) begin
+			@(posedge i_clk); #1;
+			i_bank_sel= 1;
+			i_re = 1;
+            i_ra = wght_ra_row1[i];
+
+			i_wght_valid = 1;		
+			if(i<2)		i_wght_packet = {4'd1, 4'd1, o_rd};
+			else 		i_wght_packet = {4'd2, 4'd1, o_rd};
+        end
+
+        for (i = 0; i < 15; i = i + 1) begin
+			@(posedge i_clk); #1;
+			i_bank_sel= 1;
+			i_re = 1;
+            i_ra = wght_ra_row2[i];
+
+			i_wght_valid = 1;		
+			if(i<2)		i_wght_packet = {4'd2, 4'd1, o_rd};
+			else 		i_wght_packet = {4'd3, 4'd1, o_rd};
+        end
+
+		@(posedge i_clk); #1;
+		i_re = 0;
+        i_ra = 0;
+		i_wght_valid = 1;
+		i_wght_packet = {4'd3, 4'd1, o_rd};
+
 		@(posedge i_clk); #1;
 		i_wght_valid = 1;
-		i_wght_packet = {4'd3, 4'd1, 16'd7, 16'd8, 16'd9, 16'd0};
+		i_wght_packet = {4'd3, 4'd1, o_rd};
 
 		@(posedge i_clk); #1;
 		i_wght_valid = 0;
+		i_wght_packet = 0;
 
 		wait(o_inst_ready);
 
@@ -487,6 +525,7 @@ module tb_Processing_Pass;
 		$stop;
 
         $display("End tb_Processing_Pass");
+
         $finish;
     end
 endmodule

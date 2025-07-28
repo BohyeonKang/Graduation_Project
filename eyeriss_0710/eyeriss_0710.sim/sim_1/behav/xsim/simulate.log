@@ -1,2 +1,7 @@
 Time resolution is 1 ps
+WARNING: Too many words specified in data file wght_ra_row0.mem
+WARNING: Too many words specified in data file wght_ra_row1.mem
+WARNING: Too many words specified in data file wght_ra_row2.mem
 Start tb_Processing_Pass
+$stop called at time : 2245 ns : File "C:/LAB/Graduation_Project/eyeriss_0710/eyeriss_0710.srcs/sim_1/imports/tb/tb_Processing_Pass.v" Line 479
+$stop called at time : 3455 ns : File "C:/LAB/Graduation_Project/eyeriss_0710/eyeriss_0710.srcs/sim_1/imports/tb/tb_Processing_Pass.v" Line 525

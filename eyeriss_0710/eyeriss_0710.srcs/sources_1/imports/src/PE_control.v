@@ -11,7 +11,7 @@ module PE_control #(
 
     //// Interface to TOP CTRL instruction ////  
     input [2:0] i_opcode, //NOP, SET, LOAD_IFMAP, LOAD_WGHT, CONV
-    input [8:0] i_conv_info, // TOP CTRL에서 SET opcode와 함께 보내주는 신호. p[2:0], q[2:0], s[2:0]
+    input [9:0] i_conv_info, // TOP CTRL에서 SET opcode와 함께 보내주는 신호. p[3:0], q[1:0], s[3:0]
     input       i_inst_valid, // TOP CTRL에서 opcode와 함께 보내주는 start 신호
     output reg  o_inst_ready, // (state == IDLE)일 때 활성화
 
@@ -72,12 +72,12 @@ module PE_control #(
 
     //counter
     reg [2:0] cnt_minimum_delay;
-    reg [2:0] cnt_P;
-    reg [2:0] cnt_Q;
-    reg [2:0] cnt_S;
+    reg [3:0] cnt_P;
+    reg [3:0] cnt_Q;
+    reg [3:0] cnt_S;
     reg [6:0] counter;
     
-    wire [2:0] P, Q, S;
+    wire [3:0] P, Q, S;
     assign {P, Q, S} = conv_info_reg;
 
     wire inst_hs = i_inst_valid && o_inst_ready;
@@ -232,9 +232,9 @@ module PE_control #(
             end
             else if(state == LOAD_WGHT) begin
                 if(wght_piso_hs) begin
-                    cnt_P <= (cnt_P == P - 1) ? 0 : cnt_P + 1; 
-                    cnt_S <= (cnt_P == P - 1) ? ((cnt_S == S - 1) ? 0 : cnt_S + 1) : cnt_S;
-                    cnt_Q <= (cnt_P == P - 1) ? ((cnt_S == S - 1) ? ((cnt_Q == Q - 1) ? 0 : cnt_Q + 1) : cnt_Q) : cnt_Q;
+                    cnt_S <= (cnt_S == S - 1) ? 0 : cnt_S + 1; 
+                    cnt_Q <= (cnt_S == S - 1) ? ((cnt_Q == Q - 1) ? 0 : cnt_Q + 1) : cnt_Q;
+                    cnt_P <= (cnt_S == S - 1) ? ((cnt_Q == Q - 1) ? ((cnt_P == P - 1) ? 0 : cnt_P + 1) : cnt_P) : cnt_P;
                 end
             end
             else if(state == CONV) begin
@@ -251,7 +251,7 @@ module PE_control #(
                 end
             end
             else if(state == ACCRST) begin
-                cnt_P <= (cnt_P == P - 1) ? 0 : cnt_P + 1; 
+                cnt_P <= (psum_in_piso_hs) ? ((cnt_P == P - 1) ? 0 : cnt_P + 1) : cnt_P; 
             end
             else begin
                 cnt_P <= 0; 

@@ -5,4 +5,49 @@ Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
 Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/LAB/Graduation_Project/eyeriss_0710/eyeriss_0710.srcs/sources_1/imports/src/GIN_BUS.v" Line 2. Module GIN_BUS(PACKET_IN_BITWIDTH=40,PACKET_OUT_BITWIDTH=36,SLV_NUM=3) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/LAB/Graduation_Project/eyeriss_0710/eyeriss_0710.srcs/sources_1/imports/src/GIN_BUS.v" Line 2. Module GIN_BUS(PACKET_IN_BITWIDTH=40,PACKET_OUT_BITWIDTH=36,SLV_NUM=3) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/LAB/Graduation_Project/eyeriss_0710/eyeriss_0710.srcs/sources_1/imports/src/GIN_BUS.v" Line 2. Module GIN_BUS(PACKET_IN_BITWIDTH=40,PACKET_OUT_BITWIDTH=36,SLV_NUM=3) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/LAB/Graduation_Project/eyeriss_0710/eyeriss_0710.srcs/sources_1/imports/src/GIN_BUS.v" Line 2. Module GIN_BUS(PACKET_IN_BITWIDTH=36,PACKET_OUT_BITWIDTH=32,SLV_NUM=3) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/LAB/Graduation_Project/eyeriss_0710/eyeriss_0710.srcs/sources_1/imports/src/GIN_BUS.v" Line 2. Module GIN_BUS(PACKET_IN_BITWIDTH=36,PACKET_OUT_BITWIDTH=32,SLV_NUM=3) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/LAB/Graduation_Project/eyeriss_0710/eyeriss_0710.srcs/sources_1/imports/src/GIN_BUS.v" Line 2. Module GIN_BUS(PACKET_IN_BITWIDTH=36,PACKET_OUT_BITWIDTH=32,SLV_NUM=3) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/LAB/Graduation_Project/eyeriss_0710/eyeriss_0710.srcs/sources_1/imports/src/GIN_BUS.v" Line 2. Module GIN_BUS(PACKET_IN_BITWIDTH=36,PACKET_OUT_BITWIDTH=32,SLV_NUM=3) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/LAB/Graduation_Project/eyeriss_0710/eyeriss_0710.srcs/sources_1/imports/src/GIN_BUS.v" Line 2. Module GIN_BUS(PACKET_IN_BITWIDTH=36,PACKET_OUT_BITWIDTH=32,SLV_NUM=3) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/LAB/Graduation_Project/eyeriss_0710/eyeriss_0710.srcs/sources_1/imports/src/GIN_BUS.v" Line 2. Module GIN_BUS(PACKET_IN_BITWIDTH=36,PACKET_OUT_BITWIDTH=32,SLV_NUM=3) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/LAB/Graduation_Project/eyeriss_0710/eyeriss_0710.srcs/sources_1/imports/src/GIN_BUS.v" Line 2. Module GIN_BUS(PACKET_IN_BITWIDTH=36,PACKET_OUT_BITWIDTH=32,SLV_NUM=3) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/LAB/Graduation_Project/eyeriss_0710/eyeriss_0710.srcs/sources_1/imports/src/GIN_BUS.v" Line 2. Module GIN_BUS(PACKET_IN_BITWIDTH=36,PACKET_OUT_BITWIDTH=32,SLV_NUM=3) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/LAB/Graduation_Project/eyeriss_0710/eyeriss_0710.srcs/sources_1/imports/src/GIN_BUS.v" Line 2. Module GIN_BUS(PACKET_IN_BITWIDTH=36,PACKET_OUT_BITWIDTH=32,SLV_NUM=3) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/LAB/Graduation_Project/eyeriss_0710/eyeriss_0710.srcs/sources_1/imports/src/GIN_BUS.v" Line 2. Module GIN_BUS(PACKET_IN_BITWIDTH=40,PACKET_OUT_BITWIDTH=36,SLV_NUM=3) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/LAB/Graduation_Project/eyeriss_0710/eyeriss_0710.srcs/sources_1/imports/src/GIN_BUS.v" Line 2. Module GIN_BUS(PACKET_IN_BITWIDTH=40,PACKET_OUT_BITWIDTH=36,SLV_NUM=3) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/LAB/Graduation_Project/eyeriss_0710/eyeriss_0710.srcs/sources_1/imports/src/GIN_BUS.v" Line 2. Module GIN_BUS(PACKET_IN_BITWIDTH=40,PACKET_OUT_BITWIDTH=36,SLV_NUM=3) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/LAB/Graduation_Project/eyeriss_0710/eyeriss_0710.srcs/sources_1/imports/src/GIN_BUS.v" Line 2. Module GIN_BUS(PACKET_IN_BITWIDTH=36,PACKET_OUT_BITWIDTH=32,SLV_NUM=3) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/LAB/Graduation_Project/eyeriss_0710/eyeriss_0710.srcs/sources_1/imports/src/GIN_BUS.v" Line 2. Module GIN_BUS(PACKET_IN_BITWIDTH=36,PACKET_OUT_BITWIDTH=32,SLV_NUM=3) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/LAB/Graduation_Project/eyeriss_0710/eyeriss_0710.srcs/sources_1/imports/src/GIN_BUS.v" Line 2. Module GIN_BUS(PACKET_IN_BITWIDTH=36,PACKET_OUT_BITWIDTH=32,SLV_NUM=3) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/LAB/Graduation_Project/eyeriss_0710/eyeriss_0710.srcs/sources_1/imports/src/GIN_BUS.v" Line 2. Module GIN_BUS(PACKET_IN_BITWIDTH=36,PACKET_OUT_BITWIDTH=32,SLV_NUM=3) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/LAB/Graduation_Project/eyeriss_0710/eyeriss_0710.srcs/sources_1/imports/src/GIN_BUS.v" Line 2. Module GIN_BUS(PACKET_IN_BITWIDTH=36,PACKET_OUT_BITWIDTH=32,SLV_NUM=3) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/LAB/Graduation_Project/eyeriss_0710/eyeriss_0710.srcs/sources_1/imports/src/GIN_BUS.v" Line 2. Module GIN_BUS(PACKET_IN_BITWIDTH=36,PACKET_OUT_BITWIDTH=32,SLV_NUM=3) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/LAB/Graduation_Project/eyeriss_0710/eyeriss_0710.srcs/sources_1/imports/src/GIN_BUS.v" Line 2. Module GIN_BUS(PACKET_IN_BITWIDTH=36,PACKET_OUT_BITWIDTH=32,SLV_NUM=3) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/LAB/Graduation_Project/eyeriss_0710/eyeriss_0710.srcs/sources_1/imports/src/GIN_BUS.v" Line 2. Module GIN_BUS(PACKET_IN_BITWIDTH=36,PACKET_OUT_BITWIDTH=32,SLV_NUM=3) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/LAB/Graduation_Project/eyeriss_0710/eyeriss_0710.srcs/sources_1/imports/src/GIN_BUS.v" Line 2. Module GIN_BUS(PACKET_IN_BITWIDTH=36,PACKET_OUT_BITWIDTH=32,SLV_NUM=3) doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.true_dpbram(RAM_WIDTH=32)
+Compiling module xil_defaultlib.GLB_default
+Compiling module xil_defaultlib.MC(DATA_BITWIDTH=36)
+Compiling module xil_defaultlib.GIN_BUS(PACKET_IN_BITWIDTH=40,PA...
+Compiling module xil_defaultlib.MC(DATA_BITWIDTH=32)
+Compiling module xil_defaultlib.GIN_BUS(PACKET_IN_BITWIDTH=36,PA...
+Compiling module xil_defaultlib.fifo(QUEUE_PTR_BANDWIDTH=4,ELE_B...
+Compiling module xil_defaultlib.fifo(ELE_BANDWIDTH=32)
+Compiling module xil_defaultlib.PISO(OUT_WIDTH=32,N_CHUNKS=1,IN_...
+Compiling module xil_defaultlib.SIPO(IN_WIDTH=32,N_CHUNKS=1,OUT_...
+Compiling module xil_defaultlib.PE_control(DATA_BITWIDTH=32,PSUM...
+Compiling module xil_defaultlib.RF(DATA_BITWIDTH=32,ADDR_BITWIDT...
+Compiling module xil_defaultlib.rams_dist(DATA_BITWIDTH=32,ADDR_...
+Compiling module xil_defaultlib.PE_datapath(DATA_BITWIDTH=32,WGH...
+Compiling module xil_defaultlib.PE_top(DATA_BITWIDTH=32,IFMAP_BU...
+Compiling module xil_defaultlib.PE_array(DATA_BITWIDTH=32,IFMAP_...
+Compiling module xil_defaultlib.tb_Processing_Pass
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_Processing_Pass_behav

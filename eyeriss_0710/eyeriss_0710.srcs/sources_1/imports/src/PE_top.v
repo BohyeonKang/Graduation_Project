@@ -95,7 +95,7 @@ module PE_top #(
     );
 
     fifo #(
-        .QUEUE_PTR_BANDWIDTH(5),
+        .QUEUE_PTR_BANDWIDTH(8),
         .ELE_BANDWIDTH(WGHT_BUS_BITWIDTH)
     ) u_wght_fifo (
         .i_clk(i_clk),
@@ -132,7 +132,7 @@ module PE_top #(
     );
 
     fifo #(
-        .QUEUE_PTR_BANDWIDTH(),
+        .QUEUE_PTR_BANDWIDTH(4),
         .ELE_BANDWIDTH(PSUM_BUS_BITWIDTH)
     ) u_psum_in_fifo (
         .i_clk(i_clk),

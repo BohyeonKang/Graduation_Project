@@ -24,26 +24,26 @@ module PE_array #(
     input i_inst_valid,
     output o_inst_ready,
 
-    input [IFMAP_ROW_ID_BITWIDTH * COL_LEN-1:0] i_ifmap_row_id,
-    input [WGHT_ROW_ID_BITWIDTH * COL_LEN-1:0] i_wght_row_id,
-    input [PSUM_ROW_ID_BITWIDTH * COL_LEN-1:0] i_psum_row_id,
+    input [0:IFMAP_ROW_ID_BITWIDTH * COL_LEN-1] i_ifmap_row_id,
+    input [0:WGHT_ROW_ID_BITWIDTH * COL_LEN-1] i_wght_row_id,
+    input [0:PSUM_ROW_ID_BITWIDTH * COL_LEN-1] i_psum_row_id,
 
     input i_ifmap_row_id_valid,
     input i_wght_row_id_valid,
     input i_psum_row_id_valid,
 
     // col ID는 한번에 한 ROW씩 들어오는걸로 가정
-    input [IFMAP_COL_ID_BITWIDTH * ROW_LEN - 1 :0] i_ifmap_col_id,
-    input [WGHT_COL_ID_BITWIDTH * ROW_LEN - 1 :0] i_wght_col_id,
-    input [PSUM_COL_ID_BITWIDTH * ROW_LEN - 1 :0] i_psum_col_id,
+    input [0:IFMAP_COL_ID_BITWIDTH * ROW_LEN-1] i_ifmap_col_id,
+    input [0:WGHT_COL_ID_BITWIDTH * ROW_LEN-1] i_wght_col_id,
+    input [0:PSUM_COL_ID_BITWIDTH * ROW_LEN-1] i_psum_col_id,
 
     // one-hot encoded valid signal
-    input [COL_LEN-1:0] i_ifmap_col_id_valid,
-    input [COL_LEN-1:0] i_wght_col_id_valid,
-    input [COL_LEN-1:0] i_psum_col_id_valid,
+    input [0:COL_LEN-1] i_ifmap_col_id_valid,
+    input [0:COL_LEN-1] i_wght_col_id_valid,
+    input [0:COL_LEN-1] i_psum_col_id_valid,
 
-    input [COL_LEN * ROW_LEN - 1:0] i_ctrl_psum_in_sel_LNorGIN,
-    input [COL_LEN * ROW_LEN - 1:0] i_ctrl_psum_out_sel_GON,
+    input [0:COL_LEN*ROW_LEN-1] i_ctrl_psum_in_sel_LNorGIN,
+    input [0:COL_LEN*ROW_LEN-1] i_ctrl_psum_out_sel_GON,
 
     // GLB interface
     input [IFMAP_ROW_ID_BITWIDTH + IFMAP_COL_ID_BITWIDTH + IFMAP_BUS_BITWIDTH - 1:0] i_ifmap_packet,

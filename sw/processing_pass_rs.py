@@ -1,105 +1,116 @@
 import torch
 
-def ifmap_load_addr_gen(N: int, C: int, H: int, W: int, S: int, U: int, Pad:int):
-    
-    E = ((H - S + 2*Pad) // U) + 1
+def ifmap_load_addr_gen(N: int, C: int, H: int, W: int, S: int, U: int, Pad: int):
+    """
+    N, C, H, W: ifmap shape
+    S: filter width (가로)
+    U: stride
+    Pad: padding
+    반환: torch.Tensor of shape (E, R, C*S)
+    """
+    E = ((H - S + 2*Pad) // U) + 1  # 출력 feature map row 수
 
-    # 0부터 input_feature_map - 1까지 순차적으로 증가하는 1D 텐서 생성 및 N*C*H*W 형태로 재구성
+    # ifmap shape: (N, C, H, W)
     ifmap = torch.arange(N * C * H * W, dtype=torch.int32).view(N, C, H, W)
 
-    results = {}
+    result_tensor = torch.zeros((E, H, C * S), dtype=torch.int32)
 
-    for iter_idx in range(E):
-        for row_idx in range(H):
-            key = f"iter{iter_idx}_ROW{row_idx}"
-            # 슬라이싱된 텐서를 1D로 평탄화 (flatten)
-            ifmap_row_slice = ifmap[0, :, row_idx, iter_idx : iter_idx + S].flatten()
-            results[key] = ifmap_row_slice
+    for e in range(E):        # output row index
+        for r in range(H):    # input row index
+            patch = ifmap[0, :, r, e : e + S].flatten()  # shape: (C*S,)
+            result_tensor[e, r] = patch
 
-    return results
+    return result_tensor
 
 def wght_load_addr_gen(M: int, C: int, R: int, S: int):
-    
-    wght = torch.arange(M * C * R * S, dtype=torch.int32).view(M, C, R, S)
-
-    results = {}
-
-    # 반복문을 사용하여 슬라이싱 작업 수행
-    for cnt_R in range(R):
-        key = f"ROW{cnt_R}"
-        # 슬라이싱된 텐서를 1D로 평탄화 (flatten)
-        wght_row_slice = wght[:, :, cnt_R, :].reshape(M, C * S)
-        results[key] = wght_row_slice
-
-    return results
-
-def wght_conv_addr_gen(M: int, C: int, R: int, S: int):
-
-    wght = torch.arange(M * C * R * S, dtype=torch.int32).view(M, C, R, S)
-
-    results = {}
-
-    # 반복문을 사용하여 슬라이싱 작업 수행
-    for cnt_R in range(R):
-        key = f"ROW{cnt_R}"
-        # 슬라이싱된 텐서를 1D로 평탄화 (flatten)
-        wght_row_slice = wght[:, :, cnt_R , :].permute(1,2,0).flatten()
-        results[key] = wght_row_slice
-
-    return results
-
-def read_from_memory_by_ra(memory_tensor: torch.Tensor, ra_dict: dict) -> dict:
     """
-    memory_tensor: shape (M, C, R, S)
-    ra_dict: dictionary mapping keys to index tensors (flattened addresses)
+    M: output channel 개수 (filter 개수)
+    C: input channel 개수
+    R: filter height (row 방향 size)
+    S: filter width (col 방향 size)
     
     Returns:
-        new_dict: dictionary with same keys, values are actual data from memory
+        Tensor of shape (R, M, C*S)
     """
-    # Flatten the memory for 1D indexing
-    flat_mem = memory_tensor.flatten()
+    wght = torch.arange(M * C * R * S, dtype=torch.int32).view(M, C, R, S)
     
-    result = {}
-    for key in ra_dict:
-        addr_tensor = ra_dict[key]  # e.g., shape (15,)
-        result[key] = flat_mem[addr_tensor]  # indexing
-    return result
+    result_tensor = torch.zeros((R, M, C * S), dtype=torch.int32)
 
+    for r in range(R):
+        # 각 row에서 슬라이싱한 결과: shape (M, C*S)
+        row_slice = wght[:, :, r, :].reshape(M, C * S)
+        result_tensor[r] = row_slice
+
+    return result_tensor  # shape: (R, M, C*S)
+
+def PE_1dconv(ifmap_row: torch.Tensor, weights: torch.Tensor, p, q, s):
+    """
+    ifmap: torch.Tensor of shape (q*s,)
+    weights: torch.Tensor of shape (p, q*s)
+    """
+    expected_ifmap_len = q * s
+    if len(ifmap_row) != expected_ifmap_len:
+        raise ValueError(f"ifmap_row의 길이는 q * s ({expected_ifmap_len})와 같아야 하지만, 실제 길이는 {len(ifmap_row)}입니다.")
+
+    if weights.ndim != 2:
+        raise ValueError(f"weights는 2차원 배열이어야 하지만, 실제 차원은 {weights.ndim}입니다.")
+    if weights.shape[0] != p:
+        raise ValueError(f"weights 배열의 행 수는 p ({p})와 같아야 하지만, 실제 행 수는 {weights.shape[0]}입니다.")
+    if weights.shape[1] != expected_ifmap_len:
+        raise ValueError(f"weights 배열의 열 수는 q * s ({expected_ifmap_len})와 같아야 하지만, 실제 열 수는 {weights.shape[1]}입니다.")
+
+    acc_results = torch.matmul(weights, ifmap_row)  # shape: (p,)
+
+    return acc_results
+
+import torch
+
+class PE:
+    def __init__(self):
+        self.ifmap_row = None     # shape: (C*S,)
+        self.weight_row = None    # shape: (M, C*S)
+        self.psum_out = None      # shape: (M,)
+
+    def load_ifmap(self, ifmap_row: torch.Tensor):
+        self.ifmap_row = ifmap_row
+
+    def load_weight(self, wght_row: torch.Tensor):
+        self.weight_row = wght_row
+
+    def compute(self):
+        if self.ifmap_row is None or self.weight_row is None:
+            raise ValueError("ifmap 또는 weight가 로드되지 않았습니다.")
+        self.psum_out = torch.matmul(self.weight_row, self.ifmap_row)  # shape: (M,)
+
+    def accumulate(self, psum_in: torch.Tensor):
+        if self.psum_out is None:
+            raise ValueError("먼저 compute()를 수행해야 합니다.")
+        self.psum_out += psum_in
+
+    def get_result(self) -> torch.Tensor:
+        if self.psum_out is None:
+            raise ValueError("아직 결과가 계산되지 않았습니다.")
+        return self.psum_out
+
+# Convoluation parameter setting
 N = 1
 M = 4
-
 C = 5
-
-H = 5
-W = 5
-
-R = 3
-S = 3
-
+H = W = 5
+R = S = 3
 U = 1
 Pad = 0
 
-ifmap_rows = ifmap_load_addr_gen(N, C, H, W, S, U, Pad)
-wght_rows = wght_load_addr_gen(M, C, R, S)
+ifmap_ra = ifmap_load_addr_gen(N, C, H, W, S, U, Pad)
+wght_ra = wght_load_addr_gen(M, C, R, S)
+
 wght_CONV_ra_rows = wght_conv_addr_gen(M, C, R, S)
 
-
+ifmap_mem = torch.arange(M * C * R * S, dtype=torch.int32).view(M, C, R, S)
 wght_mem = torch.arange(M * C * R * S, dtype=torch.int32).view(M, C, R, S)
 
+#psum_res = PE_1dconv(ifmap_ra, wght_ra, M, C, S)
 
-#wght_rows_data = read_from_memory_by_ra(wght_mem, wght_ra_rows)
-
-# 결과를 txt 파일로 저장
-with open("ifmap_rows_output.txt", "w") as f:
-    for key in ifmap_rows:
-        hex_values = [f"{v:#010x}" for v in ifmap_rows[key].tolist()]
-        f.write(f"{key} : {hex_values}\n")
+print(wght_ra[0])
         
-with open("wght_rows_output.txt", "w") as f:
-    for key in wght_rows:
-        f.write(f"{key}:\n")
-        for row in wght_rows[key]:
-            hex_values = [f"{v.item():#010x}" for v in row]
-            f.write("  " + str(hex_values) + "\n")
-
 print("파일 저장 완료")

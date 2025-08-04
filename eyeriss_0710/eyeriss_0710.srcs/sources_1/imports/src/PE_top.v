@@ -15,7 +15,7 @@ module PE_top #(
 
     //TOP CTRL
     input [2:0] i_inst_data,
-    input [8:0] i_conv_info,
+    input [10:0] i_conv_info, // p[3:0], q[2:0], s[3:0]
     input i_inst_valid,
     output o_inst_ready,
 

@@ -11,23 +11,18 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="4,630.001 ns"></ZoomEndTime>
-      <Cursor1Time time="2,745.000 ns"></Cursor1Time>
+      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
+      <ZoomEndTime time="5.045440 us"></ZoomEndTime>
+      <Cursor1Time time="8.195000 us"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="363"></NameColumnWidth>
-      <ValueColumnWidth column_width="176"></ValueColumnWidth>
+      <ValueColumnWidth column_width="170"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="4" />
-   <wvobject fp_name="group1208" type="group">
+   <wvobject fp_name="group1544" type="group">
       <obj_property name="label">dut</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
-      <wvobject fp_name="/tb_TOP_ctrl/dut/i_glb_rd" type="array">
-         <obj_property name="ElementShortName">i_glb_rd[31:0]</obj_property>
-         <obj_property name="ObjectShortName">i_glb_rd[31:0]</obj_property>
-      </wvobject>
       <wvobject fp_name="/tb_TOP_ctrl/dut/i_clk" type="logic">
          <obj_property name="ElementShortName">i_clk</obj_property>
          <obj_property name="ObjectShortName">i_clk</obj_property>
@@ -44,17 +39,9 @@
          <obj_property name="ElementShortName">i_pass_num[3:0]</obj_property>
          <obj_property name="ObjectShortName">i_pass_num[3:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_TOP_ctrl/dut/i_layer_C" type="array">
-         <obj_property name="ElementShortName">i_layer_C[9:0]</obj_property>
-         <obj_property name="ObjectShortName">i_layer_C[9:0]</obj_property>
-      </wvobject>
       <wvobject fp_name="/tb_TOP_ctrl/dut/i_layer_HW" type="array">
          <obj_property name="ElementShortName">i_layer_HW[7:0]</obj_property>
          <obj_property name="ObjectShortName">i_layer_HW[7:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_TOP_ctrl/dut/i_layer_U" type="array">
-         <obj_property name="ElementShortName">i_layer_U[1:0]</obj_property>
-         <obj_property name="ObjectShortName">i_layer_U[1:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_TOP_ctrl/dut/i_layer_RS" type="array">
          <obj_property name="ElementShortName">i_layer_RS[3:0]</obj_property>
@@ -64,6 +51,18 @@
          <obj_property name="ElementShortName">i_layer_EF[6:0]</obj_property>
          <obj_property name="ObjectShortName">i_layer_EF[6:0]</obj_property>
       </wvobject>
+      <wvobject fp_name="/tb_TOP_ctrl/dut/i_layer_C" type="array">
+         <obj_property name="ElementShortName">i_layer_C[9:0]</obj_property>
+         <obj_property name="ObjectShortName">i_layer_C[9:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_TOP_ctrl/dut/i_layer_M" type="array">
+         <obj_property name="ElementShortName">i_layer_M[8:0]</obj_property>
+         <obj_property name="ObjectShortName">i_layer_M[8:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_TOP_ctrl/dut/i_layer_U" type="array">
+         <obj_property name="ElementShortName">i_layer_U[1:0]</obj_property>
+         <obj_property name="ObjectShortName">i_layer_U[1:0]</obj_property>
+      </wvobject>
       <wvobject fp_name="/tb_TOP_ctrl/dut/i_layer_PAD" type="array">
          <obj_property name="ElementShortName">i_layer_PAD[1:0]</obj_property>
          <obj_property name="ObjectShortName">i_layer_PAD[1:0]</obj_property>
@@ -71,6 +70,10 @@
       <wvobject fp_name="/tb_TOP_ctrl/dut/i_layer_m" type="array">
          <obj_property name="ElementShortName">i_layer_m[3:0]</obj_property>
          <obj_property name="ObjectShortName">i_layer_m[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_TOP_ctrl/dut/i_layer_n" type="array">
+         <obj_property name="ElementShortName">i_layer_n[2:0]</obj_property>
+         <obj_property name="ObjectShortName">i_layer_n[2:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_TOP_ctrl/dut/i_layer_e" type="array">
          <obj_property name="ElementShortName">i_layer_e[4:0]</obj_property>
@@ -252,6 +255,10 @@
          <obj_property name="ElementShortName">i_psum_out_valid</obj_property>
          <obj_property name="ObjectShortName">i_psum_out_valid</obj_property>
       </wvobject>
+      <wvobject fp_name="/tb_TOP_ctrl/dut/i_glb_rd" type="array">
+         <obj_property name="ElementShortName">i_glb_rd[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i_glb_rd[31:0]</obj_property>
+      </wvobject>
       <wvobject fp_name="/tb_TOP_ctrl/dut/o_glb_bank_sel" type="array">
          <obj_property name="ElementShortName">o_glb_bank_sel[1:0]</obj_property>
          <obj_property name="ObjectShortName">o_glb_bank_sel[1:0]</obj_property>
@@ -280,9 +287,13 @@
          <obj_property name="ElementShortName">tar_cnt[10:0]</obj_property>
          <obj_property name="ObjectShortName">tar_cnt[10:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_TOP_ctrl/dut/cnt_pass" type="array">
-         <obj_property name="ElementShortName">cnt_pass[9:0]</obj_property>
-         <obj_property name="ObjectShortName">cnt_pass[9:0]</obj_property>
+      <wvobject fp_name="/tb_TOP_ctrl/dut/iter_cnt" type="array">
+         <obj_property name="ElementShortName">iter_cnt[6:0]</obj_property>
+         <obj_property name="ObjectShortName">iter_cnt[6:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_TOP_ctrl/dut/pass_cnt" type="array">
+         <obj_property name="ElementShortName">pass_cnt[9:0]</obj_property>
+         <obj_property name="ObjectShortName">pass_cnt[9:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_TOP_ctrl/dut/state" type="array">
          <obj_property name="ElementShortName">state[3:0]</obj_property>
@@ -291,6 +302,70 @@
       <wvobject fp_name="/tb_TOP_ctrl/dut/n_state" type="array">
          <obj_property name="ElementShortName">n_state[3:0]</obj_property>
          <obj_property name="ObjectShortName">n_state[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_TOP_ctrl/dut/glb_data_type" type="array">
+         <obj_property name="ElementShortName">glb_data_type[1:0]</obj_property>
+         <obj_property name="ObjectShortName">glb_data_type[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_TOP_ctrl/dut/glb_logical_addr" type="array">
+         <obj_property name="ElementShortName">glb_logical_addr[10:0]</obj_property>
+         <obj_property name="ObjectShortName">glb_logical_addr[10:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_TOP_ctrl/dut/glb_physical_addr" type="array">
+         <obj_property name="ElementShortName">glb_physical_addr[9:0]</obj_property>
+         <obj_property name="ObjectShortName">glb_physical_addr[9:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_TOP_ctrl/dut/glb_bank_sel" type="array">
+         <obj_property name="ElementShortName">glb_bank_sel[1:0]</obj_property>
+         <obj_property name="ObjectShortName">glb_bank_sel[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_TOP_ctrl/dut/ifmap_load_done" type="logic">
+         <obj_property name="ElementShortName">ifmap_load_done</obj_property>
+         <obj_property name="ObjectShortName">ifmap_load_done</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_TOP_ctrl/dut/wght_load_done" type="logic">
+         <obj_property name="ElementShortName">wght_load_done</obj_property>
+         <obj_property name="ObjectShortName">wght_load_done</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_TOP_ctrl/dut/psum_load_done" type="logic">
+         <obj_property name="ElementShortName">psum_load_done</obj_property>
+         <obj_property name="ObjectShortName">psum_load_done</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_TOP_ctrl/dut/ifmap_glb_re" type="logic">
+         <obj_property name="ElementShortName">ifmap_glb_re</obj_property>
+         <obj_property name="ObjectShortName">ifmap_glb_re</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_TOP_ctrl/dut/wght_glb_re" type="logic">
+         <obj_property name="ElementShortName">wght_glb_re</obj_property>
+         <obj_property name="ObjectShortName">wght_glb_re</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_TOP_ctrl/dut/psum_glb_re" type="logic">
+         <obj_property name="ElementShortName">psum_glb_re</obj_property>
+         <obj_property name="ObjectShortName">psum_glb_re</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_TOP_ctrl/dut/ifmap_tag" type="array">
+         <obj_property name="ElementShortName">ifmap_tag[8:0]</obj_property>
+         <obj_property name="ObjectShortName">ifmap_tag[8:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_TOP_ctrl/dut/wght_tag" type="array">
+         <obj_property name="ElementShortName">wght_tag[7:0]</obj_property>
+         <obj_property name="ObjectShortName">wght_tag[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_TOP_ctrl/dut/psum_tag" type="array">
+         <obj_property name="ElementShortName">psum_tag[7:0]</obj_property>
+         <obj_property name="ObjectShortName">psum_tag[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_TOP_ctrl/dut/ifmap_glb_ra" type="array">
+         <obj_property name="ElementShortName">ifmap_glb_ra[13:0]</obj_property>
+         <obj_property name="ObjectShortName">ifmap_glb_ra[13:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_TOP_ctrl/dut/wght_glb_ra" type="array">
+         <obj_property name="ElementShortName">wght_glb_ra[13:0]</obj_property>
+         <obj_property name="ObjectShortName">wght_glb_ra[13:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_TOP_ctrl/dut/psum_glb_ra" type="array">
+         <obj_property name="ElementShortName">psum_glb_ra[13:0]</obj_property>
+         <obj_property name="ObjectShortName">psum_glb_ra[13:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_TOP_ctrl/dut/INST_BRAM_DEPTH" type="array">
          <obj_property name="ElementShortName">INST_BRAM_DEPTH[31:0]</obj_property>
@@ -425,7 +500,7 @@
          <obj_property name="ObjectShortName">CMD_ACC[2:0]</obj_property>
       </wvobject>
    </wvobject>
-   <wvobject fp_name="group1241" type="group">
+   <wvobject fp_name="group1581" type="group">
       <obj_property name="label">ifmap_load_ctrl</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <wvobject fp_name="/tb_TOP_ctrl/dut/u_ifmap_load_ctrl/i_clk" type="logic">
@@ -435,6 +510,86 @@
       <wvobject fp_name="/tb_TOP_ctrl/dut/u_ifmap_load_ctrl/i_rst" type="logic">
          <obj_property name="ElementShortName">i_rst</obj_property>
          <obj_property name="ObjectShortName">i_rst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_TOP_ctrl/dut/u_ifmap_load_ctrl/i_load_start" type="logic">
+         <obj_property name="ElementShortName">i_load_start</obj_property>
+         <obj_property name="ObjectShortName">i_load_start</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_TOP_ctrl/dut/u_ifmap_load_ctrl/i_pass_num" type="array">
+         <obj_property name="ElementShortName">i_pass_num[3:0]</obj_property>
+         <obj_property name="ObjectShortName">i_pass_num[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_TOP_ctrl/dut/u_ifmap_load_ctrl/i_layer_HW" type="array">
+         <obj_property name="ElementShortName">i_layer_HW[7:0]</obj_property>
+         <obj_property name="ObjectShortName">i_layer_HW[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_TOP_ctrl/dut/u_ifmap_load_ctrl/i_layer_RS" type="array">
+         <obj_property name="ElementShortName">i_layer_RS[3:0]</obj_property>
+         <obj_property name="ObjectShortName">i_layer_RS[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_TOP_ctrl/dut/u_ifmap_load_ctrl/i_layer_EF" type="array">
+         <obj_property name="ElementShortName">i_layer_EF[6:0]</obj_property>
+         <obj_property name="ObjectShortName">i_layer_EF[6:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_TOP_ctrl/dut/u_ifmap_load_ctrl/i_layer_C" type="array">
+         <obj_property name="ElementShortName">i_layer_C[9:0]</obj_property>
+         <obj_property name="ObjectShortName">i_layer_C[9:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_TOP_ctrl/dut/u_ifmap_load_ctrl/i_layer_M" type="array">
+         <obj_property name="ElementShortName">i_layer_M[8:0]</obj_property>
+         <obj_property name="ObjectShortName">i_layer_M[8:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_TOP_ctrl/dut/u_ifmap_load_ctrl/i_layer_U" type="array">
+         <obj_property name="ElementShortName">i_layer_U[1:0]</obj_property>
+         <obj_property name="ObjectShortName">i_layer_U[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_TOP_ctrl/dut/u_ifmap_load_ctrl/i_layer_PAD" type="array">
+         <obj_property name="ElementShortName">i_layer_PAD[1:0]</obj_property>
+         <obj_property name="ObjectShortName">i_layer_PAD[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_TOP_ctrl/dut/u_ifmap_load_ctrl/i_layer_m" type="array">
+         <obj_property name="ElementShortName">i_layer_m[3:0]</obj_property>
+         <obj_property name="ObjectShortName">i_layer_m[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_TOP_ctrl/dut/u_ifmap_load_ctrl/i_layer_n" type="array">
+         <obj_property name="ElementShortName">i_layer_n[2:0]</obj_property>
+         <obj_property name="ObjectShortName">i_layer_n[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_TOP_ctrl/dut/u_ifmap_load_ctrl/i_layer_e" type="array">
+         <obj_property name="ElementShortName">i_layer_e[4:0]</obj_property>
+         <obj_property name="ObjectShortName">i_layer_e[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_TOP_ctrl/dut/u_ifmap_load_ctrl/i_layer_p" type="array">
+         <obj_property name="ElementShortName">i_layer_p[3:0]</obj_property>
+         <obj_property name="ObjectShortName">i_layer_p[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_TOP_ctrl/dut/u_ifmap_load_ctrl/i_layer_q" type="array">
+         <obj_property name="ElementShortName">i_layer_q[2:0]</obj_property>
+         <obj_property name="ObjectShortName">i_layer_q[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_TOP_ctrl/dut/u_ifmap_load_ctrl/i_layer_r" type="array">
+         <obj_property name="ElementShortName">i_layer_r[1:0]</obj_property>
+         <obj_property name="ObjectShortName">i_layer_r[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_TOP_ctrl/dut/u_ifmap_load_ctrl/i_layer_t" type="array">
+         <obj_property name="ElementShortName">i_layer_t[1:0]</obj_property>
+         <obj_property name="ObjectShortName">i_layer_t[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_TOP_ctrl/dut/u_ifmap_load_ctrl/o_ifmap_glb_re" type="logic">
+         <obj_property name="ElementShortName">o_ifmap_glb_re</obj_property>
+         <obj_property name="ObjectShortName">o_ifmap_glb_re</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_TOP_ctrl/dut/u_ifmap_load_ctrl/o_ifmap_glb_ra" type="array">
+         <obj_property name="ElementShortName">o_ifmap_glb_ra[15:0]</obj_property>
+         <obj_property name="ObjectShortName">o_ifmap_glb_ra[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_TOP_ctrl/dut/u_ifmap_load_ctrl/o_ifmap_tag" type="array">
+         <obj_property name="ElementShortName">o_ifmap_tag[8:0]</obj_property>
+         <obj_property name="ObjectShortName">o_ifmap_tag[8:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_TOP_ctrl/dut/u_ifmap_load_ctrl/o_load_done" type="logic">
+         <obj_property name="ElementShortName">o_load_done</obj_property>
+         <obj_property name="ObjectShortName">o_load_done</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_TOP_ctrl/dut/u_ifmap_load_ctrl/state" type="array">
          <obj_property name="ElementShortName">state[1:0]</obj_property>
@@ -451,6 +606,10 @@
       <wvobject fp_name="/tb_TOP_ctrl/dut/u_ifmap_load_ctrl/w_base" type="array">
          <obj_property name="ElementShortName">w_base[7:0]</obj_property>
          <obj_property name="ObjectShortName">w_base[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_TOP_ctrl/dut/u_ifmap_load_ctrl/iter_cnt" type="array">
+         <obj_property name="ElementShortName">iter_cnt[6:0]</obj_property>
+         <obj_property name="ObjectShortName">iter_cnt[6:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_TOP_ctrl/dut/u_ifmap_load_ctrl/cur_C_wire" type="array">
          <obj_property name="ElementShortName">cur_C_wire[8:0]</obj_property>
@@ -484,8 +643,12 @@
          <obj_property name="ElementShortName">UPDATE_BASE[1:0]</obj_property>
          <obj_property name="ObjectShortName">UPDATE_BASE[1:0]</obj_property>
       </wvobject>
+      <wvobject fp_name="/tb_TOP_ctrl/dut/u_ifmap_load_ctrl/DONE" type="array">
+         <obj_property name="ElementShortName">DONE[1:0]</obj_property>
+         <obj_property name="ObjectShortName">DONE[1:0]</obj_property>
+      </wvobject>
    </wvobject>
-   <wvobject fp_name="group1285" type="group">
+   <wvobject fp_name="group1613" type="group">
       <obj_property name="label">wght_load_ctrl</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <wvobject fp_name="/tb_TOP_ctrl/dut/u_wght_load_ctrl/i_clk" type="logic">
@@ -568,10 +731,13 @@
          <obj_property name="ElementShortName">o_wght_tag[7:0]</obj_property>
          <obj_property name="ObjectShortName">o_wght_tag[7:0]</obj_property>
       </wvobject>
+      <wvobject fp_name="/tb_TOP_ctrl/dut/u_wght_load_ctrl/o_load_done" type="logic">
+         <obj_property name="ElementShortName">o_load_done</obj_property>
+         <obj_property name="ObjectShortName">o_load_done</obj_property>
+      </wvobject>
       <wvobject fp_name="/tb_TOP_ctrl/dut/u_wght_load_ctrl/state" type="array">
          <obj_property name="ElementShortName">state[1:0]</obj_property>
          <obj_property name="ObjectShortName">state[1:0]</obj_property>
-         <obj_property name="Radix">BINARYRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_TOP_ctrl/dut/u_wght_load_ctrl/n_state" type="array">
          <obj_property name="ElementShortName">n_state[1:0]</obj_property>
@@ -593,6 +759,10 @@
          <obj_property name="ElementShortName">cnt_R[7:0]</obj_property>
          <obj_property name="ObjectShortName">cnt_R[7:0]</obj_property>
       </wvobject>
+      <wvobject fp_name="/tb_TOP_ctrl/dut/u_wght_load_ctrl/pass_done" type="logic">
+         <obj_property name="ElementShortName">pass_done</obj_property>
+         <obj_property name="ObjectShortName">pass_done</obj_property>
+      </wvobject>
       <wvobject fp_name="/tb_TOP_ctrl/dut/u_wght_load_ctrl/IDLE" type="array">
          <obj_property name="ElementShortName">IDLE[1:0]</obj_property>
          <obj_property name="ObjectShortName">IDLE[1:0]</obj_property>
@@ -606,10 +776,9 @@
          <obj_property name="ObjectShortName">DONE[1:0]</obj_property>
       </wvobject>
    </wvobject>
-   <wvobject fp_name="group1325" type="group">
+   <wvobject fp_name="group1633" type="group">
       <obj_property name="label">glb_addr_decoder</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/tb_TOP_ctrl/dut/u_glb_addr_decoder/i_GLB_allocation" type="array">
          <obj_property name="ElementShortName">i_GLB_allocation[5:0]</obj_property>
          <obj_property name="ObjectShortName">i_GLB_allocation[5:0]</obj_property>

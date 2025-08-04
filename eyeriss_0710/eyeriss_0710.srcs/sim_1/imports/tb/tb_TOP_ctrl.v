@@ -26,8 +26,9 @@ module tb_TOP_ctrl();
     reg i_rst;
     reg [0:3*clogb2(BANK_NUM)-1] i_GLB_allocation;
 
-    reg [9:0] i_layer_C;
+    reg [3:0] i_pass_num;
     reg [7:0] i_layer_HW;
+    reg [9:0] i_layer_C;
     reg [1:0] i_layer_U;
     reg [3:0] i_layer_RS;
     reg [6:0] i_layer_EF;
@@ -114,6 +115,7 @@ module tb_TOP_ctrl();
         .i_clk(i_clk),
         .i_rst(i_rst),
         .i_GLB_allocation(i_GLB_allocation),
+        .i_pass_num(i_pass_num),
         .i_layer_C(i_layer_C),
         .i_layer_HW(i_layer_HW),
         .i_layer_U(i_layer_U),
@@ -193,6 +195,7 @@ module tb_TOP_ctrl();
         i_clk = 0;
         i_rst = 1;
         i_GLB_allocation = {2'd1,2'b1,2'b1};
+        i_pass_num = 4'd1;
         i_layer_C = 10'd5;
         i_layer_HW = 8'd5;
         i_layer_U = 2'd1;

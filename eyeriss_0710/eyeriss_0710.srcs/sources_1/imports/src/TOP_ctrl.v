@@ -118,10 +118,11 @@ module TOP_ctrl #(
     localparam CMD_LOAD_IFMAP   = 3'b010;
     localparam CMD_LOAD_WGHT    = 3'b011;
     localparam CMD_CONV         = 3'b100;
-	localparam CMD_ACC          = 3'b101; // includes LOAD_PSUM from GLB PSUM BANK
+	localparam CMD_ACC          = 3'b101;
 
     reg [10:0] cnt, tar_cnt;
-    reg [9:0] cnt_pass;
+    reg [6:0] iter_cnt;
+    reg [9:0] pass_cnt;
 
     reg [3:0] state;
     reg [3:0] n_state;
@@ -160,15 +161,16 @@ module TOP_ctrl #(
                 else                        n_state = INIT;
             end
             WAIT: begin
-                if(cnt_pass == 1)           n_state = DONE;
+                if(pass_cnt == i_pass_num)    n_state = DONE;
                 else if(cnt == tar_cnt)       n_state = LOAD_DRAM2GLB;
+                else                          n_state = WAIT;
             end
             LOAD_DRAM2GLB: begin
                 if(cnt == tar_cnt)            n_state = LOAD_IFMAP;
                 else                        n_state = LOAD_DRAM2GLB;
             end
             LOAD_IFMAP: begin
-                if(cnt == tar_cnt)            n_state = LOAD_WGHT;
+                if(cnt == tar_cnt)            n_state = (iter_cnt == 0) ? LOAD_WGHT : LOAD_PSUM;
                 else                        n_state = LOAD_IFMAP;
             end
             LOAD_WGHT: begin
@@ -202,10 +204,18 @@ module TOP_ctrl #(
         if (i_rst) begin
             cnt <= 0;
             tar_cnt <= 0;
-            cnt_pass <= 0;
+            iter_cnt <= 0;
+            pass_cnt <= 0;
         end else begin
-            if(state == PSUM2GLB) begin
-                cnt_pass <= cnt_pass + 1;
+            if(state == PSUM2GLB && cnt == 0) begin
+                if(iter_cnt == i_layer_EF - 1) begin
+                    iter_cnt <= 0;
+                    if(pass_cnt == i_pass_num) pass_cnt <= 0;
+                    else pass_cnt <= pass_cnt + 1;
+                end
+                else begin
+                    iter_cnt <= iter_cnt + 1;
+                end
             end
 
             if(cnt < tar_cnt) begin
@@ -219,8 +229,8 @@ module TOP_ctrl #(
                     WAIT            : begin cnt <= 0; tar_cnt <= 0; end
                     LOAD_DRAM2GLB   : begin cnt <= 0; tar_cnt <= 0; end
                     LOAD_IFMAP      : begin cnt <= 0; tar_cnt <= (1 + i_layer_HW * i_layer_q * i_layer_RS + 2) - 1; end
-                    LOAD_WGHT       : begin cnt <= 0; tar_cnt <= (1 + i_layer_RS * (i_layer_p * i_layer_q * i_layer_RS)) - 1; end
-                    LOAD_PSUM       : begin cnt <= 0; tar_cnt <= i_layer_t * i_layer_p - 1; end
+                    LOAD_WGHT       : begin cnt <= 0; tar_cnt <= (1 + i_layer_RS * (i_layer_p * i_layer_q * i_layer_RS) + 2) - 1; end
+                    LOAD_PSUM       : begin cnt <= 0; tar_cnt <= (1 + i_layer_p * i_layer_EF + 2) - 1; end
                     CALC            : begin cnt <= 0; tar_cnt <= (i_layer_p < 3) ? (3 * i_layer_q * i_layer_RS - 1) : i_layer_p * i_layer_q * i_layer_RS - 1; end
                     ACCRST          : begin cnt <= 0; tar_cnt <= 2 * i_layer_p - 1; end
                     PSUM2GLB        : begin cnt <= 0; tar_cnt <= i_layer_p - 1; end
@@ -344,10 +354,34 @@ module TOP_ctrl #(
                 o_glb_bank_sel = glb_bank_sel;
             end
             LOAD_PSUM: begin
+                o_inst_data = LOAD_PSUM;
+                o_inst_valid = (cnt == 0);
+
+                if(cnt > 2) begin
+                    o_psum_in_valid = 1'b1;
+                    o_psum_in_packet = {psum_tag, i_glb_rd};
+                end
+                else begin
+                    o_psum_in_valid = 1'b0;
+                    o_psum_in_packet = {psum_tag, {PSUM_BUS_BITWIDTH{1'b0}}};
+                end
+                
+                glb_data_type = 2'd2;
+                glb_logical_addr = psum_glb_ra;
+
+                o_glb_re = psum_glb_re;
+                o_glb_ra = glb_physical_addr;
+                o_glb_bank_sel = glb_bank_sel;
+
+                //o_ctrl_psum_in_sel_LNorGIN = 
             end
             CALC: begin
+                o_inst_data = CMD_CONV;
+                o_inst_valid = (cnt == 0);
             end
             ACCRST: begin
+                o_inst_data = CMD_ACC;
+                o_inst_valid = (cnt == 0);
             end
             PSUM2GLB: begin
             end

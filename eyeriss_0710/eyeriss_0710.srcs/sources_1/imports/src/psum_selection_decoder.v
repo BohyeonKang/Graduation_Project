@@ -1,0 +1,38 @@
+module psum_selection_decoder #(
+    parameter NUM_ROWS = 3,
+    parameter NUM_COLS = 3,
+    parameter IFMAP_ROW_ID_BITWIDTH = 4,
+    parameter WGHT_ROW_ID_BITWIDTH = 4,
+    parameter PSUM_ROW_ID_BITWIDTH = 4,
+    parameter IFMAP_COL_ID_BITWIDTH = 5,
+    parameter WGHT_COL_ID_BITWIDTH = 4,
+    parameter PSUM_COL_ID_BITWIDTH = 4
+)(
+    input [3:0] i_layer_RS,
+    input [0:NUM_ROWS * PSUM_ROW_ID_BITWIDTH-1] i_psum_row_id,
+    input [0:NUM_ROWS * NUM_COLS * PSUM_COL_ID_BITWIDTH-1] i_psum_col_id,
+    output [0:NUM_ROWS*NUM_COLS-1] o_ctrl_psum_in_sel_LNorGIN,
+    output [0:NUM_ROWS*NUM_COLS-1] o_ctrl_psum_out_sel_GON
+);
+
+    reg [PSUM_ROW_ID_BITWIDTH-1:0] psum_row_id [0:NUM_ROWS-1][0:NUM_COLS-1];
+    reg [PSUM_COL_ID_BITWIDTH-1:0] psum_col_id [0:NUM_ROWS-1][0:NUM_COLS-1];
+    reg ctrl_psum_in_sel_LNorGIN [0:NUM_ROWS-1][0:NUM_COLS-1];
+    reg ctrl_psum_out_sel_GON [0:NUM_ROWS-1][0:NUM_COLS-1];
+
+    genvar row, col;
+    generate
+        for(row=0; row<NUM_ROWS; row=row+1) begin
+            for(col=0; col<NUM_COLS; col=col+1) begin
+                always @(*) begin
+                    psum_row_id[row][col] = i_psum_row_id[row * PSUM_ROW_ID_BITWIDTH +: PSUM_ROW_ID_BITWIDTH];
+                    psum_col_id[row][col] = i_psum_col_id[row * NUM_ROWS * PSUM_COL_ID_BITWIDTH + col * PSUM_COL_ID_BITWIDTH +: PSUM_COL_ID_BITWIDTH];
+                    ctrl_psum_in_sel_LNorGIN[row][col] = (psum_row_id[row][col] == i_layer_RS);
+                    ctrl_psum_out_sel_GON[row][col] = (psum_row_id[row][col] == 1'd1);
+                end
+                assign o_ctrl_psum_in_sel_LNorGIN[row * NUM_ROWS + col] = ctrl_psum_in_sel_LNorGIN[row][col];
+                assign o_ctrl_psum_out_sel_GON[row * NUM_ROWS + col] = ctrl_psum_out_sel_GON[row][col];
+            end 
+        end
+    endgenerate
+endmodule

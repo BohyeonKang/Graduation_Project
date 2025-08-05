@@ -30,31 +30,45 @@ module ifmap_load_ctrl(
 );
 
     // FSM 상태 정의
-    localparam IDLE         = 2'd0;
-    localparam LOAD_SEQ     = 2'd1;
-    localparam UPDATE_BASE  = 2'd2;
-    localparam DONE         = 2'd3;
+    localparam IDLE         = 3'd0;
+    localparam LOAD_SEQ     = 3'd1;
+    localparam UPDATE_BASE  = 3'd2;
+    localparam UPDATE_BATCH = 3'd3;
+    localparam DONE         = 3'd4;
 
-    // 내부 신호 정의
-    reg  [1:0] state, n_state;
+    reg  [2:0] state, n_state;
 
-    reg     sequencer_cmd_load;
-    //베이스 좌표 및 시퀀스 카운터
-    reg   [7:0] w_base;
-    reg   [6:0] iter_cnt;
+    // counters
+    reg [2:0] batch_cnt;
+    reg [6:0] iter_cnt;
+    reg [2:0] cnt_C;
+    reg [7:0] cnt_H;
+    reg [2:0] cnt_W;
 
-    // 하위 모듈 간 연결을 위한 wire
-    wire [8:0] cur_C_wire;
-    wire [7:0] cur_H_wire;
-    wire [7:0] cur_W_wire;
-    wire       seq_done;
-    wire       is_zero_wire;
+    wire [7:0] w_offset = iter_cnt * i_layer_U;
+    wire       iter_done;
 
-    // state register & counter
+    wire [3:0] row_tag;
+    wire [4:0] col_tag;
+
+    // signals needed to determine if a given logical address is in a zero padded region
+    wire [7:0] ifmap_end_idx = (i_layer_EF - 1) * i_layer_U + i_layer_RS - 1;
+    wire [7:0] upper_bound =  i_layer_HW + i_layer_PAD;
+    wire is_zero =  (cnt_H < i_layer_PAD) || // Top padding
+                    (cnt_W + w_offset < i_layer_PAD) || // Left padding
+                    (cnt_H >= upper_bound) || // Bottom padding
+                    (cnt_W + w_offset >= upper_bound);   // Right padding
+
+    // effective H, W to calculate the actual GLB address
+    wire [7:0] eff_H = cnt_H - i_layer_PAD;
+    wire [7:0] eff_W = cnt_W + w_offset - i_layer_PAD;
+
+
+
+    // state register
     always @(posedge i_clk) begin
         if (i_rst) begin
             state <= IDLE;
-            iter_cnt <= 0;
         end
         else begin
             state <= n_state;
@@ -63,85 +77,69 @@ module ifmap_load_ctrl(
         end
     end
 
+    // counter logic
+    always @(posedge i_clk)
+    begin
+        if (i_rst) begin
+            batch_cnt <= 0;
+            iter_cnt <= 0;
+            cnt_C <= 0;
+            cnt_H <= 0;
+            cnt_W <= 0;
+        end
+        else if(state == LOAD_SEQ) begin
+            if (cnt_W == i_layer_RS - 1) begin
+                cnt_W <= 0;
+                if (cnt_C == i_layer_q - 1) begin
+                    cnt_C <= 0;
+                    if (cnt_H == ifmap_end_idx) begin
+                        cnt_H <= 0;
+                    end 
+                    else begin
+                        cnt_H <= cnt_H + 1;
+                    end
+                end
+                else begin
+                    cnt_C <= cnt_C + 1;
+                end
+            end 
+            else begin
+                cnt_W <= cnt_W + 1;
+            end
+        end
+        else if(state == UPDATE_BASE)
+            iter_cnt <= (iter_cnt == i_layer_EF - 1) ? 0 : iter_cnt + 1;
+        else if(state == UPDATE_BATCH) 
+            batch_cnt <= (batch_cnt == i_layer_n - 1) ? 0 : batch_cnt + 1;
+        else begin
+            cnt_C <= 0;
+            cnt_H <= 0;
+            cnt_W <= 0;
+        end
+    end
+
     // next state logic
     always @(*) begin
         case(state)
             IDLE:           n_state = (i_load_start) ? LOAD_SEQ : IDLE;
-            LOAD_SEQ:       n_state = (seq_done) ? UPDATE_BASE : LOAD_SEQ;
-            UPDATE_BASE:    n_state = (iter_cnt == i_layer_EF - 1) ? DONE : IDLE;
+            LOAD_SEQ:       n_state = (iter_done) ? UPDATE_BASE : LOAD_SEQ;
+            UPDATE_BASE:    n_state = (iter_cnt == i_layer_EF - 1) ? UPDATE_BATCH : IDLE;
+            UPDATE_BATCH:   n_state = (batch_cnt == i_layer_n - 1) ? DONE : IDLE;
             DONE:           n_state = IDLE;
         endcase
     end
 
-    // output logic
-    always @(*) begin
-        sequencer_cmd_load = 1'b0;
-        w_base = 0;
-        case(state)
-            IDLE: begin
-            end
-            LOAD_SEQ: begin
-                sequencer_cmd_load = 1;
-                w_base = iter_cnt * i_layer_U;
-            end
-            UPDATE_BASE: begin
-            end
-        endcase
-    end
-
+    assign o_ifmap_tag = {row_tag, col_tag};
     assign o_load_done = (state == UPDATE_BASE) && (iter_cnt == i_layer_EF - 1);
 
-    ifmap_sequencer u_ifmap_sequencer (
-        .i_clk          (i_clk),
-        .i_rst          (i_rst),
-        .i_load         (sequencer_cmd_load),
+    assign tag = {row_tag, col_tag};
+    assign row_tag = 2'd1;
+    assign col_tag = cnt_H + 1;
 
-        // Layer & Tiling Info
-        .i_layer_C        (i_layer_C),
-        .i_layer_HW       (i_layer_HW),
-        .i_layer_U        (i_layer_U),
-        .i_layer_RS       (i_layer_RS),
-        .i_layer_EF       (i_layer_EF),
-        .i_layer_PAD      (i_layer_PAD),
-        .i_layer_m        (i_layer_m),
-        .i_layer_e        (i_layer_e),
-        .i_layer_p        (i_layer_p),
-        .i_layer_q        (i_layer_q),
-        .i_layer_r        (i_layer_r),
-        .i_layer_t        (i_layer_t),
-
-        // Base Cnt
-        .c_base_cnt     (0),
-        .h_base_cnt     (0),
-        .w_base_cnt     (w_base),
-
-        // Outputs
-        .cur_C          (cur_C_wire),
-        .cur_H          (cur_H_wire),
-        .cur_W          (cur_W_wire),
-        .tag            (o_ifmap_tag),
-        .seq_done       (seq_done)
-    );
-
-    ifmap_loader u_ifmap_loader (
-        .i_clk          (i_clk),
-        .i_rst          (i_rst),
-        .i_ready        (state == LOAD_SEQ),
-
-        // Layer Info
-        .i_layer_C        (i_layer_C),
-        .i_layer_HW       (i_layer_HW),
-        .i_layer_PAD      (i_layer_PAD),
-
-        // Current Coords from Sequencer
-        .cur_C          (cur_C_wire),
-        .cur_H          (cur_H_wire),
-        .cur_W          (cur_W_wire),
-
-        // Final Outputs to GLB
-        .ifmap_glb_re   (o_ifmap_glb_re),
-        .ifmap_glb_ra   (o_ifmap_glb_ra),
-        .is_zero        (is_zero_wire)
-    );
+    assign iter_done = (cnt_W == i_layer_RS - 1) && (cnt_C == i_layer_q - 1) && (cnt_H == ifmap_end_idx);
+    
+    // read GLB only if the address is not in zero padded region
+    assign o_ifmap_glb_re = (state == LOAD_SEQ) && ~is_zero;
+    assign o_ifmap_glb_ra = (cnt_C * i_layer_HW * i_layer_HW) + (eff_H * i_layer_HW) + eff_W;
 
 endmodule

@@ -1,4 +1,3 @@
-
 `timescale 1ns / 1ps
 
 module tb_TOP_ctrl();
@@ -26,14 +25,17 @@ module tb_TOP_ctrl();
     reg i_rst;
     reg [0:3*clogb2(BANK_NUM)-1] i_GLB_allocation;
 
-    reg [3:0] i_pass_num;
+    reg [3:0] i_total_pass;
     reg [7:0] i_layer_HW;
     reg [9:0] i_layer_C;
     reg [1:0] i_layer_U;
     reg [3:0] i_layer_RS;
     reg [6:0] i_layer_EF;
     reg [1:0] i_layer_PAD;
-    reg [3:0] i_layer_m;
+    reg [8:0] i_layer_M;
+
+    reg [2:0] i_layer_n;
+    reg [6:0] i_layer_m;
     reg [4:0] i_layer_e;
     reg [3:0] i_layer_p;
     reg [2:0] i_layer_q;
@@ -115,13 +117,15 @@ module tb_TOP_ctrl();
         .i_clk(i_clk),
         .i_rst(i_rst),
         .i_GLB_allocation(i_GLB_allocation),
-        .i_pass_num(i_pass_num),
+        .i_total_pass(i_total_pass),
         .i_layer_C(i_layer_C),
         .i_layer_HW(i_layer_HW),
         .i_layer_U(i_layer_U),
         .i_layer_RS(i_layer_RS),
         .i_layer_EF(i_layer_EF),
         .i_layer_PAD(i_layer_PAD),
+        .i_layer_M(i_layer_M),
+        .i_layer_n(i_layer_n),
         .i_layer_m(i_layer_m),
         .i_layer_e(i_layer_e),
         .i_layer_p(i_layer_p),
@@ -195,14 +199,17 @@ module tb_TOP_ctrl();
         i_clk = 0;
         i_rst = 1;
         i_GLB_allocation = {2'd1,2'b1,2'b1};
-        i_pass_num = 4'd1;
+        i_total_pass = 4'd1;
         i_layer_C = 10'd5;
         i_layer_HW = 8'd5;
         i_layer_U = 2'd1;
         i_layer_RS = 4'd3;
         i_layer_EF = 7'd3;
         i_layer_PAD = 2'd0;
-        i_layer_m = 4'd1;
+        i_layer_M = 9'd4;
+
+        i_layer_m = 7'd4;
+        i_layer_n = 3'd1;
         i_layer_e = 5'd3;
         i_layer_p = 4'd4;
         i_layer_q = 3'd5;

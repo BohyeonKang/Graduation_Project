@@ -45,7 +45,7 @@ module wght_load_ctrl(
     assign o_wght_glb_re = (state == LOAD_SEQ);
     assign o_wght_glb_ra = (cnt_P * i_layer_RS * i_layer_RS * i_layer_q) + (cnt_R * i_layer_RS) + (cnt_Q * i_layer_RS * i_layer_RS) + cnt_S;
     
-    assign o_wght_tag    = {cnt_R[3:0], 4'd0}; // col_tag = 0
+    assign o_wght_tag    = {cnt_R[3:0] + 1, 4'd0}; // col_tag = 0
     assign o_load_done   = (state == DONE);
     
     wire pass_done = (cnt_P == i_layer_p - 1) && (cnt_S == i_layer_RS - 1) &&

@@ -19,7 +19,7 @@ module GIN_BUS #(
     output [SLV_NUM-1:0] o_valid,
 
     // TOP CTRL interface
-    input [SLV_NUM * ID_BITWIDTH - 1:0] i_id,
+    input [0:SLV_NUM * ID_BITWIDTH - 1] i_id,
     input i_id_valid
 );
 
@@ -27,7 +27,7 @@ module GIN_BUS #(
     wire [PACKET_OUT_BITWIDTH-1:0] data;
     assign {tag, data} = i_packet;
 
-    wire [ID_BITWIDTH-1:0] id [SLV_NUM-1:0];
+    wire [ID_BITWIDTH-1:0] id [0:SLV_NUM-1];
 
     wire [SLV_NUM-1:0] slv_MC_ready;
 

@@ -36,6 +36,10 @@ module wght_load_ctrl(
 
     reg [1:0] state, n_state;
 
+    wire [7:0] wght_tag;
+    reg [7:0] wght_tag_d;
+    reg [7:0] wght_tag_d2;
+
     // 내부 카운터
     reg [3:0] cnt_P;
     reg [2:0] cnt_S;
@@ -45,8 +49,20 @@ module wght_load_ctrl(
     assign o_wght_glb_re = (state == LOAD_SEQ);
     assign o_wght_glb_ra = (cnt_P * i_layer_RS * i_layer_RS * i_layer_q) + (cnt_R * i_layer_RS) + (cnt_Q * i_layer_RS * i_layer_RS) + cnt_S;
     
-    assign o_wght_tag    = {cnt_R[3:0] + 1, 4'd0}; // col_tag = 0
-    assign o_load_done   = (state == DONE);
+    assign wght_tag    = {cnt_R[3:0] + 1, 4'd1}; // col_tag = 1
+    always @(posedge i_clk) begin
+        if(i_rst) begin
+            wght_tag_d <= 0;
+            wght_tag_d2 <= 0;
+        end
+        else begin
+            wght_tag_d <= wght_tag;
+            wght_tag_d2 <= wght_tag_d;
+        end
+    end
+
+    assign o_load_done = (state == DONE);
+    assign o_wght_tag = wght_tag_d2;
     
     wire pass_done = (cnt_P == i_layer_p - 1) && (cnt_S == i_layer_RS - 1) &&
                 (cnt_Q == i_layer_q - 1) && (cnt_R == i_layer_RS - 1);

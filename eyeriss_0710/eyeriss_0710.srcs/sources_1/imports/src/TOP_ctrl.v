@@ -117,9 +117,8 @@ module TOP_ctrl #(
     localparam CMD_SET          = 3'b001;
     localparam CMD_LOAD_IFMAP   = 3'b010;
     localparam CMD_LOAD_WGHT    = 3'b011;
-    localparam CMD_LOAD_PSUM    = 3'b100;
-    localparam CMD_CONV         = 3'b101;
-	localparam CMD_ACC          = 3'b110;
+    localparam CMD_CONV         = 3'b100;
+	localparam CMD_ACC          = 3'b101;
 
     reg [10:0] cnt, tar_cnt;
     reg [6:0] iter_cnt;
@@ -358,9 +357,6 @@ module TOP_ctrl #(
                 o_glb_bank_sel = glb_bank_sel;
             end
             LOAD_PSUM: begin
-                o_inst_data = CMD_LOAD_PSUM;
-                o_inst_valid = (cnt == 0);
-
                 if(cnt > 2) begin
                     o_psum_in_valid = 1'b1;
                     o_psum_in_packet = {psum_tag, i_glb_rd};
@@ -379,6 +375,8 @@ module TOP_ctrl #(
                 o_ctrl_psum_in_sel_LNorGIN = ctrl_psum_in_sel_LNorGIN;
             end
             CALC: begin
+                o_inst_data = CMD_CONV;
+                o_inst_valid = (cnt == 0);
             end
             ACCRST: begin
                 o_ctrl_psum_out_sel_GON = ctrl_psum_out_sel_GON;

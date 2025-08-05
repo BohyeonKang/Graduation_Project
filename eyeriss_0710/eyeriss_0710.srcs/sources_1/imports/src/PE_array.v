@@ -5,7 +5,7 @@ module PE_array #(
 
     parameter IFMAP_BUS_BITWIDTH = 8,
     parameter IFMAP_ROW_ID_BITWIDTH = 4,
-    parameter IFMAP_COL_ID_BITWIDTH = 4,
+    parameter IFMAP_COL_ID_BITWIDTH = 5,
 
     parameter WGHT_BUS_BITWIDTH = 32,
     parameter WGHT_ROW_ID_BITWIDTH = 4,
@@ -138,8 +138,8 @@ module PE_array #(
     generate
         for(row = 0; row < NUM_COLS; row = row + 1) begin : init_LN
             assign LN_psum_data[NUM_ROWS][row] = 0;
-            assign LN_psum_valid[NUM_ROWS][row] = 1;
-            assign LN_psum_ready[0][row] = 1; // GON
+            assign LN_psum_valid[NUM_ROWS][row] = 0; // bottom line of PE set always get input psum from GIN.
+            assign LN_psum_ready[0][row] = 1; // top line of PE set
         end
     endgenerate
 

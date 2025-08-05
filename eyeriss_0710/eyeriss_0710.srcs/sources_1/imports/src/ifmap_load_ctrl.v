@@ -29,7 +29,6 @@ module ifmap_load_ctrl(
     output o_load_done
 );
 
-    // FSM 상태 정의
     localparam IDLE         = 3'd0;
     localparam LOAD_SEQ     = 3'd1;
     localparam UPDATE_BASE  = 3'd2;
@@ -37,7 +36,11 @@ module ifmap_load_ctrl(
     localparam DONE         = 3'd4;
 
     reg  [2:0] state, n_state;
-
+    
+    wire [8:0]    ifmap_tag;
+    reg [8:0]     ifmap_tag_d;
+    reg [8:0]     ifmap_tag_d2;
+    
     // counters
     reg [2:0] batch_cnt;
     reg [6:0] iter_cnt;
@@ -129,17 +132,27 @@ module ifmap_load_ctrl(
         endcase
     end
 
-    assign o_ifmap_tag = {row_tag, col_tag};
-    assign o_load_done = (state == UPDATE_BASE) && (iter_cnt == i_layer_EF - 1);
-
-    assign tag = {row_tag, col_tag};
-    assign row_tag = 2'd1;
+    assign row_tag = 4'd1;
     assign col_tag = cnt_H + 1;
+
+    assign ifmap_tag = {row_tag, col_tag};
+    always @(posedge i_clk) begin
+        if(i_rst) begin
+            ifmap_tag_d <= 0;
+            ifmap_tag_d2 <= 0;
+        end
+        else begin
+            ifmap_tag_d <= ifmap_tag;
+            ifmap_tag_d2 <= ifmap_tag_d;
+        end
+    end
 
     assign iter_done = (cnt_W == i_layer_RS - 1) && (cnt_C == i_layer_q - 1) && (cnt_H == ifmap_end_idx);
     
     // read GLB only if the address is not in zero padded region
     assign o_ifmap_glb_re = (state == LOAD_SEQ) && ~is_zero;
     assign o_ifmap_glb_ra = (cnt_C * i_layer_HW * i_layer_HW) + (eff_H * i_layer_HW) + eff_W;
+    assign o_ifmap_tag = ifmap_tag_d2;
+    assign o_load_done = (state == DONE);
 
 endmodule

@@ -11,671 +11,509 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
-      <ZoomEndTime time="6.985001 us"></ZoomEndTime>
-      <Cursor1Time time="2.775000 us"></Cursor1Time>
+      <ZoomStartTime time="3,573.833 ns"></ZoomStartTime>
+      <ZoomEndTime time="3,743.234 ns"></ZoomEndTime>
+      <Cursor1Time time="3,635.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="438"></NameColumnWidth>
-      <ValueColumnWidth column_width="284"></ValueColumnWidth>
+      <ValueColumnWidth column_width="180"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="9" />
-   <wvobject fp_name="group1561" type="group">
+   <WVObjectSize size="10" />
+   <wvobject fp_name="group2400" type="group">
       <obj_property name="label">top_ctrl</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="isExpanded"></obj_property>
-      <wvobject fp_name="group1562" type="group">
-         <obj_property name="label">main_ctrl</obj_property>
-         <obj_property name="DisplayName">label</obj_property>
-         <obj_property name="isExpanded"></obj_property>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_clk" type="logic">
-            <obj_property name="ElementShortName">i_clk</obj_property>
-            <obj_property name="ObjectShortName">i_clk</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_rst" type="logic">
-            <obj_property name="ElementShortName">i_rst</obj_property>
-            <obj_property name="ObjectShortName">i_rst</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_GLB_allocation" type="array">
-            <obj_property name="ElementShortName">i_GLB_allocation[0:5]</obj_property>
-            <obj_property name="ObjectShortName">i_GLB_allocation[0:5]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_total_pass" type="array">
-            <obj_property name="ElementShortName">i_total_pass[3:0]</obj_property>
-            <obj_property name="ObjectShortName">i_total_pass[3:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_layer_HW" type="array">
-            <obj_property name="ElementShortName">i_layer_HW[7:0]</obj_property>
-            <obj_property name="ObjectShortName">i_layer_HW[7:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_layer_RS" type="array">
-            <obj_property name="ElementShortName">i_layer_RS[3:0]</obj_property>
-            <obj_property name="ObjectShortName">i_layer_RS[3:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_layer_EF" type="array">
-            <obj_property name="ElementShortName">i_layer_EF[6:0]</obj_property>
-            <obj_property name="ObjectShortName">i_layer_EF[6:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_layer_C" type="array">
-            <obj_property name="ElementShortName">i_layer_C[9:0]</obj_property>
-            <obj_property name="ObjectShortName">i_layer_C[9:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_layer_M" type="array">
-            <obj_property name="ElementShortName">i_layer_M[8:0]</obj_property>
-            <obj_property name="ObjectShortName">i_layer_M[8:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_layer_U" type="array">
-            <obj_property name="ElementShortName">i_layer_U[1:0]</obj_property>
-            <obj_property name="ObjectShortName">i_layer_U[1:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_layer_PAD" type="array">
-            <obj_property name="ElementShortName">i_layer_PAD[1:0]</obj_property>
-            <obj_property name="ObjectShortName">i_layer_PAD[1:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_layer_m" type="array">
-            <obj_property name="ElementShortName">i_layer_m[3:0]</obj_property>
-            <obj_property name="ObjectShortName">i_layer_m[3:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_layer_n" type="array">
-            <obj_property name="ElementShortName">i_layer_n[2:0]</obj_property>
-            <obj_property name="ObjectShortName">i_layer_n[2:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_layer_e" type="array">
-            <obj_property name="ElementShortName">i_layer_e[4:0]</obj_property>
-            <obj_property name="ObjectShortName">i_layer_e[4:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_layer_p" type="array">
-            <obj_property name="ElementShortName">i_layer_p[3:0]</obj_property>
-            <obj_property name="ObjectShortName">i_layer_p[3:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_layer_q" type="array">
-            <obj_property name="ElementShortName">i_layer_q[2:0]</obj_property>
-            <obj_property name="ObjectShortName">i_layer_q[2:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_layer_r" type="array">
-            <obj_property name="ElementShortName">i_layer_r[1:0]</obj_property>
-            <obj_property name="ObjectShortName">i_layer_r[1:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_layer_t" type="array">
-            <obj_property name="ElementShortName">i_layer_t[1:0]</obj_property>
-            <obj_property name="ObjectShortName">i_layer_t[1:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_ifmap_row_id" type="array">
-            <obj_property name="ElementShortName">i_ifmap_row_id[0:11]</obj_property>
-            <obj_property name="ObjectShortName">i_ifmap_row_id[0:11]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_wght_row_id" type="array">
-            <obj_property name="ElementShortName">i_wght_row_id[0:11]</obj_property>
-            <obj_property name="ObjectShortName">i_wght_row_id[0:11]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_psum_row_id" type="array">
-            <obj_property name="ElementShortName">i_psum_row_id[0:11]</obj_property>
-            <obj_property name="ObjectShortName">i_psum_row_id[0:11]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_ifmap_col_id" type="array">
-            <obj_property name="ElementShortName">i_ifmap_col_id[0:44]</obj_property>
-            <obj_property name="ObjectShortName">i_ifmap_col_id[0:44]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_wght_col_id" type="array">
-            <obj_property name="ElementShortName">i_wght_col_id[0:35]</obj_property>
-            <obj_property name="ObjectShortName">i_wght_col_id[0:35]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_psum_col_id" type="array">
-            <obj_property name="ElementShortName">i_psum_col_id[0:35]</obj_property>
-            <obj_property name="ObjectShortName">i_psum_col_id[0:35]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_inst_bram_ra" type="array">
-            <obj_property name="ElementShortName">o_inst_bram_ra[6:0]</obj_property>
-            <obj_property name="ObjectShortName">o_inst_bram_ra[6:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_inst_bram_rd" type="array">
-            <obj_property name="ElementShortName">i_inst_bram_rd[31:0]</obj_property>
-            <obj_property name="ObjectShortName">i_inst_bram_rd[31:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_inst_bram_wa" type="array">
-            <obj_property name="ElementShortName">o_inst_bram_wa[6:0]</obj_property>
-            <obj_property name="ObjectShortName">o_inst_bram_wa[6:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_inst_bram_wd" type="array">
-            <obj_property name="ElementShortName">o_inst_bram_wd[31:0]</obj_property>
-            <obj_property name="ObjectShortName">o_inst_bram_wd[31:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_inst_bram_we" type="logic">
-            <obj_property name="ElementShortName">o_inst_bram_we</obj_property>
-            <obj_property name="ObjectShortName">o_inst_bram_we</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_inst_data" type="array">
-            <obj_property name="ElementShortName">o_inst_data[2:0]</obj_property>
-            <obj_property name="ObjectShortName">o_inst_data[2:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_conv_info" type="array">
-            <obj_property name="ElementShortName">o_conv_info[10:0]</obj_property>
-            <obj_property name="ObjectShortName">o_conv_info[10:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_inst_valid" type="logic">
-            <obj_property name="ElementShortName">o_inst_valid</obj_property>
-            <obj_property name="ObjectShortName">o_inst_valid</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_inst_ready" type="logic">
-            <obj_property name="ElementShortName">i_inst_ready</obj_property>
-            <obj_property name="ObjectShortName">i_inst_ready</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_ifmap_row_id" type="array">
-            <obj_property name="ElementShortName">o_ifmap_row_id[0:11]</obj_property>
-            <obj_property name="ObjectShortName">o_ifmap_row_id[0:11]</obj_property>
-            <obj_property name="Radix">BINARYRADIX</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_wght_row_id" type="array">
-            <obj_property name="ElementShortName">o_wght_row_id[0:11]</obj_property>
-            <obj_property name="ObjectShortName">o_wght_row_id[0:11]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_psum_row_id" type="array">
-            <obj_property name="ElementShortName">o_psum_row_id[0:11]</obj_property>
-            <obj_property name="ObjectShortName">o_psum_row_id[0:11]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_ifmap_row_id_valid" type="logic">
-            <obj_property name="ElementShortName">o_ifmap_row_id_valid</obj_property>
-            <obj_property name="ObjectShortName">o_ifmap_row_id_valid</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_wght_row_id_valid" type="logic">
-            <obj_property name="ElementShortName">o_wght_row_id_valid</obj_property>
-            <obj_property name="ObjectShortName">o_wght_row_id_valid</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_psum_row_id_valid" type="logic">
-            <obj_property name="ElementShortName">o_psum_row_id_valid</obj_property>
-            <obj_property name="ObjectShortName">o_psum_row_id_valid</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_ifmap_col_id" type="array">
-            <obj_property name="ElementShortName">o_ifmap_col_id[0:14]</obj_property>
-            <obj_property name="ObjectShortName">o_ifmap_col_id[0:14]</obj_property>
-            <obj_property name="Radix">BINARYRADIX</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_wght_col_id" type="array">
-            <obj_property name="ElementShortName">o_wght_col_id[0:11]</obj_property>
-            <obj_property name="ObjectShortName">o_wght_col_id[0:11]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_psum_col_id" type="array">
-            <obj_property name="ElementShortName">o_psum_col_id[0:11]</obj_property>
-            <obj_property name="ObjectShortName">o_psum_col_id[0:11]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_ifmap_col_id_valid" type="array">
-            <obj_property name="ElementShortName">o_ifmap_col_id_valid[0:2]</obj_property>
-            <obj_property name="ObjectShortName">o_ifmap_col_id_valid[0:2]</obj_property>
-            <obj_property name="Radix">BINARYRADIX</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_wght_col_id_valid" type="array">
-            <obj_property name="ElementShortName">o_wght_col_id_valid[0:2]</obj_property>
-            <obj_property name="ObjectShortName">o_wght_col_id_valid[0:2]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_psum_col_id_valid" type="array">
-            <obj_property name="ElementShortName">o_psum_col_id_valid[0:2]</obj_property>
-            <obj_property name="ObjectShortName">o_psum_col_id_valid[0:2]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_ctrl_psum_in_sel_LNorGIN" type="array">
-            <obj_property name="ElementShortName">o_ctrl_psum_in_sel_LNorGIN[0:8]</obj_property>
-            <obj_property name="ObjectShortName">o_ctrl_psum_in_sel_LNorGIN[0:8]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_ctrl_psum_out_sel_GON" type="array">
-            <obj_property name="ElementShortName">o_ctrl_psum_out_sel_GON[0:8]</obj_property>
-            <obj_property name="ObjectShortName">o_ctrl_psum_out_sel_GON[0:8]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_ifmap_packet" type="array">
-            <obj_property name="ElementShortName">o_ifmap_packet[40:0]</obj_property>
-            <obj_property name="ObjectShortName">o_ifmap_packet[40:0]</obj_property>
-            <obj_property name="Radix">BINARYRADIX</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_wght_packet" type="array">
-            <obj_property name="ElementShortName">o_wght_packet[39:0]</obj_property>
-            <obj_property name="ObjectShortName">o_wght_packet[39:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_psum_in_packet" type="array">
-            <obj_property name="ElementShortName">o_psum_in_packet[39:0]</obj_property>
-            <obj_property name="ObjectShortName">o_psum_in_packet[39:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_ifmap_valid" type="logic">
-            <obj_property name="ElementShortName">o_ifmap_valid</obj_property>
-            <obj_property name="ObjectShortName">o_ifmap_valid</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_wght_valid" type="logic">
-            <obj_property name="ElementShortName">o_wght_valid</obj_property>
-            <obj_property name="ObjectShortName">o_wght_valid</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_psum_in_valid" type="logic">
-            <obj_property name="ElementShortName">o_psum_in_valid</obj_property>
-            <obj_property name="ObjectShortName">o_psum_in_valid</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_psum_out_ready" type="logic">
-            <obj_property name="ElementShortName">o_psum_out_ready</obj_property>
-            <obj_property name="ObjectShortName">o_psum_out_ready</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_ifmap_ready" type="logic">
-            <obj_property name="ElementShortName">i_ifmap_ready</obj_property>
-            <obj_property name="ObjectShortName">i_ifmap_ready</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_wght_ready" type="logic">
-            <obj_property name="ElementShortName">i_wght_ready</obj_property>
-            <obj_property name="ObjectShortName">i_wght_ready</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_psum_in_ready" type="logic">
-            <obj_property name="ElementShortName">i_psum_in_ready</obj_property>
-            <obj_property name="ObjectShortName">i_psum_in_ready</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_psum_out_valid" type="logic">
-            <obj_property name="ElementShortName">i_psum_out_valid</obj_property>
-            <obj_property name="ObjectShortName">i_psum_out_valid</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_glb_rd" type="array">
-            <obj_property name="ElementShortName">i_glb_rd[31:0]</obj_property>
-            <obj_property name="ObjectShortName">i_glb_rd[31:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_glb_bank_sel" type="array">
-            <obj_property name="ElementShortName">o_glb_bank_sel[1:0]</obj_property>
-            <obj_property name="ObjectShortName">o_glb_bank_sel[1:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_glb_re" type="logic">
-            <obj_property name="ElementShortName">o_glb_re</obj_property>
-            <obj_property name="ObjectShortName">o_glb_re</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_glb_we" type="logic">
-            <obj_property name="ElementShortName">o_glb_we</obj_property>
-            <obj_property name="ObjectShortName">o_glb_we</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_glb_ra" type="array">
-            <obj_property name="ElementShortName">o_glb_ra[8:0]</obj_property>
-            <obj_property name="ObjectShortName">o_glb_ra[8:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_glb_wa" type="array">
-            <obj_property name="ElementShortName">o_glb_wa[8:0]</obj_property>
-            <obj_property name="ObjectShortName">o_glb_wa[8:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/cnt" type="array">
-            <obj_property name="ElementShortName">cnt[10:0]</obj_property>
-            <obj_property name="ObjectShortName">cnt[10:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/tar_cnt" type="array">
-            <obj_property name="ElementShortName">tar_cnt[10:0]</obj_property>
-            <obj_property name="ObjectShortName">tar_cnt[10:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/iter_cnt" type="array">
-            <obj_property name="ElementShortName">iter_cnt[6:0]</obj_property>
-            <obj_property name="ObjectShortName">iter_cnt[6:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/pass_cnt" type="array">
-            <obj_property name="ElementShortName">pass_cnt[9:0]</obj_property>
-            <obj_property name="ObjectShortName">pass_cnt[9:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/state" type="array">
-            <obj_property name="ElementShortName">state[3:0]</obj_property>
-            <obj_property name="ObjectShortName">state[3:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/n_state" type="array">
-            <obj_property name="ElementShortName">n_state[3:0]</obj_property>
-            <obj_property name="ObjectShortName">n_state[3:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/glb_data_type" type="array">
-            <obj_property name="ElementShortName">glb_data_type[1:0]</obj_property>
-            <obj_property name="ObjectShortName">glb_data_type[1:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/glb_logical_addr" type="array">
-            <obj_property name="ElementShortName">glb_logical_addr[10:0]</obj_property>
-            <obj_property name="ObjectShortName">glb_logical_addr[10:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/glb_physical_addr" type="array">
-            <obj_property name="ElementShortName">glb_physical_addr[9:0]</obj_property>
-            <obj_property name="ObjectShortName">glb_physical_addr[9:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/glb_bank_sel" type="array">
-            <obj_property name="ElementShortName">glb_bank_sel[1:0]</obj_property>
-            <obj_property name="ObjectShortName">glb_bank_sel[1:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/ifmap_load_done" type="logic">
-            <obj_property name="ElementShortName">ifmap_load_done</obj_property>
-            <obj_property name="ObjectShortName">ifmap_load_done</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/wght_load_done" type="logic">
-            <obj_property name="ElementShortName">wght_load_done</obj_property>
-            <obj_property name="ObjectShortName">wght_load_done</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/psum_load_done" type="logic">
-            <obj_property name="ElementShortName">psum_load_done</obj_property>
-            <obj_property name="ObjectShortName">psum_load_done</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/ifmap_glb_re" type="logic">
-            <obj_property name="ElementShortName">ifmap_glb_re</obj_property>
-            <obj_property name="ObjectShortName">ifmap_glb_re</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/wght_glb_re" type="logic">
-            <obj_property name="ElementShortName">wght_glb_re</obj_property>
-            <obj_property name="ObjectShortName">wght_glb_re</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/psum_glb_re" type="logic">
-            <obj_property name="ElementShortName">psum_glb_re</obj_property>
-            <obj_property name="ObjectShortName">psum_glb_re</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/ifmap_tag" type="array">
-            <obj_property name="ElementShortName">ifmap_tag[8:0]</obj_property>
-            <obj_property name="ObjectShortName">ifmap_tag[8:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/wght_tag" type="array">
-            <obj_property name="ElementShortName">wght_tag[7:0]</obj_property>
-            <obj_property name="ObjectShortName">wght_tag[7:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/psum_tag" type="array">
-            <obj_property name="ElementShortName">psum_tag[7:0]</obj_property>
-            <obj_property name="ObjectShortName">psum_tag[7:0]</obj_property>
-            <obj_property name="Radix">BINARYRADIX</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/ifmap_glb_ra" type="array">
-            <obj_property name="ElementShortName">ifmap_glb_ra[13:0]</obj_property>
-            <obj_property name="ObjectShortName">ifmap_glb_ra[13:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/wght_glb_ra" type="array">
-            <obj_property name="ElementShortName">wght_glb_ra[13:0]</obj_property>
-            <obj_property name="ObjectShortName">wght_glb_ra[13:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/psum_glb_ra" type="array">
-            <obj_property name="ElementShortName">psum_glb_ra[13:0]</obj_property>
-            <obj_property name="ObjectShortName">psum_glb_ra[13:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/ctrl_psum_in_sel_LNorGIN" type="array">
-            <obj_property name="ElementShortName">ctrl_psum_in_sel_LNorGIN[0:8]</obj_property>
-            <obj_property name="ObjectShortName">ctrl_psum_in_sel_LNorGIN[0:8]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/ctrl_psum_out_sel_GON" type="array">
-            <obj_property name="ElementShortName">ctrl_psum_out_sel_GON[0:8]</obj_property>
-            <obj_property name="ObjectShortName">ctrl_psum_out_sel_GON[0:8]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/INST_BRAM_DEPTH" type="array">
-            <obj_property name="ElementShortName">INST_BRAM_DEPTH[31:0]</obj_property>
-            <obj_property name="ObjectShortName">INST_BRAM_DEPTH[31:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/INST_BRAM_ADDR_WIDTH" type="array">
-            <obj_property name="ElementShortName">INST_BRAM_ADDR_WIDTH[31:0]</obj_property>
-            <obj_property name="ObjectShortName">INST_BRAM_ADDR_WIDTH[31:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/DATA_BITWIDTH" type="array">
-            <obj_property name="ElementShortName">DATA_BITWIDTH[31:0]</obj_property>
-            <obj_property name="ObjectShortName">DATA_BITWIDTH[31:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/NUM_COLS" type="array">
-            <obj_property name="ElementShortName">NUM_COLS[31:0]</obj_property>
-            <obj_property name="ObjectShortName">NUM_COLS[31:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/NUM_ROWS" type="array">
-            <obj_property name="ElementShortName">NUM_ROWS[31:0]</obj_property>
-            <obj_property name="ObjectShortName">NUM_ROWS[31:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/BANK_NUM" type="array">
-            <obj_property name="ElementShortName">BANK_NUM[31:0]</obj_property>
-            <obj_property name="ObjectShortName">BANK_NUM[31:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/BANK_DEPTH" type="array">
-            <obj_property name="ElementShortName">BANK_DEPTH[31:0]</obj_property>
-            <obj_property name="ObjectShortName">BANK_DEPTH[31:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/IFMAP_ROW_ID_BITWIDTH" type="array">
-            <obj_property name="ElementShortName">IFMAP_ROW_ID_BITWIDTH[31:0]</obj_property>
-            <obj_property name="ObjectShortName">IFMAP_ROW_ID_BITWIDTH[31:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/WGHT_ROW_ID_BITWIDTH" type="array">
-            <obj_property name="ElementShortName">WGHT_ROW_ID_BITWIDTH[31:0]</obj_property>
-            <obj_property name="ObjectShortName">WGHT_ROW_ID_BITWIDTH[31:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/PSUM_ROW_ID_BITWIDTH" type="array">
-            <obj_property name="ElementShortName">PSUM_ROW_ID_BITWIDTH[31:0]</obj_property>
-            <obj_property name="ObjectShortName">PSUM_ROW_ID_BITWIDTH[31:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/IFMAP_COL_ID_BITWIDTH" type="array">
-            <obj_property name="ElementShortName">IFMAP_COL_ID_BITWIDTH[31:0]</obj_property>
-            <obj_property name="ObjectShortName">IFMAP_COL_ID_BITWIDTH[31:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/WGHT_COL_ID_BITWIDTH" type="array">
-            <obj_property name="ElementShortName">WGHT_COL_ID_BITWIDTH[31:0]</obj_property>
-            <obj_property name="ObjectShortName">WGHT_COL_ID_BITWIDTH[31:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/PSUM_COL_ID_BITWIDTH" type="array">
-            <obj_property name="ElementShortName">PSUM_COL_ID_BITWIDTH[31:0]</obj_property>
-            <obj_property name="ObjectShortName">PSUM_COL_ID_BITWIDTH[31:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/IFMAP_BUS_BITWIDTH" type="array">
-            <obj_property name="ElementShortName">IFMAP_BUS_BITWIDTH[31:0]</obj_property>
-            <obj_property name="ObjectShortName">IFMAP_BUS_BITWIDTH[31:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/WGHT_BUS_BITWIDTH" type="array">
-            <obj_property name="ElementShortName">WGHT_BUS_BITWIDTH[31:0]</obj_property>
-            <obj_property name="ObjectShortName">WGHT_BUS_BITWIDTH[31:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/PSUM_BUS_BITWIDTH" type="array">
-            <obj_property name="ElementShortName">PSUM_BUS_BITWIDTH[31:0]</obj_property>
-            <obj_property name="ObjectShortName">PSUM_BUS_BITWIDTH[31:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/IDLE" type="array">
-            <obj_property name="ElementShortName">IDLE[3:0]</obj_property>
-            <obj_property name="ObjectShortName">IDLE[3:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/INIT" type="array">
-            <obj_property name="ElementShortName">INIT[3:0]</obj_property>
-            <obj_property name="ObjectShortName">INIT[3:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/WAIT" type="array">
-            <obj_property name="ElementShortName">WAIT[3:0]</obj_property>
-            <obj_property name="ObjectShortName">WAIT[3:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/LOAD_DRAM2GLB" type="array">
-            <obj_property name="ElementShortName">LOAD_DRAM2GLB[3:0]</obj_property>
-            <obj_property name="ObjectShortName">LOAD_DRAM2GLB[3:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/LOAD_IFMAP" type="array">
-            <obj_property name="ElementShortName">LOAD_IFMAP[3:0]</obj_property>
-            <obj_property name="ObjectShortName">LOAD_IFMAP[3:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/LOAD_WGHT" type="array">
-            <obj_property name="ElementShortName">LOAD_WGHT[3:0]</obj_property>
-            <obj_property name="ObjectShortName">LOAD_WGHT[3:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/LOAD_PSUM" type="array">
-            <obj_property name="ElementShortName">LOAD_PSUM[3:0]</obj_property>
-            <obj_property name="ObjectShortName">LOAD_PSUM[3:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/CALC" type="array">
-            <obj_property name="ElementShortName">CALC[3:0]</obj_property>
-            <obj_property name="ObjectShortName">CALC[3:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/ACCRST" type="array">
-            <obj_property name="ElementShortName">ACCRST[3:0]</obj_property>
-            <obj_property name="ObjectShortName">ACCRST[3:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/PSUM2GLB" type="array">
-            <obj_property name="ElementShortName">PSUM2GLB[3:0]</obj_property>
-            <obj_property name="ObjectShortName">PSUM2GLB[3:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/DONE" type="array">
-            <obj_property name="ElementShortName">DONE[3:0]</obj_property>
-            <obj_property name="ObjectShortName">DONE[3:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/CMD_NOP" type="array">
-            <obj_property name="ElementShortName">CMD_NOP[2:0]</obj_property>
-            <obj_property name="ObjectShortName">CMD_NOP[2:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/CMD_SET" type="array">
-            <obj_property name="ElementShortName">CMD_SET[2:0]</obj_property>
-            <obj_property name="ObjectShortName">CMD_SET[2:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/CMD_LOAD_IFMAP" type="array">
-            <obj_property name="ElementShortName">CMD_LOAD_IFMAP[2:0]</obj_property>
-            <obj_property name="ObjectShortName">CMD_LOAD_IFMAP[2:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/CMD_LOAD_WGHT" type="array">
-            <obj_property name="ElementShortName">CMD_LOAD_WGHT[2:0]</obj_property>
-            <obj_property name="ObjectShortName">CMD_LOAD_WGHT[2:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/CMD_CONV" type="array">
-            <obj_property name="ElementShortName">CMD_CONV[2:0]</obj_property>
-            <obj_property name="ObjectShortName">CMD_CONV[2:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/CMD_ACC" type="array">
-            <obj_property name="ElementShortName">CMD_ACC[2:0]</obj_property>
-            <obj_property name="ObjectShortName">CMD_ACC[2:0]</obj_property>
-         </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_clk" type="logic">
+         <obj_property name="ElementShortName">i_clk</obj_property>
+         <obj_property name="ObjectShortName">i_clk</obj_property>
       </wvobject>
-      <wvobject fp_name="group1582" type="group">
-         <obj_property name="label">glb_addr_decoder</obj_property>
-         <obj_property name="DisplayName">label</obj_property>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_glb_addr_decoder/i_GLB_allocation" type="array">
-            <obj_property name="ElementShortName">i_GLB_allocation[5:0]</obj_property>
-            <obj_property name="ObjectShortName">i_GLB_allocation[5:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_glb_addr_decoder/i_data_type" type="array">
-            <obj_property name="ElementShortName">i_data_type[1:0]</obj_property>
-            <obj_property name="ObjectShortName">i_data_type[1:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_glb_addr_decoder/i_addr" type="array">
-            <obj_property name="ElementShortName">i_addr[10:0]</obj_property>
-            <obj_property name="ObjectShortName">i_addr[10:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_glb_addr_decoder/o_glb_bank_sel" type="array">
-            <obj_property name="ElementShortName">o_glb_bank_sel[1:0]</obj_property>
-            <obj_property name="ObjectShortName">o_glb_bank_sel[1:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_glb_addr_decoder/o_glb_addr" type="array">
-            <obj_property name="ElementShortName">o_glb_addr[9:0]</obj_property>
-            <obj_property name="ObjectShortName">o_glb_addr[9:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_glb_addr_decoder/ifmap_bank_count" type="array">
-            <obj_property name="ElementShortName">ifmap_bank_count[1:0]</obj_property>
-            <obj_property name="ObjectShortName">ifmap_bank_count[1:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_glb_addr_decoder/psum_bank_count" type="array">
-            <obj_property name="ElementShortName">psum_bank_count[1:0]</obj_property>
-            <obj_property name="ObjectShortName">psum_bank_count[1:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_glb_addr_decoder/wght_bank_count" type="array">
-            <obj_property name="ElementShortName">wght_bank_count[1:0]</obj_property>
-            <obj_property name="ObjectShortName">wght_bank_count[1:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_glb_addr_decoder/ifmap_bank_offset" type="array">
-            <obj_property name="ElementShortName">ifmap_bank_offset[1:0]</obj_property>
-            <obj_property name="ObjectShortName">ifmap_bank_offset[1:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_glb_addr_decoder/psum_bank_offset" type="array">
-            <obj_property name="ElementShortName">psum_bank_offset[1:0]</obj_property>
-            <obj_property name="ObjectShortName">psum_bank_offset[1:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_glb_addr_decoder/wght_bank_offset" type="array">
-            <obj_property name="ElementShortName">wght_bank_offset[1:0]</obj_property>
-            <obj_property name="ObjectShortName">wght_bank_offset[1:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_glb_addr_decoder/bank_idx" type="array">
-            <obj_property name="ElementShortName">bank_idx[1:0]</obj_property>
-            <obj_property name="ObjectShortName">bank_idx[1:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_glb_addr_decoder/bank_addr" type="array">
-            <obj_property name="ElementShortName">bank_addr[9:0]</obj_property>
-            <obj_property name="ObjectShortName">bank_addr[9:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_glb_addr_decoder/DATA_BITWIDTH" type="array">
-            <obj_property name="ElementShortName">DATA_BITWIDTH[31:0]</obj_property>
-            <obj_property name="ObjectShortName">DATA_BITWIDTH[31:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_glb_addr_decoder/BANK_NUM" type="array">
-            <obj_property name="ElementShortName">BANK_NUM[31:0]</obj_property>
-            <obj_property name="ObjectShortName">BANK_NUM[31:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_glb_addr_decoder/BANK_DEPTH" type="array">
-            <obj_property name="ElementShortName">BANK_DEPTH[31:0]</obj_property>
-            <obj_property name="ObjectShortName">BANK_DEPTH[31:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_glb_addr_decoder/IFMAP" type="array">
-            <obj_property name="ElementShortName">IFMAP[1:0]</obj_property>
-            <obj_property name="ObjectShortName">IFMAP[1:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_glb_addr_decoder/PSUM" type="array">
-            <obj_property name="ElementShortName">PSUM[1:0]</obj_property>
-            <obj_property name="ObjectShortName">PSUM[1:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_glb_addr_decoder/WGHT" type="array">
-            <obj_property name="ElementShortName">WGHT[1:0]</obj_property>
-            <obj_property name="ObjectShortName">WGHT[1:0]</obj_property>
-         </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_rst" type="logic">
+         <obj_property name="ElementShortName">i_rst</obj_property>
+         <obj_property name="ObjectShortName">i_rst</obj_property>
       </wvobject>
-      <wvobject fp_name="group1600" type="group">
-         <obj_property name="label">psum_selection_decoder</obj_property>
-         <obj_property name="DisplayName">label</obj_property>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_selection_decoder/i_layer_RS" type="array">
-            <obj_property name="ElementShortName">i_layer_RS[3:0]</obj_property>
-            <obj_property name="ObjectShortName">i_layer_RS[3:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_selection_decoder/i_psum_row_id" type="array">
-            <obj_property name="ElementShortName">i_psum_row_id[0:11]</obj_property>
-            <obj_property name="ObjectShortName">i_psum_row_id[0:11]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_selection_decoder/i_psum_col_id" type="array">
-            <obj_property name="ElementShortName">i_psum_col_id[0:35]</obj_property>
-            <obj_property name="ObjectShortName">i_psum_col_id[0:35]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_selection_decoder/o_ctrl_psum_in_sel_LNorGIN" type="array">
-            <obj_property name="ElementShortName">o_ctrl_psum_in_sel_LNorGIN[0:8]</obj_property>
-            <obj_property name="ObjectShortName">o_ctrl_psum_in_sel_LNorGIN[0:8]</obj_property>
-            <obj_property name="Radix">BINARYRADIX</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_selection_decoder/o_ctrl_psum_out_sel_GON" type="array">
-            <obj_property name="ElementShortName">o_ctrl_psum_out_sel_GON[0:8]</obj_property>
-            <obj_property name="ObjectShortName">o_ctrl_psum_out_sel_GON[0:8]</obj_property>
-            <obj_property name="Radix">BINARYRADIX</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_selection_decoder/psum_row_id" type="array">
-            <obj_property name="ElementShortName">psum_row_id[0:2][0:2][3:0]</obj_property>
-            <obj_property name="ObjectShortName">psum_row_id[0:2][0:2][3:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_selection_decoder/psum_col_id" type="array">
-            <obj_property name="ElementShortName">psum_col_id[0:2][0:2][3:0]</obj_property>
-            <obj_property name="ObjectShortName">psum_col_id[0:2][0:2][3:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_selection_decoder/ctrl_psum_in_sel_LNorGIN" type="array">
-            <obj_property name="ElementShortName">ctrl_psum_in_sel_LNorGIN[0:2][0:2]</obj_property>
-            <obj_property name="ObjectShortName">ctrl_psum_in_sel_LNorGIN[0:2][0:2]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_selection_decoder/ctrl_psum_out_sel_GON" type="array">
-            <obj_property name="ElementShortName">ctrl_psum_out_sel_GON[0:2][0:2]</obj_property>
-            <obj_property name="ObjectShortName">ctrl_psum_out_sel_GON[0:2][0:2]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_selection_decoder/NUM_ROWS" type="array">
-            <obj_property name="ElementShortName">NUM_ROWS[31:0]</obj_property>
-            <obj_property name="ObjectShortName">NUM_ROWS[31:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_selection_decoder/NUM_COLS" type="array">
-            <obj_property name="ElementShortName">NUM_COLS[31:0]</obj_property>
-            <obj_property name="ObjectShortName">NUM_COLS[31:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_selection_decoder/IFMAP_ROW_ID_BITWIDTH" type="array">
-            <obj_property name="ElementShortName">IFMAP_ROW_ID_BITWIDTH[31:0]</obj_property>
-            <obj_property name="ObjectShortName">IFMAP_ROW_ID_BITWIDTH[31:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_selection_decoder/WGHT_ROW_ID_BITWIDTH" type="array">
-            <obj_property name="ElementShortName">WGHT_ROW_ID_BITWIDTH[31:0]</obj_property>
-            <obj_property name="ObjectShortName">WGHT_ROW_ID_BITWIDTH[31:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_selection_decoder/PSUM_ROW_ID_BITWIDTH" type="array">
-            <obj_property name="ElementShortName">PSUM_ROW_ID_BITWIDTH[31:0]</obj_property>
-            <obj_property name="ObjectShortName">PSUM_ROW_ID_BITWIDTH[31:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_selection_decoder/IFMAP_COL_ID_BITWIDTH" type="array">
-            <obj_property name="ElementShortName">IFMAP_COL_ID_BITWIDTH[31:0]</obj_property>
-            <obj_property name="ObjectShortName">IFMAP_COL_ID_BITWIDTH[31:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_selection_decoder/WGHT_COL_ID_BITWIDTH" type="array">
-            <obj_property name="ElementShortName">WGHT_COL_ID_BITWIDTH[31:0]</obj_property>
-            <obj_property name="ObjectShortName">WGHT_COL_ID_BITWIDTH[31:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_selection_decoder/PSUM_COL_ID_BITWIDTH" type="array">
-            <obj_property name="ElementShortName">PSUM_COL_ID_BITWIDTH[31:0]</obj_property>
-            <obj_property name="ObjectShortName">PSUM_COL_ID_BITWIDTH[31:0]</obj_property>
-         </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_GLB_allocation" type="array">
+         <obj_property name="ElementShortName">i_GLB_allocation[0:5]</obj_property>
+         <obj_property name="ObjectShortName">i_GLB_allocation[0:5]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_total_pass" type="array">
+         <obj_property name="ElementShortName">i_total_pass[3:0]</obj_property>
+         <obj_property name="ObjectShortName">i_total_pass[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_layer_HW" type="array">
+         <obj_property name="ElementShortName">i_layer_HW[7:0]</obj_property>
+         <obj_property name="ObjectShortName">i_layer_HW[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_layer_RS" type="array">
+         <obj_property name="ElementShortName">i_layer_RS[3:0]</obj_property>
+         <obj_property name="ObjectShortName">i_layer_RS[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_layer_EF" type="array">
+         <obj_property name="ElementShortName">i_layer_EF[6:0]</obj_property>
+         <obj_property name="ObjectShortName">i_layer_EF[6:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_layer_C" type="array">
+         <obj_property name="ElementShortName">i_layer_C[9:0]</obj_property>
+         <obj_property name="ObjectShortName">i_layer_C[9:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_layer_M" type="array">
+         <obj_property name="ElementShortName">i_layer_M[8:0]</obj_property>
+         <obj_property name="ObjectShortName">i_layer_M[8:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_layer_U" type="array">
+         <obj_property name="ElementShortName">i_layer_U[1:0]</obj_property>
+         <obj_property name="ObjectShortName">i_layer_U[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_layer_PAD" type="array">
+         <obj_property name="ElementShortName">i_layer_PAD[1:0]</obj_property>
+         <obj_property name="ObjectShortName">i_layer_PAD[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_layer_m" type="array">
+         <obj_property name="ElementShortName">i_layer_m[3:0]</obj_property>
+         <obj_property name="ObjectShortName">i_layer_m[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_layer_n" type="array">
+         <obj_property name="ElementShortName">i_layer_n[2:0]</obj_property>
+         <obj_property name="ObjectShortName">i_layer_n[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_layer_e" type="array">
+         <obj_property name="ElementShortName">i_layer_e[4:0]</obj_property>
+         <obj_property name="ObjectShortName">i_layer_e[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_layer_p" type="array">
+         <obj_property name="ElementShortName">i_layer_p[3:0]</obj_property>
+         <obj_property name="ObjectShortName">i_layer_p[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_layer_q" type="array">
+         <obj_property name="ElementShortName">i_layer_q[2:0]</obj_property>
+         <obj_property name="ObjectShortName">i_layer_q[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_layer_r" type="array">
+         <obj_property name="ElementShortName">i_layer_r[1:0]</obj_property>
+         <obj_property name="ObjectShortName">i_layer_r[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_layer_t" type="array">
+         <obj_property name="ElementShortName">i_layer_t[1:0]</obj_property>
+         <obj_property name="ObjectShortName">i_layer_t[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_ifmap_row_id" type="array">
+         <obj_property name="ElementShortName">i_ifmap_row_id[0:11]</obj_property>
+         <obj_property name="ObjectShortName">i_ifmap_row_id[0:11]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_wght_row_id" type="array">
+         <obj_property name="ElementShortName">i_wght_row_id[0:11]</obj_property>
+         <obj_property name="ObjectShortName">i_wght_row_id[0:11]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_psum_row_id" type="array">
+         <obj_property name="ElementShortName">i_psum_row_id[0:11]</obj_property>
+         <obj_property name="ObjectShortName">i_psum_row_id[0:11]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_ifmap_col_id" type="array">
+         <obj_property name="ElementShortName">i_ifmap_col_id[0:44]</obj_property>
+         <obj_property name="ObjectShortName">i_ifmap_col_id[0:44]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_wght_col_id" type="array">
+         <obj_property name="ElementShortName">i_wght_col_id[0:35]</obj_property>
+         <obj_property name="ObjectShortName">i_wght_col_id[0:35]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_psum_col_id" type="array">
+         <obj_property name="ElementShortName">i_psum_col_id[0:35]</obj_property>
+         <obj_property name="ObjectShortName">i_psum_col_id[0:35]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_inst_bram_ra" type="array">
+         <obj_property name="ElementShortName">o_inst_bram_ra[6:0]</obj_property>
+         <obj_property name="ObjectShortName">o_inst_bram_ra[6:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_inst_bram_rd" type="array">
+         <obj_property name="ElementShortName">i_inst_bram_rd[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i_inst_bram_rd[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_inst_bram_wa" type="array">
+         <obj_property name="ElementShortName">o_inst_bram_wa[6:0]</obj_property>
+         <obj_property name="ObjectShortName">o_inst_bram_wa[6:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_inst_bram_wd" type="array">
+         <obj_property name="ElementShortName">o_inst_bram_wd[31:0]</obj_property>
+         <obj_property name="ObjectShortName">o_inst_bram_wd[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_inst_bram_we" type="logic">
+         <obj_property name="ElementShortName">o_inst_bram_we</obj_property>
+         <obj_property name="ObjectShortName">o_inst_bram_we</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_inst_data" type="array">
+         <obj_property name="ElementShortName">o_inst_data[2:0]</obj_property>
+         <obj_property name="ObjectShortName">o_inst_data[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_conv_info" type="array">
+         <obj_property name="ElementShortName">o_conv_info[10:0]</obj_property>
+         <obj_property name="ObjectShortName">o_conv_info[10:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_inst_valid" type="logic">
+         <obj_property name="ElementShortName">o_inst_valid</obj_property>
+         <obj_property name="ObjectShortName">o_inst_valid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_inst_ready" type="logic">
+         <obj_property name="ElementShortName">i_inst_ready</obj_property>
+         <obj_property name="ObjectShortName">i_inst_ready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_ifmap_row_id" type="array">
+         <obj_property name="ElementShortName">o_ifmap_row_id[0:11]</obj_property>
+         <obj_property name="ObjectShortName">o_ifmap_row_id[0:11]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_wght_row_id" type="array">
+         <obj_property name="ElementShortName">o_wght_row_id[0:11]</obj_property>
+         <obj_property name="ObjectShortName">o_wght_row_id[0:11]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_psum_row_id" type="array">
+         <obj_property name="ElementShortName">o_psum_row_id[0:11]</obj_property>
+         <obj_property name="ObjectShortName">o_psum_row_id[0:11]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_ifmap_row_id_valid" type="logic">
+         <obj_property name="ElementShortName">o_ifmap_row_id_valid</obj_property>
+         <obj_property name="ObjectShortName">o_ifmap_row_id_valid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_wght_row_id_valid" type="logic">
+         <obj_property name="ElementShortName">o_wght_row_id_valid</obj_property>
+         <obj_property name="ObjectShortName">o_wght_row_id_valid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_psum_row_id_valid" type="logic">
+         <obj_property name="ElementShortName">o_psum_row_id_valid</obj_property>
+         <obj_property name="ObjectShortName">o_psum_row_id_valid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_ifmap_col_id" type="array">
+         <obj_property name="ElementShortName">o_ifmap_col_id[0:14]</obj_property>
+         <obj_property name="ObjectShortName">o_ifmap_col_id[0:14]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_wght_col_id" type="array">
+         <obj_property name="ElementShortName">o_wght_col_id[0:11]</obj_property>
+         <obj_property name="ObjectShortName">o_wght_col_id[0:11]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_psum_col_id" type="array">
+         <obj_property name="ElementShortName">o_psum_col_id[0:11]</obj_property>
+         <obj_property name="ObjectShortName">o_psum_col_id[0:11]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_ifmap_col_id_valid" type="array">
+         <obj_property name="ElementShortName">o_ifmap_col_id_valid[0:2]</obj_property>
+         <obj_property name="ObjectShortName">o_ifmap_col_id_valid[0:2]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_wght_col_id_valid" type="array">
+         <obj_property name="ElementShortName">o_wght_col_id_valid[0:2]</obj_property>
+         <obj_property name="ObjectShortName">o_wght_col_id_valid[0:2]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_psum_col_id_valid" type="array">
+         <obj_property name="ElementShortName">o_psum_col_id_valid[0:2]</obj_property>
+         <obj_property name="ObjectShortName">o_psum_col_id_valid[0:2]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_ctrl_psum_in_sel_LNorGIN" type="array">
+         <obj_property name="ElementShortName">o_ctrl_psum_in_sel_LNorGIN[0:8]</obj_property>
+         <obj_property name="ObjectShortName">o_ctrl_psum_in_sel_LNorGIN[0:8]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_ctrl_psum_out_sel_GON" type="array">
+         <obj_property name="ElementShortName">o_ctrl_psum_out_sel_GON[0:8]</obj_property>
+         <obj_property name="ObjectShortName">o_ctrl_psum_out_sel_GON[0:8]</obj_property>
+         <obj_property name="Radix">BINARYRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_ifmap_packet" type="array">
+         <obj_property name="ElementShortName">o_ifmap_packet[40:0]</obj_property>
+         <obj_property name="ObjectShortName">o_ifmap_packet[40:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_wght_packet" type="array">
+         <obj_property name="ElementShortName">o_wght_packet[39:0]</obj_property>
+         <obj_property name="ObjectShortName">o_wght_packet[39:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_psum_in_packet" type="array">
+         <obj_property name="ElementShortName">o_psum_in_packet[39:0]</obj_property>
+         <obj_property name="ObjectShortName">o_psum_in_packet[39:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_ifmap_valid" type="logic">
+         <obj_property name="ElementShortName">o_ifmap_valid</obj_property>
+         <obj_property name="ObjectShortName">o_ifmap_valid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_wght_valid" type="logic">
+         <obj_property name="ElementShortName">o_wght_valid</obj_property>
+         <obj_property name="ObjectShortName">o_wght_valid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_psum_in_valid" type="logic">
+         <obj_property name="ElementShortName">o_psum_in_valid</obj_property>
+         <obj_property name="ObjectShortName">o_psum_in_valid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_psum_out_ready" type="logic">
+         <obj_property name="ElementShortName">o_psum_out_ready</obj_property>
+         <obj_property name="ObjectShortName">o_psum_out_ready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_ifmap_ready" type="logic">
+         <obj_property name="ElementShortName">i_ifmap_ready</obj_property>
+         <obj_property name="ObjectShortName">i_ifmap_ready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_wght_ready" type="logic">
+         <obj_property name="ElementShortName">i_wght_ready</obj_property>
+         <obj_property name="ObjectShortName">i_wght_ready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_psum_in_ready" type="logic">
+         <obj_property name="ElementShortName">i_psum_in_ready</obj_property>
+         <obj_property name="ObjectShortName">i_psum_in_ready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_psum_out_valid" type="logic">
+         <obj_property name="ElementShortName">i_psum_out_valid</obj_property>
+         <obj_property name="ObjectShortName">i_psum_out_valid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/i_glb_rd" type="array">
+         <obj_property name="ElementShortName">i_glb_rd[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i_glb_rd[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_glb_bank_sel" type="array">
+         <obj_property name="ElementShortName">o_glb_bank_sel[1:0]</obj_property>
+         <obj_property name="ObjectShortName">o_glb_bank_sel[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_glb_re" type="logic">
+         <obj_property name="ElementShortName">o_glb_re</obj_property>
+         <obj_property name="ObjectShortName">o_glb_re</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_glb_we" type="logic">
+         <obj_property name="ElementShortName">o_glb_we</obj_property>
+         <obj_property name="ObjectShortName">o_glb_we</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_glb_ra" type="array">
+         <obj_property name="ElementShortName">o_glb_ra[8:0]</obj_property>
+         <obj_property name="ObjectShortName">o_glb_ra[8:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/o_glb_wa" type="array">
+         <obj_property name="ElementShortName">o_glb_wa[8:0]</obj_property>
+         <obj_property name="ObjectShortName">o_glb_wa[8:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/cnt" type="array">
+         <obj_property name="ElementShortName">cnt[10:0]</obj_property>
+         <obj_property name="ObjectShortName">cnt[10:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/tar_cnt" type="array">
+         <obj_property name="ElementShortName">tar_cnt[10:0]</obj_property>
+         <obj_property name="ObjectShortName">tar_cnt[10:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/iter_cnt" type="array">
+         <obj_property name="ElementShortName">iter_cnt[6:0]</obj_property>
+         <obj_property name="ObjectShortName">iter_cnt[6:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/pass_cnt" type="array">
+         <obj_property name="ElementShortName">pass_cnt[9:0]</obj_property>
+         <obj_property name="ObjectShortName">pass_cnt[9:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/state" type="array">
+         <obj_property name="ElementShortName">state[3:0]</obj_property>
+         <obj_property name="ObjectShortName">state[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/n_state" type="array">
+         <obj_property name="ElementShortName">n_state[3:0]</obj_property>
+         <obj_property name="ObjectShortName">n_state[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/glb_data_type" type="array">
+         <obj_property name="ElementShortName">glb_data_type[1:0]</obj_property>
+         <obj_property name="ObjectShortName">glb_data_type[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/glb_logical_addr" type="array">
+         <obj_property name="ElementShortName">glb_logical_addr[10:0]</obj_property>
+         <obj_property name="ObjectShortName">glb_logical_addr[10:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/glb_physical_addr" type="array">
+         <obj_property name="ElementShortName">glb_physical_addr[9:0]</obj_property>
+         <obj_property name="ObjectShortName">glb_physical_addr[9:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/glb_bank_sel" type="array">
+         <obj_property name="ElementShortName">glb_bank_sel[1:0]</obj_property>
+         <obj_property name="ObjectShortName">glb_bank_sel[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/ifmap_load_done" type="logic">
+         <obj_property name="ElementShortName">ifmap_load_done</obj_property>
+         <obj_property name="ObjectShortName">ifmap_load_done</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/wght_load_done" type="logic">
+         <obj_property name="ElementShortName">wght_load_done</obj_property>
+         <obj_property name="ObjectShortName">wght_load_done</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/psum_load_done" type="logic">
+         <obj_property name="ElementShortName">psum_load_done</obj_property>
+         <obj_property name="ObjectShortName">psum_load_done</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/ifmap_glb_re" type="logic">
+         <obj_property name="ElementShortName">ifmap_glb_re</obj_property>
+         <obj_property name="ObjectShortName">ifmap_glb_re</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/wght_glb_re" type="logic">
+         <obj_property name="ElementShortName">wght_glb_re</obj_property>
+         <obj_property name="ObjectShortName">wght_glb_re</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/psum_glb_re" type="logic">
+         <obj_property name="ElementShortName">psum_glb_re</obj_property>
+         <obj_property name="ObjectShortName">psum_glb_re</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/ifmap_tag" type="array">
+         <obj_property name="ElementShortName">ifmap_tag[8:0]</obj_property>
+         <obj_property name="ObjectShortName">ifmap_tag[8:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/wght_tag" type="array">
+         <obj_property name="ElementShortName">wght_tag[7:0]</obj_property>
+         <obj_property name="ObjectShortName">wght_tag[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/psum_tag" type="array">
+         <obj_property name="ElementShortName">psum_tag[7:0]</obj_property>
+         <obj_property name="ObjectShortName">psum_tag[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/ifmap_glb_ra" type="array">
+         <obj_property name="ElementShortName">ifmap_glb_ra[13:0]</obj_property>
+         <obj_property name="ObjectShortName">ifmap_glb_ra[13:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/wght_glb_ra" type="array">
+         <obj_property name="ElementShortName">wght_glb_ra[13:0]</obj_property>
+         <obj_property name="ObjectShortName">wght_glb_ra[13:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/psum_glb_ra" type="array">
+         <obj_property name="ElementShortName">psum_glb_ra[13:0]</obj_property>
+         <obj_property name="ObjectShortName">psum_glb_ra[13:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/ctrl_psum_in_sel_LNorGIN" type="array">
+         <obj_property name="ElementShortName">ctrl_psum_in_sel_LNorGIN[0:8]</obj_property>
+         <obj_property name="ObjectShortName">ctrl_psum_in_sel_LNorGIN[0:8]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/ctrl_psum_out_sel_GON" type="array">
+         <obj_property name="ElementShortName">ctrl_psum_out_sel_GON[0:8]</obj_property>
+         <obj_property name="ObjectShortName">ctrl_psum_out_sel_GON[0:8]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/INST_BRAM_DEPTH" type="array">
+         <obj_property name="ElementShortName">INST_BRAM_DEPTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">INST_BRAM_DEPTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/INST_BRAM_ADDR_WIDTH" type="array">
+         <obj_property name="ElementShortName">INST_BRAM_ADDR_WIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">INST_BRAM_ADDR_WIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/DATA_BITWIDTH" type="array">
+         <obj_property name="ElementShortName">DATA_BITWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">DATA_BITWIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/NUM_COLS" type="array">
+         <obj_property name="ElementShortName">NUM_COLS[31:0]</obj_property>
+         <obj_property name="ObjectShortName">NUM_COLS[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/NUM_ROWS" type="array">
+         <obj_property name="ElementShortName">NUM_ROWS[31:0]</obj_property>
+         <obj_property name="ObjectShortName">NUM_ROWS[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/BANK_NUM" type="array">
+         <obj_property name="ElementShortName">BANK_NUM[31:0]</obj_property>
+         <obj_property name="ObjectShortName">BANK_NUM[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/BANK_DEPTH" type="array">
+         <obj_property name="ElementShortName">BANK_DEPTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">BANK_DEPTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/IFMAP_ROW_ID_BITWIDTH" type="array">
+         <obj_property name="ElementShortName">IFMAP_ROW_ID_BITWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">IFMAP_ROW_ID_BITWIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/WGHT_ROW_ID_BITWIDTH" type="array">
+         <obj_property name="ElementShortName">WGHT_ROW_ID_BITWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">WGHT_ROW_ID_BITWIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/PSUM_ROW_ID_BITWIDTH" type="array">
+         <obj_property name="ElementShortName">PSUM_ROW_ID_BITWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">PSUM_ROW_ID_BITWIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/IFMAP_COL_ID_BITWIDTH" type="array">
+         <obj_property name="ElementShortName">IFMAP_COL_ID_BITWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">IFMAP_COL_ID_BITWIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/WGHT_COL_ID_BITWIDTH" type="array">
+         <obj_property name="ElementShortName">WGHT_COL_ID_BITWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">WGHT_COL_ID_BITWIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/PSUM_COL_ID_BITWIDTH" type="array">
+         <obj_property name="ElementShortName">PSUM_COL_ID_BITWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">PSUM_COL_ID_BITWIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/IFMAP_BUS_BITWIDTH" type="array">
+         <obj_property name="ElementShortName">IFMAP_BUS_BITWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">IFMAP_BUS_BITWIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/WGHT_BUS_BITWIDTH" type="array">
+         <obj_property name="ElementShortName">WGHT_BUS_BITWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">WGHT_BUS_BITWIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/PSUM_BUS_BITWIDTH" type="array">
+         <obj_property name="ElementShortName">PSUM_BUS_BITWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">PSUM_BUS_BITWIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/IDLE" type="array">
+         <obj_property name="ElementShortName">IDLE[3:0]</obj_property>
+         <obj_property name="ObjectShortName">IDLE[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/INIT" type="array">
+         <obj_property name="ElementShortName">INIT[3:0]</obj_property>
+         <obj_property name="ObjectShortName">INIT[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/WAIT" type="array">
+         <obj_property name="ElementShortName">WAIT[3:0]</obj_property>
+         <obj_property name="ObjectShortName">WAIT[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/LOAD_DRAM2GLB" type="array">
+         <obj_property name="ElementShortName">LOAD_DRAM2GLB[3:0]</obj_property>
+         <obj_property name="ObjectShortName">LOAD_DRAM2GLB[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/LOAD_IFMAP" type="array">
+         <obj_property name="ElementShortName">LOAD_IFMAP[3:0]</obj_property>
+         <obj_property name="ObjectShortName">LOAD_IFMAP[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/LOAD_WGHT" type="array">
+         <obj_property name="ElementShortName">LOAD_WGHT[3:0]</obj_property>
+         <obj_property name="ObjectShortName">LOAD_WGHT[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/LOAD_PSUM" type="array">
+         <obj_property name="ElementShortName">LOAD_PSUM[3:0]</obj_property>
+         <obj_property name="ObjectShortName">LOAD_PSUM[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/CALC" type="array">
+         <obj_property name="ElementShortName">CALC[3:0]</obj_property>
+         <obj_property name="ObjectShortName">CALC[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/ACCRST" type="array">
+         <obj_property name="ElementShortName">ACCRST[3:0]</obj_property>
+         <obj_property name="ObjectShortName">ACCRST[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/PSUM2GLB" type="array">
+         <obj_property name="ElementShortName">PSUM2GLB[3:0]</obj_property>
+         <obj_property name="ObjectShortName">PSUM2GLB[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/DONE" type="array">
+         <obj_property name="ElementShortName">DONE[3:0]</obj_property>
+         <obj_property name="ObjectShortName">DONE[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/CMD_NOP" type="array">
+         <obj_property name="ElementShortName">CMD_NOP[2:0]</obj_property>
+         <obj_property name="ObjectShortName">CMD_NOP[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/CMD_SET" type="array">
+         <obj_property name="ElementShortName">CMD_SET[2:0]</obj_property>
+         <obj_property name="ObjectShortName">CMD_SET[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/CMD_LOAD_IFMAP" type="array">
+         <obj_property name="ElementShortName">CMD_LOAD_IFMAP[2:0]</obj_property>
+         <obj_property name="ObjectShortName">CMD_LOAD_IFMAP[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/CMD_LOAD_WGHT" type="array">
+         <obj_property name="ElementShortName">CMD_LOAD_WGHT[2:0]</obj_property>
+         <obj_property name="ObjectShortName">CMD_LOAD_WGHT[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/CMD_CONV" type="array">
+         <obj_property name="ElementShortName">CMD_CONV[2:0]</obj_property>
+         <obj_property name="ObjectShortName">CMD_CONV[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/CMD_ACC" type="array">
+         <obj_property name="ElementShortName">CMD_ACC[2:0]</obj_property>
+         <obj_property name="ObjectShortName">CMD_ACC[2:0]</obj_property>
       </wvobject>
    </wvobject>
-   <wvobject fp_name="group1558" type="group">
+   <wvobject fp_name="group2493" type="group">
       <obj_property name="label">pe_array</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/tb_eyeriss/u_PE_array/i_clk" type="logic">
          <obj_property name="ElementShortName">i_clk</obj_property>
          <obj_property name="ObjectShortName">i_clk</obj_property>
@@ -691,7 +529,6 @@
       <wvobject fp_name="/tb_eyeriss/u_PE_array/i_conv_info" type="array">
          <obj_property name="ElementShortName">i_conv_info[10:0]</obj_property>
          <obj_property name="ObjectShortName">i_conv_info[10:0]</obj_property>
-         <obj_property name="Radix">BINARYRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_eyeriss/u_PE_array/i_inst_valid" type="logic">
          <obj_property name="ElementShortName">i_inst_valid</obj_property>
@@ -752,7 +589,6 @@
       <wvobject fp_name="/tb_eyeriss/u_PE_array/i_ctrl_psum_in_sel_LNorGIN" type="array">
          <obj_property name="ElementShortName">i_ctrl_psum_in_sel_LNorGIN[0:8]</obj_property>
          <obj_property name="ObjectShortName">i_ctrl_psum_in_sel_LNorGIN[0:8]</obj_property>
-         <obj_property name="Radix">BINARYRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_eyeriss/u_PE_array/i_ctrl_psum_out_sel_GON" type="array">
          <obj_property name="ElementShortName">i_ctrl_psum_out_sel_GON[0:8]</obj_property>
@@ -761,7 +597,6 @@
       <wvobject fp_name="/tb_eyeriss/u_PE_array/i_ifmap_packet" type="array">
          <obj_property name="ElementShortName">i_ifmap_packet[40:0]</obj_property>
          <obj_property name="ObjectShortName">i_ifmap_packet[40:0]</obj_property>
-         <obj_property name="Radix">BINARYRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_eyeriss/u_PE_array/i_wght_packet" type="array">
          <obj_property name="ElementShortName">i_wght_packet[39:0]</obj_property>
@@ -774,6 +609,10 @@
       <wvobject fp_name="/tb_eyeriss/u_PE_array/o_psum_out_data" type="array">
          <obj_property name="ElementShortName">o_psum_out_data[31:0]</obj_property>
          <obj_property name="ObjectShortName">o_psum_out_data[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/o_psum_out_valid" type="logic">
+         <obj_property name="ElementShortName">o_psum_out_valid</obj_property>
+         <obj_property name="ObjectShortName">o_psum_out_valid</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_eyeriss/u_PE_array/i_ifmap_valid" type="logic">
          <obj_property name="ElementShortName">i_ifmap_valid</obj_property>
@@ -802,10 +641,6 @@
       <wvobject fp_name="/tb_eyeriss/u_PE_array/o_psum_in_ready" type="logic">
          <obj_property name="ElementShortName">o_psum_in_ready</obj_property>
          <obj_property name="ObjectShortName">o_psum_in_ready</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/o_psum_out_valid" type="logic">
-         <obj_property name="ElementShortName">o_psum_out_valid</obj_property>
-         <obj_property name="ObjectShortName">o_psum_out_valid</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_eyeriss/u_PE_array/inst_ready_pe" type="array">
          <obj_property name="ElementShortName">inst_ready_pe[0:2][0:2]</obj_property>
@@ -992,12 +827,20 @@
          <obj_property name="ObjectShortName">j[31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_eyeriss/u_PE_array/psum_out_data_buffer" type="array">
-         <obj_property name="ElementShortName">psum_out_data_buffer[2:0][2:0][31:0]</obj_property>
-         <obj_property name="ObjectShortName">psum_out_data_buffer[2:0][2:0][31:0]</obj_property>
+         <obj_property name="ElementShortName">psum_out_data_buffer[0:2][0:2][31:0]</obj_property>
+         <obj_property name="ObjectShortName">psum_out_data_buffer[0:2][0:2][31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_eyeriss/u_PE_array/psum_out_valid_buffer" type="array">
-         <obj_property name="ElementShortName">psum_out_valid_buffer[2:0][2:0]</obj_property>
-         <obj_property name="ObjectShortName">psum_out_valid_buffer[2:0][2:0]</obj_property>
+         <obj_property name="ElementShortName">psum_out_valid_buffer[0:2][0:2]</obj_property>
+         <obj_property name="ObjectShortName">psum_out_valid_buffer[0:2][0:2]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/NUM_ROWS" type="array">
+         <obj_property name="ElementShortName">NUM_ROWS[31:0]</obj_property>
+         <obj_property name="ObjectShortName">NUM_ROWS[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/NUM_COLS" type="array">
+         <obj_property name="ElementShortName">NUM_COLS[31:0]</obj_property>
+         <obj_property name="ObjectShortName">NUM_COLS[31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_eyeriss/u_PE_array/DATA_BITWIDTH" type="array">
          <obj_property name="ElementShortName">DATA_BITWIDTH[31:0]</obj_property>
@@ -1040,9 +883,10 @@
          <obj_property name="ObjectShortName">PSUM_COL_ID_BITWIDTH[31:0]</obj_property>
       </wvobject>
    </wvobject>
-   <wvobject fp_name="group1657" type="group">
+   <wvobject fp_name="group2543" type="group">
       <obj_property name="label">pe00</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /i_clk" type="logic">
          <obj_property name="ElementShortName">i_clk</obj_property>
          <obj_property name="ObjectShortName">i_clk</obj_property>
@@ -1127,77 +971,41 @@
          <obj_property name="ElementShortName">ifmap_ready_ctrl2fifo</obj_property>
          <obj_property name="ObjectShortName">ifmap_ready_ctrl2fifo</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /wght_data_fifo2piso" type="array">
-         <obj_property name="ElementShortName">wght_data_fifo2piso[31:0]</obj_property>
-         <obj_property name="ObjectShortName">wght_data_fifo2piso[31:0]</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /wght_data_fifo2datapath" type="array">
+         <obj_property name="ElementShortName">wght_data_fifo2datapath[31:0]</obj_property>
+         <obj_property name="ObjectShortName">wght_data_fifo2datapath[31:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /wght_valid_fifo2piso" type="logic">
-         <obj_property name="ElementShortName">wght_valid_fifo2piso</obj_property>
-         <obj_property name="ObjectShortName">wght_valid_fifo2piso</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /wght_valid_fifo2ctrl" type="logic">
+         <obj_property name="ElementShortName">wght_valid_fifo2ctrl</obj_property>
+         <obj_property name="ObjectShortName">wght_valid_fifo2ctrl</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /wght_ready_piso2fifo" type="logic">
-         <obj_property name="ElementShortName">wght_ready_piso2fifo</obj_property>
-         <obj_property name="ObjectShortName">wght_ready_piso2fifo</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /wght_ready_ctrl2fifo" type="logic">
+         <obj_property name="ElementShortName">wght_ready_ctrl2fifo</obj_property>
+         <obj_property name="ObjectShortName">wght_ready_ctrl2fifo</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /wght_ready_ctrl2piso" type="logic">
-         <obj_property name="ElementShortName">wght_ready_ctrl2piso</obj_property>
-         <obj_property name="ObjectShortName">wght_ready_ctrl2piso</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /psum_in_data_fifo2datapath" type="array">
+         <obj_property name="ElementShortName">psum_in_data_fifo2datapath[31:0]</obj_property>
+         <obj_property name="ObjectShortName">psum_in_data_fifo2datapath[31:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /wght_valid_piso2ctrl" type="logic">
-         <obj_property name="ElementShortName">wght_valid_piso2ctrl</obj_property>
-         <obj_property name="ObjectShortName">wght_valid_piso2ctrl</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /psum_in_valid_fifo2ctrl" type="logic">
+         <obj_property name="ElementShortName">psum_in_valid_fifo2ctrl</obj_property>
+         <obj_property name="ObjectShortName">psum_in_valid_fifo2ctrl</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /wght_data_piso2datapath" type="array">
-         <obj_property name="ElementShortName">wght_data_piso2datapath[31:0]</obj_property>
-         <obj_property name="ObjectShortName">wght_data_piso2datapath[31:0]</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /psum_in_ready_ctrl2fifo" type="logic">
+         <obj_property name="ElementShortName">psum_in_ready_ctrl2fifo</obj_property>
+         <obj_property name="ObjectShortName">psum_in_ready_ctrl2fifo</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /psum_in_data_fifo2piso" type="array">
-         <obj_property name="ElementShortName">psum_in_data_fifo2piso[31:0]</obj_property>
-         <obj_property name="ObjectShortName">psum_in_data_fifo2piso[31:0]</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /psum_out_data_datapath2fifo" type="array">
+         <obj_property name="ElementShortName">psum_out_data_datapath2fifo[31:0]</obj_property>
+         <obj_property name="ObjectShortName">psum_out_data_datapath2fifo[31:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /psum_in_valid_fifo2piso" type="logic">
-         <obj_property name="ElementShortName">psum_in_valid_fifo2piso</obj_property>
-         <obj_property name="ObjectShortName">psum_in_valid_fifo2piso</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /psum_out_valid_datapath2fifo" type="logic">
+         <obj_property name="ElementShortName">psum_out_valid_datapath2fifo</obj_property>
+         <obj_property name="ObjectShortName">psum_out_valid_datapath2fifo</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /psum_in_ready_piso2fifo" type="logic">
-         <obj_property name="ElementShortName">psum_in_ready_piso2fifo</obj_property>
-         <obj_property name="ObjectShortName">psum_in_ready_piso2fifo</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /psum_in_ready_ctrl2piso" type="logic">
-         <obj_property name="ElementShortName">psum_in_ready_ctrl2piso</obj_property>
-         <obj_property name="ObjectShortName">psum_in_ready_ctrl2piso</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /psum_in_valid_piso2ctrl" type="logic">
-         <obj_property name="ElementShortName">psum_in_valid_piso2ctrl</obj_property>
-         <obj_property name="ObjectShortName">psum_in_valid_piso2ctrl</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /psum_in_data_piso2datapath" type="array">
-         <obj_property name="ElementShortName">psum_in_data_piso2datapath[31:0]</obj_property>
-         <obj_property name="ObjectShortName">psum_in_data_piso2datapath[31:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /psum_out_valid_datapath2sipo" type="logic">
-         <obj_property name="ElementShortName">psum_out_valid_datapath2sipo</obj_property>
-         <obj_property name="ObjectShortName">psum_out_valid_datapath2sipo</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /psum_out_data_datapath2sipo" type="array">
-         <obj_property name="ElementShortName">psum_out_data_datapath2sipo[31:0]</obj_property>
-         <obj_property name="ObjectShortName">psum_out_data_datapath2sipo[31:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /psum_out_ready_sipo2ctrl" type="logic">
-         <obj_property name="ElementShortName">psum_out_ready_sipo2ctrl</obj_property>
-         <obj_property name="ObjectShortName">psum_out_ready_sipo2ctrl</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /psum_out_data_sipo2fifo" type="array">
-         <obj_property name="ElementShortName">psum_out_data_sipo2fifo[31:0]</obj_property>
-         <obj_property name="ObjectShortName">psum_out_data_sipo2fifo[31:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /psum_out_valid_sipo2fifo" type="logic">
-         <obj_property name="ElementShortName">psum_out_valid_sipo2fifo</obj_property>
-         <obj_property name="ObjectShortName">psum_out_valid_sipo2fifo</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /psum_out_ready_fifo2sipo" type="logic">
-         <obj_property name="ElementShortName">psum_out_ready_fifo2sipo</obj_property>
-         <obj_property name="ObjectShortName">psum_out_ready_fifo2sipo</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /psum_out_ready_fifo2ctrl" type="logic">
+         <obj_property name="ElementShortName">psum_out_ready_fifo2ctrl</obj_property>
+         <obj_property name="ObjectShortName">psum_out_ready_fifo2ctrl</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /ifmap_ra_ctrl2datapath" type="array">
          <obj_property name="ElementShortName">ifmap_ra_ctrl2datapath[3:0]</obj_property>
@@ -1276,7 +1084,7 @@
          <obj_property name="ObjectShortName">N_CHUNKS[31:0]</obj_property>
       </wvobject>
    </wvobject>
-   <wvobject fp_name="group1716" type="group">
+   <wvobject fp_name="group2593" type="group">
       <obj_property name="label">pe10</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /i_clk" type="logic">
@@ -1363,77 +1171,41 @@
          <obj_property name="ElementShortName">ifmap_ready_ctrl2fifo</obj_property>
          <obj_property name="ObjectShortName">ifmap_ready_ctrl2fifo</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /wght_data_fifo2piso" type="array">
-         <obj_property name="ElementShortName">wght_data_fifo2piso[31:0]</obj_property>
-         <obj_property name="ObjectShortName">wght_data_fifo2piso[31:0]</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /wght_data_fifo2datapath" type="array">
+         <obj_property name="ElementShortName">wght_data_fifo2datapath[31:0]</obj_property>
+         <obj_property name="ObjectShortName">wght_data_fifo2datapath[31:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /wght_valid_fifo2piso" type="logic">
-         <obj_property name="ElementShortName">wght_valid_fifo2piso</obj_property>
-         <obj_property name="ObjectShortName">wght_valid_fifo2piso</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /wght_valid_fifo2ctrl" type="logic">
+         <obj_property name="ElementShortName">wght_valid_fifo2ctrl</obj_property>
+         <obj_property name="ObjectShortName">wght_valid_fifo2ctrl</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /wght_ready_piso2fifo" type="logic">
-         <obj_property name="ElementShortName">wght_ready_piso2fifo</obj_property>
-         <obj_property name="ObjectShortName">wght_ready_piso2fifo</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /wght_ready_ctrl2fifo" type="logic">
+         <obj_property name="ElementShortName">wght_ready_ctrl2fifo</obj_property>
+         <obj_property name="ObjectShortName">wght_ready_ctrl2fifo</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /wght_ready_ctrl2piso" type="logic">
-         <obj_property name="ElementShortName">wght_ready_ctrl2piso</obj_property>
-         <obj_property name="ObjectShortName">wght_ready_ctrl2piso</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /psum_in_data_fifo2datapath" type="array">
+         <obj_property name="ElementShortName">psum_in_data_fifo2datapath[31:0]</obj_property>
+         <obj_property name="ObjectShortName">psum_in_data_fifo2datapath[31:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /wght_valid_piso2ctrl" type="logic">
-         <obj_property name="ElementShortName">wght_valid_piso2ctrl</obj_property>
-         <obj_property name="ObjectShortName">wght_valid_piso2ctrl</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /psum_in_valid_fifo2ctrl" type="logic">
+         <obj_property name="ElementShortName">psum_in_valid_fifo2ctrl</obj_property>
+         <obj_property name="ObjectShortName">psum_in_valid_fifo2ctrl</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /wght_data_piso2datapath" type="array">
-         <obj_property name="ElementShortName">wght_data_piso2datapath[31:0]</obj_property>
-         <obj_property name="ObjectShortName">wght_data_piso2datapath[31:0]</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /psum_in_ready_ctrl2fifo" type="logic">
+         <obj_property name="ElementShortName">psum_in_ready_ctrl2fifo</obj_property>
+         <obj_property name="ObjectShortName">psum_in_ready_ctrl2fifo</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /psum_in_data_fifo2piso" type="array">
-         <obj_property name="ElementShortName">psum_in_data_fifo2piso[31:0]</obj_property>
-         <obj_property name="ObjectShortName">psum_in_data_fifo2piso[31:0]</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /psum_out_data_datapath2fifo" type="array">
+         <obj_property name="ElementShortName">psum_out_data_datapath2fifo[31:0]</obj_property>
+         <obj_property name="ObjectShortName">psum_out_data_datapath2fifo[31:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /psum_in_valid_fifo2piso" type="logic">
-         <obj_property name="ElementShortName">psum_in_valid_fifo2piso</obj_property>
-         <obj_property name="ObjectShortName">psum_in_valid_fifo2piso</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /psum_out_valid_datapath2fifo" type="logic">
+         <obj_property name="ElementShortName">psum_out_valid_datapath2fifo</obj_property>
+         <obj_property name="ObjectShortName">psum_out_valid_datapath2fifo</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /psum_in_ready_piso2fifo" type="logic">
-         <obj_property name="ElementShortName">psum_in_ready_piso2fifo</obj_property>
-         <obj_property name="ObjectShortName">psum_in_ready_piso2fifo</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /psum_in_ready_ctrl2piso" type="logic">
-         <obj_property name="ElementShortName">psum_in_ready_ctrl2piso</obj_property>
-         <obj_property name="ObjectShortName">psum_in_ready_ctrl2piso</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /psum_in_valid_piso2ctrl" type="logic">
-         <obj_property name="ElementShortName">psum_in_valid_piso2ctrl</obj_property>
-         <obj_property name="ObjectShortName">psum_in_valid_piso2ctrl</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /psum_in_data_piso2datapath" type="array">
-         <obj_property name="ElementShortName">psum_in_data_piso2datapath[31:0]</obj_property>
-         <obj_property name="ObjectShortName">psum_in_data_piso2datapath[31:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /psum_out_valid_datapath2sipo" type="logic">
-         <obj_property name="ElementShortName">psum_out_valid_datapath2sipo</obj_property>
-         <obj_property name="ObjectShortName">psum_out_valid_datapath2sipo</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /psum_out_data_datapath2sipo" type="array">
-         <obj_property name="ElementShortName">psum_out_data_datapath2sipo[31:0]</obj_property>
-         <obj_property name="ObjectShortName">psum_out_data_datapath2sipo[31:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /psum_out_ready_sipo2ctrl" type="logic">
-         <obj_property name="ElementShortName">psum_out_ready_sipo2ctrl</obj_property>
-         <obj_property name="ObjectShortName">psum_out_ready_sipo2ctrl</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /psum_out_data_sipo2fifo" type="array">
-         <obj_property name="ElementShortName">psum_out_data_sipo2fifo[31:0]</obj_property>
-         <obj_property name="ObjectShortName">psum_out_data_sipo2fifo[31:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /psum_out_valid_sipo2fifo" type="logic">
-         <obj_property name="ElementShortName">psum_out_valid_sipo2fifo</obj_property>
-         <obj_property name="ObjectShortName">psum_out_valid_sipo2fifo</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /psum_out_ready_fifo2sipo" type="logic">
-         <obj_property name="ElementShortName">psum_out_ready_fifo2sipo</obj_property>
-         <obj_property name="ObjectShortName">psum_out_ready_fifo2sipo</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /psum_out_ready_fifo2ctrl" type="logic">
+         <obj_property name="ElementShortName">psum_out_ready_fifo2ctrl</obj_property>
+         <obj_property name="ObjectShortName">psum_out_ready_fifo2ctrl</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /ifmap_ra_ctrl2datapath" type="array">
          <obj_property name="ElementShortName">ifmap_ra_ctrl2datapath[3:0]</obj_property>
@@ -1512,7 +1284,7 @@
          <obj_property name="ObjectShortName">N_CHUNKS[31:0]</obj_property>
       </wvobject>
    </wvobject>
-   <wvobject fp_name="group1775" type="group">
+   <wvobject fp_name="group2643" type="group">
       <obj_property name="label">pe20</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /i_clk" type="logic">
@@ -1542,7 +1314,6 @@
       <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /i_ifmap_fifo_data" type="array">
          <obj_property name="ElementShortName">i_ifmap_fifo_data[31:0]</obj_property>
          <obj_property name="ObjectShortName">i_ifmap_fifo_data[31:0]</obj_property>
-         <obj_property name="Radix">BINARYRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /i_ifmap_fifo_valid" type="logic">
          <obj_property name="ElementShortName">i_ifmap_fifo_valid</obj_property>
@@ -1591,7 +1362,6 @@
       <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /ifmap_data_fifo2datapath" type="array">
          <obj_property name="ElementShortName">ifmap_data_fifo2datapath[31:0]</obj_property>
          <obj_property name="ObjectShortName">ifmap_data_fifo2datapath[31:0]</obj_property>
-         <obj_property name="Radix">BINARYRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /ifmap_valid_fifo2ctrl" type="logic">
          <obj_property name="ElementShortName">ifmap_valid_fifo2ctrl</obj_property>
@@ -1601,77 +1371,41 @@
          <obj_property name="ElementShortName">ifmap_ready_ctrl2fifo</obj_property>
          <obj_property name="ObjectShortName">ifmap_ready_ctrl2fifo</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /wght_data_fifo2piso" type="array">
-         <obj_property name="ElementShortName">wght_data_fifo2piso[31:0]</obj_property>
-         <obj_property name="ObjectShortName">wght_data_fifo2piso[31:0]</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /wght_data_fifo2datapath" type="array">
+         <obj_property name="ElementShortName">wght_data_fifo2datapath[31:0]</obj_property>
+         <obj_property name="ObjectShortName">wght_data_fifo2datapath[31:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /wght_valid_fifo2piso" type="logic">
-         <obj_property name="ElementShortName">wght_valid_fifo2piso</obj_property>
-         <obj_property name="ObjectShortName">wght_valid_fifo2piso</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /wght_valid_fifo2ctrl" type="logic">
+         <obj_property name="ElementShortName">wght_valid_fifo2ctrl</obj_property>
+         <obj_property name="ObjectShortName">wght_valid_fifo2ctrl</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /wght_ready_piso2fifo" type="logic">
-         <obj_property name="ElementShortName">wght_ready_piso2fifo</obj_property>
-         <obj_property name="ObjectShortName">wght_ready_piso2fifo</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /wght_ready_ctrl2fifo" type="logic">
+         <obj_property name="ElementShortName">wght_ready_ctrl2fifo</obj_property>
+         <obj_property name="ObjectShortName">wght_ready_ctrl2fifo</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /wght_ready_ctrl2piso" type="logic">
-         <obj_property name="ElementShortName">wght_ready_ctrl2piso</obj_property>
-         <obj_property name="ObjectShortName">wght_ready_ctrl2piso</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /psum_in_data_fifo2datapath" type="array">
+         <obj_property name="ElementShortName">psum_in_data_fifo2datapath[31:0]</obj_property>
+         <obj_property name="ObjectShortName">psum_in_data_fifo2datapath[31:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /wght_valid_piso2ctrl" type="logic">
-         <obj_property name="ElementShortName">wght_valid_piso2ctrl</obj_property>
-         <obj_property name="ObjectShortName">wght_valid_piso2ctrl</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /psum_in_valid_fifo2ctrl" type="logic">
+         <obj_property name="ElementShortName">psum_in_valid_fifo2ctrl</obj_property>
+         <obj_property name="ObjectShortName">psum_in_valid_fifo2ctrl</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /wght_data_piso2datapath" type="array">
-         <obj_property name="ElementShortName">wght_data_piso2datapath[31:0]</obj_property>
-         <obj_property name="ObjectShortName">wght_data_piso2datapath[31:0]</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /psum_in_ready_ctrl2fifo" type="logic">
+         <obj_property name="ElementShortName">psum_in_ready_ctrl2fifo</obj_property>
+         <obj_property name="ObjectShortName">psum_in_ready_ctrl2fifo</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /psum_in_data_fifo2piso" type="array">
-         <obj_property name="ElementShortName">psum_in_data_fifo2piso[31:0]</obj_property>
-         <obj_property name="ObjectShortName">psum_in_data_fifo2piso[31:0]</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /psum_out_data_datapath2fifo" type="array">
+         <obj_property name="ElementShortName">psum_out_data_datapath2fifo[31:0]</obj_property>
+         <obj_property name="ObjectShortName">psum_out_data_datapath2fifo[31:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /psum_in_valid_fifo2piso" type="logic">
-         <obj_property name="ElementShortName">psum_in_valid_fifo2piso</obj_property>
-         <obj_property name="ObjectShortName">psum_in_valid_fifo2piso</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /psum_out_valid_datapath2fifo" type="logic">
+         <obj_property name="ElementShortName">psum_out_valid_datapath2fifo</obj_property>
+         <obj_property name="ObjectShortName">psum_out_valid_datapath2fifo</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /psum_in_ready_piso2fifo" type="logic">
-         <obj_property name="ElementShortName">psum_in_ready_piso2fifo</obj_property>
-         <obj_property name="ObjectShortName">psum_in_ready_piso2fifo</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /psum_in_ready_ctrl2piso" type="logic">
-         <obj_property name="ElementShortName">psum_in_ready_ctrl2piso</obj_property>
-         <obj_property name="ObjectShortName">psum_in_ready_ctrl2piso</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /psum_in_valid_piso2ctrl" type="logic">
-         <obj_property name="ElementShortName">psum_in_valid_piso2ctrl</obj_property>
-         <obj_property name="ObjectShortName">psum_in_valid_piso2ctrl</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /psum_in_data_piso2datapath" type="array">
-         <obj_property name="ElementShortName">psum_in_data_piso2datapath[31:0]</obj_property>
-         <obj_property name="ObjectShortName">psum_in_data_piso2datapath[31:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /psum_out_valid_datapath2sipo" type="logic">
-         <obj_property name="ElementShortName">psum_out_valid_datapath2sipo</obj_property>
-         <obj_property name="ObjectShortName">psum_out_valid_datapath2sipo</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /psum_out_data_datapath2sipo" type="array">
-         <obj_property name="ElementShortName">psum_out_data_datapath2sipo[31:0]</obj_property>
-         <obj_property name="ObjectShortName">psum_out_data_datapath2sipo[31:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /psum_out_ready_sipo2ctrl" type="logic">
-         <obj_property name="ElementShortName">psum_out_ready_sipo2ctrl</obj_property>
-         <obj_property name="ObjectShortName">psum_out_ready_sipo2ctrl</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /psum_out_data_sipo2fifo" type="array">
-         <obj_property name="ElementShortName">psum_out_data_sipo2fifo[31:0]</obj_property>
-         <obj_property name="ObjectShortName">psum_out_data_sipo2fifo[31:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /psum_out_valid_sipo2fifo" type="logic">
-         <obj_property name="ElementShortName">psum_out_valid_sipo2fifo</obj_property>
-         <obj_property name="ObjectShortName">psum_out_valid_sipo2fifo</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /psum_out_ready_fifo2sipo" type="logic">
-         <obj_property name="ElementShortName">psum_out_ready_fifo2sipo</obj_property>
-         <obj_property name="ObjectShortName">psum_out_ready_fifo2sipo</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /psum_out_ready_fifo2ctrl" type="logic">
+         <obj_property name="ElementShortName">psum_out_ready_fifo2ctrl</obj_property>
+         <obj_property name="ObjectShortName">psum_out_ready_fifo2ctrl</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /ifmap_ra_ctrl2datapath" type="array">
          <obj_property name="ElementShortName">ifmap_ra_ctrl2datapath[3:0]</obj_property>
@@ -1750,299 +1484,252 @@
          <obj_property name="ObjectShortName">N_CHUNKS[31:0]</obj_property>
       </wvobject>
    </wvobject>
-   <wvobject fp_name="group1952" type="group">
-      <obj_property name="label">ifmap_load_ctrl</obj_property>
+   <wvobject fp_name="group2702" type="group">
+      <obj_property name="label">pe20_control</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_ifmap_load_ctrl/i_clk" type="logic">
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/i_clk" type="logic">
          <obj_property name="ElementShortName">i_clk</obj_property>
          <obj_property name="ObjectShortName">i_clk</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_ifmap_load_ctrl/i_rst" type="logic">
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/i_rst" type="logic">
          <obj_property name="ElementShortName">i_rst</obj_property>
          <obj_property name="ObjectShortName">i_rst</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_ifmap_load_ctrl/i_load_start" type="logic">
-         <obj_property name="ElementShortName">i_load_start</obj_property>
-         <obj_property name="ObjectShortName">i_load_start</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/i_opcode" type="array">
+         <obj_property name="ElementShortName">i_opcode[2:0]</obj_property>
+         <obj_property name="ObjectShortName">i_opcode[2:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_ifmap_load_ctrl/i_pass_num" type="array">
-         <obj_property name="ElementShortName">i_pass_num[3:0]</obj_property>
-         <obj_property name="ObjectShortName">i_pass_num[3:0]</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/i_conv_info" type="array">
+         <obj_property name="ElementShortName">i_conv_info[10:0]</obj_property>
+         <obj_property name="ObjectShortName">i_conv_info[10:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_ifmap_load_ctrl/i_layer_HW" type="array">
-         <obj_property name="ElementShortName">i_layer_HW[7:0]</obj_property>
-         <obj_property name="ObjectShortName">i_layer_HW[7:0]</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/i_inst_valid" type="logic">
+         <obj_property name="ElementShortName">i_inst_valid</obj_property>
+         <obj_property name="ObjectShortName">i_inst_valid</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_ifmap_load_ctrl/i_layer_RS" type="array">
-         <obj_property name="ElementShortName">i_layer_RS[3:0]</obj_property>
-         <obj_property name="ObjectShortName">i_layer_RS[3:0]</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/o_inst_ready" type="logic">
+         <obj_property name="ElementShortName">o_inst_ready</obj_property>
+         <obj_property name="ObjectShortName">o_inst_ready</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_ifmap_load_ctrl/i_layer_EF" type="array">
-         <obj_property name="ElementShortName">i_layer_EF[6:0]</obj_property>
-         <obj_property name="ObjectShortName">i_layer_EF[6:0]</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/i_ifmap_fifo_valid" type="logic">
+         <obj_property name="ElementShortName">i_ifmap_fifo_valid</obj_property>
+         <obj_property name="ObjectShortName">i_ifmap_fifo_valid</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_ifmap_load_ctrl/i_layer_C" type="array">
-         <obj_property name="ElementShortName">i_layer_C[9:0]</obj_property>
-         <obj_property name="ObjectShortName">i_layer_C[9:0]</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/o_ifmap_fifo_ready" type="logic">
+         <obj_property name="ElementShortName">o_ifmap_fifo_ready</obj_property>
+         <obj_property name="ObjectShortName">o_ifmap_fifo_ready</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_ifmap_load_ctrl/i_layer_M" type="array">
-         <obj_property name="ElementShortName">i_layer_M[8:0]</obj_property>
-         <obj_property name="ObjectShortName">i_layer_M[8:0]</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/i_wght_fifo_valid" type="logic">
+         <obj_property name="ElementShortName">i_wght_fifo_valid</obj_property>
+         <obj_property name="ObjectShortName">i_wght_fifo_valid</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_ifmap_load_ctrl/i_layer_U" type="array">
-         <obj_property name="ElementShortName">i_layer_U[1:0]</obj_property>
-         <obj_property name="ObjectShortName">i_layer_U[1:0]</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/o_wght_fifo_ready" type="logic">
+         <obj_property name="ElementShortName">o_wght_fifo_ready</obj_property>
+         <obj_property name="ObjectShortName">o_wght_fifo_ready</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_ifmap_load_ctrl/i_layer_PAD" type="array">
-         <obj_property name="ElementShortName">i_layer_PAD[1:0]</obj_property>
-         <obj_property name="ObjectShortName">i_layer_PAD[1:0]</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/i_psum_in_fifo_valid" type="logic">
+         <obj_property name="ElementShortName">i_psum_in_fifo_valid</obj_property>
+         <obj_property name="ObjectShortName">i_psum_in_fifo_valid</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_ifmap_load_ctrl/i_layer_m" type="array">
-         <obj_property name="ElementShortName">i_layer_m[3:0]</obj_property>
-         <obj_property name="ObjectShortName">i_layer_m[3:0]</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/o_psum_in_fifo_ready" type="logic">
+         <obj_property name="ElementShortName">o_psum_in_fifo_ready</obj_property>
+         <obj_property name="ObjectShortName">o_psum_in_fifo_ready</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_ifmap_load_ctrl/i_layer_n" type="array">
-         <obj_property name="ElementShortName">i_layer_n[2:0]</obj_property>
-         <obj_property name="ObjectShortName">i_layer_n[2:0]</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/i_psum_out_fifo_ready" type="logic">
+         <obj_property name="ElementShortName">i_psum_out_fifo_ready</obj_property>
+         <obj_property name="ObjectShortName">i_psum_out_fifo_ready</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_ifmap_load_ctrl/i_layer_e" type="array">
-         <obj_property name="ElementShortName">i_layer_e[4:0]</obj_property>
-         <obj_property name="ObjectShortName">i_layer_e[4:0]</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/o_ifmap_ra" type="array">
+         <obj_property name="ElementShortName">o_ifmap_ra[3:0]</obj_property>
+         <obj_property name="ObjectShortName">o_ifmap_ra[3:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_ifmap_load_ctrl/i_layer_p" type="array">
-         <obj_property name="ElementShortName">i_layer_p[3:0]</obj_property>
-         <obj_property name="ObjectShortName">i_layer_p[3:0]</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/o_wght_ra" type="array">
+         <obj_property name="ElementShortName">o_wght_ra[7:0]</obj_property>
+         <obj_property name="ObjectShortName">o_wght_ra[7:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_ifmap_load_ctrl/i_layer_q" type="array">
-         <obj_property name="ElementShortName">i_layer_q[2:0]</obj_property>
-         <obj_property name="ObjectShortName">i_layer_q[2:0]</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/o_psum_ra" type="array">
+         <obj_property name="ElementShortName">o_psum_ra[3:0]</obj_property>
+         <obj_property name="ObjectShortName">o_psum_ra[3:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_ifmap_load_ctrl/i_layer_r" type="array">
-         <obj_property name="ElementShortName">i_layer_r[1:0]</obj_property>
-         <obj_property name="ObjectShortName">i_layer_r[1:0]</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/o_ifmap_wa" type="array">
+         <obj_property name="ElementShortName">o_ifmap_wa[3:0]</obj_property>
+         <obj_property name="ObjectShortName">o_ifmap_wa[3:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_ifmap_load_ctrl/i_layer_t" type="array">
-         <obj_property name="ElementShortName">i_layer_t[1:0]</obj_property>
-         <obj_property name="ObjectShortName">i_layer_t[1:0]</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/o_wght_wa" type="array">
+         <obj_property name="ElementShortName">o_wght_wa[7:0]</obj_property>
+         <obj_property name="ObjectShortName">o_wght_wa[7:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_ifmap_load_ctrl/o_ifmap_glb_re" type="logic">
-         <obj_property name="ElementShortName">o_ifmap_glb_re</obj_property>
-         <obj_property name="ObjectShortName">o_ifmap_glb_re</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/o_psum_wa" type="array">
+         <obj_property name="ElementShortName">o_psum_wa[3:0]</obj_property>
+         <obj_property name="ObjectShortName">o_psum_wa[3:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_ifmap_load_ctrl/o_ifmap_glb_ra" type="array">
-         <obj_property name="ElementShortName">o_ifmap_glb_ra[15:0]</obj_property>
-         <obj_property name="ObjectShortName">o_ifmap_glb_ra[15:0]</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/o_ifmap_we" type="logic">
+         <obj_property name="ElementShortName">o_ifmap_we</obj_property>
+         <obj_property name="ObjectShortName">o_ifmap_we</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_ifmap_load_ctrl/o_ifmap_tag" type="array">
-         <obj_property name="ElementShortName">o_ifmap_tag[8:0]</obj_property>
-         <obj_property name="ObjectShortName">o_ifmap_tag[8:0]</obj_property>
-         <obj_property name="Radix">BINARYRADIX</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/o_wght_we" type="logic">
+         <obj_property name="ElementShortName">o_wght_we</obj_property>
+         <obj_property name="ObjectShortName">o_wght_we</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_ifmap_load_ctrl/o_load_done" type="logic">
-         <obj_property name="ElementShortName">o_load_done</obj_property>
-         <obj_property name="ObjectShortName">o_load_done</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/o_psum_we" type="logic">
+         <obj_property name="ElementShortName">o_psum_we</obj_property>
+         <obj_property name="ObjectShortName">o_psum_we</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_ifmap_load_ctrl/state" type="array">
-         <obj_property name="ElementShortName">state[2:0]</obj_property>
-         <obj_property name="ObjectShortName">state[2:0]</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/o_acc_sel" type="logic">
+         <obj_property name="ElementShortName">o_acc_sel</obj_property>
+         <obj_property name="ObjectShortName">o_acc_sel</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_ifmap_load_ctrl/n_state" type="array">
-         <obj_property name="ElementShortName">n_state[2:0]</obj_property>
-         <obj_property name="ObjectShortName">n_state[2:0]</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/o_rst_psum" type="logic">
+         <obj_property name="ElementShortName">o_rst_psum</obj_property>
+         <obj_property name="ObjectShortName">o_rst_psum</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_ifmap_load_ctrl/iter_cnt" type="array">
-         <obj_property name="ElementShortName">iter_cnt[6:0]</obj_property>
-         <obj_property name="ObjectShortName">iter_cnt[6:0]</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/conv_info_reg" type="array">
+         <obj_property name="ElementShortName">conv_info_reg[10:0]</obj_property>
+         <obj_property name="ObjectShortName">conv_info_reg[10:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_ifmap_load_ctrl/iter_done" type="logic">
-         <obj_property name="ElementShortName">iter_done</obj_property>
-         <obj_property name="ObjectShortName">iter_done</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/state" type="array">
+         <obj_property name="ElementShortName">state[3:0]</obj_property>
+         <obj_property name="ObjectShortName">state[3:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_ifmap_load_ctrl/IDLE" type="array">
-         <obj_property name="ElementShortName">IDLE[2:0]</obj_property>
-         <obj_property name="ObjectShortName">IDLE[2:0]</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/n_state" type="array">
+         <obj_property name="ElementShortName">n_state[3:0]</obj_property>
+         <obj_property name="ObjectShortName">n_state[3:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_ifmap_load_ctrl/LOAD_SEQ" type="array">
-         <obj_property name="ElementShortName">LOAD_SEQ[2:0]</obj_property>
-         <obj_property name="ObjectShortName">LOAD_SEQ[2:0]</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/cnt_minimum_delay" type="array">
+         <obj_property name="ElementShortName">cnt_minimum_delay[2:0]</obj_property>
+         <obj_property name="ObjectShortName">cnt_minimum_delay[2:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_ifmap_load_ctrl/UPDATE_BASE" type="array">
-         <obj_property name="ElementShortName">UPDATE_BASE[2:0]</obj_property>
-         <obj_property name="ObjectShortName">UPDATE_BASE[2:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_ifmap_load_ctrl/DONE" type="array">
-         <obj_property name="ElementShortName">DONE[2:0]</obj_property>
-         <obj_property name="ObjectShortName">DONE[2:0]</obj_property>
-      </wvobject>
-   </wvobject>
-   <wvobject fp_name="group2100" type="group">
-      <obj_property name="label">psum_load_ctrl</obj_property>
-      <obj_property name="DisplayName">label</obj_property>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_load_ctrl/i_clk" type="logic">
-         <obj_property name="ElementShortName">i_clk</obj_property>
-         <obj_property name="ObjectShortName">i_clk</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_load_ctrl/i_rst" type="logic">
-         <obj_property name="ElementShortName">i_rst</obj_property>
-         <obj_property name="ObjectShortName">i_rst</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_load_ctrl/i_load_start" type="logic">
-         <obj_property name="ElementShortName">i_load_start</obj_property>
-         <obj_property name="ObjectShortName">i_load_start</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_load_ctrl/i_layer_HW" type="array">
-         <obj_property name="ElementShortName">i_layer_HW[7:0]</obj_property>
-         <obj_property name="ObjectShortName">i_layer_HW[7:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_load_ctrl/i_layer_RS" type="array">
-         <obj_property name="ElementShortName">i_layer_RS[3:0]</obj_property>
-         <obj_property name="ObjectShortName">i_layer_RS[3:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_load_ctrl/i_layer_EF" type="array">
-         <obj_property name="ElementShortName">i_layer_EF[6:0]</obj_property>
-         <obj_property name="ObjectShortName">i_layer_EF[6:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_load_ctrl/i_layer_C" type="array">
-         <obj_property name="ElementShortName">i_layer_C[9:0]</obj_property>
-         <obj_property name="ObjectShortName">i_layer_C[9:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_load_ctrl/i_layer_M" type="array">
-         <obj_property name="ElementShortName">i_layer_M[8:0]</obj_property>
-         <obj_property name="ObjectShortName">i_layer_M[8:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_load_ctrl/i_layer_U" type="array">
-         <obj_property name="ElementShortName">i_layer_U[1:0]</obj_property>
-         <obj_property name="ObjectShortName">i_layer_U[1:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_load_ctrl/i_layer_PAD" type="array">
-         <obj_property name="ElementShortName">i_layer_PAD[1:0]</obj_property>
-         <obj_property name="ObjectShortName">i_layer_PAD[1:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_load_ctrl/i_layer_m" type="array">
-         <obj_property name="ElementShortName">i_layer_m[3:0]</obj_property>
-         <obj_property name="ObjectShortName">i_layer_m[3:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_load_ctrl/i_layer_n" type="array">
-         <obj_property name="ElementShortName">i_layer_n[2:0]</obj_property>
-         <obj_property name="ObjectShortName">i_layer_n[2:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_load_ctrl/i_layer_e" type="array">
-         <obj_property name="ElementShortName">i_layer_e[4:0]</obj_property>
-         <obj_property name="ObjectShortName">i_layer_e[4:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_load_ctrl/i_layer_p" type="array">
-         <obj_property name="ElementShortName">i_layer_p[2:0]</obj_property>
-         <obj_property name="ObjectShortName">i_layer_p[2:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_load_ctrl/i_layer_q" type="array">
-         <obj_property name="ElementShortName">i_layer_q[2:0]</obj_property>
-         <obj_property name="ObjectShortName">i_layer_q[2:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_load_ctrl/i_layer_r" type="array">
-         <obj_property name="ElementShortName">i_layer_r[1:0]</obj_property>
-         <obj_property name="ObjectShortName">i_layer_r[1:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_load_ctrl/i_layer_t" type="array">
-         <obj_property name="ElementShortName">i_layer_t[1:0]</obj_property>
-         <obj_property name="ObjectShortName">i_layer_t[1:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_load_ctrl/o_psum_glb_re" type="logic">
-         <obj_property name="ElementShortName">o_psum_glb_re</obj_property>
-         <obj_property name="ObjectShortName">o_psum_glb_re</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_load_ctrl/o_psum_glb_ra" type="array">
-         <obj_property name="ElementShortName">o_psum_glb_ra[15:0]</obj_property>
-         <obj_property name="ObjectShortName">o_psum_glb_ra[15:0]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_load_ctrl/o_psum_tag" type="array">
-         <obj_property name="ElementShortName">o_psum_tag[7:0]</obj_property>
-         <obj_property name="ObjectShortName">o_psum_tag[7:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_load_ctrl/o_load_done" type="logic">
-         <obj_property name="ElementShortName">o_load_done</obj_property>
-         <obj_property name="ObjectShortName">o_load_done</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_load_ctrl/state" type="array">
-         <obj_property name="ElementShortName">state[2:0]</obj_property>
-         <obj_property name="ObjectShortName">state[2:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_load_ctrl/n_state" type="array">
-         <obj_property name="ElementShortName">n_state[2:0]</obj_property>
-         <obj_property name="ObjectShortName">n_state[2:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_load_ctrl/psum_tag" type="array">
-         <obj_property name="ElementShortName">psum_tag[7:0]</obj_property>
-         <obj_property name="ObjectShortName">psum_tag[7:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_load_ctrl/psum_tag_d" type="array">
-         <obj_property name="ElementShortName">psum_tag_d[7:0]</obj_property>
-         <obj_property name="ObjectShortName">psum_tag_d[7:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_load_ctrl/psum_tag_d2" type="array">
-         <obj_property name="ElementShortName">psum_tag_d2[7:0]</obj_property>
-         <obj_property name="ObjectShortName">psum_tag_d2[7:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_load_ctrl/batch_cnt" type="array">
-         <obj_property name="ElementShortName">batch_cnt[2:0]</obj_property>
-         <obj_property name="ObjectShortName">batch_cnt[2:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_load_ctrl/iter_cnt" type="array">
-         <obj_property name="ElementShortName">iter_cnt[6:0]</obj_property>
-         <obj_property name="ObjectShortName">iter_cnt[6:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_load_ctrl/cnt_P" type="array">
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/cnt_P" type="array">
          <obj_property name="ElementShortName">cnt_P[3:0]</obj_property>
          <obj_property name="ObjectShortName">cnt_P[3:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_load_ctrl/cnt_E" type="array">
-         <obj_property name="ElementShortName">cnt_E[2:0]</obj_property>
-         <obj_property name="ObjectShortName">cnt_E[2:0]</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/cnt_Q" type="array">
+         <obj_property name="ElementShortName">cnt_Q[2:0]</obj_property>
+         <obj_property name="ObjectShortName">cnt_Q[2:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_load_ctrl/pe_set_sel" type="array">
-         <obj_property name="ElementShortName">pe_set_sel[3:0]</obj_property>
-         <obj_property name="ObjectShortName">pe_set_sel[3:0]</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/cnt_S" type="array">
+         <obj_property name="ElementShortName">cnt_S[3:0]</obj_property>
+         <obj_property name="ObjectShortName">cnt_S[3:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_load_ctrl/iter_done" type="logic">
-         <obj_property name="ElementShortName">iter_done</obj_property>
-         <obj_property name="ObjectShortName">iter_done</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/counter" type="array">
+         <obj_property name="ElementShortName">counter[6:0]</obj_property>
+         <obj_property name="ObjectShortName">counter[6:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_load_ctrl/pass_done" type="logic">
-         <obj_property name="ElementShortName">pass_done</obj_property>
-         <obj_property name="ObjectShortName">pass_done</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/P" type="array">
+         <obj_property name="ElementShortName">P[3:0]</obj_property>
+         <obj_property name="ObjectShortName">P[3:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_load_ctrl/IDLE" type="array">
-         <obj_property name="ElementShortName">IDLE[2:0]</obj_property>
-         <obj_property name="ObjectShortName">IDLE[2:0]</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/Q" type="array">
+         <obj_property name="ElementShortName">Q[2:0]</obj_property>
+         <obj_property name="ObjectShortName">Q[2:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_load_ctrl/LOAD_SEQ" type="array">
-         <obj_property name="ElementShortName">LOAD_SEQ[2:0]</obj_property>
-         <obj_property name="ObjectShortName">LOAD_SEQ[2:0]</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/S" type="array">
+         <obj_property name="ElementShortName">S[3:0]</obj_property>
+         <obj_property name="ObjectShortName">S[3:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_load_ctrl/UPDATE_BASE" type="array">
-         <obj_property name="ElementShortName">UPDATE_BASE[2:0]</obj_property>
-         <obj_property name="ObjectShortName">UPDATE_BASE[2:0]</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/inst_hs" type="logic">
+         <obj_property name="ElementShortName">inst_hs</obj_property>
+         <obj_property name="ObjectShortName">inst_hs</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_load_ctrl/UPDATE_BATCH" type="array">
-         <obj_property name="ElementShortName">UPDATE_BATCH[2:0]</obj_property>
-         <obj_property name="ObjectShortName">UPDATE_BATCH[2:0]</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/ifmap_fifo_hs" type="logic">
+         <obj_property name="ElementShortName">ifmap_fifo_hs</obj_property>
+         <obj_property name="ObjectShortName">ifmap_fifo_hs</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_psum_load_ctrl/DONE" type="array">
-         <obj_property name="ElementShortName">DONE[2:0]</obj_property>
-         <obj_property name="ObjectShortName">DONE[2:0]</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/wght_fifo_hs" type="logic">
+         <obj_property name="ElementShortName">wght_fifo_hs</obj_property>
+         <obj_property name="ObjectShortName">wght_fifo_hs</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/opcode_reg" type="array">
+         <obj_property name="ElementShortName">opcode_reg[2:0]</obj_property>
+         <obj_property name="ObjectShortName">opcode_reg[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/DATA_BITWIDTH" type="array">
+         <obj_property name="ElementShortName">DATA_BITWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">DATA_BITWIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/IFMAP_ADDR_BITWIDTH" type="array">
+         <obj_property name="ElementShortName">IFMAP_ADDR_BITWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">IFMAP_ADDR_BITWIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/WGHT_ADDR_BITWIDTH" type="array">
+         <obj_property name="ElementShortName">WGHT_ADDR_BITWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">WGHT_ADDR_BITWIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/PSUM_ADDR_BITWIDTH" type="array">
+         <obj_property name="ElementShortName">PSUM_ADDR_BITWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">PSUM_ADDR_BITWIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/CMD_NOP" type="array">
+         <obj_property name="ElementShortName">CMD_NOP[2:0]</obj_property>
+         <obj_property name="ObjectShortName">CMD_NOP[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/CMD_SET" type="array">
+         <obj_property name="ElementShortName">CMD_SET[2:0]</obj_property>
+         <obj_property name="ObjectShortName">CMD_SET[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/CMD_LOAD_IFMAP" type="array">
+         <obj_property name="ElementShortName">CMD_LOAD_IFMAP[2:0]</obj_property>
+         <obj_property name="ObjectShortName">CMD_LOAD_IFMAP[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/CMD_LOAD_WGHT" type="array">
+         <obj_property name="ElementShortName">CMD_LOAD_WGHT[2:0]</obj_property>
+         <obj_property name="ObjectShortName">CMD_LOAD_WGHT[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/CMD_CONV" type="array">
+         <obj_property name="ElementShortName">CMD_CONV[2:0]</obj_property>
+         <obj_property name="ObjectShortName">CMD_CONV[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/CMD_ACC" type="array">
+         <obj_property name="ElementShortName">CMD_ACC[2:0]</obj_property>
+         <obj_property name="ObjectShortName">CMD_ACC[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/IDLE" type="array">
+         <obj_property name="ElementShortName">IDLE[3:0]</obj_property>
+         <obj_property name="ObjectShortName">IDLE[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/DEC" type="array">
+         <obj_property name="ElementShortName">DEC[3:0]</obj_property>
+         <obj_property name="ObjectShortName">DEC[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/NOP" type="array">
+         <obj_property name="ElementShortName">NOP[3:0]</obj_property>
+         <obj_property name="ObjectShortName">NOP[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/SET" type="array">
+         <obj_property name="ElementShortName">SET[3:0]</obj_property>
+         <obj_property name="ObjectShortName">SET[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/LOAD_IFMAP" type="array">
+         <obj_property name="ElementShortName">LOAD_IFMAP[3:0]</obj_property>
+         <obj_property name="ObjectShortName">LOAD_IFMAP[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/LOAD_WGHT" type="array">
+         <obj_property name="ElementShortName">LOAD_WGHT[3:0]</obj_property>
+         <obj_property name="ObjectShortName">LOAD_WGHT[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/CONV" type="array">
+         <obj_property name="ElementShortName">CONV[3:0]</obj_property>
+         <obj_property name="ObjectShortName">CONV[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/ACCRST" type="array">
+         <obj_property name="ElementShortName">ACCRST[3:0]</obj_property>
+         <obj_property name="ObjectShortName">ACCRST[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/DONE" type="array">
+         <obj_property name="ElementShortName">DONE[3:0]</obj_property>
+         <obj_property name="ObjectShortName">DONE[3:0]</obj_property>
       </wvobject>
    </wvobject>
-   <wvobject fp_name="group2170" type="group">
-      <obj_property name="label">pe20 datapath</obj_property>
+   <wvobject fp_name="group2748" type="group">
+      <obj_property name="label">pe20_datapath</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/i_rst" type="logic">
-         <obj_property name="ElementShortName">i_rst</obj_property>
-         <obj_property name="ObjectShortName">i_rst</obj_property>
-      </wvobject>
       <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/i_clk" type="logic">
          <obj_property name="ElementShortName">i_clk</obj_property>
          <obj_property name="ObjectShortName">i_clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/i_rst" type="logic">
+         <obj_property name="ElementShortName">i_rst</obj_property>
+         <obj_property name="ObjectShortName">i_rst</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/i_ifmap_data" type="array">
          <obj_property name="ElementShortName">i_ifmap_data[31:0]</obj_property>
@@ -2059,6 +1746,10 @@
       <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/o_psum_data" type="array">
          <obj_property name="ElementShortName">o_psum_data[31:0]</obj_property>
          <obj_property name="ObjectShortName">o_psum_data[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/o_psum_out_valid" type="logic">
+         <obj_property name="ElementShortName">o_psum_out_valid</obj_property>
+         <obj_property name="ObjectShortName">o_psum_out_valid</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/i_acc_sel" type="logic">
          <obj_property name="ElementShortName">i_acc_sel</obj_property>
@@ -2103,10 +1794,6 @@
       <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/i_psum_we" type="logic">
          <obj_property name="ElementShortName">i_psum_we</obj_property>
          <obj_property name="ObjectShortName">i_psum_we</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/o_psum_out_valid" type="logic">
-         <obj_property name="ElementShortName">o_psum_out_valid</obj_property>
-         <obj_property name="ObjectShortName">o_psum_out_valid</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/psum_in_reg" type="array">
          <obj_property name="ElementShortName">psum_in_reg[31:0]</obj_property>
@@ -2217,10 +1904,526 @@
          <obj_property name="ObjectShortName">PSUM_ADDR_BITWIDTH[31:0]</obj_property>
       </wvobject>
    </wvobject>
-   <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[2].PE_gen_horizontal[0].u_PE_top /u_PE_control/state" type="array">
+   <wvobject fp_name="group2794" type="group">
+      <obj_property name="label">pe10_datapath</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="ElementShortName">state[3:0]</obj_property>
-      <obj_property name="ObjectShortName">state[3:0]</obj_property>
-      <obj_property name="label">pe20_state[3:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/i_clk" type="logic">
+         <obj_property name="ElementShortName">i_clk</obj_property>
+         <obj_property name="ObjectShortName">i_clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/i_rst" type="logic">
+         <obj_property name="ElementShortName">i_rst</obj_property>
+         <obj_property name="ObjectShortName">i_rst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/i_ifmap_data" type="array">
+         <obj_property name="ElementShortName">i_ifmap_data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i_ifmap_data[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/i_wght_data" type="array">
+         <obj_property name="ElementShortName">i_wght_data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i_wght_data[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/i_psum_data" type="array">
+         <obj_property name="ElementShortName">i_psum_data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i_psum_data[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/o_psum_data" type="array">
+         <obj_property name="ElementShortName">o_psum_data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">o_psum_data[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/i_acc_sel" type="logic">
+         <obj_property name="ElementShortName">i_acc_sel</obj_property>
+         <obj_property name="ObjectShortName">i_acc_sel</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/i_rst_psum" type="logic">
+         <obj_property name="ElementShortName">i_rst_psum</obj_property>
+         <obj_property name="ObjectShortName">i_rst_psum</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/i_ifmap_ra" type="array">
+         <obj_property name="ElementShortName">i_ifmap_ra[3:0]</obj_property>
+         <obj_property name="ObjectShortName">i_ifmap_ra[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/i_wght_ra" type="array">
+         <obj_property name="ElementShortName">i_wght_ra[7:0]</obj_property>
+         <obj_property name="ObjectShortName">i_wght_ra[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/i_psum_ra" type="array">
+         <obj_property name="ElementShortName">i_psum_ra[3:0]</obj_property>
+         <obj_property name="ObjectShortName">i_psum_ra[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/i_ifmap_wa" type="array">
+         <obj_property name="ElementShortName">i_ifmap_wa[3:0]</obj_property>
+         <obj_property name="ObjectShortName">i_ifmap_wa[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/i_wght_wa" type="array">
+         <obj_property name="ElementShortName">i_wght_wa[7:0]</obj_property>
+         <obj_property name="ObjectShortName">i_wght_wa[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/i_psum_wa" type="array">
+         <obj_property name="ElementShortName">i_psum_wa[3:0]</obj_property>
+         <obj_property name="ObjectShortName">i_psum_wa[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/i_ifmap_we" type="logic">
+         <obj_property name="ElementShortName">i_ifmap_we</obj_property>
+         <obj_property name="ObjectShortName">i_ifmap_we</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/i_wght_we" type="logic">
+         <obj_property name="ElementShortName">i_wght_we</obj_property>
+         <obj_property name="ObjectShortName">i_wght_we</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/i_psum_we" type="logic">
+         <obj_property name="ElementShortName">i_psum_we</obj_property>
+         <obj_property name="ObjectShortName">i_psum_we</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/o_psum_out_valid" type="logic">
+         <obj_property name="ElementShortName">o_psum_out_valid</obj_property>
+         <obj_property name="ObjectShortName">o_psum_out_valid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/psum_in_reg" type="array">
+         <obj_property name="ElementShortName">psum_in_reg[31:0]</obj_property>
+         <obj_property name="ObjectShortName">psum_in_reg[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/psum_in_reg_d" type="array">
+         <obj_property name="ElementShortName">psum_in_reg_d[31:0]</obj_property>
+         <obj_property name="ObjectShortName">psum_in_reg_d[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/psum_in_reg_d2" type="array">
+         <obj_property name="ElementShortName">psum_in_reg_d2[31:0]</obj_property>
+         <obj_property name="ObjectShortName">psum_in_reg_d2[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/ifmap_rd" type="array">
+         <obj_property name="ElementShortName">ifmap_rd[31:0]</obj_property>
+         <obj_property name="ObjectShortName">ifmap_rd[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/wght_rd" type="array">
+         <obj_property name="ElementShortName">wght_rd[31:0]</obj_property>
+         <obj_property name="ObjectShortName">wght_rd[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/psum_rd" type="array">
+         <obj_property name="ElementShortName">psum_rd[31:0]</obj_property>
+         <obj_property name="ObjectShortName">psum_rd[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/ifmap_reg" type="array">
+         <obj_property name="ElementShortName">ifmap_reg[31:0]</obj_property>
+         <obj_property name="ObjectShortName">ifmap_reg[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/psum_reg" type="array">
+         <obj_property name="ElementShortName">psum_reg[31:0]</obj_property>
+         <obj_property name="ObjectShortName">psum_reg[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/psum_reg_d" type="array">
+         <obj_property name="ElementShortName">psum_reg_d[31:0]</obj_property>
+         <obj_property name="ObjectShortName">psum_reg_d[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/psum_reg_d2" type="array">
+         <obj_property name="ElementShortName">psum_reg_d2[31:0]</obj_property>
+         <obj_property name="ObjectShortName">psum_reg_d2[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/wght_reg" type="array">
+         <obj_property name="ElementShortName">wght_reg[31:0]</obj_property>
+         <obj_property name="ObjectShortName">wght_reg[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/acc_sel_sft_reg" type="array">
+         <obj_property name="ElementShortName">acc_sel_sft_reg[2:0]</obj_property>
+         <obj_property name="ObjectShortName">acc_sel_sft_reg[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/rst_psum_sft_reg" type="array">
+         <obj_property name="ElementShortName">rst_psum_sft_reg[2:0]</obj_property>
+         <obj_property name="ObjectShortName">rst_psum_sft_reg[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/psum_wa_reg" type="array">
+         <obj_property name="ElementShortName">psum_wa_reg[3:0]</obj_property>
+         <obj_property name="ObjectShortName">psum_wa_reg[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/psum_wa_reg_d1" type="array">
+         <obj_property name="ElementShortName">psum_wa_reg_d1[3:0]</obj_property>
+         <obj_property name="ObjectShortName">psum_wa_reg_d1[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/psum_wa_reg_d2" type="array">
+         <obj_property name="ElementShortName">psum_wa_reg_d2[3:0]</obj_property>
+         <obj_property name="ObjectShortName">psum_wa_reg_d2[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/psum_we_sftreg" type="array">
+         <obj_property name="ElementShortName">psum_we_sftreg[2:0]</obj_property>
+         <obj_property name="ObjectShortName">psum_we_sftreg[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/rst_psum" type="logic">
+         <obj_property name="ElementShortName">rst_psum</obj_property>
+         <obj_property name="ObjectShortName">rst_psum</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/psum_we" type="logic">
+         <obj_property name="ElementShortName">psum_we</obj_property>
+         <obj_property name="ObjectShortName">psum_we</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/psum_wa" type="array">
+         <obj_property name="ElementShortName">psum_wa[3:0]</obj_property>
+         <obj_property name="ObjectShortName">psum_wa[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/acc_sel" type="logic">
+         <obj_property name="ElementShortName">acc_sel</obj_property>
+         <obj_property name="ObjectShortName">acc_sel</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/mul_reg" type="array">
+         <obj_property name="ElementShortName">mul_reg[31:0]</obj_property>
+         <obj_property name="ObjectShortName">mul_reg[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/mul_reg_d" type="array">
+         <obj_property name="ElementShortName">mul_reg_d[31:0]</obj_property>
+         <obj_property name="ObjectShortName">mul_reg_d[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/DATA_BITWIDTH" type="array">
+         <obj_property name="ElementShortName">DATA_BITWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">DATA_BITWIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/IFMAP_ADDR_BITWIDTH" type="array">
+         <obj_property name="ElementShortName">IFMAP_ADDR_BITWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">IFMAP_ADDR_BITWIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/WGHT_ADDR_BITWIDTH" type="array">
+         <obj_property name="ElementShortName">WGHT_ADDR_BITWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">WGHT_ADDR_BITWIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_datapath/PSUM_ADDR_BITWIDTH" type="array">
+         <obj_property name="ElementShortName">PSUM_ADDR_BITWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">PSUM_ADDR_BITWIDTH[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group2917" type="group">
+      <obj_property name="label">pe10_ctrl</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/i_clk" type="logic">
+         <obj_property name="ElementShortName">i_clk</obj_property>
+         <obj_property name="ObjectShortName">i_clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/i_rst" type="logic">
+         <obj_property name="ElementShortName">i_rst</obj_property>
+         <obj_property name="ObjectShortName">i_rst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/i_opcode" type="array">
+         <obj_property name="ElementShortName">i_opcode[2:0]</obj_property>
+         <obj_property name="ObjectShortName">i_opcode[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/i_conv_info" type="array">
+         <obj_property name="ElementShortName">i_conv_info[10:0]</obj_property>
+         <obj_property name="ObjectShortName">i_conv_info[10:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/i_inst_valid" type="logic">
+         <obj_property name="ElementShortName">i_inst_valid</obj_property>
+         <obj_property name="ObjectShortName">i_inst_valid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/o_inst_ready" type="logic">
+         <obj_property name="ElementShortName">o_inst_ready</obj_property>
+         <obj_property name="ObjectShortName">o_inst_ready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/i_ifmap_fifo_valid" type="logic">
+         <obj_property name="ElementShortName">i_ifmap_fifo_valid</obj_property>
+         <obj_property name="ObjectShortName">i_ifmap_fifo_valid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/o_ifmap_fifo_ready" type="logic">
+         <obj_property name="ElementShortName">o_ifmap_fifo_ready</obj_property>
+         <obj_property name="ObjectShortName">o_ifmap_fifo_ready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/i_wght_fifo_valid" type="logic">
+         <obj_property name="ElementShortName">i_wght_fifo_valid</obj_property>
+         <obj_property name="ObjectShortName">i_wght_fifo_valid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/o_wght_fifo_ready" type="logic">
+         <obj_property name="ElementShortName">o_wght_fifo_ready</obj_property>
+         <obj_property name="ObjectShortName">o_wght_fifo_ready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/i_psum_in_fifo_valid" type="logic">
+         <obj_property name="ElementShortName">i_psum_in_fifo_valid</obj_property>
+         <obj_property name="ObjectShortName">i_psum_in_fifo_valid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/o_psum_in_fifo_ready" type="logic">
+         <obj_property name="ElementShortName">o_psum_in_fifo_ready</obj_property>
+         <obj_property name="ObjectShortName">o_psum_in_fifo_ready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/i_psum_out_fifo_ready" type="logic">
+         <obj_property name="ElementShortName">i_psum_out_fifo_ready</obj_property>
+         <obj_property name="ObjectShortName">i_psum_out_fifo_ready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/o_ifmap_ra" type="array">
+         <obj_property name="ElementShortName">o_ifmap_ra[3:0]</obj_property>
+         <obj_property name="ObjectShortName">o_ifmap_ra[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/o_wght_ra" type="array">
+         <obj_property name="ElementShortName">o_wght_ra[7:0]</obj_property>
+         <obj_property name="ObjectShortName">o_wght_ra[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/o_psum_ra" type="array">
+         <obj_property name="ElementShortName">o_psum_ra[3:0]</obj_property>
+         <obj_property name="ObjectShortName">o_psum_ra[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/o_ifmap_wa" type="array">
+         <obj_property name="ElementShortName">o_ifmap_wa[3:0]</obj_property>
+         <obj_property name="ObjectShortName">o_ifmap_wa[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/o_wght_wa" type="array">
+         <obj_property name="ElementShortName">o_wght_wa[7:0]</obj_property>
+         <obj_property name="ObjectShortName">o_wght_wa[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/o_psum_wa" type="array">
+         <obj_property name="ElementShortName">o_psum_wa[3:0]</obj_property>
+         <obj_property name="ObjectShortName">o_psum_wa[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/o_ifmap_we" type="logic">
+         <obj_property name="ElementShortName">o_ifmap_we</obj_property>
+         <obj_property name="ObjectShortName">o_ifmap_we</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/o_wght_we" type="logic">
+         <obj_property name="ElementShortName">o_wght_we</obj_property>
+         <obj_property name="ObjectShortName">o_wght_we</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/o_psum_we" type="logic">
+         <obj_property name="ElementShortName">o_psum_we</obj_property>
+         <obj_property name="ObjectShortName">o_psum_we</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/o_acc_sel" type="logic">
+         <obj_property name="ElementShortName">o_acc_sel</obj_property>
+         <obj_property name="ObjectShortName">o_acc_sel</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/o_rst_psum" type="logic">
+         <obj_property name="ElementShortName">o_rst_psum</obj_property>
+         <obj_property name="ObjectShortName">o_rst_psum</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/conv_info_reg" type="array">
+         <obj_property name="ElementShortName">conv_info_reg[10:0]</obj_property>
+         <obj_property name="ObjectShortName">conv_info_reg[10:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/state" type="array">
+         <obj_property name="ElementShortName">state[3:0]</obj_property>
+         <obj_property name="ObjectShortName">state[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/n_state" type="array">
+         <obj_property name="ElementShortName">n_state[3:0]</obj_property>
+         <obj_property name="ObjectShortName">n_state[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/cnt_minimum_delay" type="array">
+         <obj_property name="ElementShortName">cnt_minimum_delay[2:0]</obj_property>
+         <obj_property name="ObjectShortName">cnt_minimum_delay[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/cnt_P" type="array">
+         <obj_property name="ElementShortName">cnt_P[3:0]</obj_property>
+         <obj_property name="ObjectShortName">cnt_P[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/cnt_Q" type="array">
+         <obj_property name="ElementShortName">cnt_Q[2:0]</obj_property>
+         <obj_property name="ObjectShortName">cnt_Q[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/cnt_S" type="array">
+         <obj_property name="ElementShortName">cnt_S[3:0]</obj_property>
+         <obj_property name="ObjectShortName">cnt_S[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/counter" type="array">
+         <obj_property name="ElementShortName">counter[6:0]</obj_property>
+         <obj_property name="ObjectShortName">counter[6:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/P" type="array">
+         <obj_property name="ElementShortName">P[3:0]</obj_property>
+         <obj_property name="ObjectShortName">P[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/Q" type="array">
+         <obj_property name="ElementShortName">Q[2:0]</obj_property>
+         <obj_property name="ObjectShortName">Q[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/S" type="array">
+         <obj_property name="ElementShortName">S[3:0]</obj_property>
+         <obj_property name="ObjectShortName">S[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/inst_hs" type="logic">
+         <obj_property name="ElementShortName">inst_hs</obj_property>
+         <obj_property name="ObjectShortName">inst_hs</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/ifmap_fifo_hs" type="logic">
+         <obj_property name="ElementShortName">ifmap_fifo_hs</obj_property>
+         <obj_property name="ObjectShortName">ifmap_fifo_hs</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/wght_fifo_hs" type="logic">
+         <obj_property name="ElementShortName">wght_fifo_hs</obj_property>
+         <obj_property name="ObjectShortName">wght_fifo_hs</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/opcode_reg" type="array">
+         <obj_property name="ElementShortName">opcode_reg[2:0]</obj_property>
+         <obj_property name="ObjectShortName">opcode_reg[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/DATA_BITWIDTH" type="array">
+         <obj_property name="ElementShortName">DATA_BITWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">DATA_BITWIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/IFMAP_ADDR_BITWIDTH" type="array">
+         <obj_property name="ElementShortName">IFMAP_ADDR_BITWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">IFMAP_ADDR_BITWIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/WGHT_ADDR_BITWIDTH" type="array">
+         <obj_property name="ElementShortName">WGHT_ADDR_BITWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">WGHT_ADDR_BITWIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/PSUM_ADDR_BITWIDTH" type="array">
+         <obj_property name="ElementShortName">PSUM_ADDR_BITWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">PSUM_ADDR_BITWIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/CMD_NOP" type="array">
+         <obj_property name="ElementShortName">CMD_NOP[2:0]</obj_property>
+         <obj_property name="ObjectShortName">CMD_NOP[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/CMD_SET" type="array">
+         <obj_property name="ElementShortName">CMD_SET[2:0]</obj_property>
+         <obj_property name="ObjectShortName">CMD_SET[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/CMD_LOAD_IFMAP" type="array">
+         <obj_property name="ElementShortName">CMD_LOAD_IFMAP[2:0]</obj_property>
+         <obj_property name="ObjectShortName">CMD_LOAD_IFMAP[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/CMD_LOAD_WGHT" type="array">
+         <obj_property name="ElementShortName">CMD_LOAD_WGHT[2:0]</obj_property>
+         <obj_property name="ObjectShortName">CMD_LOAD_WGHT[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/CMD_CONV" type="array">
+         <obj_property name="ElementShortName">CMD_CONV[2:0]</obj_property>
+         <obj_property name="ObjectShortName">CMD_CONV[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/CMD_ACC" type="array">
+         <obj_property name="ElementShortName">CMD_ACC[2:0]</obj_property>
+         <obj_property name="ObjectShortName">CMD_ACC[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/IDLE" type="array">
+         <obj_property name="ElementShortName">IDLE[3:0]</obj_property>
+         <obj_property name="ObjectShortName">IDLE[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/DEC" type="array">
+         <obj_property name="ElementShortName">DEC[3:0]</obj_property>
+         <obj_property name="ObjectShortName">DEC[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/NOP" type="array">
+         <obj_property name="ElementShortName">NOP[3:0]</obj_property>
+         <obj_property name="ObjectShortName">NOP[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/SET" type="array">
+         <obj_property name="ElementShortName">SET[3:0]</obj_property>
+         <obj_property name="ObjectShortName">SET[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/LOAD_IFMAP" type="array">
+         <obj_property name="ElementShortName">LOAD_IFMAP[3:0]</obj_property>
+         <obj_property name="ObjectShortName">LOAD_IFMAP[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/LOAD_WGHT" type="array">
+         <obj_property name="ElementShortName">LOAD_WGHT[3:0]</obj_property>
+         <obj_property name="ObjectShortName">LOAD_WGHT[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/CONV" type="array">
+         <obj_property name="ElementShortName">CONV[3:0]</obj_property>
+         <obj_property name="ObjectShortName">CONV[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/ACCRST" type="array">
+         <obj_property name="ElementShortName">ACCRST[3:0]</obj_property>
+         <obj_property name="ObjectShortName">ACCRST[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[0].u_PE_top /u_PE_control/DONE" type="array">
+         <obj_property name="ElementShortName">DONE[3:0]</obj_property>
+         <obj_property name="ObjectShortName">DONE[3:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group2942" type="group">
+      <obj_property name="label">pe10_psum_in_fifo</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[1].u_PE_top /u_psum_in_fifo/i_clk" type="logic">
+         <obj_property name="ElementShortName">i_clk</obj_property>
+         <obj_property name="ObjectShortName">i_clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[1].u_PE_top /u_psum_in_fifo/i_rst" type="logic">
+         <obj_property name="ElementShortName">i_rst</obj_property>
+         <obj_property name="ObjectShortName">i_rst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[1].u_PE_top /u_psum_in_fifo/i_push_data" type="array">
+         <obj_property name="ElementShortName">i_push_data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i_push_data[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[1].u_PE_top /u_psum_in_fifo/i_valid" type="logic">
+         <obj_property name="ElementShortName">i_valid</obj_property>
+         <obj_property name="ObjectShortName">i_valid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[1].u_PE_top /u_psum_in_fifo/o_ready" type="logic">
+         <obj_property name="ElementShortName">o_ready</obj_property>
+         <obj_property name="ObjectShortName">o_ready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[1].u_PE_top /u_psum_in_fifo/i_ready" type="logic">
+         <obj_property name="ElementShortName">i_ready</obj_property>
+         <obj_property name="ObjectShortName">i_ready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[1].u_PE_top /u_psum_in_fifo/o_valid" type="logic">
+         <obj_property name="ElementShortName">o_valid</obj_property>
+         <obj_property name="ObjectShortName">o_valid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[1].u_PE_top /u_psum_in_fifo/o_pop_data" type="array">
+         <obj_property name="ElementShortName">o_pop_data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">o_pop_data[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[1].u_PE_top /u_psum_in_fifo/queue_mem" type="array">
+         <obj_property name="ElementShortName">queue_mem[15:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">queue_mem[15:0][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[1].u_PE_top /u_psum_in_fifo/head" type="array">
+         <obj_property name="ElementShortName">head[4:0]</obj_property>
+         <obj_property name="ObjectShortName">head[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[1].u_PE_top /u_psum_in_fifo/tail" type="array">
+         <obj_property name="ElementShortName">tail[4:0]</obj_property>
+         <obj_property name="ObjectShortName">tail[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[1].u_PE_top /u_psum_in_fifo/full" type="logic">
+         <obj_property name="ElementShortName">full</obj_property>
+         <obj_property name="ObjectShortName">full</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[1].u_PE_top /u_psum_in_fifo/empty" type="logic">
+         <obj_property name="ElementShortName">empty</obj_property>
+         <obj_property name="ObjectShortName">empty</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[1].u_PE_top /u_psum_in_fifo/head_MSB" type="logic">
+         <obj_property name="ElementShortName">head_MSB</obj_property>
+         <obj_property name="ObjectShortName">head_MSB</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[1].u_PE_top /u_psum_in_fifo/tail_MSB" type="logic">
+         <obj_property name="ElementShortName">tail_MSB</obj_property>
+         <obj_property name="ObjectShortName">tail_MSB</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[1].u_PE_top /u_psum_in_fifo/head_fifo_ptr" type="array">
+         <obj_property name="ElementShortName">head_fifo_ptr[3:0]</obj_property>
+         <obj_property name="ObjectShortName">head_fifo_ptr[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[1].u_PE_top /u_psum_in_fifo/tail_fifo_ptr" type="array">
+         <obj_property name="ElementShortName">tail_fifo_ptr[3:0]</obj_property>
+         <obj_property name="ObjectShortName">tail_fifo_ptr[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[1].u_PE_top /u_psum_in_fifo/push_flag" type="logic">
+         <obj_property name="ElementShortName">push_flag</obj_property>
+         <obj_property name="ObjectShortName">push_flag</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[1].u_PE_top /u_psum_in_fifo/pop_flag" type="logic">
+         <obj_property name="ElementShortName">pop_flag</obj_property>
+         <obj_property name="ObjectShortName">pop_flag</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[1].u_PE_top /u_psum_in_fifo/shift_flag" type="logic">
+         <obj_property name="ElementShortName">shift_flag</obj_property>
+         <obj_property name="ObjectShortName">shift_flag</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[1].u_PE_top /u_psum_in_fifo/bypass_flag" type="logic">
+         <obj_property name="ElementShortName">bypass_flag</obj_property>
+         <obj_property name="ObjectShortName">bypass_flag</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[1].u_PE_top /u_psum_in_fifo/QUEUE_PTR_BANDWIDTH" type="array">
+         <obj_property name="ElementShortName">QUEUE_PTR_BANDWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">QUEUE_PTR_BANDWIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[1].u_PE_top /u_psum_in_fifo/ELE_BANDWIDTH" type="array">
+         <obj_property name="ElementShortName">ELE_BANDWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">ELE_BANDWIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[1].PE_gen_horizontal[1].u_PE_top /u_psum_in_fifo/QUEUE_SIZE" type="array">
+         <obj_property name="ElementShortName">QUEUE_SIZE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">QUEUE_SIZE[31:0]</obj_property>
+      </wvobject>
    </wvobject>
 </wave_config>

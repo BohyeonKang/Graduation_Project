@@ -19,16 +19,16 @@ module PE_control #(
     input i_ifmap_fifo_valid,
     output reg o_ifmap_fifo_ready,
 
-    //// Interface to WGHT PISO ////
-    input i_wght_piso_valid,
-    output reg o_wght_piso_ready,
+    //// Interface to WGHT FIFO ////
+    input i_wght_fifo_valid,
+    output reg o_wght_fifo_ready,
 
-    //// Interface to INPUT PSUM PISO ////
-    input i_psum_in_piso_valid,
-    output reg o_psum_in_piso_ready,
+    //// Interface to INPUT PSUM FIFO ////
+    input i_psum_in_fifo_valid,
+    output reg o_psum_in_fifo_ready,
 
-    //// Interface to OUTPUT PSUM SIPO ////
-    input i_psum_out_sipo_ready,    // from SIPO
+    //// Interface to OUTPUT PSUM FIFO ////
+    input i_psum_out_fifo_ready, //from FIFO
 
     //// Interface to PE_datapath.v ////
 	output reg [IFMAP_ADDR_BITWIDTH-1:0] o_ifmap_ra,
@@ -84,8 +84,8 @@ module PE_control #(
 
     wire inst_hs = i_inst_valid && o_inst_ready;
     wire ifmap_fifo_hs = i_ifmap_fifo_valid && o_ifmap_fifo_ready;
-    wire wght_piso_hs = i_wght_piso_valid && o_wght_piso_ready;
-    wire psum_in_piso_hs = i_psum_in_piso_valid && o_psum_in_piso_ready;
+    wire wght_fifo_hs = i_wght_fifo_valid && o_wght_fifo_ready;
+    wire psum_in_fifo_hs = i_psum_in_fifo_valid && o_psum_in_fifo_ready;
 
     //FSM : state register update
     always @(posedge i_clk) begin
@@ -189,8 +189,11 @@ module PE_control #(
             if (counter > 0) begin
                 case(state)
                     LOAD_IFMAP      : counter <= (ifmap_fifo_hs) ? counter - 1 : counter;
-                    LOAD_WGHT       : counter <= (wght_piso_hs) ? counter - 1 : counter;
-                    ACCRST          : counter <= ((counter >= P) && psum_in_piso_hs) || ((counter < P)) ? counter - 1 : counter;
+                    LOAD_WGHT       : counter <= (wght_fifo_hs) ? counter - 1 : counter;
+                    ACCRST          : begin
+                        if(counter >= P)        counter <= (psum_in_fifo_hs) ? counter - 1 : counter;
+                        else if(counter < P)    counter <= counter - 1;
+                    end
                     default         : counter <= counter - 1;
                 endcase
             end 
@@ -233,7 +236,7 @@ module PE_control #(
                 end
             end
             else if(state == LOAD_WGHT) begin
-                if(wght_piso_hs) begin
+                if(wght_fifo_hs) begin
                     cnt_P <= (cnt_P == P - 1) ? 0 : cnt_P + 1;
                     cnt_S <= (cnt_P == P - 1) ? ((cnt_S == S - 1) ? 0 : cnt_S + 1) : cnt_S;
                     cnt_Q <= (cnt_P == P - 1) ? ((cnt_S == S - 1) ? ((cnt_Q == Q - 1) ? 0 : cnt_Q + 1) : cnt_Q) : cnt_Q;
@@ -253,7 +256,7 @@ module PE_control #(
                 end
             end
             else if(state == ACCRST) begin
-                cnt_P <= (psum_in_piso_hs) ? ((cnt_P == P - 1) ? 0 : cnt_P + 1) : cnt_P; 
+                cnt_P <= (cnt_P == P - 1) ? 0 : cnt_P + 1; 
             end
             else begin
                 cnt_P <= 0; 
@@ -268,8 +271,8 @@ module PE_control #(
             IDLE: begin
                 o_inst_ready = 1;
                 o_ifmap_fifo_ready = 0;
-                o_wght_piso_ready = 0;
-                o_psum_in_piso_ready = 0;
+                o_wght_fifo_ready = 0;
+                o_psum_in_fifo_ready = 0;
 
                 o_ifmap_ra = 0;
                 o_wght_ra = 0;
@@ -287,8 +290,8 @@ module PE_control #(
             DEC: begin
                 o_inst_ready = 0;
                 o_ifmap_fifo_ready = 0;
-                o_wght_piso_ready = 0;
-                o_psum_in_piso_ready = 0;
+                o_wght_fifo_ready = 0;
+                o_psum_in_fifo_ready = 0;
 
                 o_ifmap_ra = 0;
                 o_wght_ra = 0;
@@ -306,8 +309,8 @@ module PE_control #(
             NOP: begin
                 o_inst_ready = 0;
                 o_ifmap_fifo_ready = 0;
-                o_wght_piso_ready = 0;
-                o_psum_in_piso_ready = 0;
+                o_wght_fifo_ready = 0;
+                o_psum_in_fifo_ready = 0;
 
                 o_ifmap_ra = 0;
                 o_wght_ra = 0;
@@ -325,8 +328,8 @@ module PE_control #(
             LOAD_IFMAP: begin
                 o_inst_ready = 0;
                 o_ifmap_fifo_ready = 1;
-                o_wght_piso_ready = 0;
-                o_psum_in_piso_ready = 0;
+                o_wght_fifo_ready = 0;
+                o_psum_in_fifo_ready = 0;
 
                 o_ifmap_ra = 0;
                 o_wght_ra = 0;
@@ -347,8 +350,8 @@ module PE_control #(
             LOAD_WGHT: begin
                 o_inst_ready = 0;
                 o_ifmap_fifo_ready = 0;
-                o_wght_piso_ready = 1;
-                o_psum_in_piso_ready = 0;
+                o_wght_fifo_ready = 1;
+                o_psum_in_fifo_ready = 0;
 
                 o_ifmap_ra = 0;
                 o_wght_ra = 0;
@@ -358,7 +361,7 @@ module PE_control #(
                 o_ifmap_we = 0;
 
                 o_wght_wa = (cnt_P * Q * S) + (cnt_Q * S) + cnt_S;
-                o_wght_we = i_wght_piso_valid;
+                o_wght_we = i_wght_fifo_valid;
 
                 o_psum_wa = 0;
                 o_psum_we = 0;
@@ -369,8 +372,8 @@ module PE_control #(
             CONV: begin
                 o_inst_ready = 0;
                 o_ifmap_fifo_ready = 0;
-                o_wght_piso_ready = 0;
-                o_psum_in_piso_ready = 0;
+                o_wght_fifo_ready = 0;
+                o_psum_in_fifo_ready = 0;
 
                 o_ifmap_ra = cnt_S + (S * cnt_Q);
                 o_wght_ra = (cnt_P * Q * S) + (cnt_Q * S) + cnt_S;
@@ -391,8 +394,8 @@ module PE_control #(
             ACCRST: begin
                 o_inst_ready = 0;
                 o_ifmap_fifo_ready = 0;
-                o_wght_piso_ready = 0;
-                o_psum_in_piso_ready = (counter >= P);
+                o_wght_fifo_ready = 0;
+                o_psum_in_fifo_ready = (counter >= P);
 
                 o_ifmap_ra = 0;
                 o_wght_ra = 0;
@@ -407,13 +410,13 @@ module PE_control #(
                 o_psum_wa = cnt_P;
                 o_psum_we = (counter < P);
 
-                o_acc_sel = psum_in_piso_hs;
+                o_acc_sel = psum_in_fifo_hs;
                 o_rst_psum = (counter < P);
             end
             DONE: begin
                 o_inst_ready = 0;
                 o_ifmap_fifo_ready = 0;
-                o_wght_piso_ready = 0;
+                o_wght_fifo_ready = 0;
 
                 o_ifmap_ra = 0;
                 o_wght_ra = 0;
@@ -431,12 +434,12 @@ module PE_control #(
                 o_acc_sel = 0;
                 o_rst_psum = 0;
 
-                o_psum_in_piso_ready = 0;
+                o_psum_in_fifo_ready = 0;
             end
             default: begin
                 o_inst_ready = 0;
                 o_ifmap_fifo_ready = 0;
-                o_wght_piso_ready = 0;
+                o_wght_fifo_ready = 0;
 
                 o_ifmap_ra = 0;
                 o_wght_ra = 0;
@@ -454,7 +457,7 @@ module PE_control #(
                 o_acc_sel = 0;
                 o_rst_psum = 0;
 
-                o_psum_in_piso_ready = 0;
+                o_psum_in_fifo_ready = 0;
             end
         endcase
     end

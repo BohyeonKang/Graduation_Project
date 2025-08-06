@@ -52,7 +52,7 @@ module psum_load_ctrl(
     wire pass_done = (cnt_P == i_layer_p - 1) && (cnt_E == i_layer_EF - 1) && (iter_cnt == i_layer_EF - 1) && (batch_cnt == i_layer_n - 1);
 
     wire [3:0] row_tag = i_layer_RS;
-    wire [3:0] col_tag = {1'b0, (batch_cnt + 1)};
+    wire [3:0] col_tag = {1'b0, (cnt_E + 1)};
     assign psum_tag = {row_tag, col_tag};
     always @(posedge i_clk) begin
         if(i_rst) begin

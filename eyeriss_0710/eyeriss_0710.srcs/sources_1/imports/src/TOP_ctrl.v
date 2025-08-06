@@ -185,11 +185,11 @@ module TOP_ctrl #(
                 else                        n_state = LOAD_PSUM;
             end
             CALC: begin
-                if(cnt == tar_cnt)            n_state = ACCRST;
+                if(i_inst_ready && !(cnt == 0))            n_state = ACCRST;
                 else                        n_state = CALC;
             end
             ACCRST: begin
-                if(cnt == tar_cnt)            n_state = PSUM2GLB;
+                if(i_inst_ready && !(cnt == 0))            n_state = PSUM2GLB;
                 else                        n_state = ACCRST;
             end
             PSUM2GLB: begin
@@ -203,6 +203,7 @@ module TOP_ctrl #(
         endcase
     end
 
+    // counter logic
     always @(posedge i_clk) begin
         if (i_rst) begin
             cnt <= 0;
@@ -210,21 +211,7 @@ module TOP_ctrl #(
             iter_cnt <= 0;
             pass_cnt <= 0;
         end else begin
-            if(state == PSUM2GLB && cnt == 0) begin
-                if(iter_cnt == i_layer_EF - 1) begin
-                    iter_cnt <= 0;
-                    if(pass_cnt == i_total_pass) pass_cnt <= 0;
-                    else pass_cnt <= pass_cnt + 1;
-                end
-                else begin
-                    iter_cnt <= iter_cnt + 1;
-                end
-            end
-
-            if(cnt < tar_cnt) begin
-                cnt <= cnt + 1;
-            end 
-            else begin
+            if(state != n_state) begin
                 case(n_state)
                     // Defines how long the system should stay in the current state
                     IDLE            : begin cnt <= 0; tar_cnt <= 0; end
@@ -234,12 +221,25 @@ module TOP_ctrl #(
                     LOAD_IFMAP      : begin cnt <= 0; tar_cnt <= (1 + i_layer_HW * i_layer_q * i_layer_RS + 2) - 1; end
                     LOAD_WGHT       : begin cnt <= 0; tar_cnt <= (1 + i_layer_RS * (i_layer_p * i_layer_q * i_layer_RS) + 2) - 1; end
                     LOAD_PSUM       : begin cnt <= 0; tar_cnt <= (1 + i_layer_p * i_layer_EF + 2) - 1; end
-                    CALC            : begin cnt <= 0; tar_cnt <= (i_layer_p < 3) ? (3 * i_layer_q * i_layer_RS - 1) : i_layer_p * i_layer_q * i_layer_RS - 1; end
-                    ACCRST          : begin cnt <= 0; tar_cnt <= 2 * i_layer_p - 1; end
-                    PSUM2GLB        : begin cnt <= 0; tar_cnt <= i_layer_p - 1; end
+                    CALC            : begin cnt <= 0; tar_cnt <= 11'b11111111111; end
+                    ACCRST          : begin cnt <= 0; tar_cnt <= 11'b11111111111; end
+                    PSUM2GLB        : begin 
+                        cnt <= 0; tar_cnt <= i_layer_p - 1;
+                        if(iter_cnt == i_layer_EF - 1) begin
+                            iter_cnt <= 0;
+                            if(pass_cnt == i_total_pass) pass_cnt <= 0;
+                            else pass_cnt <= pass_cnt + 1;
+                        end
+                        else begin
+                            iter_cnt <= iter_cnt + 1;
+                        end
+                    end
                     DONE            : begin cnt <= 0; tar_cnt <= 0; end
                     default         : begin cnt <= 0; tar_cnt <= 0; end
                 endcase
+            end
+            else begin
+                cnt <= cnt + 1;
             end
         end
     end

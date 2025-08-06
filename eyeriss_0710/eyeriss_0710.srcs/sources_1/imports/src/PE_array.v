@@ -348,8 +348,8 @@ module PE_array #(
         end
     endgenerate
 
-    reg [PSUM_BUS_BITWIDTH-1:0] psum_out_data_buffer [NUM_ROWS-1:0][NUM_COLS-1:0];
-    reg                         psum_out_valid_buffer [NUM_ROWS-1:0][NUM_COLS-1:0];
+    reg [PSUM_BUS_BITWIDTH-1:0] psum_out_data_buffer [0:NUM_ROWS-1][0:NUM_COLS-1];
+    reg                         psum_out_valid_buffer [0:NUM_ROWS-1][0:NUM_COLS-1];
 
     generate
         for(row = 0; row < NUM_ROWS; row = row + 1) begin: PE_gen_vertical

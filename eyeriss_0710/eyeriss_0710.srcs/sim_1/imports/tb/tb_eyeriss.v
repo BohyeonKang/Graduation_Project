@@ -299,7 +299,7 @@ module tb_eyeriss();
         i_psum_row_id = {4'd1, 4'd2, 4'd3};
         i_ifmap_col_id = {{5'd1, 5'd2, 5'd3}, {5'd2, 5'd3, 5'd4}, {5'd3, 5'd4, 5'd5}};
         i_wght_col_id = {{4'd1, 4'd1, 4'd1}, {4'd1, 4'd1, 4'd1}, {4'd1, 4'd1, 4'd1}};
-        i_psum_col_id = {{4'd1, 4'd1, 4'd1}, {4'd1, 4'd1, 4'd1}, {4'd1, 4'd1, 4'd1}};
+        i_psum_col_id = {{4'd1, 4'd2, 4'd3}, {4'd1, 4'd2, 4'd3}, {4'd1, 4'd2, 4'd3}};
 
         i_inst_bram_rd = 32'hDEADBEEF;
 

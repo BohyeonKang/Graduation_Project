@@ -256,7 +256,9 @@ module PE_control #(
                 end
             end
             else if(state == ACCRST) begin
-                cnt_P <= (cnt_P == P - 1) ? 0 : cnt_P + 1; 
+                if(psum_in_fifo_hs) begin
+                    cnt_P <= (cnt_P == P - 1) ? 0 : cnt_P + 1; 
+                end
             end
             else begin
                 cnt_P <= 0; 

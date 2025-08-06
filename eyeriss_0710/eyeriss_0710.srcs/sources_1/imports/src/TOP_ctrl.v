@@ -156,45 +156,45 @@ module TOP_ctrl #(
     always @(*) begin
         case(state)
             IDLE: begin
-                if(i_inst_bram_rd == 1'b1)  n_state = INIT;
-                else                        n_state = IDLE;
+                if(i_inst_bram_rd == 1'b1)          n_state = INIT;
+                else                                n_state = IDLE;
             end
             INIT: begin
-                if(cnt == tar_cnt)            n_state = WAIT;
-                else                        n_state = INIT;
+                if(cnt == tar_cnt)                  n_state = WAIT;
+                else                                n_state = INIT;
             end
             WAIT: begin
-                if(pass_cnt == i_total_pass)    n_state = DONE;
-                else if(cnt == tar_cnt)       n_state = LOAD_DRAM2GLB;
-                else                          n_state = WAIT;
+                if(pass_cnt == i_total_pass)        n_state = DONE;
+                else if(cnt == tar_cnt)             n_state = LOAD_DRAM2GLB;
+                else                                n_state = WAIT;
             end
             LOAD_DRAM2GLB: begin
-                if(cnt == tar_cnt)            n_state = LOAD_IFMAP;
-                else                        n_state = LOAD_DRAM2GLB;
+                if(cnt == tar_cnt)                  n_state = LOAD_IFMAP;
+                else                                n_state = LOAD_DRAM2GLB;
             end
             LOAD_IFMAP: begin
-                if(cnt == tar_cnt)            n_state = (iter_cnt == 0) ? LOAD_WGHT : LOAD_PSUM;
-                else                        n_state = LOAD_IFMAP;
+                if(cnt == tar_cnt)                  n_state = (iter_cnt == 0) ? LOAD_WGHT : LOAD_PSUM;
+                else                                n_state = LOAD_IFMAP;
             end
             LOAD_WGHT: begin
-                if(cnt == tar_cnt)            n_state = LOAD_PSUM;
-                else                        n_state = LOAD_WGHT;
+                if(cnt == tar_cnt)                  n_state = LOAD_PSUM;
+                else                                n_state = LOAD_WGHT;
             end
             LOAD_PSUM: begin
-                if(cnt == tar_cnt)            n_state = CALC;
-                else                        n_state = LOAD_PSUM;
+                if(cnt == tar_cnt)                  n_state = CALC;
+                else                                n_state = LOAD_PSUM;
             end
             CALC: begin
-                if(i_inst_ready && !(cnt == 0))            n_state = ACCRST;
-                else                        n_state = CALC;
+                if(i_inst_ready && !(cnt == 0))     n_state = ACCRST;
+                else                                n_state = CALC;
             end
             ACCRST: begin
-                if(i_inst_ready && !(cnt == 0))            n_state = PSUM2GLB;
-                else                        n_state = ACCRST;
+                if(i_inst_ready && !(cnt == 0))     n_state = PSUM2GLB;
+                else                                n_state = ACCRST;
             end
             PSUM2GLB: begin
-                if(cnt == tar_cnt)            n_state = WAIT;
-                else                        n_state = PSUM2GLB;
+                if(cnt == tar_cnt)                  n_state = WAIT;
+                else                                n_state = PSUM2GLB;
             end
             DONE: begin
                 n_state = IDLE;

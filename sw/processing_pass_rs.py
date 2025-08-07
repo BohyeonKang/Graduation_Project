@@ -83,6 +83,8 @@ R = S = 3
 U = 1
 Pad = 0
 
+E = ((H - S + 2*Pad) // U) + 1
+
 # 주소 생성기 호출
 ifmap_ra = ifmap_load_addr_gen(N, C, H, W, S, U, Pad)
 wght_ra = wght_load_addr_gen(M, C, R, S)
@@ -97,9 +99,52 @@ pe1 = PE()
 
 # 예시: ifmap_ra의 첫 번째 행과 wght_ra의 첫 번째 행을 사용하여 데이터 로드 및 연산
 # (E, R, C*S) -> (0, 0, :) 로 첫 번째 ifmap row를 가져옵니다.
-ifmap_data_to_load = ifmap_mem.flatten()[ifmap_ra[0, 0]]
-# (R, M, C*S) -> (0, :, :) 로 첫 번째 weight row를 가져옵니다.
-wght_data_to_load = wght_mem.flatten()[wght_ra[0, :]]
 
-print("ifmap_data_to_load shape:", ifmap_data_to_load.shape)
-print("wght_data_to_load shape:", wght_data_to_load.shape)
+
+
+# 1. 텐서화된 ifmap_rows: shape (E, H, C*S)
+ifmap_flat = ifmap_mem.flatten()
+ifmap_rows = torch.stack([
+    torch.stack([ifmap_flat[ifmap_ra[e, h]] for h in range(H)], dim=0)
+    for e in range(E)
+], dim=0)  # shape: (E, H, C*S)
+
+# 2. 텐서화된 wght_rows: shape (R, M, C*S)
+wght_flat = wght_mem.flatten()
+wght_rows = torch.stack([
+    torch.stack([wght_flat[wght_ra[r, m]] for m in range(M)], dim=0)
+    for r in range(R)
+], dim=0)  # shape: (R, M, C*S)
+
+pe_results = [[[None for _ in range(E)] for _ in range(R)] for _ in range(E)]  # [E][R][E]
+
+pe00_iter0_res = torch.matmul(wght_rows[0], ifmap_rows[0][0])
+pe00_iter1_res = torch.matmul(wght_rows[0], ifmap_rows[1][0])
+pe00_iter2_res = torch.matmul(wght_rows[0], ifmap_rows[2][0])
+pe01_iter0_res = torch.matmul(wght_rows[0], ifmap_rows[0][1])
+pe01_iter1_res = torch.matmul(wght_rows[0], ifmap_rows[1][1])
+pe01_iter2_res = torch.matmul(wght_rows[0], ifmap_rows[2][1])
+pe02_iter0_res = torch.matmul(wght_rows[0], ifmap_rows[0][2])
+pe02_iter1_res = torch.matmul(wght_rows[0], ifmap_rows[1][2])
+pe02_iter2_res = torch.matmul(wght_rows[0], ifmap_rows[2][2])
+pe10_iter0_res = torch.matmul(wght_rows[1], ifmap_rows[0][1])
+pe10_iter1_res = torch.matmul(wght_rows[1], ifmap_rows[1][1])
+pe10_iter2_res = torch.matmul(wght_rows[1], ifmap_rows[2][1])
+pe11_iter0_res = torch.matmul(wght_rows[1], ifmap_rows[0][2])
+pe11_iter1_res = torch.matmul(wght_rows[1], ifmap_rows[1][2])
+pe11_iter2_res = torch.matmul(wght_rows[1], ifmap_rows[2][2])
+pe12_iter0_res = torch.matmul(wght_rows[1], ifmap_rows[0][3])
+pe12_iter1_res = torch.matmul(wght_rows[1], ifmap_rows[1][3])
+pe12_iter2_res = torch.matmul(wght_rows[1], ifmap_rows[2][3])
+pe20_iter0_res = torch.matmul(wght_rows[2], ifmap_rows[0][2])
+pe20_iter1_res = torch.matmul(wght_rows[2], ifmap_rows[1][2])
+pe20_iter2_res = torch.matmul(wght_rows[2], ifmap_rows[2][2])
+pe21_iter0_res = torch.matmul(wght_rows[2], ifmap_rows[0][3])
+pe21_iter1_res = torch.matmul(wght_rows[2], ifmap_rows[1][3])
+pe21_iter2_res = torch.matmul(wght_rows[2], ifmap_rows[2][3])
+pe22_iter0_res = torch.matmul(wght_rows[2], ifmap_rows[0][4])
+pe22_iter1_res = torch.matmul(wght_rows[2], ifmap_rows[1][4])
+pe22_iter2_res = torch.matmul(wght_rows[2], ifmap_rows[2][4])
+
+#print(pe00_iter1_res + pe10_iter1_res + pe20_iter1_res)
+print(pe00_iter2_res + pe10_iter2_res + pe20_iter2_res)

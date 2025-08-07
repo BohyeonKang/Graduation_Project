@@ -8,9 +8,7 @@ verilog xil_defaultlib  \
 "../../../../eyeriss_0710.srcs/sources_1/imports/src/PE_control.v" \
 "../../../../eyeriss_0710.srcs/sources_1/imports/src/PE_datapath.v" \
 "../../../../eyeriss_0710.srcs/sources_1/imports/src/PE_top.v" \
-"../../../../eyeriss_0710.srcs/sources_1/imports/src/PISO.v" \
 "../../../../eyeriss_0710.srcs/sources_1/imports/src/RF.v" \
-"../../../../eyeriss_0710.srcs/sources_1/imports/src/SIPO.v" \
 "../../../../eyeriss_0710.srcs/sources_1/imports/src/TOP_ctrl.v" \
 "../../../../eyeriss_0710.srcs/sources_1/imports/src/fifo.v" \
 "../../../../eyeriss_0710.srcs/sources_1/imports/src/ifmap_load_ctrl.v" \

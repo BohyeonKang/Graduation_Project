@@ -244,7 +244,7 @@ module tb_eyeriss();
         .i_ifmap_packet(ifmap_packet_ctrl2arr),
         .i_wght_packet(wght_packet_ctrl2arr),
         .i_psum_in_packet(psum_in_packet_ctrl2arr),
-        .o_psum_out_data(o_psum_out_data),
+        .o_psum_out_data(psum_out_data_arr2glb),
 
         .i_ifmap_valid(ifmap_valid_ctrl2arr),
         .i_wght_valid(wght_valid_ctrl2arr),

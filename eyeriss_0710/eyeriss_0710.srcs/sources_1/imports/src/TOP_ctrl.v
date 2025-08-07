@@ -134,11 +134,11 @@ module TOP_ctrl #(
     wire [clogb2(BANK_NUM-1)-1:0] glb_bank_sel;
 
     wire ifmap_load_iter_done, psum_load_iter_done;
-    wire ifmap_load_done, wght_load_done, psum_load_done;
-    wire ifmap_glb_re, wght_glb_re, psum_glb_re;
+    wire ifmap_load_done, wght_load_done, psum_load_done, psum_store_done;
+    wire ifmap_glb_re, wght_glb_re, psum_glb_re, psum_glb_we;
     wire [8:0] ifmap_tag;
     wire [7:0] wght_tag, psum_tag;
-    wire [13:0] ifmap_glb_ra, wght_glb_ra, psum_glb_ra;
+    wire [13:0] ifmap_glb_ra, wght_glb_ra, psum_glb_ra, psum_glb_wa;
 
     wire [0:NUM_ROWS*NUM_COLS-1] ctrl_psum_in_sel_LNorGIN;
     wire [0:NUM_ROWS*NUM_COLS-1] ctrl_psum_out_sel_GON;
@@ -385,6 +385,13 @@ module TOP_ctrl #(
             end
             PSUM2GLB: begin
                 o_ctrl_psum_out_sel_GON = (ctrl_psum_out_sel_GON[cnt / i_layer_p] << (NUM_ROWS * NUM_COLS - 1 - (cnt / i_layer_p)));
+
+                glb_data_type = 2'd2;
+                glb_logical_addr = psum_glb_wa;
+
+                o_glb_we = psum_glb_we;
+                o_glb_wa = glb_physical_addr;
+                o_glb_bank_sel = glb_bank_sel;
             end
             DONE: begin
             end
@@ -488,6 +495,35 @@ module TOP_ctrl #(
         .o_psum_tag      (psum_tag),
         .o_load_done     (psum_load_done)
     );
+
+    psum_store_ctrl u_psum_store_ctrl (
+        .i_clk         (i_clk),
+        .i_rst         (i_rst),
+        .i_start       ((state == PSUM2GLB) && (cnt == 0)),
+
+        // Layer & Tiling/Mapping Parameters
+        .i_layer_HW    (i_layer_HW),
+        .i_layer_RS    (i_layer_RS),
+        .i_layer_EF    (i_layer_EF),
+        .i_layer_C     (i_layer_C),
+        .i_layer_M     (i_layer_M),
+        .i_layer_U     (i_layer_U),
+        .i_layer_PAD   (i_layer_PAD),
+        .i_layer_m     (i_layer_m),
+        .i_layer_n     (i_layer_n),
+        .i_layer_e     (i_layer_e),
+        .i_layer_p     (i_layer_p),
+        .i_layer_q     (i_layer_q),
+        .i_layer_r     (i_layer_r),
+        .i_layer_t     (i_layer_t),
+
+        // Outputs to GLB
+        .o_psum_glb_we (psum_glb_we),
+        .o_psum_glb_wa (psum_glb_wa),
+        .o_iter_done   (),
+        .o_load_done   (psum_store_done)
+    );
+
 
     psum_selection_decoder #(
         .NUM_ROWS(NUM_ROWS),

@@ -225,7 +225,7 @@ module TOP_ctrl #(
                     CALC            : begin cnt <= 0; tar_cnt <= 11'b11111111111; end
                     ACCRST          : begin cnt <= 0; tar_cnt <= 11'b11111111111; end
                     PSUM2GLB        : begin 
-                        cnt <= 0; tar_cnt <= i_layer_p - 1;
+                        cnt <= 0; tar_cnt <= NUM_ROWS * NUM_COLS * i_layer_p - 1;
                         if(iter_cnt == i_layer_EF - 1) begin
                             iter_cnt <= 0;
                             if(pass_cnt == i_total_pass) pass_cnt <= 0;
@@ -380,11 +380,11 @@ module TOP_ctrl #(
                 o_inst_valid = (cnt == 0);
             end
             ACCRST: begin
-                o_ctrl_psum_out_sel_GON = ctrl_psum_out_sel_GON;
                 o_inst_data = CMD_ACC;
                 o_inst_valid = (cnt == 0);
             end
             PSUM2GLB: begin
+                o_ctrl_psum_out_sel_GON = (ctrl_psum_out_sel_GON[cnt] << (NUM_ROWS * NUM_COLS - 1 - cnt));
             end
             DONE: begin
             end

@@ -49,7 +49,7 @@ module PE_array #(
     input [IFMAP_ROW_ID_BITWIDTH + IFMAP_COL_ID_BITWIDTH + IFMAP_BUS_BITWIDTH - 1:0] i_ifmap_packet,
     input [WGHT_ROW_ID_BITWIDTH + WGHT_COL_ID_BITWIDTH + WGHT_BUS_BITWIDTH - 1:0] i_wght_packet,
     input [PSUM_ROW_ID_BITWIDTH + PSUM_COL_ID_BITWIDTH + PSUM_BUS_BITWIDTH - 1:0] i_psum_in_packet,
-    output [PSUM_BUS_BITWIDTH-1:0] o_psum_out_data,
+    output reg [PSUM_BUS_BITWIDTH-1:0] o_psum_out_data,
 
     input i_ifmap_valid,
     input i_wght_valid,
@@ -136,10 +136,10 @@ module PE_array #(
     wire LN_psum_ready [0:NUM_ROWS][0:NUM_COLS-1];
 
     generate
-        for(col = 0; col < NUM_COLS; col = col + 1) begin : init_LN
+        for(col = 0; col < NUM_COLS; col = col + 1) begin : init_LN_col
             assign LN_psum_data[NUM_ROWS][col] = 0;
             assign LN_psum_valid[NUM_ROWS][col] = 0; // bottom line of PE set always get input psum from GIN.
-            assign LN_psum_ready[0][col] = 1; // top line of PE set
+            assign LN_psum_ready[0][col] = i_ctrl_psum_out_sel_GON[0 * NUM_COLS + col]; // top line of PE set
         end
     endgenerate
 
@@ -400,15 +400,26 @@ module PE_array #(
                             psum_out_data_buffer[row][col] <= LN_psum_data[row][col];
                             psum_out_valid_buffer[row][col] <= LN_psum_valid[row][col];
                         end
-                        else begin
+                        else if(LN_psum_ready[row][col])begin
                             psum_out_data_buffer[row][col] <= {PSUM_BUS_BITWIDTH{1'b0}};
                             psum_out_valid_buffer[row][col] <= 1'b0;
                         end
                     end
                 end
-                assign o_psum_out_data[row * NUM_COLS * PSUM_BUS_BITWIDTH + col * PSUM_BUS_BITWIDTH +: PSUM_BUS_BITWIDTH] = psum_out_data_buffer[row][col];
                 assign o_psum_out_valid[row * NUM_COLS + col] = psum_out_valid_buffer[row][col];
             end
         end
     endgenerate
+
+    always @(*) begin
+        o_psum_out_data = {PSUM_BUS_BITWIDTH{1'b0}}; // Default value
+        for (i = 0; i < NUM_ROWS; i = i + 1) begin
+            for (j = 0; j < NUM_COLS; j = j + 1) begin
+                if (i_ctrl_psum_out_sel_GON[i * NUM_COLS + j]) begin
+                    o_psum_out_data = psum_out_data_buffer[i][j];
+                end
+            end
+        end
+    end
+
 endmodule

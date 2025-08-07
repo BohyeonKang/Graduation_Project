@@ -25,6 +25,7 @@ module psum_load_ctrl(
     output          o_psum_glb_re,
     output [15:0]   o_psum_glb_ra,
     output [7:0]    o_psum_tag,
+    output          o_iter_done,
     output          o_load_done
 );
 
@@ -112,6 +113,7 @@ module psum_load_ctrl(
 
     assign o_psum_glb_re = (state == LOAD_SEQ);
     assign o_psum_glb_ra = (cnt_P * i_layer_EF * i_layer_EF) + (cnt_E * i_layer_EF) + iter_cnt;
+    assign o_iter_done = iter_done;
     assign o_load_done   = (state == DONE);
     assign o_psum_tag = psum_tag_d2;
 

@@ -133,6 +133,7 @@ module TOP_ctrl #(
     wire [clogb2(BANK_DEPTH)-1:0] glb_physical_addr;
     wire [clogb2(BANK_NUM-1)-1:0] glb_bank_sel;
 
+    wire ifmap_load_iter_done, psum_load_iter_done;
     wire ifmap_load_done, wght_load_done, psum_load_done;
     wire ifmap_glb_re, wght_glb_re, psum_glb_re;
     wire [8:0] ifmap_tag;
@@ -173,11 +174,11 @@ module TOP_ctrl #(
                 else                                n_state = LOAD_DRAM2GLB;
             end
             LOAD_IFMAP: begin
-                if(cnt == tar_cnt)                  n_state = (iter_cnt == 0) ? LOAD_WGHT : LOAD_PSUM;
+                if(i_inst_ready && !(cnt == 0))     n_state = (iter_cnt == 0) ? LOAD_WGHT : LOAD_PSUM;
                 else                                n_state = LOAD_IFMAP;
             end
             LOAD_WGHT: begin
-                if(cnt == tar_cnt)                  n_state = LOAD_PSUM;
+                if(i_inst_ready && !(cnt == 0))     n_state = LOAD_PSUM;
                 else                                n_state = LOAD_WGHT;
             end
             LOAD_PSUM: begin
@@ -218,8 +219,8 @@ module TOP_ctrl #(
                     INIT            : begin cnt <= 0; tar_cnt <= NUM_ROWS - 1; end
                     WAIT            : begin cnt <= 0; tar_cnt <= 0; end
                     LOAD_DRAM2GLB   : begin cnt <= 0; tar_cnt <= 0; end
-                    LOAD_IFMAP      : begin cnt <= 0; tar_cnt <= (1 + i_layer_HW * i_layer_q * i_layer_RS + 2) - 1; end
-                    LOAD_WGHT       : begin cnt <= 0; tar_cnt <= (1 + i_layer_RS * (i_layer_p * i_layer_q * i_layer_RS) + 2) - 1; end
+                    LOAD_IFMAP      : begin cnt <= 0; tar_cnt <= 11'b11111111111; end
+                    LOAD_WGHT       : begin cnt <= 0; tar_cnt <= 11'b11111111111; end
                     LOAD_PSUM       : begin cnt <= 0; tar_cnt <= (1 + i_layer_p * i_layer_EF + 2) - 1; end
                     CALC            : begin cnt <= 0; tar_cnt <= 11'b11111111111; end
                     ACCRST          : begin cnt <= 0; tar_cnt <= 11'b11111111111; end
@@ -320,7 +321,7 @@ module TOP_ctrl #(
                 o_inst_data = CMD_LOAD_IFMAP;
                 o_inst_valid = (cnt == 0);
 
-                if(cnt > 2) begin
+                if(cnt > 2 && cnt <= i_layer_C * i_layer_RS * i_layer_q + 2) begin
                     o_ifmap_valid = 1'b1;
                     o_ifmap_packet = {ifmap_tag, i_glb_rd};
                 end
@@ -340,7 +341,7 @@ module TOP_ctrl #(
                 o_inst_data = CMD_LOAD_WGHT;
                 o_inst_valid = (cnt == 0);
 
-                if(cnt > 2) begin
+                if(cnt > 2 && cnt <= i_layer_RS * i_layer_p * i_layer_q * i_layer_RS + 2) begin
                     o_wght_valid = 1'b1;
                     o_wght_packet = {wght_tag, i_glb_rd};
                 end

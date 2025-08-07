@@ -59,7 +59,7 @@ module PE_array #(
     output o_ifmap_ready,
     output o_wght_ready,
     output o_psum_in_ready,
-    output [0:NUM_ROWS*NUM_COLS-1] o_psum_out_valid
+    output reg o_psum_out_valid
 );
 
     genvar row, col;
@@ -406,17 +406,18 @@ module PE_array #(
                         end
                     end
                 end
-                assign o_psum_out_valid[row * NUM_COLS + col] = psum_out_valid_buffer[row][col];
             end
         end
     endgenerate
 
     always @(*) begin
-        o_psum_out_data = {PSUM_BUS_BITWIDTH{1'b0}}; // Default value
+        o_psum_out_data = {PSUM_BUS_BITWIDTH{1'b0}};
+        o_psum_out_valid = 1'b0;
         for (i = 0; i < NUM_ROWS; i = i + 1) begin
             for (j = 0; j < NUM_COLS; j = j + 1) begin
                 if (i_ctrl_psum_out_sel_GON[i * NUM_COLS + j]) begin
-                    o_psum_out_data = psum_out_data_buffer[i][j];
+                    o_psum_out_data = LN_psum_data[i][j];
+                    o_psum_out_valid = LN_psum_valid[i][j];
                 end
             end
         end

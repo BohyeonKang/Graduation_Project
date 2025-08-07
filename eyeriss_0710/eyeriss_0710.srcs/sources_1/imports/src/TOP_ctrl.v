@@ -384,7 +384,7 @@ module TOP_ctrl #(
                 o_inst_valid = (cnt == 0);
             end
             PSUM2GLB: begin
-                o_ctrl_psum_out_sel_GON = (ctrl_psum_out_sel_GON[cnt] << (NUM_ROWS * NUM_COLS - 1 - cnt));
+                o_ctrl_psum_out_sel_GON = (ctrl_psum_out_sel_GON[cnt / i_layer_p] << (NUM_ROWS * NUM_COLS - 1 - (cnt / i_layer_p)));
             end
             DONE: begin
             end

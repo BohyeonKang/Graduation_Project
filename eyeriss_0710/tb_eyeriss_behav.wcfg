@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="7,732.916 ns"></ZoomStartTime>
-      <ZoomEndTime time="8,179.417 ns"></ZoomEndTime>
-      <Cursor1Time time="8,095.000 ns"></Cursor1Time>
+      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
+      <ZoomEndTime time="8.445001 us"></ZoomEndTime>
+      <Cursor1Time time="8.185000 us"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="398"></NameColumnWidth>
-      <ValueColumnWidth column_width="174"></ValueColumnWidth>
+      <ValueColumnWidth column_width="168"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="19" />
+   <WVObjectSize size="20" />
    <wvobject fp_name="group2400" type="group">
       <obj_property name="label">top_ctrl</obj_property>
       <obj_property name="DisplayName">label</obj_property>
@@ -613,10 +613,9 @@
          <obj_property name="ObjectShortName">o_psum_out_data[31:0]</obj_property>
          <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_eyeriss/u_PE_array/o_psum_out_valid" type="array">
-         <obj_property name="ElementShortName">o_psum_out_valid[0:8]</obj_property>
-         <obj_property name="ObjectShortName">o_psum_out_valid[0:8]</obj_property>
-         <obj_property name="Radix">BINARYRADIX</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/o_psum_out_valid" type="logic">
+         <obj_property name="ElementShortName">o_psum_out_valid</obj_property>
+         <obj_property name="ObjectShortName">o_psum_out_valid</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_eyeriss/u_PE_array/i_ifmap_valid" type="logic">
          <obj_property name="ElementShortName">i_ifmap_valid</obj_property>
@@ -892,6 +891,7 @@
    <wvobject fp_name="group2543" type="group">
       <obj_property name="label">pe00</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /i_clk" type="logic">
          <obj_property name="ElementShortName">i_clk</obj_property>
          <obj_property name="ObjectShortName">i_clk</obj_property>
@@ -1561,6 +1561,7 @@
       <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[1].u_PE_top /o_psum_out_fifo_data" type="array">
          <obj_property name="ElementShortName">o_psum_out_fifo_data[31:0]</obj_property>
          <obj_property name="ObjectShortName">o_psum_out_fifo_data[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[1].u_PE_top /o_psum_out_fifo_valid" type="logic">
          <obj_property name="ElementShortName">o_psum_out_fifo_valid</obj_property>
@@ -4066,6 +4067,106 @@
       <wvobject fp_name="/tb_eyeriss/u_top_ctrl/u_ifmap_load_ctrl/DONE" type="array">
          <obj_property name="ElementShortName">DONE[2:0]</obj_property>
          <obj_property name="ObjectShortName">DONE[2:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group2480" type="group">
+      <obj_property name="label">pe00_psum_out_fifo</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_psum_out_fifo/i_clk" type="logic">
+         <obj_property name="ElementShortName">i_clk</obj_property>
+         <obj_property name="ObjectShortName">i_clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_psum_out_fifo/i_rst" type="logic">
+         <obj_property name="ElementShortName">i_rst</obj_property>
+         <obj_property name="ObjectShortName">i_rst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_psum_out_fifo/i_push_data" type="array">
+         <obj_property name="ElementShortName">i_push_data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i_push_data[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_psum_out_fifo/i_valid" type="logic">
+         <obj_property name="ElementShortName">i_valid</obj_property>
+         <obj_property name="ObjectShortName">i_valid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_psum_out_fifo/o_ready" type="logic">
+         <obj_property name="ElementShortName">o_ready</obj_property>
+         <obj_property name="ObjectShortName">o_ready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_psum_out_fifo/i_ready" type="logic">
+         <obj_property name="ElementShortName">i_ready</obj_property>
+         <obj_property name="ObjectShortName">i_ready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_psum_out_fifo/o_valid" type="logic">
+         <obj_property name="ElementShortName">o_valid</obj_property>
+         <obj_property name="ObjectShortName">o_valid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_psum_out_fifo/o_pop_data" type="array">
+         <obj_property name="ElementShortName">o_pop_data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">o_pop_data[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_psum_out_fifo/queue_mem" type="array">
+         <obj_property name="ElementShortName">queue_mem[31:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">queue_mem[31:0][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_psum_out_fifo/head" type="array">
+         <obj_property name="ElementShortName">head[5:0]</obj_property>
+         <obj_property name="ObjectShortName">head[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_psum_out_fifo/tail" type="array">
+         <obj_property name="ElementShortName">tail[5:0]</obj_property>
+         <obj_property name="ObjectShortName">tail[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_psum_out_fifo/full" type="logic">
+         <obj_property name="ElementShortName">full</obj_property>
+         <obj_property name="ObjectShortName">full</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_psum_out_fifo/empty" type="logic">
+         <obj_property name="ElementShortName">empty</obj_property>
+         <obj_property name="ObjectShortName">empty</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_psum_out_fifo/head_MSB" type="logic">
+         <obj_property name="ElementShortName">head_MSB</obj_property>
+         <obj_property name="ObjectShortName">head_MSB</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_psum_out_fifo/tail_MSB" type="logic">
+         <obj_property name="ElementShortName">tail_MSB</obj_property>
+         <obj_property name="ObjectShortName">tail_MSB</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_psum_out_fifo/head_fifo_ptr" type="array">
+         <obj_property name="ElementShortName">head_fifo_ptr[4:0]</obj_property>
+         <obj_property name="ObjectShortName">head_fifo_ptr[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_psum_out_fifo/tail_fifo_ptr" type="array">
+         <obj_property name="ElementShortName">tail_fifo_ptr[4:0]</obj_property>
+         <obj_property name="ObjectShortName">tail_fifo_ptr[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_psum_out_fifo/push_flag" type="logic">
+         <obj_property name="ElementShortName">push_flag</obj_property>
+         <obj_property name="ObjectShortName">push_flag</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_psum_out_fifo/pop_flag" type="logic">
+         <obj_property name="ElementShortName">pop_flag</obj_property>
+         <obj_property name="ObjectShortName">pop_flag</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_psum_out_fifo/shift_flag" type="logic">
+         <obj_property name="ElementShortName">shift_flag</obj_property>
+         <obj_property name="ObjectShortName">shift_flag</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_psum_out_fifo/bypass_flag" type="logic">
+         <obj_property name="ElementShortName">bypass_flag</obj_property>
+         <obj_property name="ObjectShortName">bypass_flag</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_psum_out_fifo/QUEUE_PTR_BANDWIDTH" type="array">
+         <obj_property name="ElementShortName">QUEUE_PTR_BANDWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">QUEUE_PTR_BANDWIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_psum_out_fifo/ELE_BANDWIDTH" type="array">
+         <obj_property name="ElementShortName">ELE_BANDWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">ELE_BANDWIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_eyeriss/u_PE_array/\PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top /u_psum_out_fifo/QUEUE_SIZE" type="array">
+         <obj_property name="ElementShortName">QUEUE_SIZE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">QUEUE_SIZE[31:0]</obj_property>
       </wvobject>
    </wvobject>
 </wave_config>

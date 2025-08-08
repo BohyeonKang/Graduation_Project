@@ -1,5 +1,5 @@
-module fifo#(
-    parameter QUEUE_PTR_BANDWIDTH = 3,
+module fifo #(
+    parameter QUEUE_PTR_BANDWIDTH = 5,
     parameter ELE_BANDWIDTH       = 8
 )(
     input i_clk,

@@ -11,7 +11,7 @@ module PE_control #(
 
     //// Interface to TOP CTRL instruction ////  
     input [2:0] i_opcode, //NOP, SET, LOAD_IFMAP, LOAD_WGHT, CONV
-    input [8:0] i_conv_info, // TOP CTRL에서 SET opcode와 함께 보내주는 신호. p[2:0], q[2:0], s[2:0]
+    input [10:0] i_conv_info, // TOP CTRL에서 SET opcode와 함께 보내주는 신호. p[3:0], q[2:0], s[3:0]
     input       i_inst_valid, // TOP CTRL에서 opcode와 함께 보내주는 start 신호
     output reg  o_inst_ready, // (state == IDLE)일 때 활성화
 
@@ -28,8 +28,7 @@ module PE_control #(
     output reg o_psum_in_fifo_ready,
 
     //// Interface to OUTPUT PSUM FIFO ////
-    input i_psum_out_fifo_ready,    // from FIFO
-    input i_psum_out_fifo_valid,    // from datapath
+    input i_psum_out_fifo_ready, //from FIFO
 
     //// Interface to PE_datapath.v ////
 	output reg [IFMAP_ADDR_BITWIDTH-1:0] o_ifmap_ra,
@@ -67,25 +66,26 @@ module PE_control #(
     localparam  ACCRST           = 4'h7;
     localparam  DONE             = 4'h8;
 
-    reg [8:0] conv_info_reg;
+    reg [10:0] conv_info_reg;
     reg [3:0] state;
     reg [3:0] n_state;
 
     //counter
     reg [2:0] cnt_minimum_delay;
-    reg [2:0] cnt_P;
+    reg [3:0] cnt_P;
     reg [2:0] cnt_Q;
-    reg [2:0] cnt_S;
+    reg [3:0] cnt_S;
     reg [6:0] counter;
     
-    wire [2:0] P, Q, S;
+    wire [3:0] P;
+    wire [2:0] Q;
+    wire [3:0] S;
     assign {P, Q, S} = conv_info_reg;
 
     wire inst_hs = i_inst_valid && o_inst_ready;
     wire ifmap_fifo_hs = i_ifmap_fifo_valid && o_ifmap_fifo_ready;
     wire wght_fifo_hs = i_wght_fifo_valid && o_wght_fifo_ready;
     wire psum_in_fifo_hs = i_psum_in_fifo_valid && o_psum_in_fifo_ready;
-    wire psum_out_fifo_hs = i_psum_out_fifo_valid && i_psum_out_fifo_ready;
 
     //FSM : state register update
     always @(posedge i_clk) begin
@@ -190,7 +190,10 @@ module PE_control #(
                 case(state)
                     LOAD_IFMAP      : counter <= (ifmap_fifo_hs) ? counter - 1 : counter;
                     LOAD_WGHT       : counter <= (wght_fifo_hs) ? counter - 1 : counter;
-                    ACCRST          : counter <= ((counter >= P) && psum_in_fifo_hs) || ((counter < P)) ? counter - 1 : counter;
+                    ACCRST          : begin
+                        if(counter >= P)        counter <= (psum_in_fifo_hs) ? counter - 1 : counter;
+                        else if(counter < P)    counter <= counter - 1;
+                    end
                     default         : counter <= counter - 1;
                 endcase
             end 
@@ -227,13 +230,17 @@ module PE_control #(
                 cnt_Q <= 0;
             end
             else if(state == LOAD_IFMAP) begin
-                cnt_S <= (cnt_S == S - 1) ? 0 : cnt_S + 1;
-                cnt_Q <= (cnt_S == S - 1) ? ((cnt_Q == Q - 1) ? 0 : cnt_Q + 1) : cnt_Q;
+                if(ifmap_fifo_hs) begin
+                    cnt_S <= (cnt_S == S - 1) ? 0 : cnt_S + 1;
+                    cnt_Q <= (cnt_S == S - 1) ? ((cnt_Q == Q - 1) ? 0 : cnt_Q + 1) : cnt_Q;
+                end
             end
             else if(state == LOAD_WGHT) begin
-                cnt_P <= (cnt_P == P - 1) ? 0 : cnt_P + 1; 
-                cnt_S <= (cnt_P == P - 1) ? ((cnt_S == S - 1) ? 0 : cnt_S + 1) : cnt_S;
-                cnt_Q <= (cnt_P == P - 1) ? ((cnt_S == S - 1) ? ((cnt_Q == Q - 1) ? 0 : cnt_Q + 1) : cnt_Q) : cnt_Q;
+                if(wght_fifo_hs) begin
+                    cnt_P <= (cnt_P == P - 1) ? 0 : cnt_P + 1;
+                    cnt_S <= (cnt_P == P - 1) ? ((cnt_S == S - 1) ? 0 : cnt_S + 1) : cnt_S;
+                    cnt_Q <= (cnt_P == P - 1) ? ((cnt_S == S - 1) ? ((cnt_Q == Q - 1) ? 0 : cnt_Q + 1) : cnt_Q) : cnt_Q;
+                end
             end
             else if(state == CONV) begin
                 if(P < 3) begin // PSUM SPAD에 write한 partial sum을 곧바로 read하는 데 3 cycle이 소요됨. logic 보완 필요
@@ -249,7 +256,12 @@ module PE_control #(
                 end
             end
             else if(state == ACCRST) begin
-                cnt_P <= (cnt_P == P - 1) ? 0 : cnt_P + 1; 
+                if(counter >= P) begin
+                    if(psum_in_fifo_hs) cnt_P <= (cnt_P == P - 1) ? 0 : cnt_P + 1; 
+                end
+                else begin
+                    cnt_P <= (cnt_P == P - 1) ? 0 : cnt_P + 1;
+                end
             end
             else begin
                 cnt_P <= 0; 
@@ -354,7 +366,7 @@ module PE_control #(
                 o_ifmap_we = 0;
 
                 o_wght_wa = (cnt_P * Q * S) + (cnt_Q * S) + cnt_S;
-                o_wght_we = 1;
+                o_wght_we = i_wght_fifo_valid;
 
                 o_psum_wa = 0;
                 o_psum_we = 0;

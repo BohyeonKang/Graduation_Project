@@ -83,22 +83,28 @@ module tb_PE_datapath;
 		i_wght_data = 0;
 		i_psum_data = 0;
 
-		repeat (10) @(posedge i_clk);
+		repeat (5) @(posedge i_clk);
+
+		@(posedge i_clk); #1;
 		i_rst = 0;
 
 //////////////////////////////////////////////////////////
 
 		// Load ifmap
 		// [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3]
-
+		
+		@(posedge i_clk); #1;
 		i_ifmap_we = 1;
+
 		for (i = 0; i < Q; i = i + 1) begin
 			for (j = 0; j < S; j = j + 1) begin
+				@(posedge i_clk); #1;
 				i_ifmap_wa = (i * S) + j;
 				i_ifmap_data = j + 1;
-				@(posedge i_clk);
 			end
 		end
+
+		@(posedge i_clk); #1;
 		i_ifmap_we = 0;
 
 //////////////////////////////////////////////////////////
@@ -111,16 +117,22 @@ module tb_PE_datapath;
 		// [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3]
 		// [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3]
 		
+		repeat (10) @(posedge i_clk);
+
+		@(posedge i_clk); #1;
 		i_wght_we = 1;
+
 		for (i = 0; i < Q; i = i + 1) begin
 			for(j = 0; j < S; j = j + 1) begin
 				for (k = 0; k < P; k = k + 1) begin
+					@(posedge i_clk); #1;
 					i_wght_wa = (i * S) + j + (k * Q * S);
 					i_wght_data = j + 1;
-					@(posedge i_clk);
 				end
 			end
 		end
+
+		@(posedge i_clk); #1;
 		i_wght_we = 0;
 
 //////////////////////////////////////////////////////////
@@ -129,20 +141,24 @@ module tb_PE_datapath;
 
 		// Convolution
 
+		@(posedge i_clk); #1;
 		i_psum_we = 1;
+
 		for (i = 0; i < Q; i = i + 1) begin
 			for (j = 0; j < S; j = j + 1) begin
 				for (k = 0; k < P; k = k + 1) begin
+					@(posedge i_clk); #1;
 					i_ifmap_ra = (i * S) + j;
 					i_wght_ra = (i * S) + j + (k * Q * S);
 					i_psum_ra = k;
 					i_psum_wa = k;
 					i_rst_psum = 0;
 					i_acc_sel = 0;
-					@(posedge i_clk);
 				end
 			end
 		end
+
+		@(posedge i_clk); #1;
 		i_psum_wa = 0;
 		i_psum_we = 0;
 
@@ -152,12 +168,13 @@ module tb_PE_datapath;
 
 		// Psum Accumulation
 		for (i = 0; i < 6; i = i + 1) begin
+			@(posedge i_clk); #1;
 			i_psum_ra = i;
 			i_acc_sel = 1;
 			i_psum_data = 10;
-			@(posedge i_clk);
 		end
 
+		@(posedge i_clk); #1;
 		i_psum_ra = 0;
 		i_acc_sel = 0;
 		i_psum_data = 0;
@@ -169,14 +186,15 @@ module tb_PE_datapath;
 
 		// Reset Psum accumulation
 		for (i = 0; i < 6; i = i + 1) begin
+			@(posedge i_clk); #1;
 			i_rst_psum = 1;
 			i_psum_data = 0;
 			i_acc_sel = 1;
 			i_psum_wa = i;
 			i_psum_we = 1;
-			@(posedge i_clk);
 		end
 
+		@(posedge i_clk); #1;
 		i_rst_psum = 0;
 		i_psum_data = 0;
 		i_acc_sel = 0;
@@ -185,18 +203,19 @@ module tb_PE_datapath;
 
 //////////////////////////////////////////////////////////
 
-		repeat (10) @(posedge i_clk);
+		repeat (10) @(posedge i_clk); #1;
 
 		// Reset Psum accumulation with i_psum_data
 		for (i = 0; i < 6; i = i + 1) begin
+			@(posedge i_clk); #1;
 			i_rst_psum = 1;
 			i_psum_data = 10;
 			i_acc_sel = 1;
 			i_psum_wa = i;
 			i_psum_we = 1;
-			@(posedge i_clk);
 		end
 
+		@(posedge i_clk); #1;
 		i_rst_psum = 0;
 		i_psum_data = 0;
 		i_acc_sel = 0;

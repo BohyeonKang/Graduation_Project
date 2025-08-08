@@ -2,55 +2,86 @@
 
 module PE_top #(
     parameter DATA_BITWIDTH = 8,
+    parameter IFMAP_BUS_BITWIDTH = 8,
+    parameter WGHT_BUS_BITWIDTH = 32,
+    parameter PSUM_BUS_BITWIDTH = 32,
     parameter IFMAP_ADDR_BITWIDTH = 4,
     parameter WGHT_ADDR_BITWIDTH = 7,
-    parameter PSUM_ADDR_BITWIDTH = 3
+    parameter PSUM_ADDR_BITWIDTH = 3,
+    parameter N_CHUNKS = WGHT_BUS_BITWIDTH / IFMAP_BUS_BITWIDTH
 )(
     input i_clk,
     input i_rst,
 
     //TOP CTRL
     input [2:0] i_inst_data,
-    input [8:0] i_conv_info,
+    input [10:0] i_conv_info, // p[3:0], q[2:0], s[3:0]
     input i_inst_valid,
     output o_inst_ready,
 
     //fifo interface I/O
-	input [DATA_BITWIDTH-1:0] i_ifmap_fifo_data,
+	input [IFMAP_BUS_BITWIDTH-1:0] i_ifmap_fifo_data,
     input i_ifmap_fifo_valid,
     output o_ifmap_fifo_ready,
 
-    input [DATA_BITWIDTH-1:0] i_wght_fifo_data,
+    input [WGHT_BUS_BITWIDTH-1:0] i_wght_fifo_data,
     input i_wght_fifo_valid,
     output o_wght_fifo_ready,
 
-    input [DATA_BITWIDTH-1:0] i_psum_in_fifo_data,
+    input [PSUM_BUS_BITWIDTH-1:0] i_psum_in_fifo_data,
     input i_psum_in_fifo_valid,
     output o_psum_in_fifo_ready,
 
-    output [DATA_BITWIDTH-1:0] o_psum_out_fifo_data,
+    output [PSUM_BUS_BITWIDTH-1:0] o_psum_out_fifo_data,
     output o_psum_out_fifo_valid,
     input i_psum_out_fifo_ready
 );
 
-    //Local FIFO interface signals
-    wire [DATA_BITWIDTH-1:0] ifmap_data_fifo2datapath;
+    // Local FIFO & PISO, SIPO interface signals
+
+    wire [IFMAP_BUS_BITWIDTH-1:0] ifmap_data_fifo2datapath;
     wire ifmap_valid_fifo2ctrl;
     wire ifmap_ready_ctrl2fifo;
 
-    wire [DATA_BITWIDTH-1:0] wght_data_fifo2datapath;
+    wire [WGHT_BUS_BITWIDTH-1:0] wght_data_fifo2datapath;
     wire wght_valid_fifo2ctrl;
     wire wght_ready_ctrl2fifo;
-
-    wire [DATA_BITWIDTH-1:0] psum_in_data_fifo2datapath;
+    
+    wire [PSUM_BUS_BITWIDTH-1:0] psum_in_data_fifo2datapath;
     wire psum_in_valid_fifo2ctrl;
     wire psum_in_ready_ctrl2fifo;
 
-    wire [DATA_BITWIDTH-1:0] psum_out_data_datapath2fifo;
-    wire psum_out_valid_datapath2ctrl;
+    wire [PSUM_BUS_BITWIDTH-1:0] psum_out_data_datapath2fifo;
+    wire psum_out_valid_datapath2fifo;
     wire psum_out_ready_fifo2ctrl;
 
-    //Local control signals
+    /*
+    wire [WGHT_BUS_BITWIDTH-1:0] wght_data_fifo2piso;
+    wire wght_valid_fifo2piso;
+    wire wght_ready_piso2fifo;
+
+    wire wght_ready_ctrl2piso;
+    wire wght_valid_piso2ctrl;
+    wire [DATA_BITWIDTH-1:0] wght_data_piso2datapath;
+
+    wire [PSUM_BUS_BITWIDTH-1:0] psum_in_data_fifo2piso;
+    wire psum_in_valid_fifo2piso;
+    wire psum_in_ready_piso2fifo;
+
+    wire psum_in_ready_ctrl2piso;
+    wire psum_in_valid_piso2ctrl;
+    wire [DATA_BITWIDTH-1:0] psum_in_data_piso2datapath;
+
+    wire psum_out_valid_datapath2sipo;
+    wire [DATA_BITWIDTH-1:0] psum_out_data_datapath2sipo;
+    wire psum_out_ready_sipo2ctrl;
+
+    wire [PSUM_BUS_BITWIDTH-1:0] psum_out_data_sipo2fifo;
+    wire psum_out_valid_sipo2fifo;
+    wire psum_out_ready_fifo2sipo;
+    */
+
+    // Local control signals
     wire [IFMAP_ADDR_BITWIDTH-1:0] ifmap_ra_ctrl2datapath, ifmap_wa_ctrl2datapath;
     wire [WGHT_ADDR_BITWIDTH-1:0]  wght_ra_ctrl2datapath, wght_wa_ctrl2datapath;
     wire [PSUM_ADDR_BITWIDTH-1:0]  psum_ra_ctrl2datapath, psum_wa_ctrl2datapath;
@@ -59,8 +90,8 @@ module PE_top #(
     wire acc_sel_ctrl2datapath, rst_psum_ctrl2datapath;
 
     fifo #(
-        .QUEUE_PTR_BANDWIDTH(),
-        .ELE_BANDWIDTH(DATA_BITWIDTH)
+        .QUEUE_PTR_BANDWIDTH(4),
+        .ELE_BANDWIDTH(IFMAP_BUS_BITWIDTH)
     ) u_ifmap_fifo (
         .i_clk(i_clk),
         .i_rst(i_rst),
@@ -77,8 +108,8 @@ module PE_top #(
     );
 
     fifo #(
-        .QUEUE_PTR_BANDWIDTH(),
-        .ELE_BANDWIDTH(DATA_BITWIDTH)
+        .QUEUE_PTR_BANDWIDTH(8),
+        .ELE_BANDWIDTH(WGHT_BUS_BITWIDTH)
     ) u_wght_fifo (
         .i_clk(i_clk),
         .i_rst(i_rst),
@@ -94,9 +125,30 @@ module PE_top #(
         .o_pop_data(wght_data_fifo2datapath)
     );
 
+    /*
+    PISO #(
+        .IN_WIDTH(WGHT_BUS_BITWIDTH),
+        .OUT_WIDTH(DATA_BITWIDTH),
+        .N_CHUNKS(N_CHUNKS)
+    ) u_wght_piso (
+        .i_clk    (i_clk),  
+        .i_rst    (i_rst),
+
+        .i_flush  (o_inst_ready),
+
+        .i_data   (wght_data_fifo2piso), 
+        .i_valid  (wght_valid_fifo2piso),
+        .o_ready  (wght_ready_piso2fifo),
+
+        .i_ready  (wght_ready_ctrl2piso),
+        .o_valid  (wght_valid_piso2ctrl),
+        .o_data   (wght_data_piso2datapath)  
+    );
+    */
+
     fifo #(
-        .QUEUE_PTR_BANDWIDTH(),
-        .ELE_BANDWIDTH(DATA_BITWIDTH)
+        .QUEUE_PTR_BANDWIDTH(4),
+        .ELE_BANDWIDTH(PSUM_BUS_BITWIDTH)
     ) u_psum_in_fifo (
         .i_clk(i_clk),
         .i_rst(i_rst),
@@ -112,16 +164,37 @@ module PE_top #(
         .o_pop_data(psum_in_data_fifo2datapath)
     );
 
+    /*
+    PISO #(
+        .IN_WIDTH(PSUM_BUS_BITWIDTH),
+        .OUT_WIDTH(DATA_BITWIDTH),
+        .N_CHUNKS(N_CHUNKS)
+    ) u_psum_in_piso (
+        .i_clk    (i_clk),  
+        .i_rst    (i_rst),
+
+        .i_flush  (o_inst_ready),
+
+        .i_data   (psum_in_data_fifo2piso), 
+        .i_valid  (psum_in_valid_fifo2piso),
+        .o_ready  (psum_in_ready_piso2fifo),
+
+        .i_ready  (psum_in_ready_ctrl2piso),
+        .o_valid  (psum_in_valid_piso2ctrl),
+        .o_data   (psum_in_data_piso2datapath)   
+    );
+    */
+
     fifo #(
         .QUEUE_PTR_BANDWIDTH(),
-        .ELE_BANDWIDTH(DATA_BITWIDTH)
+        .ELE_BANDWIDTH(PSUM_BUS_BITWIDTH)
     ) u_psum_out_fifo (
         .i_clk(i_clk),
         .i_rst(i_rst),
 
         //FIFO interface as rx
         .i_push_data(psum_out_data_datapath2fifo),
-        .i_valid(psum_out_valid_datapath2ctrl),
+        .i_valid(psum_out_valid_datapath2fifo),
         .o_ready(psum_out_ready_fifo2ctrl),
 
         //FIFO interface as tx
@@ -129,6 +202,29 @@ module PE_top #(
         .o_valid(o_psum_out_fifo_valid),
         .o_pop_data(o_psum_out_fifo_data)
     );
+
+    /*
+    SIPO #(
+        .IN_WIDTH(DATA_BITWIDTH),
+        .OUT_WIDTH(PSUM_BUS_BITWIDTH),
+        .N_CHUNKS(N_CHUNKS)
+    ) u_psum_out_sipo (
+        .i_clk    (i_clk),      // 클럭
+        .i_rst    (i_rst),      // 리셋
+
+        .i_flush  (o_inst_ready),
+
+        // 직렬 입력 인터페이스 (rx)
+        .i_valid  (psum_out_valid_datapath2sipo),    // 입력 데이터 유효
+        .i_data   (psum_out_data_datapath2sipo),     // 8비트 입력
+        .o_ready  (psum_out_ready_sipo2ctrl),    // 입력 수신 가능
+
+        // 병렬 출력 인터페이스 (tx)
+        .i_ready  (psum_out_ready_fifo2sipo),    // 출력 수신 가능
+        .o_valid  (psum_out_valid_sipo2fifo),    // 출력 데이터 유효
+        .o_data   (psum_out_data_sipo2fifo)      // 32비트 병렬 출력
+    );
+    */
 
     PE_control #(
         .DATA_BITWIDTH(DATA_BITWIDTH),
@@ -151,7 +247,6 @@ module PE_top #(
         .i_psum_in_fifo_valid(psum_in_valid_fifo2ctrl),
         .o_psum_in_fifo_ready(psum_in_ready_ctrl2fifo),
         .i_psum_out_fifo_ready(psum_out_ready_fifo2ctrl),
-        .i_psum_out_fifo_valid(psum_out_valid_datapath2ctrl),
 
         .o_ifmap_ra(ifmap_ra_ctrl2datapath),
         .o_wght_ra(wght_ra_ctrl2datapath),
@@ -192,7 +287,7 @@ module PE_top #(
         .i_psum_we(psum_we_ctrl2datapath),
         .i_acc_sel(acc_sel_ctrl2datapath),
         .i_rst_psum(rst_psum_ctrl2datapath),
-        .o_psum_out_valid(psum_out_valid_datapath2ctrl)
+        .o_psum_out_valid(psum_out_valid_datapath2fifo)
     );
 
 endmodule

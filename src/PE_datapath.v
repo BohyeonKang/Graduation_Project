@@ -9,10 +9,10 @@ module PE_datapath #(
 	input i_clk, i_rst,
 
 	// input, output data
-	input signed [DATA_BITWIDTH-1:0] i_ifmap_data,
-	input signed [DATA_BITWIDTH-1:0] i_wght_data,
-	input signed [DATA_BITWIDTH-1:0] i_psum_data,
-	output reg signed [DATA_BITWIDTH-1:0] o_psum_data,
+	input [DATA_BITWIDTH-1:0] i_ifmap_data,
+	input [DATA_BITWIDTH-1:0] i_wght_data,
+	input [DATA_BITWIDTH-1:0] i_psum_data,
+	output reg [DATA_BITWIDTH-1:0] o_psum_data,
 
 	// PE controller interface
 	input i_acc_sel,
@@ -23,7 +23,7 @@ module PE_datapath #(
 	input [PSUM_ADDR_BITWIDTH-1:0] i_psum_ra,
 	
 	input [IFMAP_ADDR_BITWIDTH-1:0] i_ifmap_wa,
-	input [WGHT_ADDR_BITWIDTH-1:0]  i_wght_wa,
+	input [WGHT_ADDR_BITWIDTH-1:0] i_wght_wa,
 	input [PSUM_ADDR_BITWIDTH-1:0] i_psum_wa,
 
 	input i_ifmap_we,
@@ -38,9 +38,9 @@ module PE_datapath #(
 	reg [DATA_BITWIDTH-1:0] psum_in_reg, psum_in_reg_d, psum_in_reg_d2;
 
 	//delayed spad data
-	wire signed [DATA_BITWIDTH-1:0] ifmap_rd;
-	wire signed [DATA_BITWIDTH-1:0] wght_rd;
-	wire signed [DATA_BITWIDTH-1:0] psum_rd;
+	wire [DATA_BITWIDTH-1:0] ifmap_rd;
+	wire [DATA_BITWIDTH-1:0] wght_rd;
+	wire [DATA_BITWIDTH-1:0] psum_rd;
 
 	reg [DATA_BITWIDTH-1:0] ifmap_reg;
 	reg [DATA_BITWIDTH-1:0] psum_reg, psum_reg_d, psum_reg_d2;

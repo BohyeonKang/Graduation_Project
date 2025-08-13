@@ -1,6 +1,6 @@
 import random
 
-def generate_random_nchw():
+def generate_random_nchw(N, C, H, W):
     # Generate a random 32-bit integer
     random_int = random.getrandbits(32)
 

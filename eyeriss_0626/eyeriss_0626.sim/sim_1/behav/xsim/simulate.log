@@ -1,4 +1,0 @@
-Time resolution is 1 ps
-Start Testbench
-$stop called at time : 665 ns : File "C:/LAB/Graduation_Project/eyeriss_0626/eyeriss_0626.srcs/sim_1/imports/tb/tb_PE_array.v" Line 327
-$stop called at time : 1575 ns : File "C:/LAB/Graduation_Project/eyeriss_0626/eyeriss_0626.srcs/sim_1/imports/tb/tb_PE_array.v" Line 354

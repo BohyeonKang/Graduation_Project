@@ -1,0 +1,29 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:04:56 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Sun Sep 28 12:20:43 2025
+# Process ID: 227267
+# Current directory: /home/esoc/broadwise/vivado/projects/eyeriss/xpr
+# Command line: vivado
+# Log file: /home/esoc/broadwise/vivado/projects/eyeriss/xpr/vivado.log
+# Journal file: /home/esoc/broadwise/vivado/projects/eyeriss/xpr/vivado.jou
+# Running On: esoc-desktop, OS: Linux, CPU Frequency: 1200.000 MHz, CPU Physical cores: 10, Host memory: 50201 MB
+#-----------------------------------------------------------
+start_gui
+create_project eyeriss_bd /home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd -part xczu28dr-ffvg1517-2-e
+set_property board_part xilinx.com:zcu111:part0:1.4 [current_project]
+create_bd_design "design_1"
+update_compile_order -fileset sources_1
+set_property  ip_repo_paths  /home/esoc/broadwise/vivado/projects/eyeriss/ip_repo [current_project]
+update_ip_catalog
+startgroup
+create_bd_cell -type ip -vlnv user.org:user:eyeriss_top:1.0 eyeriss_top_0
+endgroup
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:zynq_ultra_ps_e:3.5 zynq_ultra_ps_e_0
+endgroup
+apply_bd_automation -rule xilinx.com:bd_rule:zynq_ultra_ps_e -config {apply_board_preset "1" }  [get_bd_cells zynq_ultra_ps_e_0]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {Auto} Clk_xbar {Auto} Master {/zynq_ultra_ps_e_0/M_AXI_HPM0_FPD} Slave {/eyeriss_top_0/s00_axi} ddr_seg {Auto} intc_ip {New AXI Interconnect} master_apm {0}}  [get_bd_intf_pins eyeriss_top_0/s00_axi]
+save_bd_design

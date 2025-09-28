@@ -1,0 +1,120 @@
+/*
+@0x00 : GLB_allocation
+@0x01 : total_pass
+@0x02 : i_layer_HW
+@0x03 : i_layer_U
+@0x04 : i_layer_PAD
+@0x05 : i_layer_m
+@0x06 : i_layer_n
+@0x07 : i_layer_e
+@0x08 : i_layer_p
+@0x09 : i_layer_q
+@0x0A : i_layer_r
+@0x0B : i_layer_s
+@0x0C : i_layer_t
+@0x0D : ifmap row id
+@0x0E : wght row id
+@0x0F : psum row id
+@0x10 : ifmap col id - PE set (0,0) to (0,5)
+@0x11 : ifmap col id - PE set (0,6) to (0,11)
+@0x12 : ifmap col id - PE set (0,12) to (1,4)
+@0x13 : ifmap col id - PE set (1,5) to (1,10)
+@0x14 : ifmap col id - PE set (1,11) to (2,3)
+@0x15 : ifmap col id - PE set (2,4) to (2,9)
+@0x16 : ifmap col id - PE set (2,10) to (2,12)
+@0x17~0x1B : wght col id
+@0x1C~0x20 : psum col id
+*/
+
+// GLB_allocation
+0015
+
+// total_pass
+0001
+
+// i_layer_HW
+000F
+
+// i_layer_U
+0001
+
+// i_layer_PAD
+0000
+
+// i_layer_m
+0010
+
+// i_layer_n
+0001
+
+// i_layer_e
+000D
+
+// i_layer_p
+0010
+
+// i_layer_q
+0004
+
+// i_layer_r
+0001
+
+// i_layer_s
+0003
+
+// i_layer_t
+0001
+
+// ifmap row id
+0111
+
+// wght row id
+0123
+
+// psum row id
+0123
+
+// ifmap col id - PE set (0,0) to (0,5)
+// i.e. {5'd1, 5'd2, 5'd3, 5'd4, 5'd5, 5'd6}
+022190A6
+
+// ifmap col id - PE set (0,6) to (0,11)
+// i.e. {5'd7, 5'd8, 5'd9, 5'd10, 5'd11, 5'd12}
+0E84A96C
+
+// ifmap col id - PE set (0,12) to (1,4)
+// i.e. {5'd13, 5'd2, 5'd3, 5'd4, 5'd5, 5'd6}
+1A2190A6
+
+// ifmap col id - PE set (1,5) to (1,10)
+// i.e. {5'd7, 5'd8, 5'd9, 5'd10, 5'd11, 5'd12}
+0E84A96C
+
+// ifmap col id - PE set (1,11) to (2,3)
+// i.e. {5'd13, 5'd14, 5'd3, 5'd4, 5'd5, 5'd6}
+1AE190A6
+
+// ifmap col id - PE set (2,4) to (2,9)
+// i.e. {5'd7, 5'd8, 5'd9, 5'd10, 5'd11, 5'd12}
+0E84A96C
+
+// ifmap col id - PE set (2,10) to (2,12)
+// i.e. {5'd13, 5'd14, 5'd15}
+0x000035CF
+
+
+
+
+// wght col id
+11111111
+11111111
+11111111
+11111111
+01111111
+
+// psum col id
+12345678
+9ABCD123
+456789AB
+CD123456
+0789ABCD

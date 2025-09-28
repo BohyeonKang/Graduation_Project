@@ -1,4 +1,0 @@
-Running: xsim.dir/tb_eyeriss_behav/xsimk.exe -simmode gui -wdb tb_eyeriss_behav.wdb -simrunnum 0 -socket 2993
-Design successfully loaded
-Design Loading Memory Usage: 8524 KB (Peak: 8524 KB)
-Design Loading CPU Usage: 31 ms

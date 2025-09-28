@@ -1,0 +1,7 @@
+xvlog -sv -f ./design_list.f -f ./testbench_list.f
+xelab tb_eyeriss_wrapper -debug all -s  tb_eyeriss_wrapper
+xsim tb_eyeriss_wrapper -gui -wdb simulate_xsim_tb_eyeriss_wrapper.wdb -log simulate.log &
+
+# xvlog ./design_list.f -f ./testbench_list.f
+# xelab {your_test_bench_module_name} -debug all -s  {your_test_bench_module_name}
+# xsim {your_test_bench_module_name} -gui -wdb simulate_xsim_{your_top_module_anme}_tb.wdb -tclbatch kim_sim.tcl -log simulate.log

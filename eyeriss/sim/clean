@@ -1,0 +1,1 @@
+rm -rf *xe* *xs* *trace* *xv* *webtalk* *backup* .Xil .hbs *.log *.str 

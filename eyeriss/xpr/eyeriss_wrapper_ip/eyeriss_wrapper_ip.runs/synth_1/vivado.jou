@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:04:56 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Sun Sep 28 13:17:20 2025
+# Process ID: 256510
+# Current directory: /home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_wrapper_ip/eyeriss_wrapper_ip.runs/synth_1
+# Command line: vivado -log eyeriss_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source eyeriss_top.tcl
+# Log file: /home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_wrapper_ip/eyeriss_wrapper_ip.runs/synth_1/eyeriss_top.vds
+# Journal file: /home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_wrapper_ip/eyeriss_wrapper_ip.runs/synth_1/vivado.jou
+# Running On: esoc-desktop, OS: Linux, CPU Frequency: 1200.000 MHz, CPU Physical cores: 10, Host memory: 50201 MB
+#-----------------------------------------------------------
+source eyeriss_top.tcl -notrace

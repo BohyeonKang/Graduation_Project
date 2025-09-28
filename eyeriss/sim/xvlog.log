@@ -1,0 +1,78 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/esoc/broadwise/vivado/projects/eyeriss/src/fifo.v" into library work
+INFO: [VRFC 10-311] analyzing module fifo
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/esoc/broadwise/vivado/projects/eyeriss/src/GIN_BUS.v" into library work
+INFO: [VRFC 10-311] analyzing module GIN_BUS
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/esoc/broadwise/vivado/projects/eyeriss/src/GLB_addr_decoder.v" into library work
+INFO: [VRFC 10-311] analyzing module GLB_addr_decoder
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/esoc/broadwise/vivado/projects/eyeriss/src/GLB.v" into library work
+INFO: [VRFC 10-311] analyzing module GLB
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/esoc/broadwise/vivado/projects/eyeriss/src/ifmap_load_ctrl.v" into library work
+INFO: [VRFC 10-311] analyzing module ifmap_load_ctrl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/esoc/broadwise/vivado/projects/eyeriss/src/MC.v" into library work
+INFO: [VRFC 10-311] analyzing module MC
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/esoc/broadwise/vivado/projects/eyeriss/src/PE_array.v" into library work
+INFO: [VRFC 10-311] analyzing module PE_array
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/esoc/broadwise/vivado/projects/eyeriss/src/PE_control.v" into library work
+INFO: [VRFC 10-311] analyzing module PE_control
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/esoc/broadwise/vivado/projects/eyeriss/src/PE_datapath.v" into library work
+INFO: [VRFC 10-311] analyzing module PE_datapath
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/esoc/broadwise/vivado/projects/eyeriss/src/PE_top.v" into library work
+INFO: [VRFC 10-311] analyzing module PE_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/esoc/broadwise/vivado/projects/eyeriss/src/PE_vector.v" into library work
+INFO: [VRFC 10-311] analyzing module PE_vector
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/esoc/broadwise/vivado/projects/eyeriss/src/PISO.v" into library work
+INFO: [VRFC 10-311] analyzing module PISO
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/esoc/broadwise/vivado/projects/eyeriss/src/psum_load_ctrl.v" into library work
+INFO: [VRFC 10-311] analyzing module psum_load_ctrl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/esoc/broadwise/vivado/projects/eyeriss/src/psum_selection_decoder.v" into library work
+INFO: [VRFC 10-311] analyzing module psum_selection_decoder
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/esoc/broadwise/vivado/projects/eyeriss/src/psum_store_ctrl.v" into library work
+INFO: [VRFC 10-311] analyzing module psum_store_ctrl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/esoc/broadwise/vivado/projects/eyeriss/src/rams_dist.v" into library work
+INFO: [VRFC 10-311] analyzing module rams_dist
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/esoc/broadwise/vivado/projects/eyeriss/src/RF.v" into library work
+INFO: [VRFC 10-311] analyzing module RF
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/esoc/broadwise/vivado/projects/eyeriss/src/sftreg.v" into library work
+INFO: [VRFC 10-311] analyzing module sftreg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/esoc/broadwise/vivado/projects/eyeriss/src/SIPO.v" into library work
+INFO: [VRFC 10-311] analyzing module SIPO
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/esoc/broadwise/vivado/projects/eyeriss/src/TOP_ctrl.v" into library work
+INFO: [VRFC 10-311] analyzing module TOP_ctrl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/esoc/broadwise/vivado/projects/eyeriss/src/true_dpbram.v" into library work
+INFO: [VRFC 10-311] analyzing module true_dpbram
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/esoc/broadwise/vivado/projects/eyeriss/src/true_dpbram_config.v" into library work
+INFO: [VRFC 10-311] analyzing module true_dpbram_config
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/esoc/broadwise/vivado/projects/eyeriss/src/wght_load_ctrl.v" into library work
+INFO: [VRFC 10-311] analyzing module wght_load_ctrl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/esoc/broadwise/vivado/projects/eyeriss/src/eyeriss_wrapper.v" into library work
+INFO: [VRFC 10-311] analyzing module eyeriss_wrapper
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/esoc/broadwise/vivado/projects/eyeriss/tb/tb_GIN_BUS.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_GIN_BUS
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/esoc/broadwise/vivado/projects/eyeriss/tb/tb_GLB.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_GLB
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/esoc/broadwise/vivado/projects/eyeriss/tb/tb_MC.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_MC
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/esoc/broadwise/vivado/projects/eyeriss/tb/tb_PE_control.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_PE_control
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/esoc/broadwise/vivado/projects/eyeriss/tb/tb_PE_datapath.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_PE_datapath
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/esoc/broadwise/vivado/projects/eyeriss/tb/tb_PE_top.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_PE_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/esoc/broadwise/vivado/projects/eyeriss/tb/tb_PE_array.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_PE_array
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/esoc/broadwise/vivado/projects/eyeriss/tb/tb_psum_selection_decoder.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_psum_selection_decoder
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/esoc/broadwise/vivado/projects/eyeriss/tb/tb_sftreg.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_sftreg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/esoc/broadwise/vivado/projects/eyeriss/tb/tb_SPad.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_Spad
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/esoc/broadwise/vivado/projects/eyeriss/tb/tb_TOP_ctrl.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_TOP_ctrl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/esoc/broadwise/vivado/projects/eyeriss/tb/tb_eyeriss_testcase.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_eyeriss
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/esoc/broadwise/vivado/projects/eyeriss/tb/tb_eyeriss_conv3.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_eyeriss_conv3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/esoc/broadwise/vivado/projects/eyeriss/tb/tb_eyeriss_conv45.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_eyeriss_conv45
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/esoc/broadwise/vivado/projects/eyeriss/tb/tb_eyeriss_wrapper.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_eyeriss_wrapper

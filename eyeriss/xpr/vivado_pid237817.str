@@ -1,0 +1,1228 @@
+/*
+
+AMD Vivado v2023.1 (64-bit) [Major: 2023, Minor: 1]
+SW Build: 3865809 on Sun May  7 15:04:56 MDT 2023
+IP Build: 3864474 on Sun May  7 20:36:21 MDT 2023
+IP Build: 3864474 on Sun May  7 20:36:21 MDT 2023
+
+Process ID (PID): 237817
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Sun Sep 28 12:47:45 KST 2025
+Time zone: 	Korean Standard Time (Asia/Seoul)
+
+OS: Ubuntu
+OS Version: 5.15.0-139-generic
+OS Architecture: amd64
+Available processors (cores): 20
+
+Display: localhost:12.0
+Screen size: 1920x1080
+Screen resolution (DPI): 100
+Available screens: 1
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+Scale size: 12
+OS font scaling: 100%
+
+Java version: 	17.0.3 64-bit
+JavaFX version: 17.0.1
+Java home: 	/tools/Xilinx/Vivado/2023.1/tps/lnx64/jre17.0.3_7
+Java executable: 	/tools/Xilinx/Vivado/2023.1/tps/lnx64/jre17.0.3_7/bin/java
+Java arguments: 	[-Dsun.java2d.pmoffscreen=false, -Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2, -Dsun.java2d.xrender=false, -Djdk.gtk.version=2, -Dsun.java2d.uiScale.enabled=false, -Dswing.aatext=true, -XX:-UsePerfData, -Djdk.map.althashing.threshold=512, -XX:StringTableSize=4072, -XX:+UseStringDeduplication, -XX:MaxGCPauseMillis=200, -XX:+ParallelRefProcEnabled, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.base/java.nio=ALL-UNNAMED, --add-opens=java.desktop/sun.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/java.awt.event=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.base/java.nio=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.table=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.desktop/sun.awt.shell=ALL-UNNAMED, --add-exports=java.base/sun.security.action=ALL-UNNAMED, --add-exports=java.desktop/sun.font=ALL-UNNAMED, --add-opens=java.desktop/sun.awt.X11=ALL-UNNAMED, -XX:NewSize=80m, -XX:MaxNewSize=80m, -Xms512m, -Xmx4072m, -Xss10m, -Xrs]
+Java initial memory (-Xms): 	512 MB
+Java maximum memory (-Xmx):	 3 GB
+
+User name: 	esoc
+User home directory: /home/esoc
+User working directory: /home/esoc/broadwise/vivado/projects/eyeriss/xpr
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: /tools/Xilinx/Vivado
+HDI_APPROOT: /tools/Xilinx/Vivado/2023.1
+RDI_DATADIR: /tools/Xilinx/SharedData/2023.1/data:/tools/Xilinx/Vivado/2023.1/data
+RDI_BINDIR: /tools/Xilinx/Vivado/2023.1/bin
+
+Vivado preferences file: /home/esoc/.Xilinx/Vivado/2023.1/vivado.xml
+Vivado preferences directory: /home/esoc/.Xilinx/Vivado/2023.1/
+Vivado layouts directory: /home/esoc/.Xilinx/Vivado/2023.1/data/layouts
+PlanAhead jar file: 	/tools/Xilinx/Vivado/2023.1/lib/classes/planAhead.jar
+Vivado log file: 	/home/esoc/broadwise/vivado/projects/eyeriss/xpr/vivado.log
+Vivado journal file: 	/home/esoc/broadwise/vivado/projects/eyeriss/xpr/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-237817-esoc-desktop
+Non-Default Parameters:	[]
+
+Xilinx & AMD Environment Variables
+--------------------------------------------------------------------------------------------
+RDI_APPROOT: /tools/Xilinx/Vivado/2023.1
+RDI_BASEROOT: /tools/Xilinx/Vivado
+RDI_BINROOT: /tools/Xilinx/Vivado/2023.1/bin
+RDI_BUILD: yes
+RDI_DATADIR: /tools/Xilinx/SharedData/2023.1/data:/tools/Xilinx/Vivado/2023.1/data
+RDI_INSTALLROOT: /tools/Xilinx
+RDI_INSTALLVER: 2023.1
+RDI_JAVA_PLATFORM: 
+RDI_JAVA_VERSION: 17.0.3_7
+RDI_LIBDIR: /tools/Xilinx/Vivado/2023.1/lib/lnx64.o/Ubuntu/20:/tools/Xilinx/Vivado/2023.1/lib/lnx64.o/Ubuntu:/tools/Xilinx/Vivado/2023.1/lib/lnx64.o
+RDI_OPT_EXT: .o
+RDI_PATCHROOT: 
+RDI_PLATFORM: lnx64
+RDI_PREPEND_PATH: /tools/Xilinx/Vitis/2023.1/bin:/tools/Xilinx/Vivado/2023.1/ids_lite/ISE/bin/lin64
+RDI_PROG: /tools/Xilinx/Vivado/2023.1/bin/unwrapped/lnx64.o/vivado
+RDI_SESSION_INFO: /home/esoc/broadwise/vivado/projects/eyeriss/xpr:esoc-desktop_1759031252_237777
+RDI_SHARED_DATA: /tools/Xilinx/SharedData/2023.1/data
+RDI_TPS_ROOT: /tools/Xilinx/Vivado/2023.1/tps/lnx64
+RDI_USE_JDK17: True
+SHELL: /bin/bash
+XILINX: /tools/Xilinx/Vivado/2023.1/ids_lite/ISE
+XILINX_DSP: /tools/Xilinx/Vivado/2023.1/ids_lite/ISE
+XILINX_HLS: /tools/Xilinx/Vitis_HLS/2023.1
+XILINX_PLANAHEAD: /tools/Xilinx/Vivado/2023.1
+XILINX_SDK: /tools/Xilinx/Vitis/2023.1
+XILINX_VITIS: /tools/Xilinx/Vitis/2023.1
+XILINX_VIVADO: /tools/Xilinx/Vivado/2023.1
+XILINX_VIVADO_HLS: /tools/Xilinx/Vivado/2023.1
+XILINX_XRT: /opt/xilinx/xrt
+
+
+GUI allocated memory:	512 MB
+GUI max memory:		4,072 MB
+Engine allocated memory: 2,595 MB
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+selectList(PAResourceQtoS.SyntheticaGettingStartedView_RECENT_PROJECTS, "/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_wrapper_ip/eyeriss_wrapper_ip.xpr", 1); // b.c
+// [GUI Memory]: 81 MB (+82144kb) [00:00:08]
+// [Engine Memory]: 2,508 MB (+2477898kb) [00:00:08]
+// Opening Vivado Project: /home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_wrapper_ip/eyeriss_wrapper_ip.xpr. Version: Vivado v2023.1 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: FLOW_ADDED
+// Tcl Message: open_project /home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_wrapper_ip/eyeriss_wrapper_ip.xpr 
+// HMemoryUtils.trashcanNow. Engine heap size: 2,683 MB. GUI used memory: 67 MB. Current time: 9/28/25, 12:47:46 PM KST
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project /home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_wrapper_ip/eyeriss_wrapper_ip.xpr 
+// Tcl Message: INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory '/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_wrapper_ip/eyeriss_wrapper_ip.gen/sources_1'. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 233 MB (+155146kb) [00:00:16]
+// [Engine Memory]: 2,833 MB (+210205kb) [00:00:16]
+// WARNING: HEventQueue.dispatchEvent() is taking  2398 ms.
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/esoc/broadwise/vivado/projects/eyeriss/ip_repo'. INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2023.1/data/ip'. 
+// Tcl Message: open_project: Time (s): cpu = 00:00:18 ; elapsed = 00:00:09 . Memory (MB): peak = 8918.336 ; gain = 360.609 ; free physical = 22806 ; free virtual = 34590 
+// Project name: eyeriss_wrapper_ip; location: /home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_wrapper_ip; part: xczu28dr-ffvg1517-2-e
+// Elapsed time: 10 seconds
+dismissDialog("Open Project"); // bq
+// [Engine Memory]: 2,981 MB (+5642kb) [00:00:19]
+// Tcl Message: update_compile_order -fileset sources_1 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v)]", 1, true); // E - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v)]", 1); // E
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v)]", 1); // E
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v)]", 1); // E
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_axi_lite_slave : axi_lite_slave (axi_lite_slave.v)]", 2, false); // E
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v)]", 3, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_axi_lite_slave : axi_lite_slave (axi_lite_slave.v)]", 2, false); // E
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v)]", 1, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_axi_lite_slave : axi_lite_slave (axi_lite_slave.v)]", 2, false); // E
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v)]", 3, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_axi_lite_slave : axi_lite_slave (axi_lite_slave.v)]", 2, false); // E
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v)]", 1, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v)]", 3, true); // E - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v)]", 3); // E
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), glb_inst : GLB (GLB.v)]", 6, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), top_ctrl_inst : TOP_ctrl (TOP_ctrl.v)]", 5, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), u_config_bram : true_dpbram_config (true_dpbram_config.v)]", 4, false); // E
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v)]", 3, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), u_config_bram : true_dpbram_config (true_dpbram_config.v)]", 4, false); // E
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), u_config_bram : true_dpbram_config (true_dpbram_config.v)]", 4, false, false, false, false, false, true); // E - Double Click
+// HMemoryUtils.trashcanNow. Engine heap size: 3,040 MB. GUI used memory: 170 MB. Current time: 9/28/25, 12:48:21 PM KST
+selectCodeEditor("true_dpbram_config.v", 123, 121); // ad
+selectCodeEditor("true_dpbram_config.v", 217, 245); // ad
+selectCodeEditor("true_dpbram_config.v", 263, 249); // ad
+selectCodeEditor("true_dpbram_config.v", 92, 101); // ad
+selectCodeEditor("true_dpbram_config.v", 113, 94); // ad
+selectCodeEditor("true_dpbram_config.v", 508, 270); // ad
+selectCodeEditor("true_dpbram_config.v", 518, 270); // ad
+selectCodeEditor("true_dpbram_config.v", 517, 102); // ad
+selectCodeEditor("true_dpbram_config.v", 554, 95); // ad
+selectCodeEditor("true_dpbram_config.v", 509, 264); // ad
+selectCodeEditor("true_dpbram_config.v", 253, 180); // ad
+selectCodeEditor("true_dpbram_config.v", 270, 173); // ad
+selectCodeEditor("true_dpbram_config.v", 284, 171); // ad
+selectCodeEditor("true_dpbram_config.v", 405, 172); // ad
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // B
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+selectRadioButton(PAResourceAtoD.AddSrcWizard_SPECIFY_SIMULATION_SPECIFIC_HDL_FILES, "Add or create simulation sources"); // a
+selectButton("NEXT", "Next >"); // JButton
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files"); // a
+dismissFileChooser();
+selectButton("CANCEL", "Cancel"); // JButton
+// 'f' command handler elapsed time: 8 seconds
+dismissDialog("Add Sources"); // c
+// [GUI Memory]: 252 MB (+7566kb) [00:02:26]
+// Elapsed time: 78 seconds
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // B
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+selectButton("CANCEL", "Cancel"); // JButton
+dismissDialog("Add Sources"); // c
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // B
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+selectRadioButton(PAResourceAtoD.AddSrcWizard_SPECIFY_HDL_NETLIST_BLOCK_DESIGN, "Add or create design sources"); // a
+selectButton("NEXT", "Next >"); // JButton
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files"); // a
+// Elapsed time: 22 seconds
+String[] filenames31467 = {"/home/esoc/broadwise/vivado/projects/eyeriss/xpr/data/conv3/ifmap.mem", "/home/esoc/broadwise/vivado/projects/eyeriss/xpr/data/conv3/psum_init.mem", "/home/esoc/broadwise/vivado/projects/eyeriss/xpr/data/conv3/psum_out.mem", "/home/esoc/broadwise/vivado/projects/eyeriss/xpr/data/conv3/weight.mem"};
+setFileChooser(filenames31467);
+selectButton("FINISH", "Finish"); // JButton
+// 'f' command handler elapsed time: 33 seconds
+dismissDialog("Add Sources"); // c
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: import_files -norecurse {/home/esoc/broadwise/vivado/projects/eyeriss/xpr/data/conv3/ifmap.mem /home/esoc/broadwise/vivado/projects/eyeriss/xpr/data/conv3/psum_out.mem /home/esoc/broadwise/vivado/projects/eyeriss/xpr/data/conv3/psum_init.mem /home/esoc/broadwise/vivado/projects/eyeriss/xpr/data/conv3/weight.mem} 
+// Elapsed Time for: 'L.f': 02m:52s
+// Elapsed Time for: 'L.f': 02m:54s
+// HMemoryUtils.trashcanNow. Engine heap size: 3,092 MB. GUI used memory: 171 MB. Current time: 9/28/25, 12:50:46 PM KST
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Memory File]", 9); // E
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), glb_inst : GLB (GLB.v)]", 6, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), glb_inst : GLB (GLB.v)]", 6, true); // E - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), glb_inst : GLB (GLB.v)]", 6); // E
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), u_config_bram : true_dpbram_config (true_dpbram_config.v)]", 4, false); // E
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), u_config_bram : true_dpbram_config (true_dpbram_config.v)]", 4, false, false, false, false, false, true); // E - Double Click
+selectCodeEditor("true_dpbram_config.v", 176, 160); // ad
+selectCodeEditor("true_dpbram_config.v", 209, 165); // ad
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // B
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+selectButton("NEXT", "Next >"); // JButton
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files"); // a
+setFileChooser("/home/esoc/broadwise/vivado/projects/eyeriss/xpr/data/pe_set_config.mem");
+selectButton("FINISH", "Finish"); // JButton
+// 'f' command handler elapsed time: 6 seconds
+dismissDialog("Add Sources"); // c
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: import_files -norecurse /home/esoc/broadwise/vivado/projects/eyeriss/xpr/data/pe_set_config.mem 
+selectCodeEditor("true_dpbram_config.v", 231, 179); // ad
+// Elapsed Time for: 'L.f': 03m:18s
+// HMemoryUtils.trashcanNow. Engine heap size: 3,112 MB. GUI used memory: 171 MB. Current time: 9/28/25, 12:51:11 PM KST
+// Elapsed Time for: 'L.f': 03m:20s
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 03m:22s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), glb_inst : GLB (GLB.v), u_glb_bank_ifmap : true_dpbram (true_dpbram.v)]", 7, false); // E
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), glb_inst : GLB (GLB.v), u_glb_bank_ifmap : true_dpbram (true_dpbram.v)]", 7, false, false, false, false, false, true); // E - Double Click
+// [Engine Memory]: 3,147 MB (+18702kb) [00:03:40]
+selectCodeEditor("true_dpbram.v", 274, 161); // ad
+// Elapsed Time for: 'L.f': 03m:24s
+selectCodeEditor("true_dpbram.v", 315, 177); // ad
+selectCodeEditor("true_dpbram.v", 333, 175); // ad
+selectCodeEditor("true_dpbram.v", 211, 150); // ad
+selectCodeEditor("true_dpbram.v", 259, 158); // ad
+selectCodeEditor("true_dpbram.v", 260, 404); // ad
+selectCodeEditor("true_dpbram.v", 106, 200); // ad
+selectCodeEditor("true_dpbram.v", 166, 181); // ad
+selectCodeEditor("true_dpbram.v", 182, 174); // ad
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), glb_inst : GLB (GLB.v)]", 6, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), glb_inst : GLB (GLB.v)]", 6, true, false, false, false, false, true); // E - Double Click - Node
+selectCodeEditor("GLB.v", 241, 276); // ad
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 3,216 MB. GUI used memory: 172 MB. Current time: 9/28/25, 12:51:36 PM KST
+selectCodeEditor("GLB.v", 171, 365); // ad
+// Elapsed Time for: 'L.f': 03m:46s
+// Elapsed Time for: 'L.f': 03m:48s
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 03m:50s
+selectCodeEditor("GLB.v", 170, 410); // ad
+// Elapsed Time for: 'L.f': 03m:52s
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 03m:54s
+// Elapsed Time for: 'L.f': 03m:56s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), u_PE_array : PE_array (PE_array.v)]", 7, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), glb_inst : GLB (GLB.v)]", 6, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), top_ctrl_inst : TOP_ctrl (TOP_ctrl.v)]", 5, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), u_config_bram : true_dpbram_config (true_dpbram_config.v)]", 4, false); // E
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), u_PE_array : PE_array (PE_array.v)]", 7, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), glb_inst : GLB (GLB.v)]", 6, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), top_ctrl_inst : TOP_ctrl (TOP_ctrl.v)]", 5, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Memory File, ifmap.mem]", 10, false); // E
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Memory File, psum_init.mem]", 12, false, false, true, false, false, false); // E - Control Key
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Memory File, psum_out.mem]", 13, false); // E
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Memory File, weight.mem]", 14, false); // E
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Memory File, psum_out.mem]", 13, false); // E
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Memory File, psum_out.mem]", 13, false); // E
+selectCodeEditor("GLB.v", 121, 229); // ad
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v)]", 3, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v)]", 3, true, false, false, false, false, true); // E - Double Click - Node
+selectCodeEditor("eyeriss_wrapper.v", 135, 145); // ad
+selectCodeEditor("eyeriss_wrapper.v", 283, 411); // ad
+// HMemoryUtils.trashcanNow. Engine heap size: 3,283 MB. GUI used memory: 173 MB. Current time: 9/28/25, 12:52:06 PM KST
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "GLB.v", 3); // o
+selectCodeEditor("GLB.v", 378, 117); // ad
+selectCodeEditor("GLB.v", 353, 404); // ad
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "eyeriss_wrapper.v", 4); // o
+selectCodeEditor("eyeriss_wrapper.v", 287, 200); // ad
+selectCodeEditor("eyeriss_wrapper.v", 326, 391); // ad
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Memory File, psum_out.mem]", 9, false); // E
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Memory File, psum_out.mem]", 9, false, false, false, false, true, false); // E - Popup Trigger
+selectMenu(PAResourceCommand.PACommandNames_OPEN_FILE_WITH, "Open With"); // al
+selectMenuItem(RDIResourceCommand.RDICommands_DELETE, "Remove File from Project..."); // ao
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Remove Sources"); // V
+// Tcl Message: export_ip_user_files -of_objects  [get_files /home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_wrapper_ip/eyeriss_wrapper_ip.srcs/sources_1/imports/conv3/psum_out.mem] -no_script -reset -force -quiet 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: remove_files  /home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_wrapper_ip/eyeriss_wrapper_ip.srcs/sources_1/imports/conv3/psum_out.mem 
+// Elapsed Time for: 'L.f': 04m:38s
+// [Engine Memory]: 3,316 MB (+11378kb) [00:04:55]
+// HMemoryUtils.trashcanNow. Engine heap size: 3,326 MB. GUI used memory: 174 MB. Current time: 9/28/25, 12:52:31 PM KST
+// Elapsed Time for: 'L.f': 04m:40s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v)]", 1, true); // E - Node
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // ag
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // ag
+selectMenu(PAResourceItoN.MainMenuMgr_REPORTS, "Reports"); // ag
+dismissMenu(PAResourceItoN.MainMenuMgr_REPORTS, "Reports"); // ag
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // ag
+selectMenuItem(PAResourceCommand.PACommandNames_IP_PACKAGER_WIZARD, "Create and Package New IP..."); // ao
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // ag
+// Run Command: PAResourceCommand.PACommandNames_IP_PACKAGER_WIZARD
+selectButton("CANCEL", "Cancel"); // JButton
+dismissDialog("Create and Package New IP"); // x
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 16, false); // f
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a
+dismissDialog("Launch Runs"); // f
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 16, false); // f
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// TclEventType: RUN_LAUNCH
+dismissDialog("Launch Runs"); // f
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: launch_runs synth_1 -jobs 20 
+// Tcl Message: [Sun Sep 28 12:52:48 2025] Launched synth_1... Run output will be captured here: /home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_wrapper_ip/eyeriss_wrapper_ip.runs/synth_1/runme.log 
+dismissDialog("Starting Design Runs"); // bq
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 59 seconds
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "synth_1 ; constrs_1 ; Running synth_design... ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Sun Sep 28 12:52:50 KST 2025 ; 00:00:58 ; Vivado Synthesis Defaults (Vivado Synthesis 2023) ; Vivado Synthesis Default Reports (Vivado Synthesis 2023) ; xczu28dr-ffvg1517-2-e ; esoc-desktop ; Vivado Synthesis Defaults", 0, "Running synth_design...", 2, true); // ao - Node
+// PAPropertyPanels.initPanels (synth_1) elapsed time: 0.2s
+// HMemoryUtils.trashcanNow. Engine heap size: 3,373 MB. GUI used memory: 178 MB. Current time: 9/28/25, 12:53:51 PM KST
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 42 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a
+dismissDialog("Synthesis Completed"); // Q.a
+// Elapsed time: 10 seconds
+selectTreeTableHeader(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "FF", 15); // ao
+selectTreeTableHeader(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "FF", 15); // ao
+// Elapsed time: 39 seconds
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "impl_1 ; constrs_1 ; Not started ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Vivado Implementation Defaults (Vivado Implementation 2023) ; Vivado Implementation Default Reports (Vivado Implementation 2023) ; xczu28dr-ffvg1517-2-e ;  ; Default settings for Implementation.", 1, "Not started", 2, false); // ao
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "synth_1 ; constrs_1 ; synth_design Complete! ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 4099 ; 2733 ; 0.0 ; 0 ; 0 ; Sun Sep 28 12:52:50 KST 2025 ; 00:01:14 ; Vivado Synthesis Defaults (Vivado Synthesis 2023) ; Vivado Synthesis Default Reports (Vivado Synthesis 2023) ; xczu28dr-ffvg1517-2-e ; esoc-desktop ; Vivado Synthesis Defaults", 0, "synth_design Complete!", 2, true); // ao - Node
+// Elapsed time: 10 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_axi_lite_slave : axi_lite_slave (axi_lite_slave.v)]", 2, false); // E
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_axi_lite_slave : axi_lite_slave (axi_lite_slave.v)]", 2, false); // E
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v)]", 3, true); // E - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v)]", 3); // E
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v)]", 3); // E
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v)]", 1, true); // E - Node
+selectCodeEditor("eyeriss_wrapper.v", 92, 73); // ad
+selectCodeEditor("eyeriss_wrapper.v", 187, 57); // ad
+selectCodeEditor("eyeriss_wrapper.v", 264, 307); // ad
+selectCodeEditor("eyeriss_wrapper.v", 296, 307); // ad
+selectCodeEditor("eyeriss_wrapper.v", 232, 57); // ad
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "synth_1 ; constrs_1 ; synth_design Complete! ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 4099 ; 2733 ; 0.0 ; 0 ; 0 ; Sun Sep 28 12:52:50 KST 2025 ; 00:01:14 ; Vivado Synthesis Defaults (Vivado Synthesis 2023) ; Vivado Synthesis Default Reports (Vivado Synthesis 2023) ; xczu28dr-ffvg1517-2-e ; esoc-desktop ; Vivado Synthesis Defaults", 0, (String) null, 14, true); // ao - Node
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "synth_1 ; constrs_1 ; synth_design Complete! ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 4099 ; 2733 ; 0.0 ; 0 ; 0 ; Sun Sep 28 12:52:50 KST 2025 ; 00:01:14 ; Vivado Synthesis Defaults (Vivado Synthesis 2023) ; Vivado Synthesis Default Reports (Vivado Synthesis 2023) ; xczu28dr-ffvg1517-2-e ; esoc-desktop ; Vivado Synthesis Defaults", 0, (String) null, 15, true); // ao - Node
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "synth_1 ; constrs_1 ; synth_design Complete! ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 4099 ; 2733 ; 0.0 ; 0 ; 0 ; Sun Sep 28 12:52:50 KST 2025 ; 00:01:14 ; Vivado Synthesis Defaults (Vivado Synthesis 2023) ; Vivado Synthesis Default Reports (Vivado Synthesis 2023) ; xczu28dr-ffvg1517-2-e ; esoc-desktop ; Vivado Synthesis Defaults", 0, "synth_design Complete!", 2, true, false, false, false, true, false); // ao - Popup Trigger - Node
+selectMenuItem(RDIResourceCommand.RDICommands_PROPERTIES, "Synthesis Run Properties..."); // ao
+// Run Command: RDIResourceCommand.RDICommands_PROPERTIES
+selectCodeEditor("eyeriss_wrapper.v", 185, 294); // ad
+selectCodeEditor("eyeriss_wrapper.v", 166, 383); // ad
+selectCodeEditor("eyeriss_wrapper.v", 227, 267); // ad
+// HMemoryUtils.trashcanNow. Engine heap size: 3,398 MB. GUI used memory: 184 MB. Current time: 9/28/25, 12:55:56 PM KST
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "synth_1 ; constrs_1 ; synth_design Complete! ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 4099 ; 2733 ; 0.0 ; 0 ; 0 ; Sun Sep 28 12:52:50 KST 2025 ; 00:01:14 ; Vivado Synthesis Defaults (Vivado Synthesis 2023) ; Vivado Synthesis Default Reports (Vivado Synthesis 2023) ; xczu28dr-ffvg1517-2-e ; esoc-desktop ; Vivado Synthesis Defaults", 0, "synth_design Complete!", 2, true, false, false, false, true, false); // ao - Popup Trigger - Node
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "synth_1 ; constrs_1 ; synth_design Complete! ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 4099 ; 2733 ; 0.0 ; 0 ; 0 ; Sun Sep 28 12:52:50 KST 2025 ; 00:01:14 ; Vivado Synthesis Defaults (Vivado Synthesis 2023) ; Vivado Synthesis Default Reports (Vivado Synthesis 2023) ; xczu28dr-ffvg1517-2-e ; esoc-desktop ; Vivado Synthesis Defaults", 0, "synth_design Complete!", 2, true); // ao - Node
+selectCodeEditor("eyeriss_wrapper.v", 225, 375); // ad
+selectCodeEditor("eyeriss_wrapper.v", 168, 197); // ad
+// Elapsed time: 18 seconds
+selectCodeEditor("eyeriss_wrapper.v", 105, 97); // ad
+// Elapsed time: 70 seconds
+selectCodeEditor("eyeriss_wrapper.v", 255, 142); // ad
+selectCodeEditor("eyeriss_wrapper.v", 74, 141); // ad
+selectCodeEditor("eyeriss_wrapper.v", 169, 134); // ad
+selectCodeEditor("eyeriss_wrapper.v", 183, 145); // ad
+selectCodeEditor("eyeriss_wrapper.v", 73, 137); // ad
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 10m:08s
+// HMemoryUtils.trashcanNow. Engine heap size: 3,417 MB. GUI used memory: 183 MB. Current time: 9/28/25, 12:58:01 PM KST
+// Elapsed Time for: 'L.f': 10m:10s
+// Elapsed time: 24 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v)]", 3, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_axi_lite_slave : axi_lite_slave (axi_lite_slave.v)]", 2, false); // E
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v)]", 3, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v)]", 3, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_axi_lite_slave : axi_lite_slave (axi_lite_slave.v)]", 2, false); // E
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v)]", 3, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_axi_lite_slave : axi_lite_slave (axi_lite_slave.v)]", 2, false); // E
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v)]", 3); // E
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), glb_inst : GLB (GLB.v)]", 6); // E
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "synth_1 ; constrs_1 ; Synthesis Out-of-date ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 4099 ; 2733 ; 0.0 ; 0 ; 0 ; Sun Sep 28 12:52:50 KST 2025 ; 00:01:14 ; Vivado Synthesis Defaults (Vivado Synthesis 2023) ; Vivado Synthesis Default Reports (Vivado Synthesis 2023) ; xczu28dr-ffvg1517-2-e ; esoc-desktop ; Vivado Synthesis Defaults", 0, (String) null, 11, true); // ao - Node
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "synth_1 ; constrs_1 ; Synthesis Out-of-date ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 4099 ; 2733 ; 0.0 ; 0 ; 0 ; Sun Sep 28 12:52:50 KST 2025 ; 00:01:14 ; Vivado Synthesis Defaults (Vivado Synthesis 2023) ; Vivado Synthesis Default Reports (Vivado Synthesis 2023) ; xczu28dr-ffvg1517-2-e ; esoc-desktop ; Vivado Synthesis Defaults", 0, (String) null, 11, true, false, false, false, true, false); // ao - Popup Trigger - Node
+selectMenuItem(RDIResourceCommand.RDICommands_PROPERTIES, "Synthesis Run Properties..."); // ao
+// Run Command: RDIResourceCommand.RDICommands_PROPERTIES
+// [Engine Memory]: 3,482 MB (+627kb) [00:10:42]
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "synth_1 ; constrs_1 ; Synthesis Out-of-date ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 4099 ; 2733 ; 0.0 ; 0 ; 0 ; Sun Sep 28 12:52:50 KST 2025 ; 00:01:14 ; Vivado Synthesis Defaults (Vivado Synthesis 2023) ; Vivado Synthesis Default Reports (Vivado Synthesis 2023) ; xczu28dr-ffvg1517-2-e ; esoc-desktop ; Vivado Synthesis Defaults", 0, "Synthesis Out-of-date", 2, true, false, false, false, true, false); // ao - Popup Trigger - Node
+// HMemoryUtils.trashcanNow. Engine heap size: 3,482 MB. GUI used memory: 185 MB. Current time: 9/28/25, 12:58:21 PM KST
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "synth_1 ; constrs_1 ; Synthesis Out-of-date ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 4099 ; 2733 ; 0.0 ; 0 ; 0 ; Sun Sep 28 12:52:50 KST 2025 ; 00:01:14 ; Vivado Synthesis Defaults (Vivado Synthesis 2023) ; Vivado Synthesis Default Reports (Vivado Synthesis 2023) ; xczu28dr-ffvg1517-2-e ; esoc-desktop ; Vivado Synthesis Defaults", 0, "Synthesis Out-of-date", 2, true); // ao - Node
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "synth_1 ; constrs_1 ; Synthesis Out-of-date ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 4099 ; 2733 ; 0.0 ; 0 ; 0 ; Sun Sep 28 12:52:50 KST 2025 ; 00:01:14 ; Vivado Synthesis Defaults (Vivado Synthesis 2023) ; Vivado Synthesis Default Reports (Vivado Synthesis 2023) ; xczu28dr-ffvg1517-2-e ; esoc-desktop ; Vivado Synthesis Defaults", 0, "Synthesis Out-of-date", 2, true, false, false, false, true, false); // ao - Popup Trigger - Node
+selectMenuItem(PAResourceCommand.PACommandNames_VIEW_RUN_REPORTS, "Display Reports"); // ao
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "synth_1 ; constrs_1 ; Synthesis Out-of-date ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 4099 ; 2733 ; 0.0 ; 0 ; 0 ; Sun Sep 28 12:52:50 KST 2025 ; 00:01:14 ; Vivado Synthesis Defaults (Vivado Synthesis 2023) ; Vivado Synthesis Default Reports (Vivado Synthesis 2023) ; xczu28dr-ffvg1517-2-e ; esoc-desktop ; Vivado Synthesis Defaults", 0, "Synthesis Out-of-date", 2, true, false, false, false, true, false); // ao - Popup Trigger - Node
+selectMenu(PAResourceItoN.MainMenuMgr_VIEW, "View"); // ag
+dismissMenu(PAResourceItoN.MainMenuMgr_VIEW, "View"); // ag
+selectMenu(RDIResource.MainWinMenuMgr_LAYOUT, "Layout"); // ag
+dismissMenu(RDIResource.MainWinMenuMgr_LAYOUT, "Layout"); // ag
+selectMenu(PAResourceItoN.MainMenuMgr_WINDOW, "Window"); // ag
+selectMenuItem(PAResourceCommand.PACommandNames_REPORTS_WINDOW, "Reports"); // ao
+dismissMenu(PAResourceItoN.MainMenuMgr_WINDOW, "Window"); // ag
+// Run Command: PAResourceCommand.PACommandNames_REPORTS_WINDOW
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Utilization - Synth Design ; report_utilization ;  ; Sun Sep 28 12:54:00 KST 2025 ; 8839", 2, "Utilization - Synth Design", 0, false); // J
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "synthesis_report ;  ;  ; Sun Sep 28 12:54:00 KST 2025 ; 211289", 3, "synthesis_report", 0, false); // J
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "synthesis_report ;  ;  ; Sun Sep 28 12:54:00 KST 2025 ; 211289", 3, "synthesis_report", 0, false); // J
+expandTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "synthesis_report ;  ;  ; Sun Sep 28 12:54:00 KST 2025 ; 211289", 3); // J
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "synthesis_report ;  ;  ; Sun Sep 28 12:54:00 KST 2025 ; 211289", 3, "synthesis_report", 0, false, false, false, false, false, true); // J - Double Click
+// HMemoryUtils.trashcanNow. Engine heap size: 3,525 MB. GUI used memory: 186 MB. Current time: 9/28/25, 12:58:51 PM KST
+// Elapsed time: 10 seconds
+selectCodeEditor("synthesis_report - synth_1", 728, 313); // G
+selectCodeEditor("synthesis_report - synth_1", 737, 302); // G
+selectCodeEditor("synthesis_report - synth_1", 388, 171); // G
+selectCodeEditor("synthesis_report - synth_1", 713, 174); // G
+typeControlKey((HResource) null, "synthesis_report - synth_1", 'c'); // G
+selectCodeEditor("synthesis_report - synth_1", 216, 155); // G
+selectCodeEditor("synthesis_report - synth_1", 219, 347); // G
+typeControlKey((HResource) null, "synthesis_report - synth_1", 'c'); // G
+selectCodeEditor("synthesis_report - synth_1", 739, 356); // G
+// Elapsed time: 92 seconds
+selectCodeEditor("synthesis_report - synth_1", 308, 375); // G
+selectCodeEditor("synthesis_report - synth_1", 397, 380); // G
+selectCodeEditor("synthesis_report - synth_1", 346, 384); // G
+selectCodeEditor("synthesis_report - synth_1", 264, 383); // G
+selectCodeEditor("synthesis_report - synth_1", 608, 439); // G
+selectCodeEditor("synthesis_report - synth_1", 234, 419); // G
+selectCodeEditor("synthesis_report - synth_1", 175, 412); // G
+selectCodeEditor("synthesis_report - synth_1", 170, 426); // G
+selectCodeEditor("synthesis_report - synth_1", 295, 427); // G
+selectCodeEditor("synthesis_report - synth_1", 229, 424); // G
+selectCodeEditor("synthesis_report - synth_1", 590, 432); // G
+selectCodeEditor("synthesis_report - synth_1", 155, 292); // G
+selectCodeEditor("synthesis_report - synth_1", 1014, 303); // G
+selectCodeEditor("synthesis_report - synth_1", 1014, 303, false, false, false, false, true); // G - Double Click
+selectCodeEditor("synthesis_report - synth_1", 174, 338); // G
+selectCodeEditor("synthesis_report - synth_1", 201, 339); // G
+// Elapsed time: 10 seconds
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP", true); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+// Elapsed time: 16 seconds
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP", true); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP", true); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+// Elapsed time: 14 seconds
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DSP"); // d.c
+selectTab((HResource) null, (HResource) null, "Design Runs", 4); // aa
+selectTab((HResource) null, (HResource) null, "Reports", 3); // aa
+// Elapsed time: 15 seconds
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "BRAM", true); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "BRAM"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "BRAM"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "BRAM"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "BRAM"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "BRAM"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "BRAM"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "BRAM"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "BRAM"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "BRAM"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "BRAM"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "BRAM"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "BRAM"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "BRAM"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "BRAM"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "BRAM"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "BRAM"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "BRAM"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "BRAM"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "BRAM"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "BRAM"); // d.c
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "BRAM"); // d.c
+// Elapsed time: 19 seconds
+selectCodeEditor("synthesis_report - synth_1", 245, 612); // G
+selectCodeEditor("synthesis_report - synth_1", 297, 415); // G
+selectCodeEditor("synthesis_report - synth_1", 308, 415); // G
+selectCodeEditor("synthesis_report - synth_1", 296, 616); // G
+selectCodeEditor("synthesis_report - synth_1", 306, 615); // G
+selectCodeEditor("synthesis_report - synth_1", 113, 333); // G
+selectCodeEditor("synthesis_report - synth_1", 594, 322); // G
+selectCodeEditor("synthesis_report - synth_1", 604, 335); // G
+// Elapsed time: 49 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), u_config_bram : true_dpbram_config (true_dpbram_config.v)]", 4, false); // E
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), u_config_bram : true_dpbram_config (true_dpbram_config.v)]", 4, false, false, false, false, false, true); // E - Double Click
+selectCodeEditor("true_dpbram_config.v", 275, 183); // ad
+selectCodeEditor("true_dpbram_config.v", 277, 173); // ad
+selectCodeEditor("true_dpbram_config.v", 299, 173); // ad
+selectCodeEditor("true_dpbram_config.v", 183, 191); // ad
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), u_config_bram : true_dpbram_config (true_dpbram_config.v)]", 4, false); // E
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v)]", 3, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v)]", 3, true, false, false, false, false, true); // E - Double Click - Node
+selectCodeEditor("eyeriss_wrapper.v", 181, 244); // ad
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 16m:22s
+// Elapsed Time for: 'L.f': 16m:24s
+// HMemoryUtils.trashcanNow. Engine heap size: 3,560 MB. GUI used memory: 185 MB. Current time: 9/28/25, 1:04:16 PM KST
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "synthesis_report - synth_1", 6); // o
+selectCodeEditor("synthesis_report - synth_1", 310, 348); // G
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "dsp"); // d.c
+selectCodeEditor("synthesis_report - synth_1", 504, 310); // G
+selectCodeEditor("synthesis_report - synth_1", 160, 210); // G
+selectCodeEditor("synthesis_report - synth_1", 534, 250); // G
+typeControlKey((HResource) null, "synthesis_report - synth_1", 'c'); // G
+// Elapsed time: 30 seconds
+selectCodeEditor("synthesis_report - synth_1", 407, 453); // G
+selectTab((HResource) null, (HResource) null, "Design Runs", 4); // aa
+selectTab((HResource) null, (HResource) null, "Reports", 3); // aa
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Timing Summary - Design Initialization ; report_timing_summary ; max_paths = 10; report_unconstrained = true;  ;  ; ", 7, "Timing Summary - Design Initialization", 0, false); // J
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Implementation ;  ;  ;  ; ", 4, "Implementation", 0, true); // J - Node
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "synthesis_report ;  ;  ; Sun Sep 28 12:54:00 KST 2025 ; 211289", 3, "synthesis_report", 0, false); // J
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Utilization - Synth Design ; report_utilization ;  ; Sun Sep 28 12:54:00 KST 2025 ; 8839", 2, "Utilization - Synth Design", 0, false); // J
+expandTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Utilization - Synth Design ; report_utilization ;  ; Sun Sep 28 12:54:00 KST 2025 ; 8839", 2); // J
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Utilization - Synth Design ; report_utilization ;  ; Sun Sep 28 12:54:00 KST 2025 ; 8839", 2, "Utilization - Synth Design", 0, false, false, false, false, false, true); // J - Double Click
+// Elapsed time: 15 seconds
+selectCodeEditor("Utilization - Synth Design - synth_1", 178, 221); // G
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "dsp"); // d.c
+// Elapsed time: 32 seconds
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored", true); // d.c
+selectCodeEditor("Utilization - Synth Design - synth_1", 91, 118); // G
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "synthesis_report - synth_1", 6); // o
+selectCodeEditor("synthesis_report - synth_1", 449, 88); // G
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored", true); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored", true); // d.c
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored", true); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored", true); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 3,584 MB. GUI used memory: 186 MB. Current time: 9/28/25, 1:07:41 PM KST
+// Elapsed Time for: 'L.f': 19m:50s
+// Elapsed Time for: 'L.f': 19m:52s
+// Elapsed time: 61 seconds
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ignored"); // d.c
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_axi_lite_slave : axi_lite_slave (axi_lite_slave.v)]", 2, false); // E
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v)]", 3, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), u_config_bram : true_dpbram_config (true_dpbram_config.v)]", 4, false); // E
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), top_ctrl_inst : TOP_ctrl (TOP_ctrl.v)]", 5, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), glb_inst : GLB (GLB.v)]", 6, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), u_PE_array : PE_array (PE_array.v)]", 7, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), u_PE_array : PE_array (PE_array.v), u_GIN_IFMAP_YBUS : GIN_BUS (GIN_BUS.v)]", 8, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), u_PE_array : PE_array (PE_array.v), u_GIN_WGHT_YBUS : GIN_BUS (GIN_BUS.v)]", 9, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), u_PE_array : PE_array (PE_array.v), u_GIN_PSUM_YBUS : GIN_BUS (GIN_BUS.v)]", 10, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), u_PE_array : PE_array (PE_array.v), GIN_XBUS_gen[0].u_GIN_IFMAP_XBUS : GIN_BUS (GIN_BUS.v)]", 11, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), u_PE_array : PE_array (PE_array.v), GIN_XBUS_gen[2].u_GIN_IFMAP_XBUS : GIN_BUS (GIN_BUS.v), BUS_MC_gen[0].u_MC : MC (MC.v)]", -1, false); // E
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), u_PE_array : PE_array (PE_array.v), GIN_XBUS_gen[0].u_GIN_IFMAP_XBUS : GIN_BUS (GIN_BUS.v)]", 11, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), u_PE_array : PE_array (PE_array.v), u_GIN_PSUM_YBUS : GIN_BUS (GIN_BUS.v)]", 10, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), u_PE_array : PE_array (PE_array.v), GIN_XBUS_gen[0].u_GIN_IFMAP_XBUS : GIN_BUS (GIN_BUS.v)]", 11, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), u_PE_array : PE_array (PE_array.v), GIN_XBUS_gen[0].u_GIN_WGHT_XBUS : GIN_BUS (GIN_BUS.v)]", 12, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), u_PE_array : PE_array (PE_array.v), GIN_XBUS_gen[0].u_GIN_PSUM_XBUS : GIN_BUS (GIN_BUS.v)]", 13, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), u_PE_array : PE_array (PE_array.v), GIN_XBUS_gen[1].u_GIN_IFMAP_XBUS : GIN_BUS (GIN_BUS.v)]", 14, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), u_PE_array : PE_array (PE_array.v), GIN_XBUS_gen[1].u_GIN_WGHT_XBUS : GIN_BUS (GIN_BUS.v)]", 15, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), u_PE_array : PE_array (PE_array.v), GIN_XBUS_gen[1].u_GIN_PSUM_XBUS : GIN_BUS (GIN_BUS.v)]", 16, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), u_PE_array : PE_array (PE_array.v), GIN_XBUS_gen[2].u_GIN_IFMAP_XBUS : GIN_BUS (GIN_BUS.v)]", 17, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), u_PE_array : PE_array (PE_array.v), GIN_XBUS_gen[2].u_GIN_WGHT_XBUS : GIN_BUS (GIN_BUS.v)]", 18, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), u_PE_array : PE_array (PE_array.v), GIN_XBUS_gen[2].u_GIN_PSUM_XBUS : GIN_BUS (GIN_BUS.v)]", 19, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), u_PE_array : PE_array (PE_array.v), PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top : PE_top (PE_top.v)]", 20, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), u_PE_array : PE_array (PE_array.v), PE_gen_vertical[0].PE_gen_horizontal[1].u_PE_top : PE_top (PE_top.v)]", 21, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), u_PE_array : PE_array (PE_array.v), PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top : PE_top (PE_top.v)]", 20, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), u_PE_array : PE_array (PE_array.v), PE_gen_vertical[2].PE_gen_horizontal[12].u_PE_top : PE_top (PE_top.v), u_ifmap_fifo : fifo (fifo.v)]", -1, false); // E
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), u_PE_array : PE_array (PE_array.v), PE_gen_vertical[2].PE_gen_horizontal[12].u_PE_top : PE_top (PE_top.v), u_wght_fifo : fifo (fifo.v)]", -1, false); // E
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), u_PE_array : PE_array (PE_array.v), PE_gen_vertical[2].PE_gen_horizontal[12].u_PE_top : PE_top (PE_top.v), u_psum_in_fifo : fifo (fifo.v)]", -1, false); // E
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), u_PE_array : PE_array (PE_array.v), PE_gen_vertical[2].PE_gen_horizontal[12].u_PE_top : PE_top (PE_top.v), u_psum_out_fifo : fifo (fifo.v)]", -1, false); // E
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), u_PE_array : PE_array (PE_array.v), PE_gen_vertical[2].PE_gen_horizontal[12].u_PE_top : PE_top (PE_top.v), u_PE_control : PE_control (PE_control.v)]", -1, false); // E
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), u_PE_array : PE_array (PE_array.v), PE_gen_vertical[2].PE_gen_horizontal[12].u_PE_top : PE_top (PE_top.v), u_PE_datapath : PE_datapath (PE_datapath.v)]", -1, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), u_PE_array : PE_array (PE_array.v), PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top : PE_top (PE_top.v), u_PE_datapath : PE_datapath (PE_datapath.v)]", 26, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), u_PE_array : PE_array (PE_array.v), PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top : PE_top (PE_top.v), u_PE_datapath : PE_datapath (PE_datapath.v)]", 26, true, false, false, false, false, true); // E - Double Click - Node
+selectCodeEditor("PE_datapath.v", 131, 155); // ad
+// HMemoryUtils.trashcanNow. Engine heap size: 3,634 MB. GUI used memory: 186 MB. Current time: 9/28/25, 1:08:06 PM KST
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 16, false); // f
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+closeView(PAResourceOtoP.PAViews_PAR_REPORT, "PAR Report"); // c
+closeView(PAResourceOtoP.PAViews_PAR_REPORT, "PAR Report"); // c
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// Tcl Message: INFO: [Project 1-1160] Copying file /home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_wrapper_ip/eyeriss_wrapper_ip.runs/synth_1/eyeriss_top.dcp to /home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_wrapper_ip/eyeriss_wrapper_ip.srcs/utils_1/imports/synth_1 and adding it to utils fileset 
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Launch Runs"); // f
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: launch_runs synth_1 -jobs 20 
+// Tcl Message: [Sun Sep 28 13:08:10 2025] Launched synth_1... Run output will be captured here: /home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_wrapper_ip/eyeriss_wrapper_ip.runs/synth_1/runme.log 
+dismissDialog("Starting Design Runs"); // bq
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 109 seconds
+selectRadioButton(PAResourceCommand.PACommandNames_REPORTS_WINDOW, "View Reports"); // a
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// Run Command: PAResourceCommand.PACommandNames_REPORTS_WINDOW
+dismissDialog("Synthesis Completed"); // Q.a
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Utilization - Synth Design ; report_utilization ;  ; Sun Sep 28 13:09:21 KST 2025 ; 8973", 2, "Utilization - Synth Design", 0, false); // J
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Utilization - Synth Design ; report_utilization ;  ; Sun Sep 28 13:09:21 KST 2025 ; 8973", 2, "Utilization - Synth Design", 0, false); // J
+expandTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Utilization - Synth Design ; report_utilization ;  ; Sun Sep 28 13:09:21 KST 2025 ; 8973", 2); // J
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Utilization - Synth Design ; report_utilization ;  ; Sun Sep 28 13:09:21 KST 2025 ; 8973", 2, "Utilization - Synth Design", 0, false, false, false, false, false, true); // J - Double Click
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "dsp"); // d.c
+selectCodeEditor("Utilization - Synth Design - synth_1", 457, 356); // G
+selectCodeEditor("Utilization - Synth Design - synth_1", 486, 286); // G
+selectCodeEditor("Utilization - Synth Design - synth_1", 489, 284, false, false, false, false, true); // G - Double Click
+selectCodeEditor("Utilization - Synth Design - synth_1", 478, 348); // G
+selectCodeEditor("Utilization - Synth Design - synth_1", 499, 321); // G
+selectCodeEditor("Utilization - Synth Design - synth_1", 515, 198); // G
+selectCodeEditor("Utilization - Synth Design - synth_1", 534, 189); // G
+selectCodeEditor("Utilization - Synth Design - synth_1", 503, 296); // G
+selectCodeEditor("Utilization - Synth Design - synth_1", 518, 302); // G
+selectCodeEditor("Utilization - Synth Design - synth_1", 537, 161); // G
+selectCodeEditor("Utilization - Synth Design - synth_1", 539, 188); // G
+selectCodeEditor("Utilization - Synth Design - synth_1", 521, 93); // G
+selectCodeEditor("Utilization - Synth Design - synth_1", 535, 277); // G
+selectCodeEditor("Utilization - Synth Design - synth_1", 554, 107); // G
+selectCodeEditor("Utilization - Synth Design - synth_1", 324, 333); // G
+selectCodeEditor("Utilization - Synth Design - synth_1", 359, 270); // G
+selectCodeEditor("Utilization - Synth Design - synth_1", 359, 309); // G
+selectCodeEditor("Utilization - Synth Design - synth_1", 546, 96); // G
+selectCodeEditor("Utilization - Synth Design - synth_1", 517, 297); // G
+selectCodeEditor("Utilization - Synth Design - synth_1", 211, 167); // G
+selectCodeEditor("Utilization - Synth Design - synth_1", 162, 206); // G
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "lut"); // d.c
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, (String) null); // d.c
+// Elapsed time: 10 seconds
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "synthesis_report ;  ;  ; Sun Sep 28 13:09:21 KST 2025 ; 228764", 3, "synthesis_report", 0, false); // J
+expandTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "synthesis_report ;  ;  ; Sun Sep 28 13:09:21 KST 2025 ; 228764", 3); // J
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "synthesis_report ;  ;  ; Sun Sep 28 13:09:21 KST 2025 ; 228764", 3, "synthesis_report", 0, false, false, false, false, false, true); // J - Double Click
+selectCodeEditor("synthesis_report - synth_1", 231, 279); // G
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "dsp", true); // d.c
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "dsp", true); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "dsp"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "dsp"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "dsp"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "dsp"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "dsp"); // d.c
+selectCodeEditor("synthesis_report - synth_1", 509, 218); // G
+typeControlKey((HResource) null, "synthesis_report - synth_1", 'c'); // G
+// Elapsed time: 176 seconds
+selectCodeEditor("synthesis_report - synth_1", 242, 206); // G
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v)]", 1, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v)]", 1, true, false, false, false, false, true); // E - Double Click - Node
+// [Engine Memory]: 3,657 MB (+1148kb) [00:26:27]
+// HMemoryUtils.trashcanNow. Engine heap size: 3,667 MB. GUI used memory: 191 MB. Current time: 9/28/25, 1:14:06 PM KST
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v)]", 1); // E
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v)]", 3, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v)]", 3, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v)]", 3, true, false, false, false, false, true); // E - Double Click - Node
+selectCodeEditor("eyeriss_wrapper.v", 118, 65); // ad
+selectCodeEditor("eyeriss_wrapper.v", 118, 65, false, false, false, false, true); // ad - Double Click
+selectCodeEditor("eyeriss_wrapper.v", 209, 71); // ad
+// [GUI Memory]: 269 MB (+5295kb) [00:26:42]
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 26m:26s
+// Elapsed Time for: 'L.f': 26m:28s
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 16, false); // f
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+closeView(PAResourceOtoP.PAViews_PAR_REPORT, "PAR Report"); // c
+closeView(PAResourceOtoP.PAViews_PAR_REPORT, "PAR Report"); // c
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// Tcl Message: INFO: [Project 1-1161] Replacing file /home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_wrapper_ip/eyeriss_wrapper_ip.srcs/utils_1/imports/synth_1/eyeriss_top.dcp with file /home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_wrapper_ip/eyeriss_wrapper_ip.runs/synth_1/eyeriss_top.dcp 
+// TclEventType: FILE_SET_CHANGE
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Launch Runs"); // f
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: launch_runs synth_1 -jobs 20 
+// Tcl Message: [Sun Sep 28 13:14:22 2025] Launched synth_1... Run output will be captured here: /home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_wrapper_ip/eyeriss_wrapper_ip.runs/synth_1/runme.log 
+dismissDialog("Starting Design Runs"); // bq
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 10 seconds
+selectTab((HResource) null, (HResource) null, "Design Runs", 4); // aa
+selectTab((HResource) null, (HResource) null, "Reports", 3); // aa
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 32 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+dismissDialog("Synthesis Failed"); // Q.a
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-524] part-select [29:0] out of range of prefix 'bram_out_16' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_wrapper_ip/eyeriss_wrapper_ip.srcs/sources_1/imports/src/true_dpbram_config.v:173]. ]", 1, false); // u.d
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-6156] failed synthesizing module 'true_dpbram_config' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_wrapper_ip/eyeriss_wrapper_ip.srcs/sources_1/imports/src/true_dpbram_config.v:8]. ]", 2, true); // u.d - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-524] part-select [29:0] out of range of prefix 'bram_out_16' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_wrapper_ip/eyeriss_wrapper_ip.srcs/sources_1/imports/src/true_dpbram_config.v:173]. ]", 1, false); // u.d
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-6156] failed synthesizing module 'true_dpbram_config' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_wrapper_ip/eyeriss_wrapper_ip.srcs/sources_1/imports/src/true_dpbram_config.v:8]. ]", 2, true); // u.d - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-524] part-select [29:0] out of range of prefix 'bram_out_16' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_wrapper_ip/eyeriss_wrapper_ip.srcs/sources_1/imports/src/true_dpbram_config.v:173]. ]", 1, false); // u.d
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_wrapper_ip/eyeriss_wrapper_ip.srcs/sources_1/imports/src/true_dpbram_config.v;-;;-;16;-;line;-;173;-;;-;16;-;"); // u.d
+selectCodeEditor("true_dpbram_config.v", 189, 317); // ad
+selectCodeEditor("true_dpbram_config.v", 169, 174); // ad
+selectCodeEditor("true_dpbram_config.v", 215, 150); // ad
+selectCodeEditor("true_dpbram_config.v", 163, 131); // ad
+selectCodeEditor("true_dpbram_config.v", 224, 124); // ad
+selectCodeEditor("true_dpbram_config.v", 172, 134); // ad
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), u_config_bram : true_dpbram_config (true_dpbram_config.v)]", 4, false); // E
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), top_ctrl_inst : TOP_ctrl (TOP_ctrl.v)]", 5, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), u_config_bram : true_dpbram_config (true_dpbram_config.v)]", 4, false); // E
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v)]", 3, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v)]", 3, true, false, false, false, false, true); // E - Double Click - Node
+selectCodeEditor("eyeriss_wrapper.v", 100, 81); // ad
+// Elapsed time: 13 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v)]", 3); // E
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), u_config_bram : true_dpbram_config (true_dpbram_config.v)]", 4, false); // E
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), u_config_bram : true_dpbram_config (true_dpbram_config.v)]", 4, false); // E
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v), u_config_bram : true_dpbram_config (true_dpbram_config.v)]", 4, false, false, false, false, false, true); // E - Double Click
+selectCodeEditor("true_dpbram_config.v", 262, 169); // ad
+selectCodeEditor("true_dpbram_config.v", 293, 228); // ad
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-6156] failed synthesizing module 'true_dpbram_config' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_wrapper_ip/eyeriss_wrapper_ip.srcs/sources_1/imports/src/true_dpbram_config.v:8]. ]", 2, true); // u.d - Node
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_wrapper_ip/eyeriss_wrapper_ip.srcs/sources_1/imports/src/true_dpbram_config.v;-;;-;16;-;line;-;8;-;;-;16;-;"); // u.d
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-524] part-select [29:0] out of range of prefix 'bram_out_16' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_wrapper_ip/eyeriss_wrapper_ip.srcs/sources_1/imports/src/true_dpbram_config.v:173]. ]", 1, false); // u.d
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_wrapper_ip/eyeriss_wrapper_ip.srcs/sources_1/imports/src/true_dpbram_config.v;-;;-;16;-;line;-;173;-;;-;16;-;"); // u.d
+selectCodeEditor("true_dpbram_config.v", 716, 343); // ad
+selectCodeEditor("true_dpbram_config.v", 123, 313); // ad
+selectCodeEditor("true_dpbram_config.v", 874, 307); // ad
+selectCodeEditor("true_dpbram_config.v", 987, 307); // ad
+selectCodeEditor("true_dpbram_config.v", 702, 341); // ad
+selectCodeEditor("true_dpbram_config.v", 317, 328); // ad
+selectCodeEditor("true_dpbram_config.v", 704, 345); // ad
+selectCodeEditor("true_dpbram_config.v", 763, 248); // ad
+selectCodeEditor("true_dpbram_config.v", 720, 336); // ad
+selectCodeEditor("true_dpbram_config.v", 247, 314); // ad
+// Elapsed time: 37 seconds
+typeControlKey((HResource) null, "true_dpbram_config.v", 'c'); // ad
+typeControlKey((HResource) null, "true_dpbram_config.v", 'v'); // ad
+typeControlKey((HResource) null, "true_dpbram_config.v", 'v'); // ad
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 29m:18s
+// Elapsed Time for: 'L.f': 29m:20s
+// Elapsed time: 15 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 16, false); // f
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Launch Runs"); // f
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: launch_runs synth_1 -jobs 20 
+// Tcl Message: [Sun Sep 28 13:17:17 2025] Launched synth_1... Run output will be captured here: /home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_wrapper_ip/eyeriss_wrapper_ip.runs/synth_1/runme.log 
+dismissDialog("Starting Design Runs"); // bq
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 95 seconds
+selectTab((HResource) null, (HResource) null, "Design Runs", 4); // aa
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 52 seconds
+selectRadioButton(PAResourceCommand.PACommandNames_REPORTS_WINDOW, "View Reports"); // a
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// Run Command: PAResourceCommand.PACommandNames_REPORTS_WINDOW
+dismissDialog("Synthesis Completed"); // Q.a
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Utilization - Synth Design ; report_utilization ;  ; Sun Sep 28 13:19:20 KST 2025 ; 8839", 2, "Utilization - Synth Design", 0, false); // J
+expandTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Utilization - Synth Design ; report_utilization ;  ; Sun Sep 28 13:19:20 KST 2025 ; 8839", 2); // J
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Utilization - Synth Design ; report_utilization ;  ; Sun Sep 28 13:19:20 KST 2025 ; 8839", 2, "Utilization - Synth Design", 0, false, false, false, false, false, true); // J - Double Click
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "synthesis_report ;  ;  ; Sun Sep 28 13:19:20 KST 2025 ; 367931", 3, "synthesis_report", 0, false); // J
+expandTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "synthesis_report ;  ;  ; Sun Sep 28 13:19:20 KST 2025 ; 367931", 3); // J
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "synthesis_report ;  ;  ; Sun Sep 28 13:19:20 KST 2025 ; 367931", 3, "synthesis_report", 0, false, false, false, false, false, true); // J - Double Click
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Utilization - Synth Design - synth_1", 8); // o
+// HMemoryUtils.trashcanNow. Engine heap size: 3,707 MB. GUI used memory: 195 MB. Current time: 9/28/25, 1:19:56 PM KST
+selectCodeEditor("Utilization - Synth Design - synth_1", 487, 276); // G
+selectTab((HResource) null, (HResource) null, "Design Runs", 4); // aa
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "synth_1 ; constrs_1 ; synth_design Complete! ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 4865 ; 2787 ; 0.0 ; 0 ; 0 ; Sun Sep 28 13:17:19 KST 2025 ; 00:02:03 ; Vivado Synthesis Defaults (Vivado Synthesis 2023) ; Vivado Synthesis Default Reports (Vivado Synthesis 2023) ; xczu28dr-ffvg1517-2-e ; esoc-desktop ; Vivado Synthesis Defaults", 0, (String) null, 14, true); // ao - Node
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "impl_1 ; constrs_1 ; Not started ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Vivado Implementation Defaults (Vivado Implementation 2023) ; Vivado Implementation Default Reports (Vivado Implementation 2023) ; xczu28dr-ffvg1517-2-e ;  ; Default settings for Implementation.", 1, "0", 3, false); // ao
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "synth_1 ; constrs_1 ; synth_design Complete! ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 4865 ; 2787 ; 0.0 ; 0 ; 0 ; Sun Sep 28 13:17:19 KST 2025 ; 00:02:03 ; Vivado Synthesis Defaults (Vivado Synthesis 2023) ; Vivado Synthesis Default Reports (Vivado Synthesis 2023) ; xczu28dr-ffvg1517-2-e ; esoc-desktop ; Vivado Synthesis Defaults", 0, "Auto(Skipped)", 4, true); // ao - Node
+// Elapsed time: 26 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "eyeriss_ip_top.v", 7); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "PE_datapath.v", 6); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "axi_lite_slave.v", 5); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "true_dpbram_config.v", 1); // o
+selectCodeEditor("true_dpbram_config.v", 372, 267); // ad
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("true_dpbram_config.v", 426, 233); // ad
+// Elapsed Time for: 'L.f': 32m:50s
+selectCodeEditor("true_dpbram_config.v", 214, 204); // ad
+// Elapsed Time for: 'L.f': 32m:52s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_axi_lite_slave : axi_lite_slave (axi_lite_slave.v)]", 2, false); // E
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v)]", 1, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v)]", 1, true, false, false, false, false, true); // E - Double Click - Node
+selectCodeEditor("eyeriss_ip_top.v", 229, 199); // ad
+selectCodeEditor("eyeriss_ip_top.v", 102, 218); // ad
+selectCodeEditor("eyeriss_ip_top.v", 123, 230); // ad
+selectCodeEditor("eyeriss_ip_top.v", 114, 107); // ad
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v)]", 1); // E
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_axi_lite_slave : axi_lite_slave (axi_lite_slave.v)]", 2, false); // E
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v)]", 3, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, eyeriss_top (eyeriss_ip_top.v), u_eyeriss_wrapper : eyeriss_wrapper (eyeriss_wrapper.v)]", 3, true, false, false, false, false, true); // E - Double Click - Node
+selectCodeEditor("eyeriss_wrapper.v", 206, 73); // ad
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 3,799 MB. GUI used memory: 193 MB. Current time: 9/28/25, 1:21:01 PM KST
+// Elapsed Time for: 'L.f': 33m:10s
+selectCodeEditor("eyeriss_wrapper.v", 281, 323); // ad
+selectCodeEditor("eyeriss_wrapper.v", 99, 155); // ad
+selectCodeEditor("eyeriss_wrapper.v", 304, 258); // ad
+// Elapsed Time for: 'L.f': 33m:12s
+selectCodeEditor("eyeriss_wrapper.v", 232, 224); // ad
+selectCodeEditor("eyeriss_wrapper.v", 286, 287); // ad
+selectCodeEditor("eyeriss_wrapper.v", 435, 306); // ad
+selectCodeEditor("eyeriss_wrapper.v", 354, 345); // ad
+selectCodeEditor("eyeriss_wrapper.v", 306, 204); // ad
+// Elapsed time: 28 seconds
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "synth_1 ; constrs_1 ; Synthesis Out-of-date ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 4865 ; 2787 ; 0.0 ; 0 ; 0 ; Sun Sep 28 13:17:19 KST 2025 ; 00:02:03 ; Vivado Synthesis Defaults (Vivado Synthesis 2023) ; Vivado Synthesis Default Reports (Vivado Synthesis 2023) ; xczu28dr-ffvg1517-2-e ; esoc-desktop ; Vivado Synthesis Defaults", 0, "constrs_1", 1, true); // ao - Node
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "synth_1 ; constrs_1 ; Synthesis Out-of-date ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 4865 ; 2787 ; 0.0 ; 0 ; 0 ; Sun Sep 28 13:17:19 KST 2025 ; 00:02:03 ; Vivado Synthesis Defaults (Vivado Synthesis 2023) ; Vivado Synthesis Default Reports (Vivado Synthesis 2023) ; xczu28dr-ffvg1517-2-e ; esoc-desktop ; Vivado Synthesis Defaults", 0, "constrs_1", 1, true, false, false, false, true, false); // ao - Popup Trigger - Node
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "synth_1 ; constrs_1 ; Synthesis Out-of-date ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 4865 ; 2787 ; 0.0 ; 0 ; 0 ; Sun Sep 28 13:17:19 KST 2025 ; 00:02:03 ; Vivado Synthesis Defaults (Vivado Synthesis 2023) ; Vivado Synthesis Default Reports (Vivado Synthesis 2023) ; xczu28dr-ffvg1517-2-e ; esoc-desktop ; Vivado Synthesis Defaults", 0, "constrs_1", 1, true); // ao - Node
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "synth_1 ; constrs_1 ; Synthesis Out-of-date ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 4865 ; 2787 ; 0.0 ; 0 ; 0 ; Sun Sep 28 13:17:19 KST 2025 ; 00:02:03 ; Vivado Synthesis Defaults (Vivado Synthesis 2023) ; Vivado Synthesis Default Reports (Vivado Synthesis 2023) ; xczu28dr-ffvg1517-2-e ; esoc-desktop ; Vivado Synthesis Defaults", 0, "constrs_1", 1, true); // ao - Node
+collapseTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "synth_1 ; constrs_1 ; Synthesis Out-of-date ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 4865 ; 2787 ; 0.0 ; 0 ; 0 ; Sun Sep 28 13:17:19 KST 2025 ; 00:02:03 ; Vivado Synthesis Defaults (Vivado Synthesis 2023) ; Vivado Synthesis Default Reports (Vivado Synthesis 2023) ; xczu28dr-ffvg1517-2-e ; esoc-desktop ; Vivado Synthesis Defaults", 0); // ao
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "synth_1 ; constrs_1 ; Synthesis Out-of-date ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 4865 ; 2787 ; 0.0 ; 0 ; 0 ; Sun Sep 28 13:17:19 KST 2025 ; 00:02:03 ; Vivado Synthesis Defaults (Vivado Synthesis 2023) ; Vivado Synthesis Default Reports (Vivado Synthesis 2023) ; xczu28dr-ffvg1517-2-e ; esoc-desktop ; Vivado Synthesis Defaults", 0, "constrs_1", 1, true, false, false, false, false, true); // ao - Double Click - Node
+selectTab((HResource) null, (HResource) null, "Reports", 3); // aa
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "synthesis_report ;  ;  ; Sun Sep 28 13:19:20 KST 2025 ; 367931", 3, "synthesis_report", 0, false); // J
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "synthesis_report ;  ;  ; Sun Sep 28 13:19:20 KST 2025 ; 367931", 3, "synthesis_report", 0, false, false, false, false, false, true); // J - Double Click
+selectCodeEditor("synthesis_report - synth_1", 370, 280); // G
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "dsp", true); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "dsp"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "dsp"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "dsp"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "dsp"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "dsp"); // d.c
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "dsp"); // d.c
+selectCodeEditor("synthesis_report - synth_1", 491, 310); // G
+selectCodeEditor("synthesis_report - synth_1", 503, 320); // G
+typeControlKey((HResource) null, "synthesis_report - synth_1", 'c'); // G
+selectCodeEditor("synthesis_report - synth_1", 491, 275); // G
+selectCodeEditor("synthesis_report - synth_1", 480, 280); // G
+selectCodeEditor("synthesis_report - synth_1", 480, 281); // G
+selectCodeEditor("synthesis_report - synth_1", 528, 196); // G
+typeControlKey((HResource) null, "synthesis_report - synth_1", 'c'); // G
+// Elapsed time: 62 seconds
+selectTab((HResource) null, (HResource) null, "Tcl Console", 0); // aa
+selectTab((HResource) null, (HResource) null, "Reports", 3); // aa
+selectTab((HResource) null, (HResource) null, "Design Runs", 4); // aa
+selectTab((HResource) null, (HResource) null, "Messages", 1); // aa
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/u_axi_lite_slave/slv_reg1_reg[31]/Q' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_wrapper_ip/eyeriss_wrapper_ip.srcs/sources_1/imports/src/axi_lite_slave.v:418]. ]", 1, true); // u.d - Node
+selectCodeEditor("synthesis_report - synth_1", 388, 224); // G
+// HMemoryUtils.trashcanNow. Engine heap size: 3,807 MB. GUI used memory: 196 MB. Current time: 9/28/25, 1:51:02 PM KST

@@ -1,0 +1,27 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:04:56 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Sun Sep 28 12:40:43 2025
+# Process ID: 234557
+# Current directory: /home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.runs/design_1_auto_ds_0_synth_1
+# Command line: vivado -log design_1_auto_ds_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_auto_ds_0.tcl
+# Log file: /home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.runs/design_1_auto_ds_0_synth_1/design_1_auto_ds_0.vds
+# Journal file: /home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.runs/design_1_auto_ds_0_synth_1/vivado.jou
+# Running On: esoc-desktop, OS: Linux, CPU Frequency: 1300.000 MHz, CPU Physical cores: 10, Host memory: 50201 MB
+#-----------------------------------------------------------
+source design_1_auto_ds_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2362.977 ; gain = 117.023 ; free physical = 17545 ; free virtual = 29246
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/esoc/broadwise/vivado/projects/eyeriss/ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2023.1/data/ip'.
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_auto_ds_0
+INFO: [IP_Flow 19-6922] IPCACHE: Exporting cached entry e3a46a7fd29a06df to dir: /home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.runs/design_1_auto_ds_0_synth_1
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.cache/ip/2023.1/e/3/e3a46a7fd29a06df/design_1_auto_ds_1_stub.v to /home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.runs/design_1_auto_ds_0_synth_1/design_1_auto_ds_0_stub.v.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.cache/ip/2023.1/e/3/e3a46a7fd29a06df/design_1_auto_ds_1_sim_netlist.vhdl to /home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.runs/design_1_auto_ds_0_synth_1/design_1_auto_ds_0_sim_netlist.vhdl.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.cache/ip/2023.1/e/3/e3a46a7fd29a06df/design_1_auto_ds_1.dcp to /home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.runs/design_1_auto_ds_0_synth_1/design_1_auto_ds_0.dcp.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.cache/ip/2023.1/e/3/e3a46a7fd29a06df/design_1_auto_ds_1_sim_netlist.v to /home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.runs/design_1_auto_ds_0_synth_1/design_1_auto_ds_0_sim_netlist.v.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.cache/ip/2023.1/e/3/e3a46a7fd29a06df/design_1_auto_ds_1_stub.vhdl to /home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.runs/design_1_auto_ds_0_synth_1/design_1_auto_ds_0_stub.vhdl.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP design_1_auto_ds_0, cache-ID = e3a46a7fd29a06df.
+INFO: [Common 17-206] Exiting Vivado at Sun Sep 28 12:40:57 2025...

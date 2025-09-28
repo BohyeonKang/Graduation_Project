@@ -1,0 +1,7 @@
+Running: xsim.dir/tb_eyeriss_conv45/xsimk -wdb simulate_xsim_tb_eyeriss_conv45.wdb -simmode gui -simrunnum 0 -socket 46855
+Design successfully loaded
+Design Loading Memory Usage: 25576 KB (Peak: 25576 KB)
+Design Loading CPU Usage: 60 ms
+Simulation completed
+Simulation Memory Usage: 107852 KB (Peak: 164844 KB)
+Simulation CPU Usage: 950 ms

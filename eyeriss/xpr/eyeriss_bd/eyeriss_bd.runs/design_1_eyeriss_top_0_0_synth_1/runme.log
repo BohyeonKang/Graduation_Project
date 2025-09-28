@@ -1,0 +1,1131 @@
+
+*** Running vivado
+    with args -log design_1_eyeriss_top_0_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_eyeriss_top_0_0.tcl
+
+
+****** Vivado v2023.1 (64-bit)
+  **** SW Build 3865809 on Sun May  7 15:04:56 MDT 2023
+  **** IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+  **** SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source design_1_eyeriss_top_0_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2362.852 ; gain = 117.023 ; free physical = 851 ; free virtual = 24018
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/esoc/broadwise/vivado/projects/eyeriss/ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2023.1/data/ip'.
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_eyeriss_top_0_0
+Command: synth_design -top design_1_eyeriss_top_0_0 -part xczu28dr-ffvg1517-2-e -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xczu28dr'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu28dr'
+INFO: [Common 17-1540] The version limit for your license is '2025.01' and has expired for new software. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for new releases.
+INFO: [Device 21-403] Loading part xczu28dr-ffvg1517-2-e
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 233627
+INFO: [Synth 8-11241] undeclared symbol 'o_iter_done', assumed default net type 'wire' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/psum_load_ctrl.v:109]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 3743.180 ; gain = 337.770 ; free physical = 827 ; free virtual = 15377
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'design_1_eyeriss_top_0_0' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ip/design_1_eyeriss_top_0_0/synth/design_1_eyeriss_top_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'eyeriss_top' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/eyeriss_ip_top.v:4]
+INFO: [Synth 8-6157] synthesizing module 'axi_lite_slave' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:4]
+INFO: [Synth 8-226] default block is never used [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:232]
+INFO: [Synth 8-226] default block is never used [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:373]
+INFO: [Synth 8-6155] done synthesizing module 'axi_lite_slave' (0#1) [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:4]
+INFO: [Synth 8-6157] synthesizing module 'eyeriss_wrapper' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/eyeriss_wrapper.v:5]
+INFO: [Synth 8-6157] synthesizing module 'true_dpbram_config' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:8]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file './data/pe_set_config.mem'; please make sure the file is added to project and has read permission, ignoring [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:60]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[0]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[1]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[2]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[3]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[4]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[5]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[6]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[7]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[8]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[9]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[10]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[11]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[12]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[13]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[14]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[15]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[16]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[17]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[18]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[19]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[20]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[21]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[22]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[23]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[24]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[25]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[26]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[27]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[28]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[29]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[30]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[31]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[32]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[33]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[34]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[35]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[36]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[37]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[38]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[39]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[40]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[41]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[42]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[43]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[44]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[45]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[46]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[47]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[48]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[49]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[50]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[51]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[52]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[53]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[54]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[55]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[56]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[57]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[58]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[59]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[60]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[61]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[62]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'BRAM[63]' is not inferred as ram due to incorrect usage [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:52]
+INFO: [Synth 8-6155] done synthesizing module 'true_dpbram_config' (0#1) [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:8]
+INFO: [Synth 8-6157] synthesizing module 'TOP_ctrl' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/TOP_ctrl.v:2]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/TOP_ctrl.v:281]
+INFO: [Synth 8-6157] synthesizing module 'GLB_addr_decoder' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/GLB_addr_decoder.v:3]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/GLB_addr_decoder.v:42]
+INFO: [Synth 8-6155] done synthesizing module 'GLB_addr_decoder' (0#1) [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/GLB_addr_decoder.v:3]
+INFO: [Synth 8-6157] synthesizing module 'ifmap_load_ctrl' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/ifmap_load_ctrl.v:2]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/ifmap_load_ctrl.v:123]
+INFO: [Synth 8-6155] done synthesizing module 'ifmap_load_ctrl' (0#1) [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/ifmap_load_ctrl.v:2]
+INFO: [Synth 8-6157] synthesizing module 'wght_load_ctrl' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/wght_load_ctrl.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'wght_load_ctrl' (0#1) [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/wght_load_ctrl.v:2]
+INFO: [Synth 8-6157] synthesizing module 'psum_load_ctrl' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/psum_load_ctrl.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'psum_load_ctrl' (0#1) [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/psum_load_ctrl.v:2]
+INFO: [Synth 8-6157] synthesizing module 'psum_store_ctrl' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/psum_store_ctrl.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'psum_store_ctrl' (0#1) [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/psum_store_ctrl.v:2]
+INFO: [Synth 8-6157] synthesizing module 'psum_selection_decoder' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/psum_selection_decoder.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'psum_selection_decoder' (0#1) [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/psum_selection_decoder.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'TOP_ctrl' (0#1) [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/TOP_ctrl.v:2]
+INFO: [Synth 8-6157] synthesizing module 'GLB' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/GLB.v:3]
+INFO: [Synth 8-6157] synthesizing module 'true_dpbram' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram.v:8]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file './data/conv3/ifmap.mem'; please make sure the file is added to project and has read permission, ignoring [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram.v:40]
+INFO: [Synth 8-6155] done synthesizing module 'true_dpbram' (0#1) [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram.v:8]
+INFO: [Synth 8-6157] synthesizing module 'true_dpbram__parameterized0' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram.v:8]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file './data/conv3/psum_init.mem'; please make sure the file is added to project and has read permission, ignoring [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram.v:40]
+INFO: [Synth 8-6155] done synthesizing module 'true_dpbram__parameterized0' (0#1) [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram.v:8]
+INFO: [Synth 8-6157] synthesizing module 'true_dpbram__parameterized1' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram.v:8]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file './data/conv3/weight.mem'; please make sure the file is added to project and has read permission, ignoring [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram.v:40]
+INFO: [Synth 8-6155] done synthesizing module 'true_dpbram__parameterized1' (0#1) [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'GLB' (0#1) [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/GLB.v:3]
+INFO: [Synth 8-6157] synthesizing module 'PE_array' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:2]
+INFO: [Synth 8-6157] synthesizing module 'GIN_BUS' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/GIN_BUS.v:4]
+INFO: [Synth 8-6157] synthesizing module 'MC' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/MC.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'MC' (0#1) [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/MC.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'GIN_BUS' (0#1) [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/GIN_BUS.v:4]
+INFO: [Synth 8-6157] synthesizing module 'GIN_BUS__parameterized0' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/GIN_BUS.v:4]
+INFO: [Synth 8-6157] synthesizing module 'MC__parameterized0' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/MC.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'MC__parameterized0' (0#1) [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/MC.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'GIN_BUS__parameterized0' (0#1) [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/GIN_BUS.v:4]
+INFO: [Synth 8-6157] synthesizing module 'PE_top' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_top.v:3]
+INFO: [Synth 8-6157] synthesizing module 'fifo' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/fifo.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'fifo' (0#1) [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/fifo.v:3]
+INFO: [Synth 8-6157] synthesizing module 'fifo__parameterized0' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/fifo.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'fifo__parameterized0' (0#1) [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/fifo.v:3]
+INFO: [Synth 8-6157] synthesizing module 'fifo__parameterized1' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/fifo.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'fifo__parameterized1' (0#1) [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/fifo.v:3]
+INFO: [Synth 8-6157] synthesizing module 'PE_control' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_control.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'PE_control' (0#1) [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_control.v:3]
+INFO: [Synth 8-6157] synthesizing module 'PE_datapath' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_datapath.v:3]
+INFO: [Synth 8-6157] synthesizing module 'RF' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/RF.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'RF' (0#1) [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/RF.v:3]
+INFO: [Synth 8-6157] synthesizing module 'rams_dist' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/rams_dist.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'rams_dist' (0#1) [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/rams_dist.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'PE_datapath' (0#1) [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_datapath.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'PE_top' (0#1) [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_top.v:3]
+INFO: [Synth 8-6157] synthesizing module 'GIN_BUS__parameterized1' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/GIN_BUS.v:4]
+INFO: [Synth 8-6157] synthesizing module 'MC__parameterized1' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/MC.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'MC__parameterized1' (0#1) [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/MC.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'GIN_BUS__parameterized1' (0#1) [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/GIN_BUS.v:4]
+INFO: [Synth 8-6157] synthesizing module 'GIN_BUS__parameterized2' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/GIN_BUS.v:4]
+INFO: [Synth 8-6157] synthesizing module 'MC__parameterized2' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/MC.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'MC__parameterized2' (0#1) [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/MC.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'GIN_BUS__parameterized2' (0#1) [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/GIN_BUS.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'PE_array' (0#1) [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'eyeriss_wrapper' (0#1) [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/eyeriss_wrapper.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'eyeriss_top' (0#1) [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/eyeriss_ip_top.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_eyeriss_top_0_0' (0#1) [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ip/design_1_eyeriss_top_0_0/synth/design_1_eyeriss_top_0_0.v:53]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[0].PE_gen_horizontal[0].psum_out_data_buffer_reg[0][0] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:400]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[0].PE_gen_horizontal[0].psum_out_valid_buffer_reg[0][0] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:401]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[0].PE_gen_horizontal[1].psum_out_data_buffer_reg[0][1] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:400]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[0].PE_gen_horizontal[1].psum_out_valid_buffer_reg[0][1] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:401]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[0].PE_gen_horizontal[2].psum_out_data_buffer_reg[0][2] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:400]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[0].PE_gen_horizontal[2].psum_out_valid_buffer_reg[0][2] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:401]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[0].PE_gen_horizontal[3].psum_out_data_buffer_reg[0][3] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:400]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[0].PE_gen_horizontal[3].psum_out_valid_buffer_reg[0][3] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:401]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[0].PE_gen_horizontal[4].psum_out_data_buffer_reg[0][4] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:400]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[0].PE_gen_horizontal[4].psum_out_valid_buffer_reg[0][4] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:401]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[0].PE_gen_horizontal[5].psum_out_data_buffer_reg[0][5] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:400]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[0].PE_gen_horizontal[5].psum_out_valid_buffer_reg[0][5] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:401]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[0].PE_gen_horizontal[6].psum_out_data_buffer_reg[0][6] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:400]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[0].PE_gen_horizontal[6].psum_out_valid_buffer_reg[0][6] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:401]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[0].PE_gen_horizontal[7].psum_out_data_buffer_reg[0][7] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:400]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[0].PE_gen_horizontal[7].psum_out_valid_buffer_reg[0][7] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:401]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[0].PE_gen_horizontal[8].psum_out_data_buffer_reg[0][8] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:400]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[0].PE_gen_horizontal[8].psum_out_valid_buffer_reg[0][8] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:401]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[0].PE_gen_horizontal[9].psum_out_data_buffer_reg[0][9] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:400]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[0].PE_gen_horizontal[9].psum_out_valid_buffer_reg[0][9] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:401]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[0].PE_gen_horizontal[10].psum_out_data_buffer_reg[0][10] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:400]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[0].PE_gen_horizontal[10].psum_out_valid_buffer_reg[0][10] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:401]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[0].PE_gen_horizontal[11].psum_out_data_buffer_reg[0][11] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:400]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[0].PE_gen_horizontal[11].psum_out_valid_buffer_reg[0][11] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:401]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[0].PE_gen_horizontal[12].psum_out_data_buffer_reg[0][12] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:400]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[0].PE_gen_horizontal[12].psum_out_valid_buffer_reg[0][12] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:401]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[1].PE_gen_horizontal[0].psum_out_data_buffer_reg[1][0] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:400]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[1].PE_gen_horizontal[0].psum_out_valid_buffer_reg[1][0] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:401]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[1].PE_gen_horizontal[1].psum_out_data_buffer_reg[1][1] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:400]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[1].PE_gen_horizontal[1].psum_out_valid_buffer_reg[1][1] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:401]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[1].PE_gen_horizontal[2].psum_out_data_buffer_reg[1][2] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:400]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[1].PE_gen_horizontal[2].psum_out_valid_buffer_reg[1][2] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:401]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[1].PE_gen_horizontal[3].psum_out_data_buffer_reg[1][3] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:400]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[1].PE_gen_horizontal[3].psum_out_valid_buffer_reg[1][3] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:401]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[1].PE_gen_horizontal[4].psum_out_data_buffer_reg[1][4] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:400]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[1].PE_gen_horizontal[4].psum_out_valid_buffer_reg[1][4] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:401]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[1].PE_gen_horizontal[5].psum_out_data_buffer_reg[1][5] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:400]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[1].PE_gen_horizontal[5].psum_out_valid_buffer_reg[1][5] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:401]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[1].PE_gen_horizontal[6].psum_out_data_buffer_reg[1][6] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:400]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[1].PE_gen_horizontal[6].psum_out_valid_buffer_reg[1][6] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:401]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[1].PE_gen_horizontal[7].psum_out_data_buffer_reg[1][7] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:400]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[1].PE_gen_horizontal[7].psum_out_valid_buffer_reg[1][7] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:401]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[1].PE_gen_horizontal[8].psum_out_data_buffer_reg[1][8] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:400]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[1].PE_gen_horizontal[8].psum_out_valid_buffer_reg[1][8] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:401]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[1].PE_gen_horizontal[9].psum_out_data_buffer_reg[1][9] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:400]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[1].PE_gen_horizontal[9].psum_out_valid_buffer_reg[1][9] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:401]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[1].PE_gen_horizontal[10].psum_out_data_buffer_reg[1][10] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:400]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[1].PE_gen_horizontal[10].psum_out_valid_buffer_reg[1][10] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:401]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[1].PE_gen_horizontal[11].psum_out_data_buffer_reg[1][11] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:400]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[1].PE_gen_horizontal[11].psum_out_valid_buffer_reg[1][11] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:401]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[1].PE_gen_horizontal[12].psum_out_data_buffer_reg[1][12] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:400]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[1].PE_gen_horizontal[12].psum_out_valid_buffer_reg[1][12] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:401]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[2].PE_gen_horizontal[0].psum_out_data_buffer_reg[2][0] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:400]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[2].PE_gen_horizontal[0].psum_out_valid_buffer_reg[2][0] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:401]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[2].PE_gen_horizontal[1].psum_out_data_buffer_reg[2][1] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:400]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[2].PE_gen_horizontal[1].psum_out_valid_buffer_reg[2][1] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:401]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[2].PE_gen_horizontal[2].psum_out_data_buffer_reg[2][2] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:400]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[2].PE_gen_horizontal[2].psum_out_valid_buffer_reg[2][2] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:401]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[2].PE_gen_horizontal[3].psum_out_data_buffer_reg[2][3] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:400]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[2].PE_gen_horizontal[3].psum_out_valid_buffer_reg[2][3] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:401]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[2].PE_gen_horizontal[4].psum_out_data_buffer_reg[2][4] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:400]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[2].PE_gen_horizontal[4].psum_out_valid_buffer_reg[2][4] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:401]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[2].PE_gen_horizontal[5].psum_out_data_buffer_reg[2][5] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:400]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[2].PE_gen_horizontal[5].psum_out_valid_buffer_reg[2][5] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:401]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[2].PE_gen_horizontal[6].psum_out_data_buffer_reg[2][6] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:400]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[2].PE_gen_horizontal[6].psum_out_valid_buffer_reg[2][6] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:401]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[2].PE_gen_horizontal[7].psum_out_data_buffer_reg[2][7] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:400]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[2].PE_gen_horizontal[7].psum_out_valid_buffer_reg[2][7] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:401]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[2].PE_gen_horizontal[8].psum_out_data_buffer_reg[2][8] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:400]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[2].PE_gen_horizontal[8].psum_out_valid_buffer_reg[2][8] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:401]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[2].PE_gen_horizontal[9].psum_out_data_buffer_reg[2][9] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:400]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[2].PE_gen_horizontal[9].psum_out_valid_buffer_reg[2][9] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:401]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[2].PE_gen_horizontal[10].psum_out_data_buffer_reg[2][10] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:400]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[2].PE_gen_horizontal[10].psum_out_valid_buffer_reg[2][10] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:401]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[2].PE_gen_horizontal[11].psum_out_data_buffer_reg[2][11] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:400]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[2].PE_gen_horizontal[11].psum_out_valid_buffer_reg[2][11] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:401]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[2].PE_gen_horizontal[12].psum_out_data_buffer_reg[2][12] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:400]
+WARNING: [Synth 8-6014] Unused sequential element PE_gen_vertical[2].PE_gen_horizontal[12].psum_out_valid_buffer_reg[2][12] was removed.  [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/PE_array.v:401]
+WARNING: [Synth 8-7129] Port i_psum_out_fifo_ready in module PE_control is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_out_ready in module PE_array is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[0] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[1] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[2] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[3] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[4] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[5] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[6] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[7] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[8] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[9] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[10] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[11] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[12] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[13] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[14] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[15] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[16] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[17] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[18] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[19] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[20] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[21] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[22] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[23] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[24] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[25] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[26] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[27] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[28] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[29] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[30] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[31] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[32] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[33] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[34] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[35] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[36] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[37] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[38] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[39] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[40] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[41] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[42] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[43] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[44] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[45] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[46] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[47] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[48] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[49] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[50] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[51] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[52] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[53] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[54] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[55] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[56] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[57] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[58] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[59] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[60] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[61] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[62] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[63] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[64] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[65] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[66] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[67] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[68] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[69] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[70] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[71] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[72] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[73] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[74] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[75] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[76] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[77] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[78] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[79] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[80] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[81] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[82] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[83] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[84] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[85] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[86] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[87] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[88] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[89] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[90] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[91] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[92] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[93] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[94] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[95] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[96] in module psum_selection_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_psum_col_id[97] in module psum_selection_decoder is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 3837.117 ; gain = 431.707 ; free physical = 843 ; free virtual = 14852
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 3848.992 ; gain = 443.582 ; free physical = 830 ; free virtual = 14839
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 3848.992 ; gain = 443.582 ; free physical = 830 ; free virtual = 14839
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.62 ; elapsed = 00:00:00.62 . Memory (MB): peak = 3848.992 ; gain = 0.000 ; free physical = 814 ; free virtual = 14581
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4067.773 ; gain = 0.000 ; free physical = 822 ; free virtual = 14334
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.55 . Memory (MB): peak = 4118.586 ; gain = 50.812 ; free physical = 829 ; free virtual = 14311
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:22 ; elapsed = 00:00:18 . Memory (MB): peak = 4118.586 ; gain = 713.176 ; free physical = 856 ; free virtual = 14299
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xczu28dr-ffvg1517-2-e
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:22 ; elapsed = 00:00:18 . Memory (MB): peak = 4118.586 ; gain = 713.176 ; free physical = 856 ; free virtual = 14299
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:18 . Memory (MB): peak = 4118.586 ; gain = 713.176 ; free physical = 856 ; free virtual = 14299
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'wght_load_ctrl'
+WARNING: [Synth 8-327] inferring latch for variable 'n_state_reg' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/ifmap_load_ctrl.v:124]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                              001 |                               00
+                LOAD_SEQ |                              010 |                               01
+                    DONE |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'wght_load_ctrl'
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 4 and width 18 for RAM "true_dpbram:/BRAM_reg"
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 2 and width 9 for RAM "true_dpbram:/BRAM_reg"
+INFO: [Synth 8-7030] Implemented Non-Cascaded Block Ram (cascade_height = 1) of width 4 for RAM "true_dpbram:/BRAM_reg"
+INFO: [Synth 8-7030] Implemented Non-Cascaded Block Ram (cascade_height = 1) of width 1 for RAM "true_dpbram:/BRAM_reg"
+INFO: [Synth 8-3971] The signal "true_dpbram:/BRAM_reg" was recognized as a true dual port RAM template.
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 4 and width 18 for RAM "true_dpbram__parameterized0:/BRAM_reg"
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 2 and width 9 for RAM "true_dpbram__parameterized0:/BRAM_reg"
+INFO: [Synth 8-7030] Implemented Non-Cascaded Block Ram (cascade_height = 1) of width 4 for RAM "true_dpbram__parameterized0:/BRAM_reg"
+INFO: [Synth 8-7030] Implemented Non-Cascaded Block Ram (cascade_height = 1) of width 1 for RAM "true_dpbram__parameterized0:/BRAM_reg"
+INFO: [Synth 8-3971] The signal "true_dpbram__parameterized0:/BRAM_reg" was recognized as a true dual port RAM template.
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 4 and width 18 for RAM "true_dpbram__parameterized1:/BRAM_reg"
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 2 and width 9 for RAM "true_dpbram__parameterized1:/BRAM_reg"
+INFO: [Synth 8-7030] Implemented Non-Cascaded Block Ram (cascade_height = 1) of width 4 for RAM "true_dpbram__parameterized1:/BRAM_reg"
+INFO: [Synth 8-7030] Implemented Non-Cascaded Block Ram (cascade_height = 1) of width 1 for RAM "true_dpbram__parameterized1:/BRAM_reg"
+INFO: [Synth 8-3971] The signal "true_dpbram__parameterized1:/BRAM_reg" was recognized as a true dual port RAM template.
+INFO: [Synth 8-6904] The RAM "fifo:/queue_mem_reg" of size (depth=16 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "fifo__parameterized1:/queue_mem_reg" of size (depth=32 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:24 ; elapsed = 00:00:21 . Memory (MB): peak = 4118.586 ; gain = 713.176 ; free physical = 821 ; free virtual = 14238
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 171   
+	   2 Input   11 Bit       Adders := 2     
+	   2 Input   10 Bit       Adders := 1     
+	   2 Input    9 Bit       Adders := 117   
+	   2 Input    8 Bit       Adders := 82    
+	   3 Input    8 Bit       Adders := 1     
+	   2 Input    7 Bit       Adders := 6     
+	   2 Input    6 Bit       Adders := 118   
+	   2 Input    5 Bit       Adders := 282   
+	   2 Input    4 Bit       Adders := 43    
+	   2 Input    3 Bit       Adders := 85    
+	   3 Input    2 Bit       Adders := 1     
+	   2 Input    2 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1656  
+	               11 Bit    Registers := 3     
+	               10 Bit    Registers := 1     
+	                9 Bit    Registers := 80    
+	                8 Bit    Registers := 46    
+	                7 Bit    Registers := 5     
+	                6 Bit    Registers := 78    
+	                5 Bit    Registers := 281   
+	                4 Bit    Registers := 560   
+	                3 Bit    Registers := 405   
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 8     
++---Multipliers : 
+	              32x32  Multipliers := 39    
++---RAMs : 
+	             256K Bit	(8192 X 32 bit)          RAMs := 3     
+	               8K Bit	(256 X 32 bit)          RAMs := 39    
+	             1024 Bit	(32 X 32 bit)          RAMs := 39    
+	              512 Bit	(16 X 32 bit)          RAMs := 78    
++---Muxes : 
+	  12 Input   65 Bit        Muxes := 1     
+	  12 Input   52 Bit        Muxes := 2     
+	  12 Input   41 Bit        Muxes := 1     
+	   2 Input   41 Bit        Muxes := 1     
+	  12 Input   40 Bit        Muxes := 2     
+	   2 Input   40 Bit        Muxes := 2     
+	  12 Input   39 Bit        Muxes := 2     
+	   2 Input   37 Bit        Muxes := 3     
+	   2 Input   36 Bit        Muxes := 6     
+	   5 Input   32 Bit        Muxes := 156   
+	   2 Input   32 Bit        Muxes := 316   
+	   4 Input   32 Bit        Muxes := 83    
+	   3 Input   32 Bit        Muxes := 1     
+	  12 Input   15 Bit        Muxes := 1     
+	   4 Input   14 Bit        Muxes := 1     
+	  12 Input   13 Bit        Muxes := 2     
+	  12 Input   12 Bit        Muxes := 3     
+	  11 Input   11 Bit        Muxes := 1     
+	   2 Input   10 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 78    
+	   9 Input    8 Bit        Muxes := 78    
+	   2 Input    7 Bit        Muxes := 4     
+	   9 Input    5 Bit        Muxes := 39    
+	   2 Input    5 Bit        Muxes := 312   
+	   4 Input    5 Bit        Muxes := 78    
+	   7 Input    4 Bit        Muxes := 39    
+	   2 Input    4 Bit        Muxes := 705   
+	   4 Input    4 Bit        Muxes := 117   
+	   9 Input    4 Bit        Muxes := 117   
+	   9 Input    3 Bit        Muxes := 39    
+	   2 Input    3 Bit        Muxes := 511   
+	   4 Input    3 Bit        Muxes := 117   
+	   3 Input    3 Bit        Muxes := 2     
+	  12 Input    3 Bit        Muxes := 2     
+	   4 Input    2 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 5     
+	  12 Input    2 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 3260  
+	   9 Input    1 Bit        Muxes := 351   
+	   4 Input    1 Bit        Muxes := 202   
+	   6 Input    1 Bit        Muxes := 1     
+	   3 Input    1 Bit        Muxes := 5     
+	  11 Input    1 Bit        Muxes := 2     
+	  12 Input    1 Bit        Muxes := 7     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 4272 (col length:192)
+BRAMs: 2160 (col length: RAMB18 192 RAMB36 96)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+INFO: [Synth 8-6904] The RAM "PE_top:/u_ifmap_fifo/queue_mem_reg" of size (depth=16 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "PE_top:/u_psum_in_fifo/queue_mem_reg" of size (depth=16 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "PE_top:/u_psum_out_fifo/queue_mem_reg" of size (depth=32 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+DSP Report: Generating DSP mul_reg0, operation Mode is: A2*B2.
+DSP Report: register ifmap_reg_reg is absorbed into DSP mul_reg0.
+DSP Report: register mul_reg0 is absorbed into DSP mul_reg0.
+DSP Report: operator mul_reg0 is absorbed into DSP mul_reg0.
+DSP Report: operator mul_reg0 is absorbed into DSP mul_reg0.
+DSP Report: Generating DSP mul_reg_reg, operation Mode is: (PCIN>>17)+A2*B2.
+DSP Report: register wght_reg_reg is absorbed into DSP mul_reg_reg.
+DSP Report: register ifmap_reg_reg is absorbed into DSP mul_reg_reg.
+DSP Report: register mul_reg_reg is absorbed into DSP mul_reg_reg.
+DSP Report: operator mul_reg0 is absorbed into DSP mul_reg_reg.
+DSP Report: operator mul_reg0 is absorbed into DSP mul_reg_reg.
+DSP Report: Generating DSP mul_reg0, operation Mode is: A2*B2.
+DSP Report: register mul_reg0 is absorbed into DSP mul_reg0.
+DSP Report: register mul_reg0 is absorbed into DSP mul_reg0.
+DSP Report: operator mul_reg0 is absorbed into DSP mul_reg0.
+DSP Report: operator mul_reg0 is absorbed into DSP mul_reg0.
+DSP Report: Generating DSP mul_reg_reg, operation Mode is: (PCIN>>17)+A2*B2.
+DSP Report: register wght_reg_reg is absorbed into DSP mul_reg_reg.
+DSP Report: register mul_reg_reg is absorbed into DSP mul_reg_reg.
+DSP Report: register mul_reg_reg is absorbed into DSP mul_reg_reg.
+DSP Report: operator mul_reg0 is absorbed into DSP mul_reg_reg.
+DSP Report: operator mul_reg0 is absorbed into DSP mul_reg_reg.
+DSP Report: Generating DSP o_ifmap_glb_ra1, operation Mode is: A*B.
+DSP Report: operator o_ifmap_glb_ra1 is absorbed into DSP o_ifmap_glb_ra1.
+DSP Report: Generating DSP o_ifmap_glb_ra, operation Mode is: PCIN+A*B.
+DSP Report: operator o_ifmap_glb_ra is absorbed into DSP o_ifmap_glb_ra.
+DSP Report: operator o_ifmap_glb_ra1 is absorbed into DSP o_ifmap_glb_ra.
+DSP Report: Generating DSP o_psum_glb_ra1, operation Mode is: A2*B.
+DSP Report: register cnt_e_reg is absorbed into DSP o_psum_glb_ra1.
+DSP Report: operator o_psum_glb_ra1 is absorbed into DSP o_psum_glb_ra1.
+DSP Report: Generating DSP o_psum_glb_ra, operation Mode is: PCIN+A*B.
+DSP Report: operator o_psum_glb_ra is absorbed into DSP o_psum_glb_ra.
+DSP Report: operator o_psum_glb_ra1 is absorbed into DSP o_psum_glb_ra.
+DSP Report: Generating DSP o_psum_glb_wa1, operation Mode is: A2*B.
+DSP Report: register cnt_e_reg is absorbed into DSP o_psum_glb_wa1.
+DSP Report: operator o_psum_glb_wa1 is absorbed into DSP o_psum_glb_wa1.
+DSP Report: Generating DSP o_psum_glb_wa, operation Mode is: PCIN+A*B.
+DSP Report: operator o_psum_glb_wa is absorbed into DSP o_psum_glb_wa.
+DSP Report: operator wa_offset is absorbed into DSP o_psum_glb_wa.
+DSP Report: Generating DSP o_psum_glb_wa, operation Mode is: PCIN+A*B.
+DSP Report: operator o_psum_glb_wa is absorbed into DSP o_psum_glb_wa.
+DSP Report: operator o_psum_glb_wa2 is absorbed into DSP o_psum_glb_wa.
+DSP Report: Generating DSP o_ifmap_col_id1, operation Mode is: (C:0xffffffffff82)-(D'+(A:0x1))*(B:0x41).
+DSP Report: register cnt_reg is absorbed into DSP o_ifmap_col_id1.
+DSP Report: register cnt_reg is absorbed into DSP o_ifmap_col_id1.
+DSP Report: operator o_ifmap_col_id1 is absorbed into DSP o_ifmap_col_id1.
+DSP Report: operator o_ifmap_col_id2 is absorbed into DSP o_ifmap_col_id1.
+DSP Report: operator cnt0 is absorbed into DSP o_ifmap_col_id1.
+DSP Report: Generating DSP o_wght_col_id1, operation Mode is: (C:0x68)-(D'+(A:0x1))*(B:0x34).
+DSP Report: register cnt_reg is absorbed into DSP o_wght_col_id1.
+DSP Report: register cnt_reg is absorbed into DSP o_wght_col_id1.
+DSP Report: operator o_wght_col_id1 is absorbed into DSP o_wght_col_id1.
+DSP Report: operator o_wght_col_id2 is absorbed into DSP o_wght_col_id1.
+DSP Report: operator cnt0 is absorbed into DSP o_wght_col_id1.
+WARNING: [Synth 8-6014] Unused sequential element glb_inst/u_glb_bank_ifmap/BRAM_reg was removed. 
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 4 and width 18 for RAM "design_1_eyeriss_top_0_0/glb_inst/u_glb_bank_ifmap/BRAM_reg"
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 2 and width 9 for RAM "design_1_eyeriss_top_0_0/glb_inst/u_glb_bank_ifmap/BRAM_reg"
+INFO: [Synth 8-7030] Implemented Non-Cascaded Block Ram (cascade_height = 1) of width 4 for RAM "design_1_eyeriss_top_0_0/glb_inst/u_glb_bank_ifmap/BRAM_reg"
+INFO: [Synth 8-7030] Implemented Non-Cascaded Block Ram (cascade_height = 1) of width 1 for RAM "design_1_eyeriss_top_0_0/glb_inst/u_glb_bank_ifmap/BRAM_reg"
+WARNING: [Synth 8-6014] Unused sequential element glb_inst/u_glb_bank_psum/BRAM_reg was removed. 
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 4 and width 18 for RAM "design_1_eyeriss_top_0_0/glb_inst/u_glb_bank_psum/BRAM_reg"
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 2 and width 9 for RAM "design_1_eyeriss_top_0_0/glb_inst/u_glb_bank_psum/BRAM_reg"
+INFO: [Synth 8-7030] Implemented Non-Cascaded Block Ram (cascade_height = 1) of width 4 for RAM "design_1_eyeriss_top_0_0/glb_inst/u_glb_bank_psum/BRAM_reg"
+INFO: [Synth 8-7030] Implemented Non-Cascaded Block Ram (cascade_height = 1) of width 1 for RAM "design_1_eyeriss_top_0_0/glb_inst/u_glb_bank_psum/BRAM_reg"
+WARNING: [Synth 8-6014] Unused sequential element glb_inst/u_glb_bank_wght/BRAM_reg was removed. 
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 4 and width 18 for RAM "design_1_eyeriss_top_0_0/glb_inst/u_glb_bank_wght/BRAM_reg"
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 2 and width 9 for RAM "design_1_eyeriss_top_0_0/glb_inst/u_glb_bank_wght/BRAM_reg"
+INFO: [Synth 8-7030] Implemented Non-Cascaded Block Ram (cascade_height = 1) of width 4 for RAM "design_1_eyeriss_top_0_0/glb_inst/u_glb_bank_wght/BRAM_reg"
+INFO: [Synth 8-7030] Implemented Non-Cascaded Block Ram (cascade_height = 1) of width 1 for RAM "design_1_eyeriss_top_0_0/glb_inst/u_glb_bank_wght/BRAM_reg"
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[47]) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[46]) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[45]) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[44]) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[43]) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[42]) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[41]) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[40]) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[39]) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[38]) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[37]) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[36]) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[35]) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[34]) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[33]) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[32]) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[31]) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[30]) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[29]) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[28]) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[27]) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[26]) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[25]) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[24]) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[23]) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[22]) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[21]) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[20]) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[19]) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[18]) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[17]) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[16]) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[15]) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[47]__0) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[46]__0) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[45]__0) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[44]__0) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[43]__0) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[42]__0) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[41]__0) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[40]__0) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[39]__0) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[38]__0) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[37]__0) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[36]__0) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[35]__0) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[34]__0) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[33]__0) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[32]__0) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[31]__0) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[30]__0) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[29]__0) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[28]__0) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[27]__0) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[26]__0) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[25]__0) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[24]__0) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[23]__0) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[22]__0) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[21]__0) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[20]__0) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[19]__0) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[18]__0) is unused and will be removed from module PE_top.
+WARNING: [Synth 8-3332] Sequential element (u_PE_datapath/mul_reg_reg[17]__0) is unused and will be removed from module PE_top.
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'insti_2/u_axi_lite_slave/slv_reg1_reg[31]/Q' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'insti_2/u_axi_lite_slave/slv_reg1_reg[30]/Q' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'insti_2/u_axi_lite_slave/slv_reg1_reg[29]/Q' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'insti_2/u_axi_lite_slave/slv_reg1_reg[28]/Q' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'insti_2/u_axi_lite_slave/slv_reg1_reg[27]/Q' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'insti_2/u_axi_lite_slave/slv_reg1_reg[26]/Q' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'insti_2/u_axi_lite_slave/slv_reg1_reg[25]/Q' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'insti_2/u_axi_lite_slave/slv_reg1_reg[24]/Q' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'insti_2/u_axi_lite_slave/slv_reg1_reg[23]/Q' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'insti_2/u_axi_lite_slave/slv_reg1_reg[22]/Q' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'insti_2/u_axi_lite_slave/slv_reg1_reg[21]/Q' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'insti_2/u_axi_lite_slave/slv_reg1_reg[20]/Q' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'insti_2/u_axi_lite_slave/slv_reg1_reg[19]/Q' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'insti_2/u_axi_lite_slave/slv_reg1_reg[18]/Q' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'insti_2/u_axi_lite_slave/slv_reg1_reg[17]/Q' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'insti_2/u_axi_lite_slave/slv_reg1_reg[16]/Q' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'insti_2/u_axi_lite_slave/slv_reg1_reg[15]/Q' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'insti_2/u_axi_lite_slave/slv_reg1_reg[14]/Q' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'insti_2/u_axi_lite_slave/slv_reg1_reg[13]/Q' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'insti_2/u_axi_lite_slave/slv_reg1_reg[12]/Q' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'insti_2/u_axi_lite_slave/slv_reg1_reg[11]/Q' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'insti_2/u_axi_lite_slave/slv_reg1_reg[10]/Q' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'insti_2/u_axi_lite_slave/slv_reg1_reg[9]/Q' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'insti_2/u_axi_lite_slave/slv_reg1_reg[8]/Q' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'insti_2/u_axi_lite_slave/slv_reg1_reg[7]/Q' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'insti_2/u_axi_lite_slave/slv_reg1_reg[6]/Q' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'insti_2/u_axi_lite_slave/slv_reg1_reg[5]/Q' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'insti_2/u_axi_lite_slave/slv_reg1_reg[4]/Q' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'insti_2/u_axi_lite_slave/slv_reg1_reg[3]/Q' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'insti_2/u_axi_lite_slave/slv_reg1_reg[2]/Q' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'insti_2/u_axi_lite_slave/slv_reg1_reg[1]/Q' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:10 ; elapsed = 00:01:07 . Memory (MB): peak = 4118.586 ; gain = 713.176 ; free physical = 17630 ; free virtual = 29331
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping Report (see note below)
++-------------------------+------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+|Module Name              | RTL Object                         | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | Cascade Heights | 
++-------------------------+------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+|design_1_eyeriss_top_0_0 | glb_inst/u_glb_bank_ifmap/BRAM_reg | 8 K x 32(READ_FIRST)   | W |   | 8 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 1      | 7      | 4,2,1,1         | 
+|design_1_eyeriss_top_0_0 | glb_inst/u_glb_bank_psum/BRAM_reg  | 8 K x 32(READ_FIRST)   | W |   | 8 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 1      | 7      | 4,2,1,1         | 
+|design_1_eyeriss_top_0_0 | glb_inst/u_glb_bank_wght/BRAM_reg  | 8 K x 32(READ_FIRST)   | W |   | 8 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 1      | 7      | 4,2,1,1         | 
++-------------------------+------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++------------+-----------------------------------+----------------+----------------------+-----------------+
+|Module Name | RTL Object                        | Inference      | Size (Depth x Width) | Primitives      | 
++------------+-----------------------------------+----------------+----------------------+-----------------+
+|PE_top:     | u_ifmap_fifo/queue_mem_reg        | Implied        | 16 x 32              | RAM16X1D x 32   | 
+|PE_top:     | u_wght_fifo/queue_mem_reg         | Implied        | 256 x 32             | RAM256X1D x 32  | 
+|PE_top:     | u_psum_in_fifo/queue_mem_reg      | Implied        | 16 x 32              | RAM16X1D x 32   | 
+|PE_top:     | u_psum_out_fifo/queue_mem_reg     | Implied        | 32 x 32              | RAM32X1D x 32   | 
+|PE_top:     | u_PE_datapath/spad_weight/ram_reg | User Attribute | 256 x 32             | RAM64M8 x 20    | 
+|PE_top:     | u_ifmap_fifo/queue_mem_reg        | Implied        | 16 x 32              | RAM16X1D x 32   | 
+|PE_top:     | u_wght_fifo/queue_mem_reg         | Implied        | 256 x 32             | RAM256X1D x 32  | 
+|PE_top:     | u_psum_in_fifo/queue_mem_reg      | Implied        | 16 x 32              | RAM16X1D x 32   | 
+|PE_top:     | u_psum_out_fifo/queue_mem_reg     | Implied        | 32 x 32              | RAM32X1D x 32   | 
+|PE_top:     | u_PE_datapath/spad_weight/ram_reg | User Attribute | 256 x 32             | RAM64M8 x 20    | 
+|PE_top:     | u_ifmap_fifo/queue_mem_reg        | Implied        | 16 x 32              | RAM16X1D x 32   | 
+|PE_top:     | u_wght_fifo/queue_mem_reg         | Implied        | 256 x 32             | RAM256X1D x 32  | 
+|PE_top:     | u_psum_in_fifo/queue_mem_reg      | Implied        | 16 x 32              | RAM16X1D x 32   | 
+|PE_top:     | u_psum_out_fifo/queue_mem_reg     | Implied        | 32 x 32              | RAM32X1D x 32   | 
+|PE_top:     | u_PE_datapath/spad_weight/ram_reg | User Attribute | 256 x 32             | RAM64M8 x 20    | 
++------------+-----------------------------------+----------------+----------------------+-----------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++----------------+------------------------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name     | DSP Mapping                              | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++----------------+------------------------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|PE_datapath     | A2*B2                                    | 18     | 16     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|PE_datapath     | (PCIN>>17)+A2*B2                         | 16     | 16     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 1    | 
+|PE_datapath     | A2*B2                                    | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|PE_datapath     | (PCIN>>17)+A2*B2                         | 18     | 16     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 1    | 
+|ifmap_load_ctrl | A*B                                      | 8      | 8      | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ifmap_load_ctrl | PCIN+A*B                                 | 11     | 8      | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|psum_load_ctrl  | A2*B                                     | 5      | 5      | -      | -      | 10     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|psum_load_ctrl  | PCIN+A*B                                 | 10     | 5      | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|psum_store_ctrl | A2*B                                     | 5      | 5      | -      | -      | 10     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|psum_store_ctrl | PCIN+A*B                                 | 10     | 5      | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|psum_store_ctrl | PCIN+A*B                                 | 10     | 5      | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|TOP_ctrl        | (C:0xffffffffff82)-(D'+(A:0x1))*(B:0x41) | 1      | 7      | 8      | 11     | 8      | 0    | 0    | 0    | 1    | 1     | 0    | 0    | 
+|TOP_ctrl        | (C:0x68)-(D'+(A:0x1))*(B:0x34)           | 1      | 6      | 8      | 11     | 8      | 0    | 0    | 0    | 1    | 1     | 0    | 0    | 
++----------------+------------------------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:19 ; elapsed = 00:01:18 . Memory (MB): peak = 4329.484 ; gain = 924.074 ; free physical = 18751 ; free virtual = 30455
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:19 ; elapsed = 00:01:18 . Memory (MB): peak = 4330.484 ; gain = 925.074 ; free physical = 18750 ; free virtual = 30455
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping Report
++-------------------------+------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+|Module Name              | RTL Object                         | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | Cascade Heights | 
++-------------------------+------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+|design_1_eyeriss_top_0_0 | glb_inst/u_glb_bank_ifmap/BRAM_reg | 8 K x 32(READ_FIRST)   | W |   | 8 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 1      | 7      | 4,2,1,1         | 
+|design_1_eyeriss_top_0_0 | glb_inst/u_glb_bank_psum/BRAM_reg  | 8 K x 32(READ_FIRST)   | W |   | 8 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 1      | 7      | 4,2,1,1         | 
+|design_1_eyeriss_top_0_0 | glb_inst/u_glb_bank_wght/BRAM_reg  | 8 K x 32(READ_FIRST)   | W |   | 8 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 1      | 7      | 4,2,1,1         | 
++-------------------------+------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+
+
+Distributed RAM: Final Mapping Report
++------------+-----------------------------------+----------------+----------------------+-----------------+
+|Module Name | RTL Object                        | Inference      | Size (Depth x Width) | Primitives      | 
++------------+-----------------------------------+----------------+----------------------+-----------------+
+|PE_top:     | u_ifmap_fifo/queue_mem_reg        | Implied        | 16 x 32              | RAM16X1D x 32   | 
+|PE_top:     | u_wght_fifo/queue_mem_reg         | Implied        | 256 x 32             | RAM256X1D x 32  | 
+|PE_top:     | u_psum_in_fifo/queue_mem_reg      | Implied        | 16 x 32              | RAM16X1D x 32   | 
+|PE_top:     | u_psum_out_fifo/queue_mem_reg     | Implied        | 32 x 32              | RAM32X1D x 32   | 
+|PE_top:     | u_PE_datapath/spad_weight/ram_reg | User Attribute | 256 x 32             | RAM64M8 x 20    | 
+|PE_top:     | u_ifmap_fifo/queue_mem_reg        | Implied        | 16 x 32              | RAM16X1D x 32   | 
+|PE_top:     | u_wght_fifo/queue_mem_reg         | Implied        | 256 x 32             | RAM256X1D x 32  | 
+|PE_top:     | u_psum_in_fifo/queue_mem_reg      | Implied        | 16 x 32              | RAM16X1D x 32   | 
+|PE_top:     | u_psum_out_fifo/queue_mem_reg     | Implied        | 32 x 32              | RAM32X1D x 32   | 
+|PE_top:     | u_PE_datapath/spad_weight/ram_reg | User Attribute | 256 x 32             | RAM64M8 x 20    | 
+|PE_top:     | u_ifmap_fifo/queue_mem_reg        | Implied        | 16 x 32              | RAM16X1D x 32   | 
+|PE_top:     | u_wght_fifo/queue_mem_reg         | Implied        | 256 x 32             | RAM256X1D x 32  | 
+|PE_top:     | u_psum_in_fifo/queue_mem_reg      | Implied        | 16 x 32              | RAM16X1D x 32   | 
+|PE_top:     | u_psum_out_fifo/queue_mem_reg     | Implied        | 32 x 32              | RAM32X1D x 32   | 
+|PE_top:     | u_PE_datapath/spad_weight/ram_reg | User Attribute | 256 x 32             | RAM64M8 x 20    | 
++------------+-----------------------------------+----------------+----------------------+-----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[0][5] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[0][5]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[0][4] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[0][4]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[0][1] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[0][1]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[0][0] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[0][0]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[1][3] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[1][3]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[1][2] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[1][2]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[1][1] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[1][1]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[1][0] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[1][0]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[2][7] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[2][7]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[2][6] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[2][6]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[2][5] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[2][5]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[2][4] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[2][4]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[2][3] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[2][3]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[2][2] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[2][2]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[2][1] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[2][1]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[2][0] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[2][0]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[3][1] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[3][1]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[3][0] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[3][0]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[4][1] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[4][1]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[4][0] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[4][0]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[6][2] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[6][2]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[6][1] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[6][1]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[6][0] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[6][0]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[7][4] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[7][4]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[7][3] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[7][3]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[7][2] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[7][2]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[7][1] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[7][1]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[7][0] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[7][0]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[8][4] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[8][4]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[8][3] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[8][3]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[8][2] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[8][2]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[8][1] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[8][1]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[8][0] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[8][0]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[9][2] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[9][2]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[9][1] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[9][1]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[9][0] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[9][0]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[11][3] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[11][3]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[11][2] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[11][2]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[11][1] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[11][1]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[11][0] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[11][0]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[13][11] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[13][11]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[13][10] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[13][10]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[13][9] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[13][9]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[13][8] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[13][8]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[13][7] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[13][7]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[13][6] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[13][6]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[13][5] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[13][5]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[13][4] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[13][4]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[13][3] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[13][3]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[13][2] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[13][2]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[13][1] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[13][1]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[13][0] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[13][0]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[14][11] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[14][11]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[14][10] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[14][10]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[14][9] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[14][9]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[14][8] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[14][8]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[14][7] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[14][7]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[14][6] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[14][6]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[14][5] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[14][5]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[14][4] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[14][4]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[14][3] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[14][3]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[14][2] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[14][2]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[14][1] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[14][1]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[14][0] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[14][0]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[15][11] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[15][11]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[15][10] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[15][10]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[15][9] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[15][9]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[15][8] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[15][8]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[15][7] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[15][7]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[15][6] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[15][6]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[15][5] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[15][5]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[15][4] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[15][4]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[15][3] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[15][3]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[15][2] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[15][2]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[15][1] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[15][1]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[15][0] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[15][0]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[16][29] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[16][29]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[16][28] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[16][28]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[16][27] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[16][27]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[16][26] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[16][26]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[16][25] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[16][25]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[16][24] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[16][24]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[16][23] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[16][23]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[16][22] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[16][22]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[16][21] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[16][21]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[16][20] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[16][20]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[16][19] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[16][19]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[16][18] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[16][18]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[16][17] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[16][17]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[16][16] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[16][16]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[16][15] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[16][15]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[16][14] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[16][14]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[16][13] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[16][13]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[16][12] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[16][12]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[16][11] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[16][11]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[16][10] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[16][10]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[16][9] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[16][9]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[16][8] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[16][8]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[16][7] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[16][7]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Synth 8-4765] Removing register instance (\BRAM_reg[16][6] ) from module (true_dpbram_config) as it is equivalent to (\BRAM_reg[16][6]__0 ) and driving same net [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/true_dpbram_config.v:79]
+INFO: [Common 17-14] Message 'Synth 8-4765' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3332] Sequential element (inst/u_eyeriss_wrapper/u_PE_array/PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top/u_PE_datapath/mul_reg_reg[16]__0) is unused and will be removed from module design_1_eyeriss_top_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/u_eyeriss_wrapper/u_PE_array/PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top/u_PE_datapath/mul_reg_reg[15]__0) is unused and will be removed from module design_1_eyeriss_top_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/u_eyeriss_wrapper/u_PE_array/PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top/u_PE_datapath/mul_reg_reg[14]__0) is unused and will be removed from module design_1_eyeriss_top_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/u_eyeriss_wrapper/u_PE_array/PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top/u_PE_datapath/mul_reg_reg[13]__0) is unused and will be removed from module design_1_eyeriss_top_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/u_eyeriss_wrapper/u_PE_array/PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top/u_PE_datapath/mul_reg_reg[12]__0) is unused and will be removed from module design_1_eyeriss_top_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/u_eyeriss_wrapper/u_PE_array/PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top/u_PE_datapath/mul_reg_reg[11]__0) is unused and will be removed from module design_1_eyeriss_top_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/u_eyeriss_wrapper/u_PE_array/PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top/u_PE_datapath/mul_reg_reg[10]__0) is unused and will be removed from module design_1_eyeriss_top_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/u_eyeriss_wrapper/u_PE_array/PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top/u_PE_datapath/mul_reg_reg[9]__0) is unused and will be removed from module design_1_eyeriss_top_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/u_eyeriss_wrapper/u_PE_array/PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top/u_PE_datapath/mul_reg_reg[8]__0) is unused and will be removed from module design_1_eyeriss_top_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/u_eyeriss_wrapper/u_PE_array/PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top/u_PE_datapath/mul_reg_reg[7]__0) is unused and will be removed from module design_1_eyeriss_top_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/u_eyeriss_wrapper/u_PE_array/PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top/u_PE_datapath/mul_reg_reg[6]__0) is unused and will be removed from module design_1_eyeriss_top_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/u_eyeriss_wrapper/u_PE_array/PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top/u_PE_datapath/mul_reg_reg[5]__0) is unused and will be removed from module design_1_eyeriss_top_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/u_eyeriss_wrapper/u_PE_array/PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top/u_PE_datapath/mul_reg_reg[4]__0) is unused and will be removed from module design_1_eyeriss_top_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/u_eyeriss_wrapper/u_PE_array/PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top/u_PE_datapath/mul_reg_reg[3]__0) is unused and will be removed from module design_1_eyeriss_top_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/u_eyeriss_wrapper/u_PE_array/PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top/u_PE_datapath/mul_reg_reg[2]__0) is unused and will be removed from module design_1_eyeriss_top_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/u_eyeriss_wrapper/u_PE_array/PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top/u_PE_datapath/mul_reg_reg[1]__0) is unused and will be removed from module design_1_eyeriss_top_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/u_eyeriss_wrapper/u_PE_array/PE_gen_vertical[0].PE_gen_horizontal[0].u_PE_top/u_PE_datapath/mul_reg_reg[0]__0) is unused and will be removed from module design_1_eyeriss_top_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/u_eyeriss_wrapper/u_PE_array/PE_gen_vertical[0].PE_gen_horizontal[1].u_PE_top/u_PE_datapath/mul_reg_reg[16]__0) is unused and will be removed from module design_1_eyeriss_top_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/u_eyeriss_wrapper/u_PE_array/PE_gen_vertical[0].PE_gen_horizontal[1].u_PE_top/u_PE_datapath/mul_reg_reg[15]__0) is unused and will be removed from module design_1_eyeriss_top_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/u_eyeriss_wrapper/u_PE_array/PE_gen_vertical[0].PE_gen_horizontal[1].u_PE_top/u_PE_datapath/mul_reg_reg[14]__0) is unused and will be removed from module design_1_eyeriss_top_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/u_eyeriss_wrapper/u_PE_array/PE_gen_vertical[0].PE_gen_horizontal[1].u_PE_top/u_PE_datapath/mul_reg_reg[13]__0) is unused and will be removed from module design_1_eyeriss_top_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/u_eyeriss_wrapper/u_PE_array/PE_gen_vertical[0].PE_gen_horizontal[1].u_PE_top/u_PE_datapath/mul_reg_reg[12]__0) is unused and will be removed from module design_1_eyeriss_top_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/u_eyeriss_wrapper/u_PE_array/PE_gen_vertical[0].PE_gen_horizontal[1].u_PE_top/u_PE_datapath/mul_reg_reg[11]__0) is unused and will be removed from module design_1_eyeriss_top_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/u_eyeriss_wrapper/u_PE_array/PE_gen_vertical[0].PE_gen_horizontal[1].u_PE_top/u_PE_datapath/mul_reg_reg[10]__0) is unused and will be removed from module design_1_eyeriss_top_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/u_eyeriss_wrapper/u_PE_array/PE_gen_vertical[0].PE_gen_horizontal[1].u_PE_top/u_PE_datapath/mul_reg_reg[9]__0) is unused and will be removed from module design_1_eyeriss_top_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/u_eyeriss_wrapper/u_PE_array/PE_gen_vertical[0].PE_gen_horizontal[1].u_PE_top/u_PE_datapath/mul_reg_reg[8]__0) is unused and will be removed from module design_1_eyeriss_top_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/u_eyeriss_wrapper/u_PE_array/PE_gen_vertical[0].PE_gen_horizontal[1].u_PE_top/u_PE_datapath/mul_reg_reg[7]__0) is unused and will be removed from module design_1_eyeriss_top_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/u_eyeriss_wrapper/u_PE_array/PE_gen_vertical[0].PE_gen_horizontal[1].u_PE_top/u_PE_datapath/mul_reg_reg[6]__0) is unused and will be removed from module design_1_eyeriss_top_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/u_eyeriss_wrapper/u_PE_array/PE_gen_vertical[0].PE_gen_horizontal[1].u_PE_top/u_PE_datapath/mul_reg_reg[5]__0) is unused and will be removed from module design_1_eyeriss_top_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/u_eyeriss_wrapper/u_PE_array/PE_gen_vertical[0].PE_gen_horizontal[1].u_PE_top/u_PE_datapath/mul_reg_reg[4]__0) is unused and will be removed from module design_1_eyeriss_top_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/u_eyeriss_wrapper/u_PE_array/PE_gen_vertical[0].PE_gen_horizontal[1].u_PE_top/u_PE_datapath/mul_reg_reg[3]__0) is unused and will be removed from module design_1_eyeriss_top_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/u_eyeriss_wrapper/u_PE_array/PE_gen_vertical[0].PE_gen_horizontal[1].u_PE_top/u_PE_datapath/mul_reg_reg[2]__0) is unused and will be removed from module design_1_eyeriss_top_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/u_eyeriss_wrapper/u_PE_array/PE_gen_vertical[0].PE_gen_horizontal[1].u_PE_top/u_PE_datapath/mul_reg_reg[1]__0) is unused and will be removed from module design_1_eyeriss_top_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/u_eyeriss_wrapper/u_PE_array/PE_gen_vertical[0].PE_gen_horizontal[1].u_PE_top/u_PE_datapath/mul_reg_reg[0]__0) is unused and will be removed from module design_1_eyeriss_top_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/u_eyeriss_wrapper/u_PE_array/PE_gen_vertical[0].PE_gen_horizontal[2].u_PE_top/u_PE_datapath/mul_reg_reg[16]__0) is unused and will be removed from module design_1_eyeriss_top_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/u_eyeriss_wrapper/u_PE_array/PE_gen_vertical[0].PE_gen_horizontal[2].u_PE_top/u_PE_datapath/mul_reg_reg[15]__0) is unused and will be removed from module design_1_eyeriss_top_0_0.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:25 ; elapsed = 00:01:24 . Memory (MB): peak = 4491.109 ; gain = 1085.699 ; free physical = 18580 ; free virtual = 30284
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:28 ; elapsed = 00:01:27 . Memory (MB): peak = 4491.109 ; gain = 1085.699 ; free physical = 18577 ; free virtual = 30282
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:28 ; elapsed = 00:01:27 . Memory (MB): peak = 4491.109 ; gain = 1085.699 ; free physical = 18577 ; free virtual = 30282
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst/u_eyeriss_wrapper/top_ctrl_inst/u_ifmap_load_ctrl/iter_cnt[5] with 1st driver pin 'inst/u_eyeriss_wrapper/top_ctrl_inst/u_ifmap_load_ctrl/iter_cnt_reg[5]__0/Q' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/ifmap_load_ctrl.v:48]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst/u_eyeriss_wrapper/top_ctrl_inst/u_ifmap_load_ctrl/iter_cnt[5] with 2nd driver pin 'inst/u_eyeriss_wrapper/top_ctrl_inst/u_ifmap_load_ctrl/iter_cnt_reg[5]/Q' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/ifmap_load_ctrl.v:85]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst/u_eyeriss_wrapper/top_ctrl_inst/u_ifmap_load_ctrl/iter_cnt[4] with 1st driver pin 'inst/u_eyeriss_wrapper/top_ctrl_inst/u_ifmap_load_ctrl/iter_cnt_reg[4]__0/Q' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/ifmap_load_ctrl.v:48]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst/u_eyeriss_wrapper/top_ctrl_inst/u_ifmap_load_ctrl/iter_cnt[4] with 2nd driver pin 'inst/u_eyeriss_wrapper/top_ctrl_inst/u_ifmap_load_ctrl/iter_cnt_reg[4]/Q' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/ifmap_load_ctrl.v:85]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst/u_eyeriss_wrapper/top_ctrl_inst/u_ifmap_load_ctrl/iter_cnt[3] with 1st driver pin 'inst/u_eyeriss_wrapper/top_ctrl_inst/u_ifmap_load_ctrl/iter_cnt_reg[3]__0/Q' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/ifmap_load_ctrl.v:48]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst/u_eyeriss_wrapper/top_ctrl_inst/u_ifmap_load_ctrl/iter_cnt[3] with 2nd driver pin 'inst/u_eyeriss_wrapper/top_ctrl_inst/u_ifmap_load_ctrl/iter_cnt_reg[3]/Q' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/ifmap_load_ctrl.v:85]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst/u_eyeriss_wrapper/top_ctrl_inst/u_ifmap_load_ctrl/iter_cnt[2] with 1st driver pin 'inst/u_eyeriss_wrapper/top_ctrl_inst/u_ifmap_load_ctrl/iter_cnt_reg[2]__0/Q' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/ifmap_load_ctrl.v:48]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst/u_eyeriss_wrapper/top_ctrl_inst/u_ifmap_load_ctrl/iter_cnt[2] with 2nd driver pin 'inst/u_eyeriss_wrapper/top_ctrl_inst/u_ifmap_load_ctrl/iter_cnt_reg[2]/Q' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/ifmap_load_ctrl.v:85]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst/u_eyeriss_wrapper/top_ctrl_inst/u_ifmap_load_ctrl/iter_cnt[1] with 1st driver pin 'inst/u_eyeriss_wrapper/top_ctrl_inst/u_ifmap_load_ctrl/iter_cnt_reg[1]__0/Q' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/ifmap_load_ctrl.v:48]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst/u_eyeriss_wrapper/top_ctrl_inst/u_ifmap_load_ctrl/iter_cnt[1] with 2nd driver pin 'inst/u_eyeriss_wrapper/top_ctrl_inst/u_ifmap_load_ctrl/iter_cnt_reg[1]/Q' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/ifmap_load_ctrl.v:85]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst/u_eyeriss_wrapper/top_ctrl_inst/u_ifmap_load_ctrl/iter_cnt[0] with 1st driver pin 'inst/u_eyeriss_wrapper/top_ctrl_inst/u_ifmap_load_ctrl/iter_cnt_reg[0]__0/Q' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/ifmap_load_ctrl.v:48]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst/u_eyeriss_wrapper/top_ctrl_inst/u_ifmap_load_ctrl/iter_cnt[0] with 2nd driver pin 'inst/u_eyeriss_wrapper/top_ctrl_inst/u_ifmap_load_ctrl/iter_cnt_reg[0]/Q' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/ifmap_load_ctrl.v:85]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst/u_axi_lite_slave/slv_reg1[0] with 1st driver pin 'inst/u_axi_lite_slave/slv_reg1_reg[0]__0/Q' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:225]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst/u_axi_lite_slave/slv_reg1[0] with 2nd driver pin 'inst/u_axi_lite_slave/slv_reg1_reg[0]/Q' [/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/ipshared/4fe8/src/axi_lite_slave.v:418]
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        7|Failed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:29 ; elapsed = 00:01:28 . Memory (MB): peak = 4491.109 ; gain = 1085.699 ; free physical = 18577 ; free virtual = 30281
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:29 ; elapsed = 00:01:28 . Memory (MB): peak = 4491.109 ; gain = 1085.699 ; free physical = 18577 ; free virtual = 30281
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:29 ; elapsed = 00:01:28 . Memory (MB): peak = 4491.109 ; gain = 1085.699 ; free physical = 18577 ; free virtual = 30281
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:29 ; elapsed = 00:01:28 . Memory (MB): peak = 4491.109 ; gain = 1085.699 ; free physical = 18577 ; free virtual = 30281
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY8 |   153|
+|2     |LUT1   |   316|
+|3     |LUT2   |  1013|
+|4     |LUT3   |   868|
+|5     |LUT4   |   962|
+|6     |LUT5   |  1199|
+|7     |LUT6   |  1263|
+|8     |FDRE   |  2731|
+|9     |FDSE   |     2|
+|10    |LD     |     3|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:29 ; elapsed = 00:01:28 . Memory (MB): peak = 4491.109 ; gain = 1085.699 ; free physical = 18577 ; free virtual = 30281
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 107 critical warnings and 69 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:18 ; elapsed = 00:01:21 . Memory (MB): peak = 4491.109 ; gain = 816.105 ; free physical = 18576 ; free virtual = 30281
+Synthesis Optimization Complete : Time (s): cpu = 00:01:29 ; elapsed = 00:01:28 . Memory (MB): peak = 4491.117 ; gain = 1085.699 ; free physical = 18576 ; free virtual = 30281
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 4499.109 ; gain = 0.000 ; free physical = 18833 ; free virtual = 30538
+INFO: [Netlist 29-17] Analyzing 156 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4538.062 ; gain = 0.000 ; free physical = 18824 ; free virtual = 30529
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 3 instances were transformed.
+  LD => LDCE: 3 instances
+
+Synth Design complete | Checksum: 54a5cc5a
+INFO: [Common 17-83] Releasing license: Synthesis
+266 Infos, 311 Warnings, 111 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:39 ; elapsed = 00:01:35 . Memory (MB): peak = 4538.062 ; gain = 2105.797 ; free physical = 18827 ; free virtual = 30531
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 4026.381; main = 3769.541; forked = 352.125
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 5409.352; main = 4538.066; forked = 961.824
+INFO: [Common 17-1381] The checkpoint '/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.runs/design_1_eyeriss_top_0_0_synth_1/design_1_eyeriss_top_0_0.dcp' has been generated.
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+INFO: [Coretcl 2-1174] Renamed 255 cell refs.
+INFO: [Common 17-1381] The checkpoint '/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.runs/design_1_eyeriss_top_0_0_synth_1/design_1_eyeriss_top_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file design_1_eyeriss_top_0_0_utilization_synth.rpt -pb design_1_eyeriss_top_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sun Sep 28 12:41:19 2025...

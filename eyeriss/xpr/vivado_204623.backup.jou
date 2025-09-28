@@ -1,0 +1,28 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:04:56 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Sun Sep 28 11:44:34 2025
+# Process ID: 204623
+# Current directory: /home/esoc/broadwise/vivado/projects/eyeriss/xpr
+# Command line: vivado
+# Log file: /home/esoc/broadwise/vivado/projects/eyeriss/xpr/vivado.log
+# Journal file: /home/esoc/broadwise/vivado/projects/eyeriss/xpr/vivado.jou
+# Running On: esoc-desktop, OS: Linux, CPU Frequency: 1300.000 MHz, CPU Physical cores: 10, Host memory: 50201 MB
+#-----------------------------------------------------------
+start_gui
+create_project eyeriss_wrapper_ip /home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_wrapper_ip -part xczu28dr-ffvg1517-2-e
+set_property board_part xilinx.com:zcu111:part0:1.4 [current_project]
+import_files -norecurse {/home/esoc/broadwise/vivado/projects/eyeriss/xpr/src/PE_array.v /home/esoc/broadwise/vivado/projects/eyeriss/xpr/src/PE_vector.v /home/esoc/broadwise/vivado/projects/eyeriss/xpr/src/true_dpbram_config.v /home/esoc/broadwise/vivado/projects/eyeriss/xpr/src/fifo.v /home/esoc/broadwise/vivado/projects/eyeriss/xpr/src/ifmap_load_ctrl.v /home/esoc/broadwise/vivado/projects/eyeriss/xpr/src/wght_load_ctrl.v /home/esoc/broadwise/vivado/projects/eyeriss/xpr/src/GLB_addr_decoder.v /home/esoc/broadwise/vivado/projects/eyeriss/xpr/src/GLB.v /home/esoc/broadwise/vivado/projects/eyeriss/xpr/src/GIN_BUS.v /home/esoc/broadwise/vivado/projects/eyeriss/xpr/src/PE_control.v /home/esoc/broadwise/vivado/projects/eyeriss/xpr/src/eyeriss_wrapper.v /home/esoc/broadwise/vivado/projects/eyeriss/xpr/src/rams_dist.v /home/esoc/broadwise/vivado/projects/eyeriss/xpr/src/TOP_ctrl.v /home/esoc/broadwise/vivado/projects/eyeriss/xpr/src/sftreg.v /home/esoc/broadwise/vivado/projects/eyeriss/xpr/src/psum_load_ctrl.v /home/esoc/broadwise/vivado/projects/eyeriss/xpr/src/psum_store_ctrl.v /home/esoc/broadwise/vivado/projects/eyeriss/xpr/src/PE_datapath.v /home/esoc/broadwise/vivado/projects/eyeriss/xpr/src/PE_top.v /home/esoc/broadwise/vivado/projects/eyeriss/xpr/src/MC.v /home/esoc/broadwise/vivado/projects/eyeriss/xpr/src/RF.v /home/esoc/broadwise/vivado/projects/eyeriss/xpr/src/true_dpbram.v /home/esoc/broadwise/vivado/projects/eyeriss/xpr/src/psum_selection_decoder.v}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files /home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_wrapper_ip/eyeriss_wrapper_ip.srcs/sources_1/imports/src/PE_vector.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_wrapper_ip/eyeriss_wrapper_ip.srcs/sources_1/imports/src/sftreg.v] -no_script -reset -force -quiet
+remove_files  {/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_wrapper_ip/eyeriss_wrapper_ip.srcs/sources_1/imports/src/PE_vector.v /home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_wrapper_ip/eyeriss_wrapper_ip.srcs/sources_1/imports/src/sftreg.v}
+ipx::package_project -root_dir /home/esoc/broadwise/vivado/projects/eyeriss/ip_repo -vendor user.org -library user -taxonomy /UserIP -import_files
+ipx::unload_core /home/esoc/broadwise/vivado/projects/eyeriss/ip_repo/component.xml
+import_files -norecurse {/home/esoc/broadwise/vivado/projects/eyeriss/xpr/src/axi_eyeriss_ip_top.v /home/esoc/broadwise/vivado/projects/eyeriss/xpr/src/axi_lite_slave.v}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+ipx::package_project -root_dir /home/esoc/broadwise/vivado/projects/eyeriss/ip_repo -vendor user.org -library user -taxonomy /UserIP -import_files -force

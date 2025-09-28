@@ -1,0 +1,25 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:04:56 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Sun Sep 28 12:34:16 2025
+# Process ID: 230330
+# Current directory: /home/esoc/broadwise/vivado/projects/eyeriss/xpr
+# Command line: vivado
+# Log file: /home/esoc/broadwise/vivado/projects/eyeriss/xpr/vivado.log
+# Journal file: /home/esoc/broadwise/vivado/projects/eyeriss/xpr/vivado.jou
+# Running On: esoc-desktop, OS: Linux, CPU Frequency: 1200.000 MHz, CPU Physical cores: 10, Host memory: 50201 MB
+#-----------------------------------------------------------
+start_gui
+open_project /home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.xpr
+update_compile_order -fileset sources_1
+open_bd_design {/home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.srcs/sources_1/bd/design_1/design_1.bd}
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {/zynq_ultra_ps_e_0/pl_clk0 (99 MHz)} Clk_xbar {/zynq_ultra_ps_e_0/pl_clk0 (99 MHz)} Master {/zynq_ultra_ps_e_0/M_AXI_HPM1_FPD} Slave {/eyeriss_top_0/s00_axi} ddr_seg {Auto} intc_ip {/ps8_0_axi_periph} master_apm {0}}  [get_bd_intf_pins zynq_ultra_ps_e_0/M_AXI_HPM1_FPD]
+validate_bd_design
+save_bd_design
+launch_runs impl_1 -to_step write_bitstream -jobs 20
+make_wrapper -files [get_files /home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.srcs/sources_1/bd/design_1/design_1.bd] -top
+add_files -norecurse /home/esoc/broadwise/vivado/projects/eyeriss/xpr/eyeriss_bd/eyeriss_bd.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v
+launch_runs impl_1 -to_step write_bitstream -jobs 20
+wait_on_run impl_1

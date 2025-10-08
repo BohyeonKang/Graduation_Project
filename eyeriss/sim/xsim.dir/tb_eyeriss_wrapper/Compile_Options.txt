@@ -1,1 +1,0 @@
-"tb_eyeriss_wrapper" -debug "all" -s "tb_eyeriss_wrapper" 

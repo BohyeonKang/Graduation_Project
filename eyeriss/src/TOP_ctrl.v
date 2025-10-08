@@ -1,31 +1,25 @@
 `timescale 1ns / 1ps
-module TOP_ctrl #(
+module top_ctrl #(
     parameter DATA_BITWIDTH = 32,
     parameter NUM_ROWS = 3,
     parameter NUM_COLS = 3,
-    parameter BANK_NUM = 3,
     parameter BANK_DEPTH = 512,
 	parameter IFMAP_ROW_ID_BITWIDTH = 4,
 	parameter WGHT_ROW_ID_BITWIDTH = 4,
 	parameter PSUM_ROW_ID_BITWIDTH = 4,
 	parameter IFMAP_COL_ID_BITWIDTH = 5,
 	parameter WGHT_COL_ID_BITWIDTH = 4,
-	parameter PSUM_COL_ID_BITWIDTH = 4,
-	parameter IFMAP_BUS_BITWIDTH = 32,
-    parameter WGHT_BUS_BITWIDTH = 32,
-    parameter PSUM_BUS_BITWIDTH = 32
+	parameter PSUM_COL_ID_BITWIDTH = 4
 )(
     input i_clk,
     input i_rst,
 
-    input i_ap_start,
-    output reg o_ap_done,
+    input i_start,
+    output reg o_done,
 
     //// Layer & Tiling/Mapping Parameters from scan_chain_decoder.v
-    input [0:3*clogb2(BANK_NUM)-1] i_GLB_allocation,
-    input [3:0] i_total_pass,
     input [7:0] i_layer_HW,
-    input [1:0] i_layer_U,
+    input [2:0] i_layer_U,
     input [1:0] i_layer_PAD,
     
     input [6:0] i_layer_m,
@@ -36,103 +30,261 @@ module TOP_ctrl #(
     input [2:0] i_layer_r,
     input [3:0] i_layer_s,
     input [2:0] i_layer_t,
-    input [0:NUM_ROWS * IFMAP_ROW_ID_BITWIDTH-1] i_ifmap_row_id,
-    input [0:NUM_ROWS * WGHT_ROW_ID_BITWIDTH-1] i_wght_row_id,
-    input [0:NUM_ROWS * PSUM_ROW_ID_BITWIDTH-1] i_psum_row_id,
-    input [0:NUM_ROWS * NUM_COLS * IFMAP_COL_ID_BITWIDTH-1] i_ifmap_col_id,
-    input [0:NUM_ROWS * NUM_COLS * WGHT_COL_ID_BITWIDTH-1] i_wght_col_id,
-    input [0:NUM_ROWS * NUM_COLS * PSUM_COL_ID_BITWIDTH-1] i_psum_col_id,
+    input [NUM_ROWS * IFMAP_ROW_ID_BITWIDTH-1:0] i_ifmap_row_id,
+    input [NUM_ROWS * WGHT_ROW_ID_BITWIDTH-1:0] i_wght_row_id,
+    input [NUM_ROWS * PSUM_ROW_ID_BITWIDTH-1:0] i_psum_row_id,
+    input [NUM_ROWS * NUM_COLS * IFMAP_COL_ID_BITWIDTH-1:0] i_ifmap_col_id,
+    input [NUM_ROWS * NUM_COLS * WGHT_COL_ID_BITWIDTH-1:0] i_wght_col_id,
+    input [NUM_ROWS * NUM_COLS * PSUM_COL_ID_BITWIDTH-1:0] i_psum_col_id,
 
     // PE array interface
     output reg [2:0] o_inst_data,
-    output reg o_inst_valid,
-    input i_inst_ready,
+    output reg       o_inst_valid,
+    input            i_inst_ready,
 
-    output reg [0:IFMAP_ROW_ID_BITWIDTH * NUM_ROWS-1] o_ifmap_row_id,
-    output reg [0:WGHT_ROW_ID_BITWIDTH * NUM_ROWS-1] o_wght_row_id,
-    output reg [0:PSUM_ROW_ID_BITWIDTH * NUM_ROWS-1] o_psum_row_id,
+    output reg [IFMAP_ROW_ID_BITWIDTH * NUM_ROWS-1:0] o_ifmap_row_id,
+    output reg [WGHT_ROW_ID_BITWIDTH * NUM_ROWS-1:0] o_wght_row_id,
+    output reg [PSUM_ROW_ID_BITWIDTH * NUM_ROWS-1:0] o_psum_row_id,
     output reg o_ifmap_row_id_valid,
     output reg o_wght_row_id_valid,
     output reg o_psum_row_id_valid,
 
-    // col ID는 한번에 한 ROW씩 들어오는걸로 가정. valid 신호는 one-hot encoded
-    output reg [0:IFMAP_COL_ID_BITWIDTH*NUM_COLS-1] o_ifmap_col_id,
-    output reg [0:WGHT_COL_ID_BITWIDTH*NUM_COLS-1] o_wght_col_id,
-    output reg [0:PSUM_COL_ID_BITWIDTH*NUM_COLS-1] o_psum_col_id,
-    output reg [0:NUM_ROWS-1] o_ifmap_col_id_valid,
-    output reg [0:NUM_ROWS-1] o_wght_col_id_valid,
-    output reg [0:NUM_ROWS-1] o_psum_col_id_valid,
+    output reg [IFMAP_COL_ID_BITWIDTH*NUM_COLS-1:0] o_ifmap_col_id,
+    output reg [WGHT_COL_ID_BITWIDTH*NUM_COLS-1:0] o_wght_col_id,
+    output reg [PSUM_COL_ID_BITWIDTH*NUM_COLS-1:0] o_psum_col_id,
+    output reg [NUM_ROWS-1:0] o_ifmap_col_id_valid,
+    output reg [NUM_ROWS-1:0] o_wght_col_id_valid,
+    output reg [NUM_ROWS-1:0] o_psum_col_id_valid,
 
-    // psum_selection ctrl
-    output reg [0:NUM_ROWS*NUM_COLS-1] o_ctrl_psum_in_sel_LNorGIN,
-    output reg [0:NUM_ROWS*NUM_COLS-1] o_ctrl_psum_out_sel_GON,
+    output reg [NUM_ROWS*NUM_COLS-1:0] o_psum_in_sel,
+    output reg [NUM_ROWS*NUM_COLS-1:0] o_psum_out_sel,
 
-    // label combined with GLB data
-    output reg [IFMAP_ROW_ID_BITWIDTH + IFMAP_COL_ID_BITWIDTH + IFMAP_BUS_BITWIDTH - 1:0] o_ifmap_packet,
-    output reg [WGHT_ROW_ID_BITWIDTH + WGHT_COL_ID_BITWIDTH + WGHT_BUS_BITWIDTH - 1:0] o_wght_packet,
-    output reg [PSUM_ROW_ID_BITWIDTH + PSUM_COL_ID_BITWIDTH + PSUM_BUS_BITWIDTH - 1:0] o_psum_in_packet,
+    output reg [IFMAP_ROW_ID_BITWIDTH + IFMAP_COL_ID_BITWIDTH + DATA_BITWIDTH - 1:0] o_ifmap_packet,
+    output reg [WGHT_ROW_ID_BITWIDTH + WGHT_COL_ID_BITWIDTH + DATA_BITWIDTH - 1:0] o_wght_packet,
+    output reg [PSUM_ROW_ID_BITWIDTH + PSUM_COL_ID_BITWIDTH + DATA_BITWIDTH - 1:0] o_psum_in_packet,
 
     output reg o_ifmap_valid,
     output reg o_wght_valid,
+    input i_psum_in_ready, // not used. 로직 보완 필요
     output reg o_psum_in_valid,
     output reg o_psum_out_ready,
 
-    input i_ifmap_ready,
-    input i_wght_ready,
-    input i_psum_in_ready,
     input i_psum_out_valid,
+    input [DATA_BITWIDTH-1:0] i_psum_out_data,
+    output [DATA_BITWIDTH-1:0] o_psum_out_data,
 
     // GLB interface
     input [DATA_BITWIDTH-1:0] i_glb_rd,
-	output reg [clogb2(BANK_NUM-1)-1:0] o_glb_bank_sel,
-    output reg o_glb_re,
+	output reg [1:0] o_glb_bank_sel,
+    output reg o_glb_en,
     output reg o_glb_we,
-    output reg [clogb2(BANK_DEPTH-1)-1:0] o_glb_ra,
-    output reg [clogb2(BANK_DEPTH-1)-1:0] o_glb_wa
+    output reg [clogb2(BANK_DEPTH-1)-1:0] o_glb_addr
 );
 
-    localparam IDLE = 4'd0;
-    localparam INIT = 4'd1; // i_layer configuration
-    localparam WAIT = 4'd2; // pass progress check
-    localparam LOAD_DRAM2GLB = 4'd3; // Load required ifmap and weight from DRAM to GLB
-    localparam LOAD_IFMAP = 4'd4; // LOAD IFMAP from GLB to PE array
-    localparam LOAD_WGHT = 4'd5; // LOAD WGHT from GLB to PE array
-    localparam LOAD_PSUM = 4'd6; // LOAD PSUM from GLB to PE array psum fifo. if no PSUM needed, load zero.
-    localparam CALC = 4'd7;
-    localparam ACCRST = 4'd8;
-    localparam PSUM2GLB = 4'd9;
-    localparam DONE = 4'd10;
+    localparam IDLE = 4'h0;
+    localparam INIT = 4'h1;
+    localparam LOAD_IFMAP_START = 4'h2;
+    localparam LOAD_IFMAP_WAIT = 4'h3;
+    localparam LOAD_IFMAP = 4'h4;
+    localparam WAIT = 4'h5;
+    localparam LOAD_WGHT_START = 4'h6;
+    localparam LOAD_WGHT_WAIT = 4'h7;
+    localparam LOAD_WGHT = 4'h8;
+    localparam LOAD_PSUM_START = 4'h9;
+    localparam LOAD_PSUM_WAIT = 4'ha;
+    localparam LOAD_PSUM = 4'hb;
+    localparam CALC = 4'hc;
+    localparam ACC = 4'hd;
+    localparam PSUM2GLB = 4'he;
+    localparam DONE = 4'hf;
 
     // opcodes for PE array
-    localparam CMD_NOP          = 3'b000;
-    localparam CMD_SET          = 3'b001;
-    localparam CMD_LOAD_IFMAP   = 3'b010;
-    localparam CMD_LOAD_WGHT    = 3'b011;
-    localparam CMD_CONV         = 3'b100;
-	localparam CMD_ACC          = 3'b101;
+    localparam CMD_SET          = 3'd0;
+    localparam CMD_LOAD_IFMAP   = 3'd1;
+    localparam CMD_LOAD_WGHT    = 3'd2;
+    localparam CMD_CONV         = 3'd3;
+	localparam CMD_ACC          = 3'd4;
 
-    reg [10:0] cnt, tar_cnt;
-    reg [6:0] iter_cnt;
-    reg [9:0] pass_cnt;
+    reg [10:0] counter;
+    reg [5:0] iter_cnt;
 
-    reg [3:0] state;
-    reg [3:0] n_state;
+    reg [4:0] state;
+    reg [4:0] n_state;
+    reg is_first_cycle;
 
-    reg [1:0] glb_data_type;
-    reg [clogb2(BANK_NUM*BANK_DEPTH)-1:0] glb_logical_addr;
-
-    wire [clogb2(BANK_DEPTH)-1:0] glb_physical_addr;
-    wire [clogb2(BANK_NUM-1)-1:0] glb_bank_sel;
-
-    wire ifmap_load_iter_done, psum_load_iter_done;
-    wire ifmap_load_done, wght_load_done, psum_load_done, psum_store_done;
-    wire ifmap_glb_re, wght_glb_re, psum_glb_re, psum_glb_we;
+    // ifmap_load_ctrl
+    wire [15:0] ifmap_glb_ra;
     wire [8:0] ifmap_tag;
-    wire [7:0] wght_tag, psum_tag;
-    wire [15:0] ifmap_glb_ra, wght_glb_ra, psum_glb_ra, psum_glb_wa;
+    wire       ifmap_glb_en;
+    wire       ifmap_valid;
 
-    wire [0:NUM_ROWS*NUM_COLS-1] ctrl_psum_in_sel_LNorGIN;
-    wire [0:NUM_ROWS*NUM_COLS-1] ctrl_psum_out_sel_GON;
+    // wght_load_ctrl
+    wire [15:0] wght_glb_ra;
+    wire [7:0] wght_tag;
+    wire       wght_glb_en;
+    wire       wght_valid;
+
+    // psum_load_ctrl
+    wire [15:0] psum_glb_ra;
+    wire [7:0] psum_tag;
+    wire       psum_glb_en;
+    wire       psum_valid;
+
+    // psum_store_ctrl
+    wire [15:0] psum_glb_wa;
+    wire psum_glb_we;
+
+    // psum_sel_ctrl
+    wire [NUM_ROWS*NUM_COLS-1:0] psum_in_sel;
+    wire [NUM_ROWS*NUM_COLS-1:0] psum_out_sel;
+
+    reg psum_out_valid;
+    reg [DATA_BITWIDTH-1:0] psum_out_data;
+
+    // ifmap_load_ctrl instance
+    ifmap_load_ctrl u_ifmap_load_ctrl (
+        .i_clk             (i_clk),
+        .i_rst             (i_rst),
+
+        .i_load_start      ((state == LOAD_IFMAP_START) && is_first_cycle),
+        .i_iter_cnt        (iter_cnt),
+
+        // Layer & Tiling/Mapping Parameters
+        .i_layer_HW        (i_layer_HW),
+        .i_layer_U         (i_layer_U),
+        .i_layer_PAD       (i_layer_PAD),
+        .i_layer_e         (i_layer_e),
+        .i_layer_p         (i_layer_p),
+        .i_layer_q         (i_layer_q),
+        .i_layer_r         (i_layer_r),
+        .i_layer_s         (i_layer_s),
+        .i_layer_t         (i_layer_t),
+
+        // Final Outputs to GLB
+        .o_ifmap_glb_en    (ifmap_glb_en),
+        .o_ifmap_glb_ra    (ifmap_glb_ra),
+        .o_ifmap_tag       (ifmap_tag),
+        .o_ifmap_valid     (ifmap_valid)
+    );
+
+    // Instance of wght_load_ctrl
+    wght_load_ctrl u_wght_load_ctrl (
+        .i_clk         (i_clk),           // input clock
+        .i_rst         (i_rst),           // input reset
+
+        .i_load_start  ((state == LOAD_WGHT_START) && is_first_cycle),    // start signal to begin loading
+
+        .i_layer_p       (i_layer_p),
+        .i_layer_q       (i_layer_q),
+        .i_layer_s       (i_layer_s),
+
+        .o_wght_glb_en   (wght_glb_en),     // weight GLB enable
+        .o_wght_glb_ra   (wght_glb_ra),     // weight GLB read address
+        .o_wght_tag      (wght_tag),        // weight tag (used for routing or matching)
+        .o_wght_valid    (wght_valid)
+    );
+
+    psum_load_ctrl u_psum_load_ctrl (
+        .i_clk           (i_clk),
+        .i_rst           (i_rst),
+
+        .i_load_start    ((state == LOAD_PSUM_START) && is_first_cycle),
+        .i_iter_cnt      (iter_cnt),
+
+        .i_layer_m       (i_layer_m),
+        .i_layer_n       (i_layer_n),
+        .i_layer_e       (i_layer_e),
+        .i_layer_p       (i_layer_p),
+        .i_layer_q       (i_layer_q),
+        .i_layer_r       (i_layer_r),
+        .i_layer_s       (i_layer_s),
+        .i_layer_t       (i_layer_t),
+
+        .o_psum_glb_en   (psum_glb_en),
+        .o_psum_glb_ra   (psum_glb_ra),
+        .o_psum_tag      (psum_tag),
+        .o_psum_valid    (psum_valid)
+    );
+
+    psum_store_ctrl u_psum_store_ctrl (
+        .i_clk         (i_clk),
+        .i_rst         (i_rst),
+
+        .i_store_start ((state == PSUM2GLB) && is_first_cycle),
+        .i_iter_cnt    (iter_cnt),
+
+        .i_layer_m     (i_layer_m),
+        .i_layer_n     (i_layer_n),
+        .i_layer_e     (i_layer_e),
+        .i_layer_p     (i_layer_p),
+        .i_layer_q     (i_layer_q),
+        .i_layer_r     (i_layer_r),
+        .i_layer_s     (i_layer_s),
+        .i_layer_t     (i_layer_t),
+
+        .o_psum_glb_we (psum_glb_we),
+        .o_psum_glb_wa (psum_glb_wa)
+    );
+
+    psum_sel_ctrl #(
+        .NUM_ROWS(NUM_ROWS),
+        .NUM_COLS(NUM_COLS),
+        .PSUM_ROW_ID_BITWIDTH(PSUM_ROW_ID_BITWIDTH),
+        .PSUM_COL_ID_BITWIDTH(PSUM_COL_ID_BITWIDTH)
+    ) u_psum_sel_ctrl (
+        .i_layer_s(i_layer_s),
+        .i_psum_row_id(i_psum_row_id),
+        .i_psum_col_id(i_psum_col_id),
+        .o_psum_in_sel(psum_in_sel),
+        .o_psum_out_sel(psum_out_sel)
+    );
+
+    always @(posedge i_clk) begin
+        if (i_rst) begin
+            psum_out_valid <= 0;
+            psum_out_data <= 0;
+        end
+        else begin
+            psum_out_valid <= i_psum_out_valid;
+            psum_out_data <= i_psum_out_data;
+        end
+    end
+
+    // counter logic
+    always @(posedge i_clk) begin
+        if (i_rst) begin
+            counter <= 0;
+        end 
+        else begin
+            if(state != n_state) begin
+                counter <= 0;                    
+            end
+            else begin
+                counter <= counter + 1;
+            end
+        end
+    end
+
+    always @(posedge i_clk) begin
+        if(i_rst) begin
+            iter_cnt <= 0;
+        end
+        else begin
+            if((state == PSUM2GLB) && (state != n_state)) begin
+                iter_cnt <= (iter_cnt == i_layer_e - 1) ? 0 : iter_cnt + 1;
+            end
+        end
+    end
+
+    // signal activated every first cycle of each state
+    always @(posedge i_clk) begin
+        if(i_rst) begin
+            is_first_cycle <= 0;
+        end
+        else begin
+            is_first_cycle <= (state != n_state);
+        end
+    end
 
     //FSM : state register update
     always @(posedge i_clk) begin
@@ -146,102 +298,70 @@ module TOP_ctrl #(
 
     //FSM: next state logic
     always @(*) begin
-        o_ap_done = 1'b0;
+        o_done = 1'b0;
         case(state)
             IDLE: begin
-                if(i_ap_start == 1'b1)              n_state = INIT;
-                else                                n_state = IDLE;
+                if(i_start == 1'b1)                         n_state = INIT;
+                else                                        n_state = IDLE;
             end
             INIT: begin
-                if(cnt == tar_cnt)                  n_state = WAIT;
-                else                                n_state = INIT;
+                if(i_inst_ready && !is_first_cycle)         n_state = LOAD_IFMAP_START;
+                else                                        n_state = INIT;
             end
-            WAIT: begin
-                if(pass_cnt == i_total_pass)        n_state = DONE;
-                else if(cnt == tar_cnt)             n_state = LOAD_DRAM2GLB;
-                else                                n_state = WAIT;
-            end
-            LOAD_DRAM2GLB: begin
-                if(cnt == tar_cnt)                  n_state = LOAD_IFMAP;
-                else                                n_state = LOAD_DRAM2GLB;
+            LOAD_IFMAP_START:                               n_state = LOAD_IFMAP_WAIT;
+            LOAD_IFMAP_WAIT: begin
+                if(counter == 1)                            n_state = LOAD_IFMAP;
+                else                                        n_state = LOAD_IFMAP_WAIT;
             end
             LOAD_IFMAP: begin
-                if(i_inst_ready && !(cnt == 0))     n_state = (iter_cnt == 0) ? LOAD_WGHT : LOAD_PSUM;
-                else                                n_state = LOAD_IFMAP;
+                if(i_inst_ready && !is_first_cycle)         n_state = WAIT;
+                else                                        n_state = LOAD_IFMAP;
+            end
+            WAIT: begin
+                if(iter_cnt == 0)                           n_state = LOAD_WGHT_START;
+                else                                        n_state = LOAD_PSUM_START;
+            end
+            LOAD_WGHT_START:                                n_state = LOAD_WGHT_WAIT;
+            LOAD_WGHT_WAIT: begin
+                if(counter == 1)                            n_state = LOAD_WGHT;
+                else                                        n_state = LOAD_WGHT_WAIT;
             end
             LOAD_WGHT: begin
-                if(i_inst_ready && !(cnt == 0))     n_state = LOAD_PSUM;
-                else                                n_state = LOAD_WGHT;
+                if(i_inst_ready && !is_first_cycle)         n_state = LOAD_PSUM_START;
+                else                                        n_state = LOAD_WGHT;
+            end
+            LOAD_PSUM_START:                                n_state = LOAD_PSUM_WAIT;
+            LOAD_PSUM_WAIT:  begin
+                if(counter == 1)                            n_state = LOAD_PSUM;
+                else                                        n_state = LOAD_PSUM_WAIT;
             end
             LOAD_PSUM: begin
-                if(cnt == tar_cnt)                  n_state = CALC;
-                else                                n_state = LOAD_PSUM;
+                if(counter == i_layer_p * i_layer_e - 1)    n_state = CALC;
+                else                                        n_state = LOAD_PSUM;
             end
             CALC: begin
-                if(i_inst_ready && !(cnt == 0))     n_state = ACCRST;
-                else                                n_state = CALC;
+                if(i_inst_ready && !is_first_cycle)         n_state = ACC;
+                else                                        n_state = CALC;
             end
-            ACCRST: begin
-                if(i_inst_ready && !(cnt == 0))     n_state = PSUM2GLB;
-                else                                n_state = ACCRST;
+            ACC: begin
+                if(i_inst_ready && !is_first_cycle)         n_state = PSUM2GLB;
+                else                                        n_state = ACC;
             end
             PSUM2GLB: begin
-                if(cnt == tar_cnt)                  n_state = WAIT;
-                else                                n_state = PSUM2GLB;
+                if(counter == NUM_ROWS * NUM_COLS * i_layer_p - 1)  n_state = (iter_cnt ==  i_layer_e - 1) ? DONE : LOAD_IFMAP_START;
+                else                                                n_state = PSUM2GLB;
             end
             DONE: begin
                 n_state = IDLE;
-                o_ap_done = 1'b1;
+                o_done = 1'b1;
             end
             default: n_state = IDLE;
         endcase
     end
 
-    // counter logic
-    always @(posedge i_clk) begin
-        if (i_rst) begin
-            cnt <= 0;
-            tar_cnt <= 0;
-            iter_cnt <= 0;
-            pass_cnt <= 0;
-        end else begin
-            if(state != n_state) begin
-                case(n_state)
-                    // Defines how long the system should stay in the current state
-                    IDLE            : begin cnt <= 0; tar_cnt <= 0; end
-                    INIT            : begin cnt <= 0; tar_cnt <= NUM_ROWS - 1; end
-                    WAIT            : begin cnt <= 0; tar_cnt <= 0; end
-                    LOAD_DRAM2GLB   : begin cnt <= 0; tar_cnt <= 0; end
-                    LOAD_IFMAP      : begin cnt <= 0; tar_cnt <= 11'b11111111111; end
-                    LOAD_WGHT       : begin cnt <= 0; tar_cnt <= 11'b11111111111; end
-                    LOAD_PSUM       : begin cnt <= 0; tar_cnt <= (1 + i_layer_p * i_layer_e + 2) - 1; end
-                    CALC            : begin cnt <= 0; tar_cnt <= 11'b11111111111; end
-                    ACCRST          : begin cnt <= 0; tar_cnt <= 11'b11111111111; end
-                    PSUM2GLB        : begin 
-                        cnt <= 0; tar_cnt <= NUM_ROWS * NUM_COLS * i_layer_p - 1;
-                        if(iter_cnt == i_layer_e - 1) begin
-                            iter_cnt <= 0;
-                            if(pass_cnt == i_total_pass) pass_cnt <= 0;
-                            else pass_cnt <= pass_cnt + 1;
-                        end
-                        else begin
-                            iter_cnt <= iter_cnt + 1;
-                        end
-                    end
-                    DONE            : begin cnt <= 0; tar_cnt <= 0; end
-                    default         : begin cnt <= 0; tar_cnt <= 0; end
-                endcase
-            end
-            else begin
-                cnt <= cnt + 1;
-            end
-        end
-    end
-
     always @(*) begin
-
         //PE array interface
-        o_inst_data = CMD_NOP;
+        o_inst_data = CMD_SET;
         o_inst_valid = 1'b0;
 
         o_ifmap_row_id = {IFMAP_ROW_ID_BITWIDTH * NUM_ROWS{1'b0}};
@@ -257,245 +377,129 @@ module TOP_ctrl #(
         o_wght_col_id_valid = {NUM_ROWS{1'b0}};
         o_psum_col_id_valid = {NUM_ROWS{1'b0}};
 
-        o_ctrl_psum_in_sel_LNorGIN = {NUM_ROWS*NUM_COLS{1'b0}};
-        o_ctrl_psum_out_sel_GON = {NUM_ROWS*NUM_COLS{1'b0}};
+        o_psum_in_sel = {NUM_ROWS*NUM_COLS{1'b0}};
+        o_psum_out_sel = {NUM_ROWS*NUM_COLS{1'b0}};
         
-        o_ifmap_packet = {(IFMAP_ROW_ID_BITWIDTH + IFMAP_COL_ID_BITWIDTH + IFMAP_BUS_BITWIDTH){1'b0}};
-        o_wght_packet = {(WGHT_ROW_ID_BITWIDTH + WGHT_COL_ID_BITWIDTH + WGHT_BUS_BITWIDTH){1'b0}};
-        o_psum_in_packet = {(PSUM_ROW_ID_BITWIDTH + PSUM_COL_ID_BITWIDTH + PSUM_BUS_BITWIDTH){1'b0}};
+        o_ifmap_packet = {(IFMAP_ROW_ID_BITWIDTH + IFMAP_COL_ID_BITWIDTH + DATA_BITWIDTH){1'b0}};
+        o_wght_packet = {(WGHT_ROW_ID_BITWIDTH + WGHT_COL_ID_BITWIDTH + DATA_BITWIDTH){1'b0}};
+        o_psum_in_packet = {(PSUM_ROW_ID_BITWIDTH + PSUM_COL_ID_BITWIDTH + DATA_BITWIDTH){1'b0}};
         o_ifmap_valid = 1'b0;
         o_wght_valid = 1'b0;
         o_psum_in_valid = 1'b0;
         o_psum_out_ready = 1'b0;
-        
-        // GLB addr decoder interface
-        glb_data_type = 2'd0 ;
-        glb_logical_addr = {clogb2(BANK_NUM*BANK_DEPTH){1'b0}};
 
         // GLB interface
-        o_glb_bank_sel = {clogb2(BANK_NUM-1){1'b0}};
-        o_glb_re = {1'b0};
-        o_glb_we = {1'b0};
-        o_glb_ra = {clogb2(BANK_DEPTH-1){1'b0}};
-        o_glb_wa = {clogb2(BANK_DEPTH-1){1'b0}};
+        o_glb_en = 1'b0;
+        o_glb_we = 1'b0;
+        o_glb_addr = {clogb2(BANK_DEPTH-1){1'b0}};
+        o_glb_bank_sel = 2'h0;
+
         case(state)
             IDLE: begin
             end
             INIT: begin
                 o_inst_data = CMD_SET;
-                o_inst_valid = (cnt == 0);
+                o_inst_valid = is_first_cycle;
 
                 o_ifmap_row_id = i_ifmap_row_id;
                 o_wght_row_id = i_wght_row_id;
                 o_psum_row_id = i_psum_row_id;
-                o_ifmap_row_id_valid = (cnt == 0);
-                o_wght_row_id_valid = (cnt == 0);
-                o_psum_row_id_valid = (cnt == 0);
-                o_ifmap_col_id = i_ifmap_col_id[cnt * (NUM_COLS * IFMAP_COL_ID_BITWIDTH) +: (NUM_COLS * IFMAP_COL_ID_BITWIDTH)];
-                o_wght_col_id = i_wght_col_id[cnt * (NUM_COLS * WGHT_COL_ID_BITWIDTH) +: (NUM_COLS * WGHT_COL_ID_BITWIDTH)];
-                o_psum_col_id = i_psum_col_id[cnt * (NUM_COLS * PSUM_COL_ID_BITWIDTH) +: (NUM_COLS * PSUM_COL_ID_BITWIDTH)];
-                o_ifmap_col_id_valid = {1'b1, {(NUM_ROWS - 1){1'b0}}} >> cnt;
-                o_wght_col_id_valid = {1'b1, {(NUM_ROWS - 1){1'b0}}} >> cnt;
-                o_psum_col_id_valid = {1'b1, {(NUM_ROWS - 1){1'b0}}} >> cnt;
+                o_ifmap_row_id_valid = is_first_cycle;
+                o_wght_row_id_valid = is_first_cycle;
+                o_psum_row_id_valid = is_first_cycle;
+                o_ifmap_col_id = i_ifmap_col_id[counter * (NUM_COLS * IFMAP_COL_ID_BITWIDTH) +: (NUM_COLS * IFMAP_COL_ID_BITWIDTH)];
+                o_wght_col_id = i_wght_col_id[counter * (NUM_COLS * WGHT_COL_ID_BITWIDTH) +: (NUM_COLS * WGHT_COL_ID_BITWIDTH)];
+                o_psum_col_id = i_psum_col_id[counter * (NUM_COLS * PSUM_COL_ID_BITWIDTH) +: (NUM_COLS * PSUM_COL_ID_BITWIDTH)];
+                o_ifmap_col_id_valid = 1'b1 << counter;
+                o_wght_col_id_valid = 1'b1 << counter;
+                o_psum_col_id_valid = 1'b1 << counter;
             end
-            WAIT: begin
+            LOAD_IFMAP_START: begin
+                o_inst_data = CMD_LOAD_IFMAP;
+                o_inst_valid = is_first_cycle;
+
+                o_glb_addr = ifmap_glb_ra;
+                o_glb_en = ifmap_glb_en;
+                o_glb_bank_sel = 2'h1;
             end
-            LOAD_DRAM2GLB: begin
+            LOAD_IFMAP_WAIT: begin
+                o_glb_addr = ifmap_glb_ra;
+                o_glb_en = ifmap_glb_en;
+                o_glb_bank_sel = 2'h1;
             end
             LOAD_IFMAP: begin
-                o_inst_data = CMD_LOAD_IFMAP;
-                o_inst_valid = (cnt == 0);
+                o_ifmap_valid = ifmap_valid;
+                o_ifmap_packet = {ifmap_tag, i_glb_rd};
 
-                if(cnt > 2 && cnt <= i_layer_s * i_layer_q * i_layer_HW + 2) begin
-                    o_ifmap_valid = 1'b1;
-                    o_ifmap_packet = {ifmap_tag, i_glb_rd};
-                end
-                else begin
-                    o_ifmap_valid = 1'b0;
-                    o_ifmap_packet = {ifmap_tag, {IFMAP_BUS_BITWIDTH{1'b0}}};
-                end
+                o_glb_addr = ifmap_glb_ra;
+                o_glb_en = ifmap_glb_en;
+                o_glb_bank_sel = 2'h1;
+            end
+            LOAD_WGHT_START: begin
+                o_inst_data = CMD_LOAD_WGHT;
+                o_inst_valid = is_first_cycle;
 
-                glb_data_type = 2'd1;
-                glb_logical_addr = ifmap_glb_ra;
-
-                o_glb_re = ifmap_glb_re;
-                o_glb_ra = glb_physical_addr;
-                o_glb_bank_sel = glb_bank_sel;
+                o_glb_en = wght_glb_en;
+                o_glb_addr = wght_glb_ra;
+                o_glb_bank_sel = 2'h2;
+            end
+            LOAD_WGHT_WAIT: begin
+                o_glb_en = wght_glb_en;
+                o_glb_addr = wght_glb_ra;
+                o_glb_bank_sel = 2'h2;
             end
             LOAD_WGHT: begin
-                o_inst_data = CMD_LOAD_WGHT;
-                o_inst_valid = (cnt == 0);
+                o_wght_valid = wght_valid;
+                o_wght_packet = {wght_tag, i_glb_rd};
 
-                if(cnt > 2 && cnt <= i_layer_s * i_layer_p * i_layer_q * i_layer_s + 2) begin
-                    o_wght_valid = 1'b1;
-                    o_wght_packet = {wght_tag, i_glb_rd};
-                end
-                else begin
-                    o_wght_valid = 1'b0;
-                    o_wght_packet = {wght_tag, {WGHT_BUS_BITWIDTH{1'b0}}};
-                end
-                
-                glb_data_type = 2'd3;
-                glb_logical_addr = wght_glb_ra;
-
-                o_glb_re = wght_glb_re;
-                o_glb_ra = glb_physical_addr;
-                o_glb_bank_sel = glb_bank_sel;
+                o_glb_en = wght_glb_en;
+                o_glb_addr = wght_glb_ra;
+                o_glb_bank_sel = 2'h2;
+            end
+            LOAD_PSUM_START: begin
+                o_glb_en = psum_glb_en;
+                o_glb_addr = psum_glb_ra;
+                o_glb_bank_sel = 2'h3;
+                o_psum_in_sel = psum_in_sel;
+            end
+            LOAD_PSUM_WAIT: begin
+                o_glb_en = psum_glb_en;
+                o_glb_addr = psum_glb_ra;
+                o_glb_bank_sel = 2'h3;
+                o_psum_in_sel = psum_in_sel;
             end
             LOAD_PSUM: begin
-                if(cnt > 2) begin
-                    o_psum_in_valid = 1'b1;
-                    o_psum_in_packet = {psum_tag, i_glb_rd};
-                end
-                else begin
-                    o_psum_in_valid = 1'b0;
-                    o_psum_in_packet = {psum_tag, {PSUM_BUS_BITWIDTH{1'b0}}};
-                end
-                
-                glb_data_type = 2'd2;
-                glb_logical_addr = psum_glb_ra;
+                o_psum_in_valid = psum_valid;
+                o_psum_in_packet = {psum_tag, i_glb_rd};
 
-                o_glb_re = psum_glb_re;
-                o_glb_ra = glb_physical_addr;
-                o_glb_bank_sel = glb_bank_sel;
-                o_ctrl_psum_in_sel_LNorGIN = ctrl_psum_in_sel_LNorGIN;
+                o_glb_en = psum_glb_en;
+                o_glb_addr = psum_glb_ra;
+                o_glb_bank_sel = 2'h3;
+                o_psum_in_sel = psum_in_sel;
             end
             CALC: begin
                 o_inst_data = CMD_CONV;
-                o_inst_valid = (cnt == 0);
+                o_inst_valid = is_first_cycle;
             end
-            ACCRST: begin
+            ACC: begin
                 o_inst_data = CMD_ACC;
-                o_inst_valid = (cnt == 0);
+                o_inst_valid = is_first_cycle;
             end
             PSUM2GLB: begin
-                o_ctrl_psum_out_sel_GON = (ctrl_psum_out_sel_GON[cnt / i_layer_p] << (NUM_ROWS * NUM_COLS - 1 - (cnt / i_layer_p)));
-
-                glb_data_type = 2'd2;
-                glb_logical_addr = psum_glb_wa;
-
-                o_glb_we = psum_glb_we;
-                o_glb_wa = glb_physical_addr;
-                o_glb_bank_sel = glb_bank_sel;
+                o_glb_bank_sel = 2'h3;
+                o_glb_en = psum_glb_we;
+                o_glb_we = psum_out_valid;
+                o_glb_addr = psum_glb_wa;
+                
+                // p cycle for each top pe
+                o_psum_out_sel = (psum_out_sel[counter / i_layer_p] << (counter / i_layer_p));
             end
             DONE: begin
             end
         endcase
     end
 
-    GLB_addr_decoder #(
-        .DATA_BITWIDTH (DATA_BITWIDTH),
-        .BANK_NUM      (BANK_NUM),
-        .BANK_DEPTH    (BANK_DEPTH)
-    ) u_glb_addr_decoder (
-        .i_GLB_allocation (i_GLB_allocation),
-        .i_data_type     (glb_data_type),  // [1:0]
-        .i_addr          (glb_logical_addr),  // [clogb2(BANK_NUM*BANK_DEPTH)-1:0]
-        .o_glb_bank_sel  (glb_bank_sel),  // [clogb2(BANK_NUM)-1:0]
-        .o_glb_addr        (glb_physical_addr)   // [clogb2(BANK_DEPTH)-1:0]
-    );
-
-    // ifmap_load_ctrl instance
-    ifmap_load_ctrl u_ifmap_load_ctrl (
-        .i_clk           (i_clk),
-        .i_rst           (i_rst),
-
-        .i_load_start   ((state == LOAD_IFMAP) && (cnt == 0)),
-
-        // Layer & Tiling/Mapping Parameters
-        .i_layer_HW        (i_layer_HW),
-        .i_layer_U         (i_layer_U),
-        .i_layer_PAD       (i_layer_PAD),
-        .i_layer_m         (i_layer_m),
-        .i_layer_n         (i_layer_n),
-        .i_layer_e         (i_layer_e),
-        .i_layer_p         (i_layer_p),
-        .i_layer_q         (i_layer_q),
-        .i_layer_r         (i_layer_r),
-        .i_layer_s         (i_layer_s),
-        .i_layer_t         (i_layer_t),
-
-        // Final Outputs to GLB
-        .o_ifmap_glb_re    (ifmap_glb_re),
-        .o_ifmap_glb_ra    (ifmap_glb_ra),
-        .o_ifmap_tag       (ifmap_tag),
-        .o_load_done       (ifmap_load_done)
-    );
-
-    // Instance of wght_load_ctrl
-    wght_load_ctrl u_wght_load_ctrl (
-        .i_clk         (i_clk),           // input clock
-        .i_rst         (i_rst),           // input reset
-        .i_load_start  ((state == LOAD_WGHT) && (cnt == 0)),    // start signal to begin loading
-
-        .i_layer_m       (i_layer_m),
-        .i_layer_n       (i_layer_n),
-        .i_layer_e       (i_layer_e),
-        .i_layer_p       (i_layer_p),
-        .i_layer_q       (i_layer_q),
-        .i_layer_r       (i_layer_r),
-        .i_layer_s       (i_layer_s),
-        .i_layer_t       (i_layer_t),
-
-        .o_wght_glb_re   (wght_glb_re),     // weight GLB read enable
-        .o_wght_glb_ra   (wght_glb_ra),     // weight GLB read address
-        .o_wght_tag      (wght_tag),        // weight tag (used for routing or matching)
-        .o_load_done     (wght_load_done)        // indicates all loading is finished
-    );
-
-    psum_load_ctrl u_psum_load_ctrl (
-        .i_clk           (i_clk),
-        .i_rst           (i_rst),
-
-        .i_load_start    ((state == LOAD_PSUM) && (cnt == 0)),
-
-        .i_layer_m       (i_layer_m),
-        .i_layer_n       (i_layer_n),
-        .i_layer_e       (i_layer_e),
-        .i_layer_p       (i_layer_p),
-        .i_layer_q       (i_layer_q),
-        .i_layer_r       (i_layer_r),
-        .i_layer_s       (i_layer_s),
-        .i_layer_t       (i_layer_t),
-
-        .o_psum_glb_re   (psum_glb_re),
-        .o_psum_glb_ra   (psum_glb_ra),
-        .o_psum_tag      (psum_tag),
-        .o_load_done     (psum_load_done)
-    );
-
-    psum_store_ctrl u_psum_store_ctrl (
-        .i_clk         (i_clk),
-        .i_rst         (i_rst),
-        .i_start       ((state == PSUM2GLB) && (cnt == 0)),
-
-        .i_layer_m     (i_layer_m),
-        .i_layer_n     (i_layer_n),
-        .i_layer_e     (i_layer_e),
-        .i_layer_p     (i_layer_p),
-        .i_layer_q     (i_layer_q),
-        .i_layer_r     (i_layer_r),
-        .i_layer_s     (i_layer_s),
-        .i_layer_t     (i_layer_t),
-
-        .o_psum_glb_we (psum_glb_we),
-        .o_psum_glb_wa (psum_glb_wa),
-        .o_iter_done   (),
-        .o_load_done   (psum_store_done)
-    );
-
-    psum_selection_decoder #(
-        .NUM_ROWS(NUM_ROWS),
-        .NUM_COLS(NUM_COLS),
-        .PSUM_ROW_ID_BITWIDTH(PSUM_ROW_ID_BITWIDTH),
-        .PSUM_COL_ID_BITWIDTH(PSUM_COL_ID_BITWIDTH)
-    ) u_psum_selection_decoder (
-        .i_layer_s(i_layer_s),
-        .i_psum_row_id(i_psum_row_id),
-        .i_psum_col_id(i_psum_col_id),
-        .o_ctrl_psum_in_sel_LNorGIN(ctrl_psum_in_sel_LNorGIN),
-        .o_ctrl_psum_out_sel_GON(ctrl_psum_out_sel_GON)
-    );
+    assign o_psum_out_data = psum_out_data;
 
     function integer clogb2;
         input integer depth;

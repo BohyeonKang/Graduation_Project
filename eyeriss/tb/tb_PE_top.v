@@ -2,66 +2,71 @@
 
 module tb_PE_top;
 
-	parameter DATA_BITWIDTH = 8;
-	parameter BUS_BITWIDTH = 32;
-	parameter IFMAP_ADDR_BITWIDTH = 4;
-	parameter WGHT_ADDR_BITWIDTH = 7;
-	parameter PSUM_ADDR_BITWIDTH = 3;
+	parameter DWIDTH = 32;
+	parameter IFMAP_SPAD_AWIDTH = 4;
+	parameter WGHT_SPAD_AWIDTH = 7;
+	parameter PSUM_SPAD_AWIDTH = 3;
+	parameter IFMAP_FIFO_AWIDTH = 4;
+	parameter WGHT_FIFO_AWIDTH = 8;
+	parameter PSUM_FIFO_AWIDTH = 4;
 
-	localparam IFMAP_DATA_BITWIDTH = DATA_BITWIDTH;
-	localparam WGHT_DATA_BITWIDTH = 4 * DATA_BITWIDTH;
-	localparam PSUM_DATA_BITWIDTH = 4 * DATA_BITWIDTH;
+    localparam CMD_SET          = 3'b000;
+    localparam CMD_LOAD_IFMAP   = 3'b001;
+    localparam CMD_LOAD_WGHT    = 3'b010;
+    localparam CMD_CONV         = 3'b011;
+	localparam CMD_ACC          = 3'b100;
 
-    localparam CMD_NOP          = 3'b000;
-    localparam CMD_SET          = 3'b001;
-    localparam CMD_LOAD_IFMAP   = 3'b010;
-    localparam CMD_LOAD_WGHT    = 3'b011;
-    localparam CMD_CONV         = 3'b100;
-	localparam CMD_ACC          = 3'b101;
+	reg i_clk;
+	reg i_rst;
 
-    reg i_clk = 0;
-    reg i_rst;
+	// TOP CTRL
+	reg [2:0] i_opcode;
+	reg i_opcode_valid;
+	wire o_opcode_ready;
 
-    //TOP CTRL
-    reg [2:0] i_inst_data;
-    reg [8:0] i_conv_info;
-    reg i_inst_valid;
-    wire o_inst_ready;
+	reg [4:0] i_layer_p;
+	reg [2:0] i_layer_q;
+	reg [3:0] i_layer_s;
 
-    //fifo interface
-	reg [IFMAP_DATA_BITWIDTH-1:0] i_ifmap_fifo_data;
-    reg i_ifmap_fifo_valid;
-    wire o_ifmap_fifo_ready;
+	// FIFO interface I/O
+	reg [DWIDTH-1:0] i_ifmap_fifo_data;
+	reg i_ifmap_fifo_valid;
+	wire o_ifmap_fifo_ready;
 
-    reg [WGHT_DATA_BITWIDTH-1:0] i_wght_fifo_data;
-    reg i_wght_fifo_valid;
-    wire o_wght_fifo_ready;
+	reg [DWIDTH-1:0] i_wght_fifo_data;
+	reg i_wght_fifo_valid;
+	wire o_wght_fifo_ready;
 
-    reg [PSUM_DATA_BITWIDTH-1:0] i_psum_in_fifo_data;
-    reg i_psum_in_fifo_valid;
-    wire o_psum_in_fifo_ready;
+	reg [DWIDTH-1:0] i_psum_in_fifo_data;
+	reg i_psum_in_fifo_valid;
+	wire o_psum_in_fifo_ready;
 
-    wire [PSUM_DATA_BITWIDTH-1:0] o_psum_out_fifo_data;
-    wire o_psum_out_fifo_valid;
-    reg i_psum_out_fifo_ready;
+	reg i_psum_out_fifo_ready;
+	wire [DWIDTH-1:0] o_psum_out_fifo_data;
+	wire o_psum_out_fifo_valid;
+	
 
 	PE_top #(
-		.DATA_BITWIDTH(DATA_BITWIDTH), 
-		.BUS_BITWIDTH(BUS_BITWIDTH),
-		.IFMAP_ADDR_BITWIDTH(IFMAP_ADDR_BITWIDTH), 
-		.WGHT_ADDR_BITWIDTH(WGHT_ADDR_BITWIDTH), 
-		.PSUM_ADDR_BITWIDTH(PSUM_ADDR_BITWIDTH)
-	) dut (
+		.DWIDTH(DWIDTH),
+		.IFMAP_SPAD_AWIDTH(IFMAP_SPAD_AWIDTH),
+		.WGHT_SPAD_AWIDTH(WGHT_SPAD_AWIDTH),
+		.PSUM_SPAD_AWIDTH(PSUM_SPAD_AWIDTH),
+		.IFMAP_FIFO_AWIDTH(IFMAP_FIFO_AWIDTH),
+		.WGHT_FIFO_AWIDTH(WGHT_FIFO_AWIDTH),
+		.PSUM_FIFO_AWIDTH(PSUM_FIFO_AWIDTH)
+	) U_PE_top (
 		.i_clk(i_clk),
 		.i_rst(i_rst),
 
-		// TOP CTRL
-		.i_inst_data(i_inst_data),
-		.i_conv_info(i_conv_info),
-		.i_inst_valid(i_inst_valid),
-		.o_inst_ready(o_inst_ready),
+		//TOP CTRL
+		.i_opcode(i_opcode),
+		.i_opcode_valid(i_opcode_valid),
+		.o_opcode_ready(o_opcode_ready),
+		.i_layer_p(i_layer_p),
+		.i_layer_q(i_layer_q),
+		.i_layer_s(i_layer_s),
 
-		// FIFO interface
+		//fifo interface I/O
 		.i_ifmap_fifo_data(i_ifmap_fifo_data),
 		.i_ifmap_fifo_valid(i_ifmap_fifo_valid),
 		.o_ifmap_fifo_ready(o_ifmap_fifo_ready),
@@ -86,10 +91,13 @@ module tb_PE_top;
 		$display("Start Testbench");
 
 		// Reset
+		i_clk = 0;
 		i_rst = 1;
-		i_inst_data = 0;
-		i_conv_info = 0;
-		i_inst_valid = 0;
+		i_layer_p = 0;
+		i_layer_q = 0;
+		i_layer_s = 0;
+		i_opcode = 0;
+		i_opcode_valid = 0;
 		i_ifmap_fifo_data = 0;
 		i_ifmap_fifo_valid = 0;
 		i_wght_fifo_data = 0;
@@ -103,23 +111,25 @@ module tb_PE_top;
 
 		///// SET /////
 		@(posedge i_clk); #1;
-		i_inst_data = CMD_SET;
-		i_conv_info = 9'b110100011; //(P=6, Q=4, S=3)
-		i_inst_valid = 1;
+		i_layer_p = 5'h6;
+		i_layer_q = 3'h4;
+		i_layer_s = 4'h3;
+		i_opcode = CMD_SET;
+		i_opcode_valid = 1;
 
 		@(posedge i_clk); #1; //wait 1 cycle for DEC state
-		i_inst_valid = 0;
+		i_opcode_valid = 0;
 
-		wait(o_inst_ready);
+		wait(o_opcode_ready);
 
 
 		///// LOAD_IFMAP /////
 		@(posedge i_clk); #1;
-		i_inst_data = CMD_LOAD_IFMAP;
-		i_inst_valid = 1;
+		i_opcode = CMD_LOAD_IFMAP;
+		i_opcode_valid = 1;
 
 		@(posedge i_clk); #1; //wait 1 cycle for DEC state
-		i_inst_valid = 0;
+		i_opcode_valid = 0;
 
 		for(j=0; j<dut.u_PE_control.conv_info_reg[5:3]; j=j+1) begin  // loop for Q
 			for(k=0; k<dut.u_PE_control.conv_info_reg[2:0]; k=k+1) begin // loop for S
@@ -133,16 +143,16 @@ module tb_PE_top;
 		i_ifmap_fifo_valid = 0;
 		i_ifmap_fifo_data = 0;
 
-		wait(o_inst_ready);
+		wait(o_opcode_ready);
 
 
 		///// LOAD_WGHT /////
 		@(posedge i_clk); #1;
-		i_inst_data = CMD_LOAD_WGHT;
-		i_inst_valid = 1;
+		i_opcode = CMD_LOAD_WGHT;
+		i_opcode_valid = 1;
 		
 		@(posedge i_clk); #1; //wait 1 cycle for DEC state
-		i_inst_valid = 0;
+		i_opcode_valid = 0;
 
 
 		@(posedge i_clk); #1;
@@ -220,29 +230,29 @@ module tb_PE_top;
 		@(posedge i_clk); #1;
 		i_wght_fifo_valid = 0;
 
-		wait(o_inst_ready);
+		wait(o_opcode_ready);
 
 
 		///// CONV /////
 		@(posedge i_clk); #1;
-		i_inst_data = CMD_CONV;
-		i_inst_valid = 1;
+		i_opcode = CMD_CONV;
+		i_opcode_valid = 1;
 
 		@(posedge i_clk); #1; //wait 1 cycle for DEC state
-		i_inst_valid = 0;
+		i_opcode_valid = 0;
 
 		repeat (72) @(posedge i_clk);
 
-		wait(o_inst_ready);
+		wait(o_opcode_ready);
 
 
 		///// ACCRST /////
 		@(posedge i_clk); #1;
-		i_inst_data = CMD_ACC;
-		i_inst_valid = 1;
+		i_opcode = CMD_ACC;
+		i_opcode_valid = 1;
 
 		@(posedge i_clk); #1; //wait 1 cycle for DEC state
-		i_inst_valid = 0;
+		i_opcode_valid = 0;
 
 		@(posedge i_clk); #1;
 		i_psum_in_fifo_valid = 1;
@@ -257,7 +267,7 @@ module tb_PE_top;
 
 		repeat (10) @(posedge i_clk);
 
-		wait(o_inst_ready);
+		wait(o_opcode_ready);
 
 		$stop;
 	end

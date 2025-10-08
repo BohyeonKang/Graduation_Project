@@ -20,16 +20,17 @@ module GIN_BUS #(
     input [SLV_NUM-1:0] i_ready,
     output [SLV_NUM-1:0] o_valid,
 
-    // TOP CTRL interface
-    input [0:SLV_NUM * ID_BITWIDTH - 1] i_id,
-    input i_id_valid
+    input [SLV_NUM * ID_BITWIDTH - 1:0] i_id,
+    input i_id_valid,
+    output [SLV_NUM * ID_BITWIDTH - 1:0] o_cur_id
 );
 
     wire [ID_BITWIDTH-1:0] tag;
     wire [PACKET_OUT_BITWIDTH-1:0] data;
     assign {tag, data} = i_packet;
 
-    wire [ID_BITWIDTH-1:0] id [0:SLV_NUM-1];
+    wire [ID_BITWIDTH-1:0] input_id [0:SLV_NUM-1];
+    wire [ID_BITWIDTH-1:0] output_id [0:SLV_NUM-1];
 
     wire [SLV_NUM-1:0] slv_MC_ready;
 
@@ -38,7 +39,8 @@ module GIN_BUS #(
     genvar i;
     generate
         for(i=0; i<SLV_NUM; i=i+1) begin: BUS_MC_gen
-            assign id[i] = i_id[i * ID_BITWIDTH +: ID_BITWIDTH];
+            assign input_id[i] = i_id[i * ID_BITWIDTH +: ID_BITWIDTH];
+            assign o_cur_id[i * ID_BITWIDTH +: ID_BITWIDTH] = output_id[i];
 
             MC #(
                 .DATA_BITWIDTH(PACKET_OUT_BITWIDTH),
@@ -47,7 +49,7 @@ module GIN_BUS #(
                 .i_clk(i_clk),
                 .i_rst(i_rst),
 
-                .i_id(id[i]),
+                .i_id(input_id[i]),
                 .i_id_valid(i_id_valid),
                 .i_tag(tag),
                 
@@ -57,7 +59,8 @@ module GIN_BUS #(
 
                 .i_ready(i_ready[i]),
                 .o_valid(o_valid[i]),
-                .o_data(o_packet[i * PACKET_OUT_BITWIDTH +: PACKET_OUT_BITWIDTH])
+                .o_data(o_packet[i * PACKET_OUT_BITWIDTH +: PACKET_OUT_BITWIDTH]),
+                .o_cur_id(output_id[i])
             );
         end
     endgenerate

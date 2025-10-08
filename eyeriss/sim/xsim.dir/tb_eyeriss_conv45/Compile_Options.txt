@@ -1,1 +1,0 @@
-"tb_eyeriss_conv45" -debug "all" -s "tb_eyeriss_conv45" 

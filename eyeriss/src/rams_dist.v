@@ -1,29 +1,51 @@
 `timescale 1ns / 1ps
 // Dual-Port Distributed RAM with Synchronous Read
-module rams_dist # (
+module rams_dist #(
     parameter DATA_BITWIDTH = 8,
-    parameter ADDR_BITWIDTH = 7
+    parameter ADDR_BITWIDTH = 7,
+    parameter DEPTH = (1 << ADDR_BITWIDTH),
+    parameter INIT_FILE = ""
 )(
-    input         clk,
-    input         we,
-    input  [ADDR_BITWIDTH-1:0]  a,      // write + spo read address
-    input  [ADDR_BITWIDTH-1:0]  dpra,   // dpo read address
-    input  [DATA_BITWIDTH-1:0] di,      // write data
-    output [DATA_BITWIDTH-1:0] spo, // spo read data
-    output [DATA_BITWIDTH-1:0] dpo  // dpo read data
+    input                      clk,
+    input                      we0,
+    input                      we1,
+    input  [DATA_BITWIDTH-1:0] d0,
+    input  [DATA_BITWIDTH-1:0] d1,
+    input  [ADDR_BITWIDTH-1:0] addr0,
+    input  [ADDR_BITWIDTH-1:0] addr1,
+    output [DATA_BITWIDTH-1:0] q0,
+    output [DATA_BITWIDTH-1:0] q1
 );
 
     localparam RAM_DEPTH = 1 << ADDR_BITWIDTH;
 
     (* ram_style = "distributed" *)
-    reg [DATA_BITWIDTH-1:0] ram [0:RAM_DEPTH-1];
+    reg [DATA_BITWIDTH-1:0] mem [0:RAM_DEPTH-1];
 
-    always @(posedge clk) begin
-        if (we)
-            ram[a] <= di;
+
+    integer i;
+    initial begin
+        if (INIT_FILE != "") begin
+        $readmemh(INIT_FILE, mem);
+        end
+        else begin
+        for (i = 0; i < DEPTH; i = i + 1) begin
+            mem[i] = 0;
+        end
+        end
     end
 
-    assign spo = ram[a];     // synchronous read for spo
-    assign dpo = ram[dpra];  // synchronous read for dpo
+    always @(posedge clk) begin
+        if (we0)
+        mem[addr0] <= d0;
+    end
+
+    always @(posedge clk) begin
+        if (we1)
+        mem[addr1] <= d1;
+    end
+
+    assign q0 = mem[addr0];
+    assign q1 = mem[addr1];
 
 endmodule

@@ -1,0 +1,109 @@
+/*
+@0x00 : i_layer_HW
+@0x01 : i_layer_U
+@0x02 : i_layer_PAD
+@0x03 : i_layer_m
+@0x04 : i_layer_n
+@0x05 : i_layer_e
+@0x06 : i_layer_p
+@0x07 : i_layer_q
+@0x08 : i_layer_r
+@0x09 : i_layer_s
+@0x0A : i_layer_t
+@0x0B : ifmap row id
+@0x0C : wght row id
+@0x0D : psum row id
+@0x0E : ifmap col id - PE set (0,0) to (0,5)
+@0x0F : ifmap col id - PE set (0,6) to (0,11)
+@0x10 : ifmap col id - PE set (0,12) to (1,4)
+@0x11 : ifmap col id - PE set (1,5) to (1,10)
+@0x12 : ifmap col id - PE set (1,11) to (2,3)
+@0x13 : ifmap col id - PE set (2,4) to (2,9)
+@0x14 : ifmap col id - PE set (2,10) to (2,12)
+@0x15~0x19 : wght col id
+@0x1A~0x1E : psum col id
+*/
+
+// i_layer_HW
+0000000F
+
+// i_layer_U
+00000001
+
+// i_layer_PAD
+00000000
+
+// i_layer_m
+00000010
+
+// i_layer_n
+00000001
+
+// i_layer_e
+0000000D
+
+// i_layer_p
+00000010
+
+// i_layer_q
+00000004
+
+// i_layer_r
+00000001
+
+// i_layer_s
+00000003
+
+// i_layer_t
+00000001
+
+// ifmap row id
+00000111
+
+// wght row id
+00000321
+
+// psum row id
+00000321
+
+// ifmap col id - PE set (0,0) to (0,5)
+// i.e. {2'd0, 5'd6, 5'd5, 5'd4, 5'd3, 5'd2, 5'd1}
+0C520C41
+
+// ifmap col id - PE set (0,6) to (0,11)
+// i.e. {2'd0, 5'd12, 5'd11, 5'd10, 5'd9, 5'd8, 5'd7}
+18B52507
+
+// ifmap col id - PE set (0,12) to (1,4)
+// i.e. {2'd0, 5'd6, 5'd5, 5'd4, 5'd3, 5'd2, 5'd13}
+0C520C4D
+
+// ifmap col id - PE set (1,5) to (1,10)
+// i.e. {2'd0, 5'd12, 5'd11, 5'd10, 5'd9, 5'd8, 5'd7}
+18B52507
+
+// ifmap col id - PE set (1,11) to (2,3)
+// i.e. {2'd0, 5'd6, 5'd5, 5'd4, 5'd3, 5'd14, 5'd13}
+0C520DCD
+
+// ifmap col id - PE set (2,4) to (2,9)
+// i.e. {2'd0, 5'd12, 5'd11, 5'd10, 5'd9, 5'd8, 5'd7}
+18B52507
+
+// ifmap col id - PE set (2,10) to (2,12)
+// i.e. {17'd0, 5'd15, 5'd14, 5'd13}
+00003DCD
+
+// wght col id
+11111111
+11111111
+11111111
+11111111
+01111111
+
+// psum col id
+87654321
+321DCBA9
+BA987654
+654321DC
+0DCBA987

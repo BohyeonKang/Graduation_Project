@@ -1,13 +1,9 @@
-
 `timescale 1ns / 1ps
-
+`define TESTCASE_CONV45
 module tb_eyeriss_wrapper();
 
-    localparam BANK_NUM = 3;
     localparam BANK_DEPTH = 8192;
     localparam DATA_BITWIDTH = 32;
-    localparam NUM_ROWS = 3;
-    localparam NUM_COLS = 13;
     localparam IFMAP_ROW_ID_BITWIDTH = 4;
     localparam WGHT_ROW_ID_BITWIDTH = 4;
     localparam PSUM_ROW_ID_BITWIDTH = 4;
@@ -18,8 +14,40 @@ module tb_eyeriss_wrapper();
     localparam WGHT_BUS_BITWIDTH = 32;
     localparam PSUM_BUS_BITWIDTH = 32;
 
-    localparam layer_e = 13; // Number of output channels
-    localparam layer_p = 16; // Number of input channels
+`ifdef TESTCASE_CONV3
+    localparam CONFIG_FILE = "./data/conv3/config.mem";
+    localparam NUM_ROWS = 3;
+    localparam NUM_COLS = 13;
+    localparam layer_e = 13;
+    localparam layer_p = 16;
+    localparam IFMAP_FILE   = "./data/conv3/ifmap.mem";
+    localparam WEIGHT_FILE  = "./data/conv3/weight.mem";
+    localparam PSUM_INIT_FILE = "./data/conv3/psum_init.mem";
+    localparam PSUM_ANSWER_FILE = "./data/conv3/psum_answer.mem";
+    localparam PSUM_OUT_FILE = "./data/conv3/psum_out.mem";
+`elsif TESTCASE_CONV45
+    localparam CONFIG_FILE = "./data/conv45/config.mem";
+    localparam NUM_ROWS = 3;
+    localparam NUM_COLS = 13;
+    localparam layer_e = 13;
+    localparam layer_p = 16;
+    localparam IFMAP_FILE   = "./data/conv45/ifmap.mem";
+    localparam WEIGHT_FILE  = "./data/conv45/weight.mem";
+    localparam PSUM_INIT_FILE = "./data/conv45/psum_init.mem";
+    localparam PSUM_ANSWER_FILE = "./data/conv45/psum_answer.mem";
+    localparam PSUM_OUT_FILE = "./data/conv45/psum_out.mem";
+`else // 기본값
+    localparam CONFIG_FILE = "./data/testcase/config.mem";
+    localparam NUM_ROWS = 3;
+    localparam NUM_COLS = 3;
+    localparam layer_e = 3;
+    localparam layer_p = 4;
+    localparam IFMAP_FILE   = "./data/testcase/ifmap.mem";
+    localparam WEIGHT_FILE  = "./data/testcase/weight.mem";
+    localparam PSUM_INIT_FILE = "./data/testcase/psum_init.mem";
+    localparam PSUM_ANSWER_FILE = "./data/testcase/psum_answer.mem";
+    localparam PSUM_OUT_FILE = "./data/testcase/psum_out.mem";
+`endif
 
     reg i_clk;
     reg i_rst;
@@ -30,48 +58,42 @@ module tb_eyeriss_wrapper();
     // Global buffer
     reg [DATA_BITWIDTH-1:0] psum_answer [0:BANK_DEPTH-1];
 
-    // PE_array → GLB
-    wire [DATA_BITWIDTH-1:0] psum_out_data_arr2glb;
 
     // for file writing and comparison
     integer fd, i;
     integer base_addr, num_elem, mismatch;
 
-
     eyeriss_wrapper #(
-    .BANK_NUM(BANK_NUM),
-    .BANK_DEPTH(BANK_DEPTH),
-    .DATA_BITWIDTH(DATA_BITWIDTH),
-    .NUM_ROWS(NUM_ROWS),
-    .NUM_COLS(NUM_COLS),
-    .IFMAP_ROW_ID_BITWIDTH(IFMAP_ROW_ID_BITWIDTH),
-    .WGHT_ROW_ID_BITWIDTH(WGHT_ROW_ID_BITWIDTH),
-    .PSUM_ROW_ID_BITWIDTH(PSUM_ROW_ID_BITWIDTH),
-    .IFMAP_COL_ID_BITWIDTH(IFMAP_COL_ID_BITWIDTH),
-    .WGHT_COL_ID_BITWIDTH(WGHT_COL_ID_BITWIDTH),
-    .PSUM_COL_ID_BITWIDTH(PSUM_COL_ID_BITWIDTH),
-    .IFMAP_BUS_BITWIDTH(IFMAP_BUS_BITWIDTH),
-    .WGHT_BUS_BITWIDTH(WGHT_BUS_BITWIDTH),
-    .PSUM_BUS_BITWIDTH(PSUM_BUS_BITWIDTH)
+        .CONFIG_FILE(CONFIG_FILE),
+        .BANK_DEPTH(BANK_DEPTH),
+        .DATA_BITWIDTH(DATA_BITWIDTH),
+        .NUM_ROWS(NUM_ROWS),
+        .NUM_COLS(NUM_COLS),
+        .IFMAP_ROW_ID_BITWIDTH(IFMAP_ROW_ID_BITWIDTH),
+        .WGHT_ROW_ID_BITWIDTH(WGHT_ROW_ID_BITWIDTH),
+        .PSUM_ROW_ID_BITWIDTH(PSUM_ROW_ID_BITWIDTH),
+        .IFMAP_COL_ID_BITWIDTH(IFMAP_COL_ID_BITWIDTH),
+        .WGHT_COL_ID_BITWIDTH(WGHT_COL_ID_BITWIDTH),
+        .PSUM_COL_ID_BITWIDTH(PSUM_COL_ID_BITWIDTH),
+        .IFMAP_BUS_BITWIDTH(IFMAP_BUS_BITWIDTH),
+        .WGHT_BUS_BITWIDTH(WGHT_BUS_BITWIDTH),
+        .PSUM_BUS_BITWIDTH(PSUM_BUS_BITWIDTH)
     ) u_eyeriss_wrapper (
-    // Port connections
-    .i_clk(i_clk),
-    .i_rst(i_rst),
-    .i_core_start(i_core_start),
-    .o_core_done(o_core_done)
+        .i_clk(i_clk),
+        .i_rst(i_rst),
+        .i_core_start(i_core_start),
+        .o_core_done(o_core_done)
     );
 
     // Clock generation
     always #5 i_clk = ~i_clk;
 
     initial begin
-        /*
-        $readmemh("./data/conv3/ifmap.mem", u_eyeriss_wrapper.glb_inst.gen_GLB_BANKS[0].glb_bank_inst.BRAM);
-        $readmemh("./data/conv3/psum_init.mem", u_eyeriss_wrapper.glb_inst.gen_GLB_BANKS[1].glb_bank_inst.BRAM);
-        $readmemh("./data/conv3/weight.mem", u_eyeriss_wrapper.glb_inst.gen_GLB_BANKS[2].glb_bank_inst.BRAM);
-        */
         
-        $readmemh("./data/conv3/psum_answer.mem", psum_answer);
+        $readmemh(IFMAP_FILE, u_eyeriss_wrapper.u_glb.ifmap_bank.BRAM);
+        $readmemh(WEIGHT_FILE, u_eyeriss_wrapper.u_glb.wght_bank.BRAM);
+        $readmemh(PSUM_INIT_FILE, u_eyeriss_wrapper.u_glb.psum_bank.BRAM);
+        $readmemh(PSUM_ANSWER_FILE, psum_answer);
 
         // Initialize Inputs
         i_clk = 0;
@@ -85,13 +107,11 @@ module tb_eyeriss_wrapper();
         i_core_start = 32'd0;
         wait(o_core_done);
 
-
-
         // Save psum_out to file
-        fd = $fopen("./data/conv3/psum_out.mem", "w");
+        fd = $fopen(PSUM_OUT_FILE, "w");
         if (fd) begin
             for (i = 0; i < BANK_DEPTH; i = i + 1) begin
-                $fdisplay(fd, "%h", eyeriss_wrapper.glb_inst.u_glb_bank_psum.BRAM[i]);
+                $fdisplay(fd, "%h", u_eyeriss_wrapper.u_glb.psum_bank.BRAM[i]);
             end
             $fclose(fd);
         end else begin
@@ -99,19 +119,19 @@ module tb_eyeriss_wrapper();
         end
 
         // Compare psum_answer and psum_out
-            base_addr = layer_e * layer_e * layer_p;
-            num_elem = layer_e * layer_e * layer_p;
-            mismatch = 0;
-            for (i = 0; i < num_elem; i = i + 1) begin
-                if (psum_answer[i] == u_eyeriss_wrapper.glb_inst.u_glb_bank_psum.BRAM[base_addr + i]) begin
-                    $display("Match at address %0d: answer=%h, out=%h", i, psum_answer[i], u_eyeriss_wrapper.glb_inst.u_glb_bank_psum.BRAM[base_addr + i]);
-                end
-                if (psum_answer[i] !== u_eyeriss_wrapper.glb_inst.u_glb_bank_psum.BRAM[base_addr + i]) begin
-                $display("Mismatch at address %0d: answer=%h, out=%h", i, psum_answer[i], u_eyeriss_wrapper.glb_inst.u_glb_bank_psum.BRAM[base_addr + i]);
-                mismatch = 1;
-                end
+        base_addr = layer_e * layer_e * layer_p;
+        num_elem = layer_e * layer_e * layer_p;
+        mismatch = 0;
+        for (i = 0; i < num_elem; i = i + 1) begin
+            if (psum_answer[i] == u_eyeriss_wrapper.u_glb.psum_bank.BRAM[base_addr + i]) begin
+                $display("Match at address %0d: answer=%h, out=%h", i, psum_answer[i], u_eyeriss_wrapper.u_glb.psum_bank.BRAM[base_addr + i]);
             end
-            if (!mismatch) $display("All compared psum values match.");
+            if (psum_answer[i] !== u_eyeriss_wrapper.u_glb.psum_bank.BRAM[base_addr + i]) begin
+                $display("Mismatch at address %0d: answer=%h, out=%h", i, psum_answer[i], u_eyeriss_wrapper.u_glb.psum_bank.BRAM[base_addr + i]);
+                mismatch = 1;
+            end
+        end
+        if (!mismatch) $display("All compared psum values match.");
 
         $finish;
     end

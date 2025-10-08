@@ -83,25 +83,4 @@ module fifo #(
             end
         end
     end
-
 endmodule
-
-/*
-    fifo #(
-        QUEUE_PTR_BANDWIDTH(),
-        ELE_BANDWIDTH()
-    ) your_instance_name (
-        .i_clk(),
-        .i_rst(),
-
-        //FIFO interface as rx
-        .i_push_data(),
-        .i_valid(),
-        .o_ready(),
-
-        //FIFO interface as tx
-        .i_ready(),         
-        .o_valid(),
-        .o_pop_data()
-    );
-*/
